@@ -33,7 +33,7 @@
     //#region Attributes
 
     protected clientsData!: Client;
-    protected columnsToDisplay: string[] = ['id', 'nombre', 'apellido', 'negocio', 'telefono'];
+    protected columnsToDisplay: string[] = ['id', 'nombre', 'apellido', 'telefono'];
     @ViewChild(MatPaginator, {static: false})
     protected paginator!: MatPaginator;
     @ViewChild(MatSort)
@@ -46,7 +46,7 @@
 
     constructor() {
       this.editMode = false;
-      this.clientsData = new Client({nombre: '', apellido: '', negocio: '', telefono: ''});
+      this.clientsData = new Client({nombre: '', apellido: '', telefono: ''});
       this.datasource = new MatTableDataSource();
       console.log(this.clientsData);
     }

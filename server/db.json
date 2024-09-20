@@ -1,10 +1,10 @@
 {
   "clients": [
-    { "id": 1, "nombre": "Carlos", "apellido": "Martinez", "negocio": "Vinos del Valle", "telefono": "999 999 999" },
-    { "id": 2, "nombre": "Laura", "apellido": "Gómez", "negocio": "Distribuidora Gómez", "telefono": "999 999 999" },
-    { "id": 3, "nombre": "Eduardo", "apellido": "Rodriguez", "negocio": "Viñedos Rodriguez", "telefono": "999 999 999" },
-    { "id": 4, "nombre": "Ana", "apellido": "Fernández", "negocio": "Bodegas Fernández", "telefono": "999 999 999" },
-    { "id": 5, "nombre": "José", "apellido": "Pérez", "negocio": "El Buen Vino", "telefono": "999 999 999" }
-  ],
+    { "id": 1, "nombre": "Carlos", "apellido": "Martinez", "telefono": "999 999 999" },
+    { "id": 2, "nombre": "Laura", "apellido": "Gómez", "telefono": "999 999 999" },
+    { "id": 3, "nombre": "Eduardo", "apellido": "Rodriguez", "telefono": "999 999 999" },
+    { "id": 4, "nombre": "Ana", "apellido": "Fernández", "telefono": "999 999 999" },
+    { "id": 5, "nombre": "José", "apellido": "Pérez", "telefono": "999 999 999" }
+  ]
 
 }
