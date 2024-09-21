@@ -1,0 +1,110 @@
+{
+  "clients": [
+    {
+      "id": "2",
+      "nombre": "Laura",
+      "apellido": "Gómez",
+      "telefono": "999 999 999"
+    },
+    {
+      "id": "3",
+      "nombre": "Eduardo",
+      "apellido": "Rodriguez",
+      "telefono": "999 999 999"
+    },
+    {
+      "id": "4",
+      "nombre": "Ana",
+      "apellido": "Fernández",
+      "telefono": "999 999 999"
+    },
+    {
+      "id": "5",
+      "nombre": "José",
+      "apellido": "Pérez",
+      "telefono": "999 999 999"
+    }
+  ],
+  "inventory": [
+    {
+      "nombre": "Uvas Cabernet",
+      "tipo": "Materia Prima",
+      "unidad": "kg",
+      "caducidad": "15-12-24",
+      "proveedor": "Viñedos del Sol",
+      "costoU": "$2.50",
+      "ultimaActualizacion": "2024-09-01",
+      "cantidad": 500
+    },
+    {
+      "nombre": "Levadura Seca",
+      "tipo": "Materia Prima",
+      "unidad": "kg",
+      "caducidad": "01-06-25",
+      "proveedor": "Fermenta Max",
+      "costoU": "$15.00",
+      "ultimaActualizacion": "2024-08-29",
+      "cantidad": 50
+    },
+    {
+      "nombre": "Barriles de Roble",
+      "tipo": "Equipamiento",
+      "unidad": "und",
+      "caducidad": "N/A",
+      "proveedor": "Barriles Únicos",
+      "costoU": "$250.00",
+      "ultimaActualizacion": "2024-09-03",
+      "cantidad": 30
+    },
+    {
+      "nombre": "Botellas de Vidrio",
+      "tipo": "Consumible",
+      "unidad": "und",
+      "caducidad": "N/A",
+      "proveedor": "Vidrios de Oro",
+      "costoU": "$0.75",
+      "ultimaActualizacion": "2024-09-02",
+      "cantidad": 2000
+    },
+    {
+      "nombre": "Corchos Naturales",
+      "tipo": "Consumible",
+      "unidad": "und",
+      "caducidad": "N/A",
+      "proveedor": "Corcho Total",
+      "costoU": "$0.10",
+      "ultimaActualizacion": "2024-09-02",
+      "cantidad": 3000
+    },
+    {
+      "nombre": "Azúcar Refinada",
+      "tipo": "Aditivo",
+      "unidad": "kg",
+      "caducidad": "2025-01-10",
+      "proveedor": "Dulces Vinos",
+      "costoU": "$1.80",
+      "ultimaActualizacion": "2024-09-04",
+      "cantidad": 100
+    },
+    {
+      "nombre": "Azúcar Refinada",
+      "tipo": "Aditivo",
+      "unidad": "kg",
+      "caducidad": "2025-09-20",
+      "proveedor": "Vinotech",
+      "costoU": "$8.00",
+      "ultimaActualizacion": "2024-09-05",
+      "cantidad": 40
+    },
+    {
+      "nombre": "Tapas de Botella",
+      "tipo": "Consumible",
+      "unidad": "und",
+      "caducidad": "N/A",
+      "proveedor": "TapasPlus",
+      "costoU": "$0.05",
+      "ultimaActualizacion": "2024-09-05",
+      "cantidad": 3000
+    }
+  ]
+}
