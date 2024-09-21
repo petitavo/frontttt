@@ -26,7 +26,7 @@
       "unidad": "kg",
       "caducidad": "15-12-24",
       "proveedor": "Viñedos del Sol",
-      "costoU": "$2.50",
+      "costoU": 2.5,
       "ultimaActualizacion": "2024-09-01",
       "cantidad": 500,
       "id": "01db"
@@ -37,7 +37,7 @@
       "unidad": "kg",
       "caducidad": "01-06-25",
       "proveedor": "Fermenta Max",
-      "costoU": "$15.00",
+      "costoU": 15,
       "ultimaActualizacion": "2024-08-29",
       "cantidad": 50,
       "id": "1ddb"
@@ -48,7 +48,7 @@
       "unidad": "und",
       "caducidad": "N/A",
       "proveedor": "Barriles Únicos",
-      "costoU": "$250.00",
+      "costoU": 250,
       "ultimaActualizacion": "2024-09-03",
       "cantidad": 30,
       "id": "e578"
@@ -59,21 +59,10 @@
       "unidad": "und",
       "caducidad": "N/A",
       "proveedor": "Vidrios de Oro",
-      "costoU": "$0.75",
+      "costoU": 0.75,
       "ultimaActualizacion": "2024-09-02",
       "cantidad": 2000,
       "id": "92a7"
-    },
-    {
-      "nombre": "Corchos Naturales",
-      "tipo": "Consumible",
-      "unidad": "und",
-      "caducidad": "N/A",
-      "proveedor": "Corcho Total",
-      "costoU": "$0.10",
-      "ultimaActualizacion": "2024-09-02",
-      "cantidad": 3000,
-      "id": "272c"
     },
     {
       "nombre": "Azúcar Refinada",
@@ -81,7 +70,7 @@
       "unidad": "kg",
       "caducidad": "2025-01-10",
       "proveedor": "Dulces Vinos",
-      "costoU": "$1.80",
+      "costoU": 1.8,
       "ultimaActualizacion": "2024-09-04",
       "cantidad": 100,
       "id": "6d57"
@@ -92,21 +81,10 @@
       "unidad": "kg",
       "caducidad": "2025-09-20",
       "proveedor": "Vinotech",
-      "costoU": "$8.00",
+      "costoU": 8,
       "ultimaActualizacion": "2024-09-05",
       "cantidad": 40,
       "id": "4770"
-    },
-    {
-      "nombre": "Tapas de Botella",
-      "tipo": "Consumible",
-      "unidad": "und",
-      "caducidad": "N/A",
-      "proveedor": "TapasPlus",
-      "costoU": "$0.05",
-      "ultimaActualizacion": "2024-09-05",
-      "cantidad": 3000,
-      "id": "46c2"
     }
   ]
 }
