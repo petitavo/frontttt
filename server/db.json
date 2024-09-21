@@ -17,12 +17,6 @@
       "nombre": "Ana",
       "apellido": "Fernández",
       "telefono": "999 999 999"
-    },
-    {
-      "id": "5",
-      "nombre": "José",
-      "apellido": "Pérez",
-      "telefono": "999 999 999"
     }
   ],
   "inventory": [
@@ -34,7 +28,8 @@
       "proveedor": "Viñedos del Sol",
       "costoU": "$2.50",
       "ultimaActualizacion": "2024-09-01",
-      "cantidad": 500
+      "cantidad": 500,
+      "id": "01db"
     },
     {
       "nombre": "Levadura Seca",
@@ -44,7 +39,8 @@
       "proveedor": "Fermenta Max",
       "costoU": "$15.00",
       "ultimaActualizacion": "2024-08-29",
-      "cantidad": 50
+      "cantidad": 50,
+      "id": "1ddb"
     },
     {
       "nombre": "Barriles de Roble",
@@ -54,7 +50,8 @@
       "proveedor": "Barriles Únicos",
       "costoU": "$250.00",
       "ultimaActualizacion": "2024-09-03",
-      "cantidad": 30
+      "cantidad": 30,
+      "id": "e578"
     },
     {
       "nombre": "Botellas de Vidrio",
@@ -64,7 +61,8 @@
       "proveedor": "Vidrios de Oro",
       "costoU": "$0.75",
       "ultimaActualizacion": "2024-09-02",
-      "cantidad": 2000
+      "cantidad": 2000,
+      "id": "92a7"
     },
     {
       "nombre": "Corchos Naturales",
@@ -74,7 +72,8 @@
       "proveedor": "Corcho Total",
       "costoU": "$0.10",
       "ultimaActualizacion": "2024-09-02",
-      "cantidad": 3000
+      "cantidad": 3000,
+      "id": "272c"
     },
     {
       "nombre": "Azúcar Refinada",
@@ -84,7 +83,8 @@
       "proveedor": "Dulces Vinos",
       "costoU": "$1.80",
       "ultimaActualizacion": "2024-09-04",
-      "cantidad": 100
+      "cantidad": 100,
+      "id": "6d57"
     },
     {
       "nombre": "Azúcar Refinada",
@@ -94,7 +94,8 @@
       "proveedor": "Vinotech",
       "costoU": "$8.00",
       "ultimaActualizacion": "2024-09-05",
-      "cantidad": 40
+      "cantidad": 40,
+      "id": "4770"
     },
     {
       "nombre": "Tapas de Botella",
@@ -104,7 +105,8 @@
       "proveedor": "TapasPlus",
       "costoU": "$0.05",
       "ultimaActualizacion": "2024-09-05",
-      "cantidad": 3000
+      "cantidad": 3000,
+      "id": "46c2"
     }
   ]
 }
