@@ -131,6 +131,18 @@
       "ciudad": "Lima",
       "dni": "90123456",
       "correo": "daniela.perez@example.com"
+    },
+    {
+      "id": 0,
+      "nombre": "Joaquin",
+      "apellido": "Perez",
+      "negocio": "",
+      "telefono": "555565",
+      "direccion": "San Felipe",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "9491974",
+      "correo": "jqgla@gmail.com"
     }
   ],
   "inventory": [

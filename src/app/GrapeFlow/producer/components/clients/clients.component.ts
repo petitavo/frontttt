@@ -88,5 +88,6 @@ export class ClientsComponent implements OnInit, AfterViewInit {
 
   onAddClient() {
     console.log('Add Client');
+    this.router.navigate(['/add-client']);
   }
 }
