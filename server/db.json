@@ -86,5 +86,52 @@
       "cantidad": 40,
       "id": "4770"
     }
+  ],
+  "lotes": [
+    {
+      "numeroLote": "L001",
+      "uva": "Uva Tinta",
+      "fechaInicio": "15/08/2024",
+      "cantidadLitros": 300,
+      "pH": 3.5,
+      "temperatura": 18,
+      "estadoProceso": "Terminado"
+    },
+    {
+      "numeroLote": "L002",
+      "uva": "Uva Blanca",
+      "fechaInicio": "20/08/2024",
+      "cantidadLitros": 250,
+      "pH": 3.6,
+      "temperatura": 20,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "numeroLote": "L003",
+      "uva": "Uva Cabernet",
+      "fechaInicio": "30/07/2024",
+      "cantidadLitros": 400,
+      "pH": 3.4,
+      "temperatura": 17,
+      "estadoProceso": "Terminado"
+    },
+    {
+      "numeroLote": "L004",
+      "uva": "Uva Malbec",
+      "fechaInicio": "05/08/2024",
+      "cantidadLitros": 350,
+      "pH": 3.7,
+      "temperatura": 19,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "numeroLote": "L005",
+      "uva": "Uva Syrah",
+      "fechaInicio": "10/08/2024",
+      "cantidadLitros": 450,
+      "pH": 3.8,
+      "temperatura": 18,
+      "estadoProceso": "Terminado"
+    }
   ]
 }
