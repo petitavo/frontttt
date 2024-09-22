@@ -1,0 +1,23 @@
+.add-client-container {
+  max-width: 450px;
+  margin: 8% auto;
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: orange;
+  text-decoration: underline;
+}
+.add-client-form {
+  width: 100%; /* Asegúrate de que el formulario ocupe el ancho completo */
+  max-width: 430px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 30px 0; /* Espaciado vertical */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Espacio entre botones */
+  margin-top: 20px; /* Espacio superior para los botones */
+}
+

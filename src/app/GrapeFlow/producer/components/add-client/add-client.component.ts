@@ -24,11 +24,20 @@ export class AddClientComponent {
   newClient: Client = new Client({nombre: '', apellido: '', telefono: '', direccion: '', ciudad: '', pais: '', dni: '', correo: ''});
 
   constructor(private clientService: ClientService, private router: Router) {}
-
+  private nextId = 13;
   onAdd(): void {
+
+    this.newClient.id = this.nextId.toString();
+    this.nextId++;  // Incrementar el ID
+
     this.clientService.create(this.newClient).subscribe(() => {
       this.router.navigate(['/clients']);
     });
+  }
+
+  generateUniqueId(): number {
+    // Por ejemplo, usando el timestamp
+    return Date.now();
   }
 
   onCancel(): void {

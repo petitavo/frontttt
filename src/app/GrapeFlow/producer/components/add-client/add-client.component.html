@@ -1,7 +1,7 @@
 <div class="add-client-container">
   <h1>Agregar Cliente</h1>
 
-  <form (ngSubmit)="onAdd()">
+  <form (ngSubmit)="onAdd()" class="add-client-form">
     <mat-form-field appearance="fill">
       <mat-label>Nombre</mat-label>
       <input matInput [(ngModel)]="newClient.nombre" name="nombre" required>
