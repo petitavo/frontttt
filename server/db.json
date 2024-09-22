@@ -1,22 +1,136 @@
 {
   "clients": [
     {
+      "id": "1",
+      "nombre": "Luis",
+      "apellido": "Ramírez",
+      "telefono": "999 111 222",
+      "direccion": "San Borja",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "12345678",
+      "correo": "luis.ramirez@example.com"
+    },
+    {
       "id": "2",
-      "nombre": "Laura",
-      "apellido": "Gómez",
-      "telefono": "999 999 999"
+      "nombre": "Gabriela",
+      "apellido": "Silva",
+      "telefono": "999 222 333",
+      "direccion": "Magdalena",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "23456789",
+      "correo": "gabriela.silva@example.com"
     },
     {
       "id": "3",
       "nombre": "Eduardo",
       "apellido": "Rodriguez",
-      "telefono": "999 999 999"
+      "telefono": "999 999 999",
+      "direccion": "San Felipe",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "87654321",
+      "correo": "eduardo.rodriguez@example.com"
     },
     {
       "id": "4",
       "nombre": "Ana",
       "apellido": "Fernández",
-      "telefono": "999 999 999"
+      "telefono": "999 999 999",
+      "direccion": "San Lorenzo",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "12345678",
+      "correo": "ana.fernandez@example.com"
+    },
+    {
+      "id": "5",
+      "nombre": "Carlos",
+      "apellido": "García",
+      "telefono": "999 888 777",
+      "direccion": "Las Condes",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "23456789",
+      "correo": "carlos.garcia@example.com"
+    },
+    {
+      "id": "6",
+      "nombre": "María",
+      "apellido": "López",
+      "telefono": "888 777 666",
+      "direccion": "Miraflores",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "34567890",
+      "correo": "maria.lopez@example.com"
+    },
+    {
+      "id": "7",
+      "nombre": "Jorge",
+      "apellido": "Martínez",
+      "telefono": "777 666 555",
+      "direccion": "San Isidro",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "45678901",
+      "correo": "jorge.martinez@example.com"
+    },
+    {
+      "id": "8",
+      "nombre": "Lucía",
+      "apellido": "Gómez",
+      "telefono": "666 555 444",
+      "direccion": "Palermo",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "56789012",
+      "correo": "lucia.gomez@example.com"
+    },
+    {
+      "id": "9",
+      "nombre": "Pedro",
+      "apellido": "Hernández",
+      "telefono": "555 444 333",
+      "direccion": "Recoleta",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "67890123",
+      "correo": "pedro.hernandez@example.com"
+    },
+    {
+      "id": "10",
+      "nombre": "Sofía",
+      "apellido": "Torres",
+      "telefono": "444 333 222",
+      "direccion": "Surquillo",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "78901234",
+      "correo": "sofia.torres@example.com"
+    },
+    {
+      "id": "11",
+      "nombre": "Roberto",
+      "apellido": "Ríos",
+      "telefono": "333 222 111",
+      "direccion": "San Borja",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "89012345",
+      "correo": "roberto.rios@example.com"
+    },
+    {
+      "id": "12",
+      "nombre": "Daniela",
+      "apellido": "Pérez",
+      "telefono": "222 111 000",
+      "direccion": "Providencia",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "90123456",
+      "correo": "daniela.perez@example.com"
     }
   ],
   "inventory": [
