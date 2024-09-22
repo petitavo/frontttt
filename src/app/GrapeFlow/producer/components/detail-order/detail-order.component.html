@@ -1,0 +1,35 @@
+<div class="detalle-pedido-container">
+  <h2>Detalle del Pedido</h2>
+
+  <div class="pedido-info">
+    <!-- Información del cliente y solicitud -->
+    <p><strong>Nombre del cliente:</strong> {{ nombreCliente }}</p>
+    <p><strong>N° de Solicitud:</strong> {{ numeroSolicitud }}</p>
+    <p><strong>Correo Electrónico:</strong> {{ correoElectronico }}</p>
+    <p><strong>Teléfono:</strong> {{ telefono }}</p>
+    <p><strong>Dirección de Entrega:</strong> {{ direccionEntrega }}</p>
+
+    <!-- Productos solicitados -->
+    <p><strong>Productos Solicitados:</strong></p>
+    <ul>
+      <li>{{ productos[0].description }} - {{ productos[0].cantidad }}</li>
+      <li>{{ productos[1].description }} - {{ productos[1].cantidad }}</li>
+    </ul>
+
+    <!-- Otros detalles del pedido -->
+    <p><strong>Condiciones de Transporte:</strong> {{ condicionesTransporte }}</p>
+    <p><strong>Método de Pago:</strong> {{ metodoPago }}</p>
+    <p><strong>Términos de Pago:</strong> {{ terminosPago }}</p>
+    <p><strong>Fecha de Solicitud:</strong> {{ fechaSolicitud }}</p>
+    <p><strong>Fecha de Entrega Solicitada:</strong> {{ fechaEntregaSolicitada }}</p>
+
+    <!-- Estado del pedido -->
+    <div class="select estado-pedido">
+      <select (change)="cambiarEstado($event)">
+        <option value="pendiente" class="estado-pendiente">Pendiente</option>
+        <option value="cancelado" class="estado-cancelado">Cancelado</option>
+        <option value="enviado" class="estado-enviado">Enviado</option>
+      </select>
+    </div>
+  </div>
+</div>
