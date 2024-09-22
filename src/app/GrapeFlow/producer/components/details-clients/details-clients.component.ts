@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Client} from "../../model/client.entity";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {ClientService} from "../../services/client.service";
 import {MatButton} from "@angular/material/button";
 import {NgIf} from "@angular/common";
@@ -10,7 +10,8 @@ import {NgIf} from "@angular/common";
   standalone: true,
   imports: [
     MatButton,
-    NgIf
+    NgIf,
+    RouterLink
   ],
   templateUrl: './details-clients.component.html',
   styleUrl: './details-clients.component.css'
@@ -23,7 +24,7 @@ export class DetailsClientsComponent implements OnInit {
   ngOnInit(): void {
     const clientId = this.route.snapshot.paramMap.get('id');
     if (clientId) {
-      this.clientService.getById(clientId).subscribe(client => {
+      this.clientService.getById(clientId).subscribe( client => {
         this.client = client;
       });
     }

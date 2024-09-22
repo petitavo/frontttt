@@ -68,6 +68,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
 
   onEdit(client: Client) {
     console.log('Edit', client);
+    this.router.navigate(['/edit-clients', client.id]);
   }
 
   onDelete(client: Client) {
