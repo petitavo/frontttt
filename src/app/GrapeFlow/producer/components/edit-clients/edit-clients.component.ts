@@ -37,7 +37,7 @@ export class EditClientsComponent {
       });
     } else {
       console.error('Client ID is null');
-      this.router.navigate(['/clients']); // Redirigir si no hay ID
+      this.router.navigate(['/clients']);
     }
   }
 

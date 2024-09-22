@@ -28,17 +28,13 @@ export class AddClientComponent {
   onAdd(): void {
 
     this.newClient.id = this.nextId.toString();
-    this.nextId++;  // Incrementar el ID
+    this.nextId++;
 
     this.clientService.create(this.newClient).subscribe(() => {
       this.router.navigate(['/clients']);
     });
   }
 
-  generateUniqueId(): number {
-    // Por ejemplo, usando el timestamp
-    return Date.now();
-  }
 
   onCancel(): void {
     this.router.navigate(['/clients']);

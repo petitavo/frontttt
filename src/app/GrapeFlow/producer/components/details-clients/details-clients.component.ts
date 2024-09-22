@@ -31,6 +31,6 @@ export class DetailsClientsComponent implements OnInit {
   }
 
   goBack(): void {
-    this.router.navigate(['/clients']); // Ajusta la ruta según tu configuración
+    this.router.navigate(['/clients']);
   }
 }
