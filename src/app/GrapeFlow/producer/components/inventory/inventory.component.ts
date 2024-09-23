@@ -28,7 +28,7 @@ import { InventoryService } from '../../services/inventory.service';
 })
 export class InventoryComponent implements OnInit, AfterViewInit {
   protected inventoryData: Inventory;
-  protected columnsToDisplay: string[] = ['nombre', 'tipo', 'unidad', 'caducidad', 'costoU', 'ultimaActualizacion', 'cantidad', 'actions'];
+  protected columnsToDisplay: string[] = ['nombre', 'tipo', 'unidad', 'caducidad', 'costoU', 'cantidad', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   protected dataSource: MatTableDataSource<Inventory>;
@@ -36,7 +36,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   constructor() {
     this.inventoryData = new Inventory({
-      nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, ultimaActualizacion: '', cantidad: 0
+      nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
     });
     this.dataSource = new MatTableDataSource<Inventory>();
   }
@@ -66,7 +66,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
       (newItem) => {
         this.dataSource.data = [...this.dataSource.data, newItem];
         this.inventoryData = new Inventory({
-          nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, ultimaActualizacion: '', cantidad: 0
+          nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
         });
       },
       (error) => console.error('Error adding inventory item', error)

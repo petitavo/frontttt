@@ -1,17 +1,6 @@
 {
   "clients": [
     {
-      "id": "2",
-      "nombre": "Gabriela",
-      "apellido": "Silva",
-      "telefono": "999 222 333",
-      "direccion": "Magdalena",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "23456789",
-      "correo": "gabriela.silva@example.com"
-    },
-    {
       "id": "3",
       "nombre": "Eduardo",
       "apellido": "Rodriguez",
@@ -178,6 +167,16 @@
       "ultimaActualizacion": "2024-09-05",
       "cantidad": 40,
       "id": "4770"
+    },
+    {
+      "id": 0,
+      "nombre": "Cabernet",
+      "tipo": "Vino",
+      "unidad": "kg",
+      "caducidad": "15-12-25",
+      "costoU": 10,
+      "ultimaActualizacion": "",
+      "cantidad": 200
     }
   ],
   "lotes": [
