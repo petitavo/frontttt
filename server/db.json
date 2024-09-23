@@ -199,7 +199,7 @@
       "cantidadLitros": 250,
       "pH": 3.6,
       "temperatura": 20,
-      "estadoProceso": "En Proceso"
+      "estadoProceso": "Terminado"
     },
     {
       "id": "3",
@@ -219,6 +219,26 @@
       "cantidadLitros": 350,
       "pH": 3.7,
       "temperatura": 19,
+      "estadoProceso": "Terminado"
+    },
+    {
+      "id": "10",
+      "numeroLote": "545",
+      "uva": "5454",
+      "fechaInicio": "5454-04-05",
+      "cantidadLitros": 5454,
+      "pH": 545,
+      "temperatura": 54,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "10",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
       "estadoProceso": "En Proceso"
     }
   ]
