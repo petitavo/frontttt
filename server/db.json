@@ -1,17 +1,6 @@
 {
   "clients": [
     {
-      "id": "1",
-      "nombre": "Angelo",
-      "apellido": "Ramírez",
-      "telefono": "999 111 222",
-      "direccion": "San Borja",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "12345678",
-      "correo": "luis.ramirez@example.com"
-    },
-    {
       "id": "2",
       "nombre": "Gabriela",
       "apellido": "Silva",
@@ -109,6 +98,18 @@
       "ciudad": "Lima",
       "dni": "78901234",
       "correo": "sofia.torres@example.com"
+    },
+    {
+      "id": "13",
+      "nombre": "Juan",
+      "apellido": "aaffa",
+      "negocio": "",
+      "telefono": "131313",
+      "direccion": "adaf",
+      "pais": "afafa",
+      "ciudad": "afafa",
+      "dni": "fafa",
+      "correo": "fafa"
     }
   ],
   "inventory": [
