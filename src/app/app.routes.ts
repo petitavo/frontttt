@@ -5,6 +5,7 @@ import {LoteComponent} from "./GrapeFlow/producer/components/lote/lote.component
 import {DetailsClientsComponent} from "./GrapeFlow/producer/components/details-clients/details-clients.component";
 import {EditClientsComponent} from "./GrapeFlow/producer/components/edit-clients/edit-clients.component";
 import {AddClientComponent} from "./GrapeFlow/producer/components/add-client/add-client.component";
+import {LoteAddComponent} from "./GrapeFlow/producer/components/lote-add/lote-add.component";
 
 export const routes: Routes = [
   {path: 'clients', component : ClientsComponent},

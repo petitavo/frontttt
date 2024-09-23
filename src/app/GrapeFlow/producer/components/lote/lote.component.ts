@@ -12,6 +12,8 @@
   import { LoteService } from '../../services/lote.service';
   import { LoteDetailsComponent } from '../lote-details/lote-details.component';
   import { MatIconModule } from '@angular/material/icon';
+  import {RouterLink} from "@angular/router";
+  import {LoteAddComponent} from "../lote-add/lote-add.component";
 
   @Component({
     selector: 'app-lote',
@@ -26,7 +28,8 @@
       FormsModule,
       MatSortModule,
       MatDialogModule,
-      MatIconModule
+      MatIconModule,
+      RouterLink
     ],
     templateUrl: './lote.component.html',
     styleUrls: ['./lote.component.css']
@@ -98,5 +101,18 @@
         },
         (error) => console.error('Error updating lote status', error)
       );
+    }
+
+    openAddLoteDialog(): void {
+      const dialogRef = this.dialog.open(LoteAddComponent, {
+        width: '400px',
+        data: {} // Pasa los datos que necesites al diálogo
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.getAllLotes(); // Actualiza la lista después de cerrar el diálogo
+        }
+      });
     }
   }
