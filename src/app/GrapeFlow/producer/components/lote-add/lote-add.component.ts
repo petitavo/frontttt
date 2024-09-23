@@ -40,15 +40,16 @@ export class LoteAddComponent {
     @Inject(MAT_DIALOG_DATA) public data: any,
     private loteService: LoteService // Inyectamos el servicio LoteService
   ) {}
-  private nextId = 10;
+
   onSave(): void {
+    // Obtener el último ID de los lotes existentes para generar uno nuevo
+    this.loteService.getAll().subscribe(lotes => {
+      const lastId = lotes.length > 0 ? Math.max(...lotes.map(lote => +lote.id)) : 0; // Buscar el ID más alto
+      this.lote.id = (lastId + 1).toString(); // Generar un nuevo ID sumando 1
 
-
-      this.lote.id = this.nextId.toString();
-      this.nextId++;
-
-    this.loteService.create(this.lote).subscribe(newLote => {
-      this.dialogRef.close(newLote); // Devuelve el nuevo lote al cerrar el diálogo
+      this.loteService.create(this.lote).subscribe(newLote => {
+        this.dialogRef.close(newLote); // Devuelve el nuevo lote al cerrar el diálogo
+      });
     });
   }
 
@@ -56,3 +57,4 @@ export class LoteAddComponent {
     this.dialogRef.close();
   }
 }
+
