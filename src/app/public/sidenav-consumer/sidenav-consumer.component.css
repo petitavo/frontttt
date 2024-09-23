@@ -16,14 +16,14 @@
   flex: 1;
 }
 
-.producer-indicator {
+.consumer-indicator {
   display: flex;
   align-items: center;
   font-size: 14px;
   color: #fff;
 }
 
-.producer-indicator mat-icon {
+.consumer-indicator mat-icon {
   margin-right: 4px;
   color: #fff;
 }
