@@ -217,6 +217,81 @@
       "pH": 0,
       "temperatura": 0,
       "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "10",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
+      "estadoProceso": "En Proceso"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "numeroPedido": "P001",
+      "fecha": "01/09/2024",
+      "tipo": "vino",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "2",
+      "numeroPedido": "P002",
+      "fecha": "02/09/2024",
+      "tipo": "vino",
+      "estado": "En proceso"
+    },
+    {
+      "id": "3",
+      "numeroPedido": "P003",
+      "fecha": "03/09/2024",
+      "tipo": "vino",
+      "estado": "Enviado"
+    },
+    {
+      "id": "4",
+      "numeroPedido": "P004",
+      "fecha": "04/09/2024",
+      "tipo": "vino",
+      "estado": "Devolución"
+    },
+    {
+      "id": "5",
+      "numeroPedido": "P005",
+      "fecha": "05/09/2024",
+      "tipo": "vino",
+      "estado": "Entregado"
+    },
+    {
+      "id": "6",
+      "numeroPedido": "P006",
+      "fecha": "06/09/2024",
+      "tipo": "vino",
+      "estado": "Cancelado"
+    },
+    {
+      "id": "7",
+      "numeroPedido": "P007",
+      "fecha": "07/09/2024",
+      "tipo": "vino",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "8",
+      "numeroPedido": "P008",
+      "fecha": "08/09/2024",
+      "tipo": "vino",
+      "estado": "En proceso"
+    },
+    {
+      "id": "9",
+      "numeroPedido": "P009",
+      "fecha": "09/09/2024",
+      "tipo": "vino",
+      "estado": "Enviado"
     }
   ]
 }
