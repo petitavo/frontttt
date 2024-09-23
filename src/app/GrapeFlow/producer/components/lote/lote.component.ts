@@ -90,10 +90,13 @@
     }
 
     onChangeStatus(lote: Lote): void {
+      console.log('Estado actual:', lote.estadoProceso); // Verificar estado actual
       const newStatus = lote.estadoProceso === 'En Proceso' ? 'Terminado' : 'En Proceso';
-      this.loteService.update(lote.numeroLote, { ...lote, estadoProceso: newStatus }).subscribe(
+      console.log('Nuevo estado:', newStatus); // Verificar nuevo estado
+
+      this.loteService.update(lote.id, { ...lote, estadoProceso: newStatus }).subscribe(
         (updatedLote) => {
-          const index = this.dataSource.data.findIndex(l => l.numeroLote === updatedLote.numeroLote);
+          const index = this.dataSource.data.findIndex(l => l.id === updatedLote.id);
           if (index !== -1) {
             this.dataSource.data[index] = updatedLote;
             this.dataSource._updateChangeSubscription();

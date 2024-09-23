@@ -1,25 +1,35 @@
-<h1 mat-dialog-title>Agregar Lote</h1>
-<div mat-dialog-content>
-  <!-- Formulario para ingresar los detalles del lote -->
-  <mat-form-field>
+<h1>Agregar Nuevo Lote</h1>
+<form (ngSubmit)="onSave()" #loteForm="ngForm">
+  <mat-form-field appearance="fill">
     <mat-label>Número de Lote</mat-label>
-    <input matInput [(ngModel)]="lote.numeroLote">
+    <input matInput [(ngModel)]="lote.numeroLote" name="numeroLote" required>
   </mat-form-field>
-  <mat-form-field>
+
+  <mat-form-field appearance="fill">
     <mat-label>Uva</mat-label>
-    <input matInput [(ngModel)]="lote.uva">
+    <input matInput [(ngModel)]="lote.uva" name="uva" required>
   </mat-form-field>
-  <mat-form-field>
+
+  <mat-form-field appearance="fill">
     <mat-label>Fecha de Inicio</mat-label>
-    <input matInput [(ngModel)]="lote.fechaInicio" type="date">
+    <input matInput [(ngModel)]="lote.fechaInicio" name="fechaInicio" type="date" required>
   </mat-form-field>
-  <mat-form-field>
-    <mat-label>Cantidad de Litros</mat-label>
-    <input matInput [(ngModel)]="lote.cantidadLitros" type="number">
+
+  <mat-form-field appearance="fill">
+    <mat-label>Cantidad Litros</mat-label>
+    <input matInput [(ngModel)]="lote.cantidadLitros" name="cantidadLitros" type="number" required>
   </mat-form-field>
-  <!-- Añadir más campos según sea necesario -->
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">Cancelar</button>
-  <button mat-button color="primary" (click)="onSave()">Guardar</button>
-</div>
+
+  <mat-form-field appearance="fill">
+    <mat-label>pH</mat-label>
+    <input matInput [(ngModel)]="lote.pH" name="pH" type="number" step="0.1" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Temperatura</mat-label>
+    <input matInput [(ngModel)]="lote.temperatura" name="temperatura" type="number" required>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Agregar Lote</button>
+  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+</form>
