@@ -283,5 +283,55 @@
       "tipo": "vino",
       "estado": "Enviado"
     }
+  ],
+  "vinos": [
+    {
+      "id": "1",
+      "nombre": "Vino Tinto Gran Reserva - Valle de Ica",
+      "descripcion": "Vino robusto y complejo, con notas intensas de frutos rojos maduros y especias.",
+      "tipo": "Vino Tinto",
+      "region": "Valle de Ica",
+      "pais": "Perú",
+      "anio": 2021,
+      "uvas": ["Malbec", "Cabernet Sauvignon"],
+      "alcohol": 14.5,
+      "certificacion": "Denominación de Origen Ica",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD001",
+      "lote_id": "L001"
+    },
+    {
+      "id": "2",
+      "nombre": "Vino Blanco Chardonnay - Valle de Casablanca",
+      "descripcion": "Vino fresco y afrutado con notas cítricas y tropicales.",
+      "tipo": "Vino Blanco",
+      "region": "Valle de Casablanca",
+      "pais": "Chile",
+      "anio": 2022,
+      "uvas": ["Chardonnay"],
+      "alcohol": 13.5,
+      "certificacion": "D.O. Valle de Casablanca",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD002",
+      "lote_id": "L002"
+    },
+    {
+      "id": "3",
+      "nombre": "Vino Rosado Malbec - Mendoza",
+      "descripcion": "Vino ligero y refrescante con aromas a frutos rojos y flores.",
+      "tipo": "Vino Rosado",
+      "region": "Mendoza",
+      "pais": "Argentina",
+      "anio": 2023,
+      "uvas": ["Malbec"],
+      "alcohol": 12.5,
+      "certificacion": "I.G. Mendoza",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD003",
+      "lote_id": "L003"
+    }
   ]
 }
