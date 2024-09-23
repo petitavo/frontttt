@@ -189,7 +189,7 @@
       "cantidadLitros": 300,
       "pH": 3.5,
       "temperatura": 18,
-      "estadoProceso": "Terminado"
+      "estadoProceso": "En Proceso"
     },
     {
       "id": "2",
@@ -209,7 +209,7 @@
       "cantidadLitros": 400,
       "pH": 3.4,
       "temperatura": 17,
-      "estadoProceso": "Terminado"
+      "estadoProceso": "En Proceso"
     },
     {
       "id": "4",

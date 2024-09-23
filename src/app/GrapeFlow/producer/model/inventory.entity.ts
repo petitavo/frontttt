@@ -4,7 +4,6 @@ export class Inventory {
   tipo: string;
   unidad: string;
   caducidad: string;
-  proveedor: string;
   costoU: number;
   ultimaActualizacion: string;
   cantidad: number;
@@ -15,7 +14,6 @@ export class Inventory {
     tipo: string;
     unidad: string;
     caducidad: string;
-    proveedor: string;
     costoU: number;
     ultimaActualizacion: string;
     cantidad: number;
@@ -25,7 +23,6 @@ export class Inventory {
     this.tipo = inventory.tipo;
     this.unidad = inventory.unidad;
     this.caducidad = inventory.caducidad;
-    this.proveedor = inventory.proveedor;
     this.costoU = inventory.costoU;
     this.ultimaActualizacion = inventory.ultimaActualizacion;
     this.cantidad = inventory.cantidad;
