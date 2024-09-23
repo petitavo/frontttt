@@ -9,7 +9,7 @@ import {AddClientComponent} from "./GrapeFlow/producer/components/add-client/add
 export const routes: Routes = [
   {path: 'clients', component : ClientsComponent},
   {path: 'inventory', component : InventoryComponent},
-  {path: 'lote', component: LoteComponent}
+  {path: 'lote', component: LoteComponent},
   {path: 'details-clients/:id', component: DetailsClientsComponent},
   {path: 'edit-clients/:id', component: EditClientsComponent},
   {path: 'add-client', component: AddClientComponent},
