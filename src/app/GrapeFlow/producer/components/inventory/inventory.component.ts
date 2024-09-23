@@ -9,6 +9,8 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { Inventory } from '../../model/inventory.entity';
 import { InventoryService } from '../../services/inventory.service';
+import {MatDialog} from "@angular/material/dialog";
+import {InventoryEditComponent} from "../inventory-edit/inventory-edit.component";
 
 @Component({
   selector: 'app-inventory',
@@ -34,7 +36,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   protected dataSource: MatTableDataSource<Inventory>;
   private inventoryService: InventoryService = inject(InventoryService);
 
-  constructor() {
+  constructor(private InventoryService: InventoryService,private dialog: MatDialog) {
     this.inventoryData = new Inventory({
       nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
     });
@@ -74,8 +76,18 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   }
 
   onEdit(item: Inventory): void {
-    console.log('Edit', item);
-    // Implement edit functionality
+    const dialogRef = this.dialog.open(InventoryEditComponent, {
+      width: '400px',
+      data: item
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.inventoryService.update(result.id, result).subscribe(() => {
+          this.getAllInventory(); // Refresca la lista de inventario
+        });
+      }
+    });
   }
 
   onDelete(item: Inventory): void {

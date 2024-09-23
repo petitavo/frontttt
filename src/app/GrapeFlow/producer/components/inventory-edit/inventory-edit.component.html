@@ -1,0 +1,42 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    <h2>Editar Inventario</h2>
+  </div>
+
+  <form (ngSubmit)="onSave()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput [(ngModel)]="inventoryData.nombre" name="nombre" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo</mat-label>
+      <input matInput [(ngModel)]="inventoryData.tipo" name="tipo" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Unidad</mat-label>
+      <input matInput [(ngModel)]="inventoryData.unidad" name="unidad" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Caducidad</mat-label>
+      <input matInput [(ngModel)]="inventoryData.caducidad" name="caducidad" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Costo U.</mat-label>
+      <input matInput [(ngModel)]="inventoryData.costoU" type="number" name="costoU" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Cantidad</mat-label>
+      <input matInput [(ngModel)]="inventoryData.cantidad" type="number" name="cantidad" required>
+    </mat-form-field>
+
+    <div class="dialog-buttons">
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+      <button mat-button (click)="onCancel()">Cancelar</button>
+    </div>
+  </form>
+</div>
