@@ -6,9 +6,9 @@
     <span class="app-title" routerLink="/home">GrapeFlow</span>
     <span class="spacer"></span>
 
-    <!-- Indicador sutil para "consumer" -->
+    <!-- Subtle indicator for "consumer" -->
     <div class="consumer-indicator">
-      <mat-icon>person</mat-icon> <!-- Ícono de usuario -->
+      <mat-icon>person</mat-icon> <!-- User icon -->
       <span class="consumer-label">Consumer</span>
     </div>
   </mat-toolbar>
@@ -19,15 +19,15 @@
     <mat-nav-list>
       <a mat-list-item routerLink="/home" (click)="closeSidenav()" class="white-text">
         <mat-icon>home</mat-icon>
-        <span class="link-text">Inicio</span>
+        <span class="link-text">Home</span>
       </a>
       <a mat-list-item routerLink="/wines" (click)="closeSidenav()" class="white-text">
         <mat-icon>local_bar</mat-icon>
-        <span class="link-text">Vinos</span>
+        <span class="link-text">Wines</span>
       </a>
       <a mat-list-item routerLink="/my-orders" (click)="closeSidenav()" class="white-text">
         <mat-icon>shopping_basket</mat-icon>
-        <span class="link-text">Mis pedidos</span>
+        <span class="link-text">My Orders</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -35,3 +35,9 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<!-- Footer -->
+<div class="footer-content">
+  <p>Copyright © 2024</p>
+  <p>Developed by the developer team of Villa System</p>
+</div>

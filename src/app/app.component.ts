@@ -5,11 +5,12 @@ import {ClientsComponent} from "./GrapeFlow/producer/components/clients/clients.
 import {LoteComponent} from "./GrapeFlow/producer/components/lote/lote.component";
 import {SidenavConsumerComponent} from "./public/sidenav-consumer/sidenav-consumer.component";
 import {InventoryComponent} from "./GrapeFlow/producer/components/inventory/inventory.component";
+import {FooterContentComponent} from "./public/footer-content/footer-content.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SidenavComponent, ClientsComponent, LoteComponent, SidenavConsumerComponent, InventoryComponent],
+  imports: [RouterOutlet, SidenavComponent, ClientsComponent, LoteComponent, SidenavConsumerComponent, InventoryComponent, FooterContentComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

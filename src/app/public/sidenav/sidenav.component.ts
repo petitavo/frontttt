@@ -6,23 +6,25 @@ import {MatSidenav, MatSidenavContainer} from "@angular/material/sidenav";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {FooterContentComponent} from "../footer-content/footer-content.component";
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-  imports: [
-    MatListItem,
-    MatIcon,
-    RouterLink,
-    MatNavList,
-    MatSidenav,
-    MatSidenavContainer,
-    MatButton,
-    MatIconButton,
-    MatToolbar,
-    RouterOutlet,
-    MatSidenavModule
-  ],
+    imports: [
+        MatListItem,
+        MatIcon,
+        RouterLink,
+        MatNavList,
+        MatSidenav,
+        MatSidenavContainer,
+        MatButton,
+        MatIconButton,
+        MatToolbar,
+        RouterOutlet,
+        MatSidenavModule,
+        FooterContentComponent
+    ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
