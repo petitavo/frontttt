@@ -10,6 +10,7 @@ import { Client } from "../../model/client.entity";
 import { MatPaginator } from "@angular/material/paginator";
 import { MatSort, MatSortModule } from "@angular/material/sort";
 import { ClientService } from "../../services/client.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients',
@@ -35,7 +36,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   protected datasource: MatTableDataSource<Client>;
   private clientService: ClientService = inject(ClientService);
 
-  constructor() {
+  constructor(private router: Router) {
     this.clientsData = new Client({nombre: '', apellido: '', telefono: ''});
     this.datasource = new MatTableDataSource<Client>();
   }
@@ -61,11 +62,13 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   }
 
   onDetails(client: Client) {
-    console.log('Details', client);
+    console.log('Detalles del cliente:', client);
+    this.router.navigate(['/details-clients', client.id]);
   }
 
   onEdit(client: Client) {
     console.log('Edit', client);
+    this.router.navigate(['/edit-clients', client.id]);
   }
 
   onDelete(client: Client) {
@@ -85,5 +88,6 @@ export class ClientsComponent implements OnInit, AfterViewInit {
 
   onAddClient() {
     console.log('Add Client');
+    this.router.navigate(['/add-client']);
   }
 }

@@ -4,9 +4,7 @@ export class Inventory {
   tipo: string;
   unidad: string;
   caducidad: string;
-  proveedor: string;
   costoU: number;
-  ultimaActualizacion: string;
   cantidad: number;
 
   constructor(inventory: {
@@ -15,9 +13,7 @@ export class Inventory {
     tipo: string;
     unidad: string;
     caducidad: string;
-    proveedor: string;
     costoU: number;
-    ultimaActualizacion: string;
     cantidad: number;
   }) {
     this.id = inventory.id || 0;
@@ -25,9 +21,7 @@ export class Inventory {
     this.tipo = inventory.tipo;
     this.unidad = inventory.unidad;
     this.caducidad = inventory.caducidad;
-    this.proveedor = inventory.proveedor;
     this.costoU = inventory.costoU;
-    this.ultimaActualizacion = inventory.ultimaActualizacion;
     this.cantidad = inventory.cantidad;
   }
 }
