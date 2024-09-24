@@ -166,7 +166,7 @@
       "cantidadLitros": 300,
       "pH": 3.5,
       "temperatura": 18,
-      "estadoProceso": "Terminado"
+      "estadoProceso": "En Proceso"
     },
     {
       "id": "2",
@@ -217,71 +217,188 @@
       "pH": 3,
       "temperatura": 20,
       "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "13",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "14",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
+      "estadoProceso": "En Proceso"
     }
   ],
   "orders": [
     {
       "id": "1",
       "numeroPedido": "P001",
+      "nombre": "Roberto Carlos",
+      "correo": "juan.perez@vinosdelsur.com",
+      "productos": [
+        "Vino Tinto Malbec - 750 ml - 2 botellas",
+        "Vino Blanco Sauvignon - 750 ml - 5 botellas"
+      ],
+      "condicionTransporte": "Transporte con temperatura controlada",
+      "metodoPago": "Transferencia bancaria",
+      "telefono": "+51 987 564 321",
+      "terminosPago": "Crédito a 30 dias",
       "fecha": "01/09/2024",
+      "fechaEntrega": "02/09/2024",
       "tipo": "vino",
-      "estado": "Pendiente"
+      "estado": "En Proceso"
     },
     {
       "id": "2",
       "numeroPedido": "P002",
+      "nombre": "Maria Fernandez",
+      "correo": "maria.fernandez@cervezasdelnorte.com",
+      "productos": [
+        "Cerveza Artesanal Rubia - 500 ml - 6 unidades",
+        "Cerveza Artesanal Negra - 500 ml - 4 unidades"
+      ],
+      "condicionTransporte": "Recolección en Tienda",
+      "metodoPago": "Tarjeta de Débito",
+      "telefono": "+51 942 876 123",
+      "terminosPago": "Pago Contado",
       "fecha": "02/09/2024",
-      "tipo": "vino",
-      "estado": "En proceso"
+      "fechaEntrega": "03/09/2024",
+      "tipo": "cerveza",
+      "estado": "En Proceso"
     },
     {
       "id": "3",
       "numeroPedido": "P003",
+      "nombre": "Pedro Martinez",
+      "correo": "pedro.martinez@licoresdelmundo.pe",
+      "productos": [
+        "Whisky Escocés 12 Años - 750 ml - 1 botella",
+        "Vodka Ruso - 750 ml - 1 botella"
+      ],
+      "condicionTransporte": "Transporte Regular",
+      "metodoPago": "Yape",
+      "telefono": "+51 910 345 678",
+      "terminosPago": "Pago Contado",
       "fecha": "03/09/2024",
-      "tipo": "vino",
-      "estado": "Enviado"
+      "fechaEntrega": "10/09/2024",
+      "tipo": "licores",
+      "estado": "En Proceso"
     },
     {
       "id": "4",
       "numeroPedido": "P004",
+      "nombre": "Ana Lopez",
+      "correo": "ana.lopez@vinosdelpacifico.cl",
+      "productos": [
+        "Vino Tinto Chileno Reserva - 750 ml - 3 botellas",
+        "Queso Parmesano - 200 g - 1 unidad"
+      ],
+      "condicionTransporte": "Transporte con temperatura controlada",
+      "metodoPago": "Pago Contraentrega",
+      "telefono": "+56 9 8765 4321",
+      "terminosPago": "Pago Contado",
       "fecha": "04/09/2024",
-      "tipo": "vino",
-      "estado": "Devolución"
+      "fechaEntrega": "12/09/2024",
+      "tipo": "mixto",
+      "estado": "En Proceso"
     },
     {
       "id": "5",
       "numeroPedido": "P005",
+      "nombre": "Diego Torres",
+      "correo": "diego.torres@licoresdelsur.ar",
+      "productos": [
+        "Gin Argentino London Dry - 750 ml - 2 botellas",
+        "Tónica Premium - 330 ml - 6 unidades"
+      ],
+      "condicionTransporte": "Transporte Regular",
+      "metodoPago": "Mercado Pago",
+      "telefono": "+54 11 5432 1098",
+      "terminosPago": "Pago Contado",
       "fecha": "05/09/2024",
-      "tipo": "vino",
-      "estado": "Entregado"
+      "fechaEntrega": "17/09/2024",
+      "tipo": "licores",
+      "estado": "Terminado"
     },
     {
       "id": "6",
       "numeroPedido": "P006",
+      "nombre": "Sofia Garcia",
+      "correo": "sofia.garcia@vinosdelvalle.com",
+      "productos": [
+        "Vino Rosado Español - 750 ml - 1 botella"
+      ],
+      "condicionTransporte": "Recolección en Tienda",
+      "metodoPago": "Tarjeta de Crédito",
+      "telefono": "+34 6 1234 5678",
+      "terminosPago": "Pago Contado",
       "fecha": "06/09/2024",
+      "fechaEntrega": "06/09/2024",
       "tipo": "vino",
-      "estado": "Cancelado"
+      "estado": "Terminado"
     },
     {
       "id": "7",
       "numeroPedido": "P007",
+      "nombre": "Laura Ramirez",
+      "correo": "laura.ramirez@cervezasartesanales.mx",
+      "productos": [
+        "Cerveza IPA Mexicana - 355 ml - 12 unidades"
+      ],
+      "condicionTransporte": "Envío a Domicilio",
+      "metodoPago": "PayPal",
+      "telefono": "+52 55 1234 5678",
+      "terminosPago": "Pago Contado",
       "fecha": "07/09/2024",
-      "tipo": "vino",
-      "estado": "Pendiente"
+      "fechaEntrega": "14/09/2024",
+      "tipo": "cerveza",
+      "estado": "Terminado"
     },
     {
       "id": "8",
       "numeroPedido": "P008",
+      "nombre": "Carlos Rodriguez",
+      "correo": "carlos.rodriguez@vinosargentinos.com.ar",
+      "productos": [
+        "Vino Tinto Malbec Reserva - 750 ml - 2 botellas",
+        "Aceite de Oliva Extra Virgen - 500 ml - 1 botella"
+      ],
+      "condicionTransporte": "Transporte con temperatura controlada",
+      "metodoPago": "Transferencia bancaria",
+      "telefono": "+54 9 11 2345 6789",
+      "terminosPago": "Crédito a 30 días",
       "fecha": "08/09/2024",
-      "tipo": "vino",
-      "estado": "En proceso"
+      "fechaEntrega": "20/09/2024",
+      "tipo": "mixto",
+      "estado": "En Proceso"
     },
     {
       "id": "9",
       "numeroPedido": "P009",
+      "nombre": "Isabella Santos",
+      "correo": "isabella.santos@licorespremium.br",
+      "productos": [
+        "Ron Añejo Colombiano - 750 ml - 1 botella",
+        "Cachaça Brasileña - 700 ml - 1 botella"
+      ],
+      "condicionTransporte": "Transporte Regular",
+      "metodoPago": "Tarjeta de Crédito",
+      "telefono": "+55 21 98765 4321",
+      "terminosPago": "Pago Contado",
       "fecha": "09/09/2024",
-      "tipo": "vino",
-      "estado": "Enviado"
+      "fechaEntrega": "19/09/2024",
+      "tipo": "licores",
+      "estado": "Terminado"
     }
   ],
   "vinos": [
@@ -293,7 +410,10 @@
       "region": "Valle de Ica",
       "pais": "Perú",
       "anio": 2021,
-      "uvas": ["Malbec", "Cabernet Sauvignon"],
+      "uvas": [
+        "Malbec",
+        "Cabernet Sauvignon"
+      ],
       "alcohol": 14.5,
       "certificacion": "Denominación de Origen Ica",
       "calificacion": 5,
@@ -309,7 +429,9 @@
       "region": "Valle de Casablanca",
       "pais": "Chile",
       "anio": 2022,
-      "uvas": ["Chardonnay"],
+      "uvas": [
+        "Chardonnay"
+      ],
       "alcohol": 13.5,
       "certificacion": "D.O. Valle de Casablanca",
       "calificacion": 4,
@@ -325,7 +447,9 @@
       "region": "Mendoza",
       "pais": "Argentina",
       "anio": 2023,
-      "uvas": ["Malbec"],
+      "uvas": [
+        "Malbec"
+      ],
       "alcohol": 12.5,
       "certificacion": "I.G. Mendoza",
       "calificacion": 4,
@@ -336,7 +460,7 @@
   ],
   "order": [
     {
-      "direccion" : "Calle Principal 123, Miraflores, Lima"
+      "direccion": "Calle Principal 123, Miraflores, Lima"
     }
   ]
 }

@@ -20,6 +20,10 @@ import {MatIcon} from "@angular/material/icon";
 import {DatePipe} from "@angular/common";
 import {MatOption} from "@angular/material/core";
 import {MatSelect} from "@angular/material/select";
+import {Lote} from "../../model/lote.entity";
+import {LoteDetailsComponent} from "../lote-details/lote-details.component";
+import {MatDialog} from "@angular/material/dialog";
+import {OrdersDetailsComponent} from "../orders-details/orders-details.component";
 
 @Component({
   selector: 'app-orders',
@@ -57,6 +61,9 @@ export class OrdersComponent implements OnInit, AfterViewInit{
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
+
+  private dialog: MatDialog = inject(MatDialog);
+
   constructor(private orderService: OrderService) {}
 
   ngOnInit(): void {
@@ -82,14 +89,28 @@ export class OrdersComponent implements OnInit, AfterViewInit{
     this.datasource.filter = filterValue.trim().toLowerCase();
   }
 
-  onViewDetails(order: Order) {
-    console.log('Detalles del pedido:', order);
-    // Navegar a detalles del pedido
+  onViewDetails(order: Order): void {
+    this.dialog.open(OrdersDetailsComponent, {
+      width: '600px',
+      data: order
+    });
   }
 
-  onChangeStatus(order: Order) {
-    console.log('Cambiar estado del pedido:', order);
-    // Lógica para cambiar el estado del pedido
+  onChangeStatus(order: Order): void {
+    console.log('Estado actual:', order.estado); // Verificar estado actual
+    const newStatus = order.estado === 'En Proceso' ? 'Terminado' : 'En Proceso';
+    console.log('Nuevo estado:', newStatus); // Verificar nuevo estado
+
+    this.orderService.update(order.id, { ...order, estado: newStatus }).subscribe(
+      (updatedOrder) => {
+        const index = this.datasource.data.findIndex(o => o.id === updatedOrder.id);
+        if (index !== -1) {
+          this.datasource.data[index] = updatedOrder;
+          this.datasource._updateChangeSubscription();
+        }
+      },
+      (error) => console.error('Error updating order status', error)
+    );
   }
 
   onDelete(order: Order) {
