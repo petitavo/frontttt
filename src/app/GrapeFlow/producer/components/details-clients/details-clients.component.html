@@ -2,16 +2,21 @@
   <h1>Detalles del Cliente</h1>
 
   <div class="client-card">
-    <h2>{{ client.nombre }} {{ client.apellido }}</h2>
-    <p><strong>Teléfono:</strong> {{ client.telefono }}</p>
-    <p><strong>Dirección:</strong> {{ client.direccion }}</p>
-    <p><strong>Ciudad:</strong> {{ client.ciudad }}</p>
-    <p><strong>País:</strong> {{ client.pais }}</p>
-    <p><strong>DNI:</strong> {{ client.dni }}</p>
-    <p><strong>Correo:</strong> {{ client.correo }}</p>
-
-    <div class="button-container">
-      <button mat-raised-button color="accent" routerLink="/clients">Volver a la lista</button>
+    <div class="client-info">
+      <h2>{{ client?.nombre }} {{ client?.apellido }}</h2>
+      <p><strong>Teléfono:</strong> {{ client?.telefono }}</p>
+      <p><strong>Dirección:</strong> {{ client?.direccion }}</p>
+      <p><strong>Ciudad:</strong> {{ client?.ciudad }}</p>
+      <p><strong>País:</strong> {{ client?.pais }}</p>
+      <p><strong>DNI:</strong> {{ client?.dni }}</p>
+      <p><strong>Correo:</strong> {{ client?.correo }}</p>
     </div>
+    <div class="client-image">
+      <img src="/6009864.png" alt="Imagen del Cliente">
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button color="accent" routerLink="/clients">Volver a la lista</button>
   </div>
 </div>
