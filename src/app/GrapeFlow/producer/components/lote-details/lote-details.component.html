@@ -1,28 +1,28 @@
-<h2 mat-dialog-title>Detalles del Lote</h2>
+<h2 mat-dialog-title>Batch Details</h2>
 <mat-dialog-content>
   <dl>
-    <dt>Número de Lote:</dt>
+    <dt>Batch Number:</dt>
     <dd>{{ data.numeroLote }}</dd>
 
-    <dt>Uva:</dt>
+    <dt>Grape:</dt>
     <dd>{{ data.uva }}</dd>
 
-    <dt>Fecha de Inicio:</dt>
+    <dt>Start Date:</dt>
     <dd>{{ data.fechaInicio | date:'dd/MM/yyyy' }}</dd>
 
-    <dt>Cantidad (litros):</dt>
+    <dt>Quantity (liters):</dt>
     <dd>{{ data.cantidadLitros }}</dd>
 
     <dt>pH:</dt>
     <dd>{{ data.pH }}</dd>
 
-    <dt>Temperatura (°C):</dt>
+    <dt>Temperature (°C):</dt>
     <dd>{{ data.temperatura }}</dd>
 
-    <dt>Estado del Proceso:</dt>
+    <dt>Process Status:</dt>
     <dd>{{ data.estadoProceso }}</dd>
   </dl>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button (click)="onClose()">Cerrar</button>
+  <button mat-button (click)="onClose()">Close</button>
 </mat-dialog-actions>
