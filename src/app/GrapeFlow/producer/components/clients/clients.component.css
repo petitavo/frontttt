@@ -18,15 +18,15 @@ table {
 }
 
 .mat-mdc-header-row {
-  background-color: #f2f2f2;
+  background-color: #A70AC0;
 }
 
 .mat-mdc-row:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #F5F5DC !important;
 }
 
 .mat-mdc-row:nth-child(odd) {
-  background-color: #ffffff;
+  background-color: #E6E6FA;
 }
 
 .mat-mdc-cell, .mat-mdc-header-cell {
@@ -51,6 +51,27 @@ table {
   margin-right: 20px;
 }
 
+.edit-button {
+  background-color: #ffc107 !important;
+  color: white !important;
+}
+
+.add-button {
+  background-color: #ffc107 !important;
+  color: white !important;
+}
+
+.detail-button{
+  background-color: #A70AC0 !important;
+  color: white !important;
+}
+
+.delete-button {
+  background-color: red !important;
+  color: white !important;
+}
+
+
 button {
   margin-right: 5px;
 }
@@ -58,3 +79,9 @@ button {
 .mat-column-actions {
   width: 250px;
 }
+
+
+/*mat-paginator {
+  margin-top: 20px;
+  background-color: #ffc107 !important;
+}*/
