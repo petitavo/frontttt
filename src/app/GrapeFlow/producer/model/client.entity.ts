@@ -2,7 +2,6 @@ export class Client {
   id: string;
   nombre: string;
   apellido: string;
-  negocio: string;
   telefono: string;
   direccion: string;
   pais: string;
@@ -14,7 +13,6 @@ export class Client {
     id?: string,
     nombre: string,
     apellido: string,
-    negocio?: string,
     telefono: string,
     direccion?: string,
     pais?: string,
@@ -25,7 +23,6 @@ export class Client {
     this.id = client.id || '';
     this.nombre = client.nombre || '';
     this.apellido = client.apellido || '';
-    this.negocio = client.negocio || '';
     this.telefono = client.telefono || '';
     this.direccion = client.direccion || '';
     this.pais = client.pais || '';
