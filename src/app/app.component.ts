@@ -6,6 +6,7 @@ import {LoteComponent} from "./GrapeFlow/producer/components/lote/lote.component
 import {SidenavConsumerComponent} from "./public/sidenav-consumer/sidenav-consumer.component";
 import {InventoryComponent} from "./GrapeFlow/producer/components/inventory/inventory.component";
 import {FooterContentComponent} from "./public/footer-content/footer-content.component";
+import { ProductComponent} from "./GrapeFlow/consumer/components/product/product.component";
 
 @Component({
   selector: 'app-root',
