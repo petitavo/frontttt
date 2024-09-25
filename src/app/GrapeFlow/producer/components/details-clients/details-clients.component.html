@@ -1,0 +1,22 @@
+<div class="client-details-container">
+  <h1>Client Details</h1>
+
+  <div class="client-card">
+    <div class="client-info">
+      <h2>{{ client?.nombre }} {{ client?.apellido }}</h2>
+      <p><strong>Phone:</strong> {{ client?.telefono }}</p>
+      <p><strong>Address:</strong> {{ client?.direccion }}</p>
+      <p><strong>City:</strong> {{ client?.ciudad }}</p>
+      <p><strong>Country:</strong> {{ client?.pais }}</p>
+      <p><strong>ID:</strong> {{ client?.dni }}</p>
+      <p><strong>Email:</strong> {{ client?.correo }}</p>
+    </div>
+    <div class="client-image">
+      <img src="/6009864.png" alt="Client Image">
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button mat-raised-button color="accent" routerLink="/clients">Back to the list</button>
+  </div>
+</div>

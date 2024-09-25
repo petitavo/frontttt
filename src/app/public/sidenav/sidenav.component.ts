@@ -6,6 +6,7 @@ import {MatSidenav, MatSidenavContainer} from "@angular/material/sidenav";
 import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {FooterContentComponent} from "../footer-content/footer-content.component";
 
 @Component({
   selector: 'app-sidenav',
@@ -21,7 +22,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatIconButton,
     MatToolbar,
     RouterOutlet,
-    MatSidenavModule
+    MatSidenavModule,
+    FooterContentComponent
   ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
@@ -41,6 +43,7 @@ export class SidenavComponent {
 
   logout() {
     console.log("Sesión cerrada");
-
+    // Redirigir al login
+    window.location.href = '/login';
   }
 }

@@ -1,0 +1,19 @@
+/* Estilo para el footer */
+.footer-content {
+  margin-top: 100px;
+  background-color: #A70AC0; /* Color de fondo del footer */
+  color: white; /* Color del texto */
+  text-align: center; /* Centrar el texto */
+  padding: 20px; /* Espaciado interno */
+  position: relative; /* Asegúrate de que esté posicionado en relación al flujo normal */
+  width: 97.8%; /* Asegura que el footer ocupe el ancho completo */
+  bottom: 0; /* Mantén el footer en la parte inferior */
+}
+
+/* Para asegurar que el contenido principal no se divida */
+mat-sidenav-content {
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  min-height: calc(100vh - 64px); /* Ajusta la altura para que el footer no se superponga */
+  padding-bottom: 60px; /* Espacio para el footer */
+}
