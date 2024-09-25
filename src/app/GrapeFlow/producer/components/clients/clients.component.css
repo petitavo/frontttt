@@ -1,0 +1,87 @@
+.table-wrapper {
+  margin: 20px;
+  color: #A70AC0;
+}
+
+h1{
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Times New Roman", sans-serif;
+}
+
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+}
+
+.mat-mdc-header-row {
+  background-color: #A70AC0;
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: #F5F5DC !important;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #E6E6FA;
+}
+
+.mat-mdc-cell, .mat-mdc-header-cell {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.mat-mdc-header-cell {
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mat-mdc-form-field {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+.edit-button {
+  background-color: #ffc107 !important;
+  color: white !important;
+}
+
+.add-button {
+  background-color: #ffc107 !important;
+  color: white !important;
+}
+
+.detail-button{
+  background-color: #A70AC0 !important;
+  color: white !important;
+}
+
+.delete-button {
+  background-color: red !important;
+  color: white !important;
+}
+
+
+button {
+  margin-right: 5px;
+}
+
+.mat-column-actions {
+  width: 250px;
+}
+
+
+/*mat-paginator {
+  margin-top: 20px;
+  background-color: #ffc107 !important;
+}*/

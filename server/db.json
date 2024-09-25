@@ -1,0 +1,446 @@
+{
+  "clients": [
+    {
+      "id": "3",
+      "nombre": "Eduardo",
+      "apellido": "Rodriguez",
+      "telefono": "999 999 999",
+      "direccion": "San Felipe",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "87654321",
+      "correo": "eduardo.rodriguez@example.com"
+    },
+    {
+      "id": "4",
+      "nombre": "Ana",
+      "apellido": "Fernández",
+      "telefono": "999 999 999",
+      "direccion": "San Lorenzo",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "12345678",
+      "correo": "ana.fernandez@example.com"
+    },
+    {
+      "id": "5",
+      "nombre": "Carlos",
+      "apellido": "García",
+      "telefono": "999 888 777",
+      "direccion": "Las Condes",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "23456789",
+      "correo": "carlos.garcia@example.com"
+    },
+    {
+      "id": "6",
+      "nombre": "María",
+      "apellido": "López",
+      "telefono": "888 777 666",
+      "direccion": "Miraflores",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "34567890",
+      "correo": "maria.lopez@example.com"
+    },
+    {
+      "id": "7",
+      "nombre": "Jorge",
+      "apellido": "Martínez",
+      "telefono": "777 666 555",
+      "direccion": "San Isidro",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "45678901",
+      "correo": "jorge.martinez@example.com"
+    },
+    {
+      "id": "8",
+      "nombre": "Lucía",
+      "apellido": "Gómez",
+      "telefono": "666 555 444",
+      "direccion": "Palermo",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "56789012",
+      "correo": "lucia.gomez@example.com"
+    },
+    {
+      "id": "9",
+      "nombre": "Pedro",
+      "apellido": "Hernández",
+      "telefono": "555 444 333",
+      "direccion": "Recoleta",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "67890123",
+      "correo": "pedro.hernandez@example.com"
+    },
+    {
+      "id": "10",
+      "nombre": "Sofía",
+      "apellido": "Torres",
+      "telefono": "444 333 222",
+      "direccion": "Surquillo",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "78901234",
+      "correo": "sofia.torres@example.com"
+    },
+    {
+      "id": "13",
+      "nombre": "Juan",
+      "apellido": "aaffa",
+      "negocio": "",
+      "telefono": "131313",
+      "direccion": "adaf",
+      "pais": "afafa",
+      "ciudad": "afafa",
+      "dni": "fafa",
+      "correo": "fafa"
+    }
+  ],
+  "inventory": [
+    {
+      "nombre": "Barriles de Robl",
+      "tipo": "Equipamiento",
+      "unidad": "und",
+      "caducidad": "N/A",
+      "proveedor": "Barriles Únicos",
+      "costoU": 250,
+      "ultimaActualizacion": "2024-09-03",
+      "cantidad": 30,
+      "id": "e578"
+    },
+    {
+      "nombre": "Botellas de Vidrio",
+      "tipo": "Consumible",
+      "unidad": "und",
+      "caducidad": "N/A",
+      "proveedor": "Vidrios de Oro",
+      "costoU": 0.75,
+      "ultimaActualizacion": "2024-09-02",
+      "cantidad": 2000,
+      "id": "92a7"
+    },
+    {
+      "nombre": "Azúcar Refinada",
+      "tipo": "Aditivo",
+      "unidad": "kg",
+      "caducidad": "2025-01-10",
+      "proveedor": "Dulces Vinos",
+      "costoU": 1.8,
+      "ultimaActualizacion": "2024-09-04",
+      "cantidad": 100,
+      "id": "6d57"
+    },
+    {
+      "nombre": "Azúcar Refinada",
+      "tipo": "Aditivo",
+      "unidad": "kg",
+      "caducidad": "2025-09-20",
+      "proveedor": "Vinotech",
+      "costoU": 8,
+      "ultimaActualizacion": "2024-09-05",
+      "cantidad": 40,
+      "id": "4770"
+    },
+    {
+      "id": "0",
+      "nombre": "Cabernet",
+      "tipo": "Vino",
+      "unidad": "kg",
+      "caducidad": "15-12-25",
+      "costoU": 10,
+      "ultimaActualizacion": "",
+      "cantidad": 200
+    }
+  ],
+  "lotes": [
+    {
+      "id": "1",
+      "numeroLote": "L001",
+      "uva": "Uva Tinta",
+      "fechaInicio": "11/08/2024",
+      "cantidadLitros": 300,
+      "pH": 3.5,
+      "temperatura": 18,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "2",
+      "numeroLote": "L002",
+      "uva": "Uva Blanca",
+      "fechaInicio": "04/08/2024",
+      "cantidadLitros": 250,
+      "pH": 3.6,
+      "temperatura": 20,
+      "estadoProceso": "Terminado"
+    },
+    {
+      "id": "3",
+      "numeroLote": "L003",
+      "uva": "Uva Cabernet",
+      "fechaInicio": "06/07/2024",
+      "cantidadLitros": 400,
+      "pH": 3.4,
+      "temperatura": 17,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "10",
+      "numeroLote": "L003",
+      "uva": "uva",
+      "fechaInicio": "2020-10-20",
+      "cantidadLitros": 5,
+      "pH": 5,
+      "temperatura": 5,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "11",
+      "numeroLote": "5",
+      "uva": "Vino",
+      "fechaInicio": "2024-10-20",
+      "cantidadLitros": 3,
+      "pH": 3,
+      "temperatura": 3,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "12",
+      "numeroLote": "L004",
+      "uva": "Tinta",
+      "fechaInicio": "2024-10-15",
+      "cantidadLitros": 20,
+      "pH": 3,
+      "temperatura": 20,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "13",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "14",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
+      "estadoProceso": "En Proceso"
+    }
+  ],
+  "orders": [
+    {
+      "id": "2",
+      "numeroPedido": "P002",
+      "nombre": "Maria Fernandez",
+      "nombreProductor": "Carlos Fernandez",
+      "correoProductor": "carlosf@vinosdelsur.com",
+      "correo": "maria.fernandez@cervezasdelnorte.com",
+      "productos": [
+        "Cerveza Artesanal Rubia - 500 ml - 6 unidades",
+        "Cerveza Artesanal Negra - 500 ml - 4 unidades"
+      ],
+      "condicionTransporte": "Recolección en Tienda",
+      "metodoPago": "Tarjeta de Débito",
+      "telefonoProductor": "+51 912 345 678",
+      "telefono": "+51 942 876 123",
+      "terminosPago": "Pago Contado",
+      "fecha": "02/09/2024",
+      "fechaEntrega": "03/09/2024",
+      "tipo": "vino",
+      "estado": "Terminado"
+    },
+    {
+      "id": "3",
+      "numeroPedido": "P003",
+      "nombre": "Pedro Martinez",
+      "nombreProductor": "Laura Torres",
+      "correoProductor": "lauratorres@vinosdelsur.com",
+      "correo": "pedro.martinez@licoresdelmundo.pe",
+      "productos": [
+        "Whisky Escocés 12 Años - 750 ml - 1 botella",
+        "Vodka Ruso - 750 ml - 1 botella"
+      ],
+      "condicionTransporte": "Transporte Regular",
+      "metodoPago": "Yape",
+      "telefono": "+51 910 345 678",
+      "telefonoProductor": "+51 998 765 432",
+      "terminosPago": "Pago Contado",
+      "fecha": "03/09/2024",
+      "fechaEntrega": "10/09/2024",
+      "tipo": "vino",
+      "estado": "En Proceso"
+    },
+    {
+      "id": "4",
+      "numeroPedido": "P004",
+      "nombre": "Ana Lopez",
+      "nombreProductor": "Juan Perez",
+      "correoProductor": "juanperez@vinosdelsur.com",
+      "correo": "ana.lopez@vinosdelpacifico.cl",
+      "productos": [
+        "Vino Tinto Chileno Reserva - 750 ml - 3 botellas",
+        "Queso Parmesano - 200 g - 1 unidad"
+      ],
+      "condicionTransporte": "Transporte con temperatura controlada",
+      "metodoPago": "Pago Contraentrega",
+      "telefonoProductor": "+51 923 456 789",
+      "telefono": "+56 9 8765 4321",
+      "terminosPago": "Pago Contado",
+      "fecha": "04/09/2024",
+      "fechaEntrega": "12/09/2024",
+      "tipo": "vino",
+      "estado": "En Proceso"
+    },
+    {
+      "id": "5",
+      "numeroPedido": "P005",
+      "nombre": "Diego Torres",
+      "nombreProductor": "Sofia Mendoza",
+      "correoProductor": "sofiamendoza@vinosdelsur.com",
+      "correo": "diego.torres@licoresdelsur.ar",
+      "productos": [
+        "Gin Argentino London Dry - 750 ml - 2 botellas",
+        "Tónica Premium - 330 ml - 6 unidades"
+      ],
+      "condicionTransporte": "Transporte Regular",
+      "metodoPago": "Mercado Pago",
+      "telefonoProductor": "+51 934 567 890",
+      "telefono": "+54 11 5432 1098",
+      "terminosPago": "Pago Contado",
+      "fecha": "05/09/2024",
+      "fechaEntrega": "17/09/2024",
+      "tipo": "vino",
+      "estado": "Terminado"
+    },
+    {
+      "id": "6",
+      "numeroPedido": "P006",
+      "nombre": "Sofia Garcia",
+      "nombreProductor": "Pedro Gonzales",
+      "correoProductor": "pedro@vinosdelsur.com",
+      "correo": "sofia.garcia@vinosdelvalle.com",
+      "productos": [
+        "Vino Rosado Español - 750 ml - 1 botella"
+      ],
+      "condicionTransporte": "Recolección en Tienda",
+      "metodoPago": "Tarjeta de Crédito",
+      "telefonoProductor": "+51 945 678 901",
+      "telefono": "+34 6 1234 5678",
+      "terminosPago": "Pago Contado",
+      "fecha": "06/09/2024",
+      "fechaEntrega": "06/09/2024",
+      "tipo": "vino",
+      "estado": "Terminado"
+    },
+    {
+      "id": "7",
+      "numeroPedido": "P007",
+      "nombre": "Laura Ramirez",
+      "nombreProductor": "Maria Lopez",
+      "correoProductor": "maria@vinosdelsur.com",
+      "correo": "laura.ramirez@cervezasartesanales.mx",
+      "productos": [
+        "Cerveza IPA Mexicana - 355 ml - 12 unidades"
+      ],
+      "condicionTransporte": "Envío a Domicilio",
+      "metodoPago": "PayPal",
+      "telefonoProductor": "+51 956 789 012",
+      "telefono": "+52 55 1234 5678",
+      "terminosPago": "Pago Contado",
+      "fecha": "07/09/2024",
+      "fechaEntrega": "14/09/2024",
+      "tipo": "vino",
+      "estado": "Terminado"
+    },
+    {
+      "id": "8",
+      "numeroPedido": "P008",
+      "nombre": "Carlos Rodriguez",
+      "nombreProductor": "David Rodriguez",
+      "correoProductor": "david@vinosdelsur.com",
+      "correo": "carlos.rodriguez@vinosargentinos.com.ar",
+      "productos": [
+        "Vino Tinto Malbec Reserva - 750 ml - 2 botellas",
+        "Aceite de Oliva Extra Virgen - 500 ml - 1 botella"
+      ],
+      "condicionTransporte": "Transporte con temperatura controlada",
+      "metodoPago": "Transferencia bancaria",
+      "telefonoProductor": "+51 967 890 123",
+      "telefono": "+54 9 11 2345 6789",
+      "terminosPago": "Crédito a 30 días",
+      "fecha": "08/09/2024",
+      "fechaEntrega": "20/09/2024",
+      "tipo": "vino",
+      "estado": "En Proceso"
+    }
+  ],
+  "vinos": [
+    {
+      "id": "1",
+      "nombre": "Vino Tinto Gran Reserva - Valle de Ica",
+      "descripcion": "Vino robusto y complejo, con notas intensas de frutos rojos maduros y especias.",
+      "tipo": "Vino Tinto",
+      "region": "Valle de Ica",
+      "pais": "Perú",
+      "anio": 2021,
+      "uvas": [
+        "Malbec",
+        "Cabernet Sauvignon"
+      ],
+      "alcohol": 14.5,
+      "certificacion": "Denominación de Origen Ica",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD001",
+      "lote_id": "L001"
+    },
+    {
+      "id": "2",
+      "nombre": "Vino Blanco Chardonnay - Valle de Casablanca",
+      "descripcion": "Vino fresco y afrutado con notas cítricas y tropicales.",
+      "tipo": "Vino Blanco",
+      "region": "Valle de Casablanca",
+      "pais": "Chile",
+      "anio": 2022,
+      "uvas": [
+        "Chardonnay"
+      ],
+      "alcohol": 13.5,
+      "certificacion": "D.O. Valle de Casablanca",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD002",
+      "lote_id": "L002"
+    },
+    {
+      "id": "3",
+      "nombre": "Vino Rosado Malbec - Mendoza",
+      "descripcion": "Vino ligero y refrescante con aromas a frutos rojos y flores.",
+      "tipo": "Vino Rosado",
+      "region": "Mendoza",
+      "pais": "Argentina",
+      "anio": 2023,
+      "uvas": [
+        "Malbec"
+      ],
+      "alcohol": 12.5,
+      "certificacion": "I.G. Mendoza",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD003",
+      "lote_id": "L003"
+    }
+  ]
+}
