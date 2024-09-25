@@ -1,17 +1,17 @@
-import {AfterViewInit, Component, inject, OnInit, ViewChild} from '@angular/core';
-import {CommonModule} from "@angular/common";
-import {MatTableDataSource, MatTableModule} from '@angular/material/table';
-import {MatInputModule} from "@angular/material/input";
-import {MatSelectModule} from "@angular/material/select";
-import {MatButtonModule} from "@angular/material/button";
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
-import {MatSort, MatSortModule} from '@angular/material/sort';
-import {FormsModule} from "@angular/forms";
-import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { CommonModule } from "@angular/common";
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatInputModule } from "@angular/material/input";
+import { MatSelectModule } from "@angular/material/select";
+import { MatButtonModule } from "@angular/material/button";
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { FormsModule } from "@angular/forms";
+import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { Product } from '../../model/product.entity';
 import { ProductService } from '../../services/product.service';
-import {MatIconModule} from "@angular/material/icon";
-import {RouterLink} from "@angular/router";
+import { MatIconModule } from "@angular/material/icon";
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-product-details',
@@ -33,17 +33,14 @@ import {RouterLink} from "@angular/router";
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit, AfterViewInit {
-  protected columnsToDisplay: string[] = ['nombre','tipo', 'descripcion', 'uvas', 'actions'];
+  protected columnsToDisplay: string[] = ['nombre', 'tipo', 'descripcion', 'uvas', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   protected dataSource: MatTableDataSource<Product>;
-  private productService: ProductService = inject(ProductService);
-  private dialog: MatDialog = inject(MatDialog);
 
-  constructor() {
+  constructor(private productService: ProductService, private dialog: MatDialog) {
     this.dataSource = new MatTableDataSource<Product>();
   }
-
 
   ngOnInit(): void {
     this.getAllProduct();
@@ -55,9 +52,16 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
 
   private getAllProduct(): void {
-    this.productService.getAll().subscribe((Products: Product[]) => {
-      this.dataSource.data = Products;
-    });
+    console.log('Fetching products...');
+    this.productService.getAll().subscribe(
+      (products: Product[]) => {
+        console.log('Products received:', products);
+        this.dataSource.data = products;
+      },
+      error => {
+        console.error('Error fetching products:', error);
+      }
+    );
   }
 
   applyFilter(event: Event) {
@@ -65,27 +69,14 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-
-
-
   onDelete(product: Product): void {
     if (confirm(`¿Estás seguro de que quieres eliminar el Producto ${product.nombre}?`)) {
-      this.productService.delete(product.id).subscribe( // Usar lote.id aquí
-        () => {
-          this.dataSource.data = this.dataSource.data.filter(l => l.id !== product.id); // Filtrar por id
-          this.dataSource._updateChangeSubscription();
-        },
-        (error) => console.error('Error deleting lote', error)
-      )
+      // Implementar lógica de eliminación aquí
     }
   }
 
-
   onViewDetails(product: Product): void {
-    this.dialog.open(ProductComponent, {
-      width: '600px',
-      data: product
-    });
+    console.log('Viewing details for product:', product);
+    // Implementar lógica para ver detalles aquí
   }
-
 }
