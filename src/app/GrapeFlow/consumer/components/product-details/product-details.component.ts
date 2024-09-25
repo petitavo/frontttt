@@ -1,7 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import {
   MAT_DIALOG_DATA, MatDialogActions, MatDialogContent,
-  MatDialogRef,
+  MatDialogRef, MatDialogTitle,
 } from "@angular/material/dialog";
 import { CommonModule } from '@angular/common';
 import { Product } from "../../model/product.entity";
@@ -13,7 +13,7 @@ import { catchError, map } from 'rxjs/operators';
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, MatButtonModule, MatDialogContent, MatDialogActions],
+  imports: [CommonModule, MatButtonModule, MatDialogContent, MatDialogActions, MatDialogTitle],
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
