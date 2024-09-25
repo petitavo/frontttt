@@ -1,17 +1,32 @@
+
 .orders-wrapper {
   padding: 20px;
+
 }
 
-h1 {
-  color: #333;
+h1{
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Times New Roman", sans-serif;
   margin-bottom: 20px;
+  color: #A70AC0;
 }
-
 .search-container {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
+.mat-mdc-header-row {
+  background-color: #A70AC0;
+}
+.mat-mdc-row:nth-child(even) {
+  background-color: #F5F5DC !important;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #E6E6FA;
+}
+
 
 table {
   width: 100%;
@@ -38,3 +53,10 @@ mat-paginator {
 button[mat-raised-button] {
   margin-bottom: 20px;
 }
+
+
+.add-button {
+  background-color: #ffc107 !important;
+  color: white !important;
+}
+
