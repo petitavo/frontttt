@@ -13,7 +13,6 @@
         <mat-option value="estado">Estado</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onAddOrder()">Agregar Pedido</button>
   </div>
 
   <table mat-table [dataSource]="datasource" class="mat-elevation-z8" matSort>
@@ -42,14 +41,6 @@
       <td mat-cell *matCellDef="let order">
         <button mat-icon-button color="primary" (click)="onViewDetails(order)" aria-label="Ver detalles">
           <mat-icon>visibility</mat-icon>
-        </button>
-
-        <button mat-icon-button color="primary" (click)="onChangeStatus(order)" aria-label="Cambiar estado">
-          <mat-icon>autorenew</mat-icon>
-        </button>
-
-        <button mat-icon-button color="warn" (click)="onDelete(order)" aria-label="Eliminar">
-          <mat-icon>delete</mat-icon>
         </button>
       </td>
     </ng-container>

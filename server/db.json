@@ -241,27 +241,6 @@
   ],
   "orders": [
     {
-      "id": "1",
-      "numeroPedido": "P001",
-      "nombre": "Roberto Carlos",
-      "nombreProductor": "Sofia Mendoza",
-      "correoProductor": "sofendoza@vinosdelsur.com",
-      "correo": "juan.perez@vinosdelsur.com",
-      "productos": [
-        "Vino Tinto Malbec - 750 ml - 2 botellas",
-        "Vino Blanco Sauvignon - 750 ml - 5 botellas"
-      ],
-      "condicionTransporte": "Transporte con temperatura controlada",
-      "metodoPago": "Transferencia bancaria",
-      "telefonoProductor": "+51 987 654 321",
-      "telefono": "+51 987 564 321",
-      "terminosPago": "Crédito a 30 dias",
-      "fecha": "01/09/2024",
-      "fechaEntrega": "02/09/2024",
-      "tipo": "vino",
-      "estado": "En Proceso"
-    },
-    {
       "id": "2",
       "numeroPedido": "P002",
       "nombre": "Maria Fernandez",
@@ -280,7 +259,7 @@
       "fecha": "02/09/2024",
       "fechaEntrega": "03/09/2024",
       "tipo": "vino",
-      "estado": "En Proceso"
+      "estado": "Terminado"
     },
     {
       "id": "3",
@@ -405,27 +384,6 @@
       "fechaEntrega": "20/09/2024",
       "tipo": "vino",
       "estado": "En Proceso"
-    },
-    {
-      "id": "9",
-      "numeroPedido": "P009",
-      "nombre": "Isabella Santos",
-      "nombreProductor": "Alejandro Morales",
-      "correoProductor": "alejandro@vinosdelsur.com",
-      "correo": "isabella.santos@licorespremium.br",
-      "productos": [
-        "Ron Añejo Colombiano - 750 ml - 1 botella",
-        "Cachaça Brasileña - 700 ml - 1 botella"
-      ],
-      "condicionTransporte": "Transporte Regular",
-      "metodoPago": "Tarjeta de Crédito",
-      "telefono": "+55 21 98765 4321",
-      "telefonoProductor": "+51 910 112 233",
-      "terminosPago": "Pago Contado",
-      "fecha": "09/09/2024",
-      "fechaEntrega": "19/09/2024",
-      "tipo": "vino",
-      "estado": "Terminado"
     }
   ],
   "vinos": [
