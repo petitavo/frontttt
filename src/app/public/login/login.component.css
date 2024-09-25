@@ -1,11 +1,80 @@
+button {
+  margin: 10px;
+  padding: 16px 32px; /* Botones más grandes */
+  background-color: #ff80ab; /* Color de fondo rosado */
+  color: white; /* Texto en blanco */
+  border: none; /* Sin borde */
+  border-radius: 30px; /* Bordes redondeados */
+  font-size: 1.4rem; /* Tamaño de fuente más grande */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para efecto hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+
+button:hover {
+  background-color: #e040fb; /* Cambia el fondo a morado en hover */
+  transform: translateY(-5px); /* Movimiento hacia arriba al pasar el mouse */
+}
+
+button:active {
+  background-color: #d500f9; /* Color más oscuro al hacer clic */
+  transform: translateY(0); /* Restablece la posición al hacer clic */
+}
+
+button:focus {
+  outline: none; /* Elimina el borde de foco */
+  box-shadow: 0 0 10px #ff80ab; /* Añade una sombra de foco de color rosado */
+}
+
 .login-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: linear-gradient(135deg, #f48fb1, #8e24aa); /* Degradado de rosado a morado */
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  text-align: center;
 }
 
-button {
-  margin: 10px;
+.login-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.login-container button {
+  background-color: rgba(255, 255, 255, 0.3); /* Botón semi-transparente */
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  margin: 10px 0;
+  font-size: 1.4rem; /* Tamaño de fuente más grande */
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+}
+
+.login-container button:hover {
+  background-color: rgba(255, 255, 255, 0.6); /* Cambia el fondo al hacer hover */
+  transform: translateY(-5px); /* Movimiento hacia arriba al pasar el mouse */
+}
+
+.login-container button:focus {
+  outline: none; /* Quita el borde de foco predeterminado */
+}
+
+@media (max-width: 768px) {
+  .login-container h2 {
+    font-size: 2rem; /* Tamaño del texto reducido en pantallas pequeñas */
+  }
+
+  .login-container button {
+    font-size: 1.2rem; /* Botones más pequeños en pantallas pequeñas */
+    padding: 12px 24px;
+  }
 }
