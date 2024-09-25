@@ -16,23 +16,23 @@
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="over">
       <mat-nav-list>
-        <a mat-list-item (click)="closeSidenav()" class="white-text">
+        <a mat-list-item routerLink="/producer/home" (click)="closeSidenav()" class="white-text">
           <mat-icon>home</mat-icon>
           <span class="link-text">Home</span>
         </a>
-        <a mat-list-item routerLink="/inventory" (click)="closeSidenav()" class="white-text">
+        <a mat-list-item routerLink="/producer/inventory" (click)="closeSidenav()" class="white-text">
           <mat-icon>inventory</mat-icon>
           <span class="link-text">Inventory</span>
         </a>
-        <a mat-list-item routerLink="/lote" (click)="closeSidenav()" class="white-text">
+        <a mat-list-item routerLink="/producer/lote" (click)="closeSidenav()" class="white-text">
           <mat-icon>local_bar</mat-icon>
           <span class="link-text">Winemaking</span>
         </a>
-        <a mat-list-item routerLink="/clients" (click)="closeSidenav()" class="white-text">
+        <a mat-list-item routerLink="/producer/clients" (click)="closeSidenav()" class="white-text">
           <mat-icon>people</mat-icon>
           <span class="link-text">My Clients</span>
         </a>
-        <a mat-list-item routerLink="/orders" (click)="closeSidenav()" class="white-text">
+        <a mat-list-item routerLink="/producer/orders" (click)="closeSidenav()" class="white-text">
           <mat-icon>assignment</mat-icon>
           <span class="link-text">My Orders</span>
         </a>

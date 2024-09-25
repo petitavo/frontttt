@@ -1,30 +1,29 @@
-import {Component, ViewChild} from '@angular/core';
-import {MatListItem, MatNavList} from "@angular/material/list";
-import {MatIcon} from "@angular/material/icon";
-import {RouterLink, RouterOutlet} from "@angular/router";
-import {MatSidenav, MatSidenavContainer} from "@angular/material/sidenav";
-import {MatButton, MatIconButton} from "@angular/material/button";
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {FooterContentComponent} from "../footer-content/footer-content.component";
+import { Component, ViewChild } from '@angular/core';
+import { MatListItem, MatNavList } from "@angular/material/list";
+import { MatIcon } from "@angular/material/icon";
+import { RouterLink, RouterOutlet } from "@angular/router";
+import { MatSidenav, MatSidenavContainer, MatSidenavModule } from "@angular/material/sidenav";  // Asegúrate de importar el módulo
+import { MatButton, MatIconButton } from "@angular/material/button";
+import { MatToolbar } from "@angular/material/toolbar";
+import { FooterContentComponent } from "../footer-content/footer-content.component";
 
 @Component({
   selector: 'app-sidenav',
   standalone: true,
-    imports: [
-        MatListItem,
-        MatIcon,
-        RouterLink,
-        MatNavList,
-        MatSidenav,
-        MatSidenavContainer,
-        MatButton,
-        MatIconButton,
-        MatToolbar,
-        RouterOutlet,
-        MatSidenavModule,
-        FooterContentComponent
-    ],
+  imports: [
+    MatListItem,
+    MatIcon,
+    RouterLink,
+    MatNavList,
+    MatSidenav,
+    MatSidenavContainer,
+    MatButton,
+    MatIconButton,
+    MatToolbar,
+    RouterOutlet,
+    MatSidenavModule,  // Asegúrate de que este módulo esté incluido
+    FooterContentComponent
+  ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
 })
@@ -43,6 +42,5 @@ export class SidenavComponent {
 
   logout() {
     console.log("Sesión cerrada");
-
   }
 }
