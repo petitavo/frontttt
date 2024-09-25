@@ -20,7 +20,11 @@
     <dd>{{ data.anio }}</dd>
 
     <dt>Uvas:</dt>
-    <dd><ul><li *ngFor="let uva of data.uvas">{{ uva }}</li></ul></dd>
+    <dd>
+      <ul>
+        <li *ngFor="let uva of data.uvas">{{ uva }}</li>
+      </ul>
+    </dd>
 
     <dt>País:</dt>
     <dd>{{ data.pais }}</dd>
@@ -42,11 +46,9 @@
 
     <dt>ID del Lote:</dt>
     <dd>{{ data.lote }}</dd>
-
-
-
   </dl>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
+  <button mat-button (click)="onViewLote()">Ver Lote</button>
   <button mat-button (click)="onClose()">Cerrar</button>
 </mat-dialog-actions>

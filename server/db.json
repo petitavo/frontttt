@@ -157,10 +157,11 @@
       "cantidad": 200
     }
   ],
-  "lotes": [
+  "lotes":
+  [
     {
       "id": "1",
-      "numeroLote": "L001",
+      "lote": 1,
       "uva": "Uva Tinta",
       "fechaInicio": "11/08/2024",
       "cantidadLitros": 300,
@@ -170,7 +171,7 @@
     },
     {
       "id": "2",
-      "numeroLote": "L002",
+      "lote": 2,
       "uva": "Uva Blanca",
       "fechaInicio": "04/08/2024",
       "cantidadLitros": 250,
@@ -180,7 +181,7 @@
     },
     {
       "id": "3",
-      "numeroLote": "L003",
+      "lote": 3,
       "uva": "Uva Cabernet",
       "fechaInicio": "06/07/2024",
       "cantidadLitros": 400,
@@ -190,7 +191,7 @@
     },
     {
       "id": "10",
-      "numeroLote": "L003",
+      "lote": 4,
       "uva": "uva",
       "fechaInicio": "2020-10-20",
       "cantidadLitros": 5,
@@ -200,7 +201,7 @@
     },
     {
       "id": "11",
-      "numeroLote": "5",
+      "lote": 5,
       "uva": "Vino",
       "fechaInicio": "2024-10-20",
       "cantidadLitros": 3,
@@ -210,7 +211,7 @@
     },
     {
       "id": "12",
-      "numeroLote": "L004",
+      "lote": 6,
       "uva": "Tinta",
       "fechaInicio": "2024-10-15",
       "cantidadLitros": 20,
@@ -220,7 +221,7 @@
     },
     {
       "id": "13",
-      "numeroLote": "",
+      "lote": 7,
       "uva": "",
       "fechaInicio": "",
       "cantidadLitros": 0,
