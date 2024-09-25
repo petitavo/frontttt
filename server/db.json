@@ -32,73 +32,6 @@
       "ciudad": "Lima",
       "dni": "23456789",
       "correo": "carlos.garcia@example.com"
-    },
-    {
-      "id": "6",
-      "nombre": "María",
-      "apellido": "López",
-      "telefono": "888 777 666",
-      "direccion": "Miraflores",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "34567890",
-      "correo": "maria.lopez@example.com"
-    },
-    {
-      "id": "7",
-      "nombre": "Jorge",
-      "apellido": "Martínez",
-      "telefono": "777 666 555",
-      "direccion": "San Isidro",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "45678901",
-      "correo": "jorge.martinez@example.com"
-    },
-    {
-      "id": "8",
-      "nombre": "Lucía",
-      "apellido": "Gómez",
-      "telefono": "666 555 444",
-      "direccion": "Palermo",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "56789012",
-      "correo": "lucia.gomez@example.com"
-    },
-    {
-      "id": "9",
-      "nombre": "Pedro",
-      "apellido": "Hernández",
-      "telefono": "555 444 333",
-      "direccion": "Recoleta",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "67890123",
-      "correo": "pedro.hernandez@example.com"
-    },
-    {
-      "id": "10",
-      "nombre": "Sofía",
-      "apellido": "Torres",
-      "telefono": "444 333 222",
-      "direccion": "Surquillo",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "78901234",
-      "correo": "sofia.torres@example.com"
-    },
-    {
-      "id": "13",
-      "nombre": "Juan",
-      "apellido": "aaffa",
-      "negocio": "",
-      "telefono": "131313",
-      "direccion": "adaf",
-      "pais": "afafa",
-      "ciudad": "afafa",
-      "dni": "fafa",
-      "correo": "fafa"
     }
   ],
   "inventory": [
@@ -134,27 +67,6 @@
       "ultimaActualizacion": "2024-09-04",
       "cantidad": 100,
       "id": "6d57"
-    },
-    {
-      "nombre": "Azúcar Refinada",
-      "tipo": "Aditivo",
-      "unidad": "kg",
-      "caducidad": "2025-09-20",
-      "proveedor": "Vinotech",
-      "costoU": 8,
-      "ultimaActualizacion": "2024-09-05",
-      "cantidad": 40,
-      "id": "4770"
-    },
-    {
-      "id": "0",
-      "nombre": "Cabernet",
-      "tipo": "Vino",
-      "unidad": "kg",
-      "caducidad": "15-12-25",
-      "costoU": 10,
-      "ultimaActualizacion": "",
-      "cantidad": 200
     }
   ],
   "lotes":
@@ -187,66 +99,6 @@
       "cantidadLitros": 400,
       "pH": 3.4,
       "temperatura": 17,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "10",
-      "lote": 4,
-      "uva": "uva",
-      "fechaInicio": "2020-10-20",
-      "cantidadLitros": 5,
-      "pH": 5,
-      "temperatura": 5,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "11",
-      "lote": 5,
-      "uva": "Vino",
-      "fechaInicio": "2024-10-20",
-      "cantidadLitros": 3,
-      "pH": 3,
-      "temperatura": 3,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "12",
-      "lote": 6,
-      "uva": "Tinta",
-      "fechaInicio": "2024-10-15",
-      "cantidadLitros": 20,
-      "pH": 3,
-      "temperatura": 20,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "13",
-      "lote": 7,
-      "uva": "",
-      "fechaInicio": "",
-      "cantidadLitros": 0,
-      "pH": 0,
-      "temperatura": 0,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "13",
-      "numeroLote": "",
-      "uva": "",
-      "fechaInicio": "",
-      "cantidadLitros": 0,
-      "pH": 0,
-      "temperatura": 0,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "14",
-      "numeroLote": "",
-      "uva": "",
-      "fechaInicio": "",
-      "cantidadLitros": 0,
-      "pH": 0,
-      "temperatura": 0,
       "estadoProceso": "En Proceso"
     }
   ],
@@ -319,92 +171,6 @@
       "fechaEntrega": "12/09/2024",
       "tipo": "vino",
       "estado": "En Proceso"
-    },
-    {
-      "id": "5",
-      "numeroPedido": "P005",
-      "nombre": "Diego Torres",
-      "nombreProductor": "Sofia Mendoza",
-      "correoProductor": "sofiamendoza@vinosdelsur.com",
-      "correo": "diego.torres@licoresdelsur.ar",
-      "productos": [
-        "Gin Argentino London Dry - 750 ml - 2 botellas",
-        "Tónica Premium - 330 ml - 6 unidades"
-      ],
-      "condicionTransporte": "Transporte Regular",
-      "metodoPago": "Mercado Pago",
-      "telefonoProductor": "+51 934 567 890",
-      "telefono": "+54 11 5432 1098",
-      "terminosPago": "Pago Contado",
-      "fecha": "05/09/2024",
-      "tipo": "vino",
-      "estado": "Entregado"
-    },
-    {
-      "id": "6",
-      "numeroPedido": "P006",
-      "nombre": "Sofia Garcia",
-      "nombreProductor": "Pedro Gonzales",
-      "correoProductor": "pedro@vinosdelsur.com",
-      "correo": "sofia.garcia@vinosdelvalle.com",
-      "productos": [
-        "Vino Rosado Español - 750 ml - 1 botella"
-      ],
-      "condicionTransporte": "Recolección en Tienda",
-      "metodoPago": "Tarjeta de Crédito",
-      "telefonoProductor": "+51 945 678 901",
-      "telefono": "+34 6 1234 5678",
-      "terminosPago": "Pago Contado",
-      "fecha": "06/09/2024",
-      "fechaEntrega": "06/09/2024",
-      "tipo": "vino",
-      "estado": "Terminado"
-    },
-    {
-      "id": "7",
-      "numeroPedido": "P007",
-      "nombre": "Laura Ramirez",
-      "nombreProductor": "Maria Lopez",
-      "correoProductor": "maria@vinosdelsur.com",
-      "correo": "laura.ramirez@cervezasartesanales.mx",
-      "productos": [
-        "Cerveza IPA Mexicana - 355 ml - 12 unidades"
-      ],
-      "condicionTransporte": "Envío a Domicilio",
-      "metodoPago": "PayPal",
-      "telefonoProductor": "+51 956 789 012",
-      "telefono": "+52 55 1234 5678",
-      "terminosPago": "Pago Contado",
-      "fecha": "07/09/2024",
-      "tipo": "vino",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "8",
-      "numeroPedido": "P008",
-      "nombre": "Carlos Rodriguez",
-      "nombreProductor": "David Rodriguez",
-      "correoProductor": "david@vinosdelsur.com",
-      "correo": "carlos.rodriguez@vinosargentinos.com.ar",
-      "productos": [
-        "Vino Tinto Malbec Reserva - 750 ml - 2 botellas",
-        "Aceite de Oliva Extra Virgen - 500 ml - 1 botella"
-      ],
-      "condicionTransporte": "Transporte con temperatura controlada",
-      "metodoPago": "Transferencia bancaria",
-      "telefonoProductor": "+51 967 890 123",
-      "telefono": "+54 9 11 2345 6789",
-      "terminosPago": "Crédito a 30 días",
-      "fecha": "08/09/2024",
-      "tipo": "vino",
-      "estado": "En proceso"
-    },
-    {
-      "id": "9",
-      "numeroPedido": "P009",
-      "fecha": "09/09/2024",
-      "tipo": "vino",
-      "estado": "Enviado"
     }
   ],
   "wines": [
@@ -461,41 +227,6 @@
       "lote_id": "L006",
       "lote": "3"
 
-    },
-    {
-      "id": "7",
-      "nombre": "Vino Espumoso Brut - Valle de Casablanca",
-      "descripcion": "Vino espumoso fresco y elegante, ideal para celebraciones.",
-      "tipo": "Espumoso",
-      "region": "Valle de Casablanca",
-      "pais": "Chile",
-      "anio": 2023,
-      "uvas": ["Chardonnay", "Pinot Noir"],
-      "alcohol": 12.0,
-      "certificacion": "D.O. Valle de Casablanca",
-      "calificacion": 5,
-      "estado": "Disponible",
-      "productor_id": "PROD007",
-      "lote_id": "L007",
-      "lote": "4"
-
-    },
-    {
-      "id": "8",
-      "nombre": "Vino Tinto Cabernet Sauvignon - Valle de Napa",
-      "descripcion": "Un clásico Cabernet con notas de frutos negros y roble.",
-      "tipo": "Vino Tinto",
-      "region": "Valle de Napa",
-      "pais": "EE.UU.",
-      "anio": 2019,
-      "uvas": ["Cabernet Sauvignon"],
-      "alcohol": 14.5,
-      "certificacion": "Napa Valley",
-      "calificacion": 5,
-      "estado": "Disponible",
-      "productor_id": "PROD008",
-      "lote_id": "L008",
-      "lote": "6"
     }
-  ]
+   ]
 }

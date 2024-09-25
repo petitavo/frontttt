@@ -6,6 +6,7 @@ import { ClientsComponent } from "./GrapeFlow/producer/components/clients/client
 import { InventoryComponent } from "./GrapeFlow/producer/components/inventory/inventory.component";
 import { LoteComponent } from "./GrapeFlow/producer/components/lote/lote.component";
 import { ConsumerOrderComponent } from "./GrapeFlow/consumer/components/consumer-order/consumer-order.component";
+import {ProductComponent} from "./GrapeFlow/consumer/components/product/product.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -18,6 +19,7 @@ export const routes: Routes = [
     ]},
   { path: 'consumer', component: SidenavConsumerComponent, children: [
       { path: 'orders', component: ConsumerOrderComponent },
+      { path: 'product', component: ProductComponent },
       // Otras rutas de consumidor...
     ]}
 ];
