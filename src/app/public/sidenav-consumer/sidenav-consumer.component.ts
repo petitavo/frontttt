@@ -5,6 +5,7 @@ import { RouterLink, RouterOutlet } from "@angular/router";
 import { MatSidenav, MatSidenavContainer, MatSidenavModule } from "@angular/material/sidenav";
 import { MatIconButton } from "@angular/material/button";
 import { MatToolbar } from "@angular/material/toolbar";
+import {FooterContentComponent} from "../footer-content/footer-content.component";
 
 @Component({
   selector: 'app-sidenav-consumer',
@@ -19,7 +20,8 @@ import { MatToolbar } from "@angular/material/toolbar";
     MatIconButton,
     MatToolbar,
     RouterOutlet,
-    MatSidenavModule
+    MatSidenavModule,
+    FooterContentComponent
   ],
   templateUrl: './sidenav-consumer.component.html',
   styleUrls: ['./sidenav-consumer.component.css']

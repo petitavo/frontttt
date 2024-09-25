@@ -217,6 +217,16 @@
       "pH": 3,
       "temperatura": 20,
       "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "13",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
+      "estadoProceso": "En Proceso"
     }
   ],
   "orders": [
@@ -225,35 +235,35 @@
       "numeroPedido": "P001",
       "fecha": "01/09/2024",
       "tipo": "vino",
-      "estado": "Pendiente"
+      "estado": "Terminado"
     },
     {
       "id": "2",
       "numeroPedido": "P002",
       "fecha": "02/09/2024",
       "tipo": "vino",
-      "estado": "En proceso"
+      "estado": "Terminado"
     },
     {
       "id": "3",
       "numeroPedido": "P003",
       "fecha": "03/09/2024",
       "tipo": "vino",
-      "estado": "Enviado"
+      "estado": "Terminado"
     },
     {
       "id": "4",
       "numeroPedido": "P004",
       "fecha": "04/09/2024",
       "tipo": "vino",
-      "estado": "Devolución"
+      "estado": "Terminado"
     },
     {
       "id": "5",
       "numeroPedido": "P005",
       "fecha": "05/09/2024",
       "tipo": "vino",
-      "estado": "Entregado"
+      "estado": "Terminado"
     },
     {
       "id": "6",
@@ -284,7 +294,7 @@
       "estado": "Enviado"
     }
   ],
-  "vinos": [
+  "wines": [
     {
       "id": "1",
       "nombre": "Vino Tinto Gran Reserva - Valle de Ica",
@@ -293,7 +303,10 @@
       "region": "Valle de Ica",
       "pais": "Perú",
       "anio": 2021,
-      "uvas": ["Malbec", "Cabernet Sauvignon"],
+      "uvas": [
+        "Malbec",
+        "Cabernet Sauvignon"
+      ],
       "alcohol": 14.5,
       "certificacion": "Denominación de Origen Ica",
       "calificacion": 5,
@@ -309,7 +322,9 @@
       "region": "Valle de Casablanca",
       "pais": "Chile",
       "anio": 2022,
-      "uvas": ["Chardonnay"],
+      "uvas": [
+        "Chardonnay"
+      ],
       "alcohol": 13.5,
       "certificacion": "D.O. Valle de Casablanca",
       "calificacion": 4,
@@ -325,7 +340,9 @@
       "region": "Mendoza",
       "pais": "Argentina",
       "anio": 2023,
-      "uvas": ["Malbec"],
+      "uvas": [
+        "Malbec"
+      ],
       "alcohol": 12.5,
       "certificacion": "I.G. Mendoza",
       "calificacion": 4,

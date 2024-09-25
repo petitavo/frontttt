@@ -1,0 +1,54 @@
+<div class="Came-wrapper">
+  <h1>Wines</h1>
+
+  <div class="search-container">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <mat-select>
+        <mat-option value="nombre">Name</mat-option>
+        <mat-option value="tipo">Type</mat-option>
+        <mat-option value="uvas">Grapes</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="nombre">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <td mat-cell *matCellDef="let product">{{ product.nombre }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+      <td mat-cell *matCellDef="let product">{{ product.tipo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="descripcion">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+      <td mat-cell *matCellDef="let product">{{ product.descripcion }}</td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="Uvas">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Grapes</th>
+      <td mat-cell *matCellDef="let product">{{ product.uvas }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let product">
+        <button mat-icon-button color="primary" (click)="onViewDetails(product)" aria-label="View details">
+          <mat-icon>visibility</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+
+  <mat-paginator [pageSize]="5"></mat-paginator>
+</div>
