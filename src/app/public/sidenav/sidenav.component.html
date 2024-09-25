@@ -1,3 +1,4 @@
+<!-- app.component.html (o producer.component.html) -->
 <div class="app-container">
   <header class="app-header">
     <mat-toolbar color="primary">
@@ -39,11 +40,8 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content class="welcome-container">
-      <div class="welcome-content">
-        <p class="welcome-text">Welcome Producer</p>
-        <router-outlet></router-outlet>
-      </div>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet> <!-- Solo deja el router-outlet aquí -->
     </mat-sidenav-content>
 
   </mat-sidenav-container>
