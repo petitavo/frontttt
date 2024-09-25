@@ -12,6 +12,7 @@ import { Product } from '../../model/product.entity';
 import { ProductService } from '../../services/product.service';
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
+import {ProductDetailsComponent} from "../product-details/product-details.component";
 
 @Component({
   selector: 'app-product-details',
@@ -69,14 +70,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  onDelete(product: Product): void {
-    if (confirm(`¿Estás seguro de que quieres eliminar el Producto ${product.nombre}?`)) {
-      // Implementar lógica de eliminación aquí
-    }
-  }
-
   onViewDetails(product: Product): void {
-    console.log('Viewing details for product:', product);
-    // Implementar lógica para ver detalles aquí
+    this.dialog.open(ProductDetailsComponent, {
+      width: '600px',
+      data: product
+    });
   }
 }

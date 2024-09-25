@@ -235,7 +235,7 @@
       "numeroPedido": "P001",
       "fecha": "01/09/2024",
       "tipo": "vino",
-      "estado": "Terminado"
+      "estado": "En Proceso"
     },
     {
       "id": "2",
@@ -249,21 +249,21 @@
       "numeroPedido": "P003",
       "fecha": "03/09/2024",
       "tipo": "vino",
-      "estado": "Terminado"
+      "estado": "Enviado"
     },
     {
       "id": "4",
       "numeroPedido": "P004",
       "fecha": "04/09/2024",
       "tipo": "vino",
-      "estado": "Terminado"
+      "estado": "Devolución"
     },
     {
       "id": "5",
       "numeroPedido": "P005",
       "fecha": "05/09/2024",
       "tipo": "vino",
-      "estado": "Terminado"
+      "estado": "Entregado"
     },
     {
       "id": "6",
@@ -296,59 +296,165 @@
   ],
   "wines": [
     {
-      "id": "1",
-      "nombre": "Vino Tinto Gran Reserva - Valle de Ica",
-      "descripcion": "Vino robusto y complejo, con notas intensas de frutos rojos maduros y especias.",
+      "id": "4",
+      "nombre": "Vino Tinto Reserva - Valle del Maule",
+      "descripcion": "Un vino tinto intenso con aromas a ciruelas y un toque de vainilla.",
       "tipo": "Vino Tinto",
-      "region": "Valle de Ica",
-      "pais": "Perú",
-      "anio": 2021,
-      "uvas": [
-        "Malbec",
-        "Cabernet Sauvignon"
-      ],
-      "alcohol": 14.5,
-      "certificacion": "Denominación de Origen Ica",
+      "region": "Valle del Maule",
+      "pais": "Chile",
+      "anio": 2020,
+      "uvas": ["Carmenere", "Syrah"],
+      "alcohol": 14.0,
+      "certificacion": "D.O. Valle del Maule",
       "calificacion": 5,
       "estado": "Disponible",
-      "productor_id": "PROD001",
-      "lote_id": "L001"
+      "productor_id": "PROD004",
+      "lote_id": "L004"
     },
     {
-      "id": "2",
-      "nombre": "Vino Blanco Chardonnay - Valle de Casablanca",
-      "descripcion": "Vino fresco y afrutado con notas cítricas y tropicales.",
+      "id": "5",
+      "nombre": "Vino Blanco Sauvignon Blanc - Valle de Leyda",
+      "descripcion": "Vino fresco y vibrante con notas herbáceas y cítricas.",
       "tipo": "Vino Blanco",
-      "region": "Valle de Casablanca",
+      "region": "Valle de Leyda",
       "pais": "Chile",
       "anio": 2022,
-      "uvas": [
-        "Chardonnay"
-      ],
-      "alcohol": 13.5,
-      "certificacion": "D.O. Valle de Casablanca",
+      "uvas": ["Sauvignon Blanc"],
+      "alcohol": 13.0,
+      "certificacion": "D.O. Leyda",
       "calificacion": 4,
       "estado": "Disponible",
-      "productor_id": "PROD002",
-      "lote_id": "L002"
+      "productor_id": "PROD005",
+      "lote_id": "L005"
     },
     {
-      "id": "3",
-      "nombre": "Vino Rosado Malbec - Mendoza",
-      "descripcion": "Vino ligero y refrescante con aromas a frutos rojos y flores.",
-      "tipo": "Vino Rosado",
+      "id": "6",
+      "nombre": "Vino Tinto Malbec - Mendoza",
+      "descripcion": "Concentrado y afrutado, ideal para acompañar carnes rojas.",
+      "tipo": "Vino Tinto",
       "region": "Mendoza",
       "pais": "Argentina",
-      "anio": 2023,
-      "uvas": [
-        "Malbec"
-      ],
-      "alcohol": 12.5,
+      "anio": 2021,
+      "uvas": ["Malbec"],
+      "alcohol": 13.5,
       "certificacion": "I.G. Mendoza",
       "calificacion": 4,
       "estado": "Disponible",
-      "productor_id": "PROD003",
-      "lote_id": "L003"
+      "productor_id": "PROD006",
+      "lote_id": "L006"
+    },
+    {
+      "id": "7",
+      "nombre": "Vino Espumoso Brut - Valle de Casablanca",
+      "descripcion": "Vino espumoso fresco y elegante, ideal para celebraciones.",
+      "tipo": "Espumoso",
+      "region": "Valle de Casablanca",
+      "pais": "Chile",
+      "anio": 2023,
+      "uvas": ["Chardonnay", "Pinot Noir"],
+      "alcohol": 12.0,
+      "certificacion": "D.O. Valle de Casablanca",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD007",
+      "lote_id": "L007"
+    },
+    {
+      "id": "8",
+      "nombre": "Vino Tinto Cabernet Sauvignon - Valle de Napa",
+      "descripcion": "Un clásico Cabernet con notas de frutos negros y roble.",
+      "tipo": "Vino Tinto",
+      "region": "Valle de Napa",
+      "pais": "EE.UU.",
+      "anio": 2019,
+      "uvas": ["Cabernet Sauvignon"],
+      "alcohol": 14.5,
+      "certificacion": "Napa Valley",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD008",
+      "lote_id": "L008"
+    },
+    {
+      "id": "9",
+      "nombre": "Vino Rosado - Valle de Provence",
+      "descripcion": "Un vino rosado ligero con notas florales y de frutas rojas.",
+      "tipo": "Vino Rosado",
+      "region": "Provence",
+      "pais": "Francia",
+      "anio": 2022,
+      "uvas": ["Grenache", "Cinsault"],
+      "alcohol": 12.5,
+      "certificacion": "A.O.C. Côtes de Provence",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD009",
+      "lote_id": "L009"
+    },
+    {
+      "id": "10",
+      "nombre": "Vino Tinto Syrah - Valle de Colchagua",
+      "descripcion": "Vino con cuerpo, con notas de frutas negras y especias.",
+      "tipo": "Vino Tinto",
+      "region": "Valle de Colchagua",
+      "pais": "Chile",
+      "anio": 2021,
+      "uvas": ["Syrah"],
+      "alcohol": 14.0,
+      "certificacion": "D.O. Colchagua",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD010",
+      "lote_id": "L010"
+    },
+    {
+      "id": "11",
+      "nombre": "Vino Blanco Riesling - Valle del Mosela",
+      "descripcion": "Vino aromático, con un equilibrio perfecto entre acidez y dulzura.",
+      "tipo": "Vino Blanco",
+      "region": "Mosela",
+      "pais": "Alemania",
+      "anio": 2021,
+      "uvas": ["Riesling"],
+      "alcohol": 11.5,
+      "certificacion": "QbA Mosel",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD011",
+      "lote_id": "L011"
+    },
+    {
+      "id": "12",
+      "nombre": "Vino Tinto Tempranillo - Ribera del Duero",
+      "descripcion": "Vino con aromas a cerezas y vainilla, ideal para carnes rojas.",
+      "tipo": "Vino Tinto",
+      "region": "Ribera del Duero",
+      "pais": "España",
+      "anio": 2019,
+      "uvas": ["Tempranillo"],
+      "alcohol": 14.0,
+      "certificacion": "D.O. Ribera del Duero",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD012",
+      "lote_id": "L012"
+    },
+    {
+      "id": "13",
+      "nombre": "Vino Rosado de Garnacha - Navarra",
+      "descripcion": "Un vino rosado fresco y afrutado, ideal para el verano.",
+      "tipo": "Vino Rosado",
+      "region": "Navarra",
+      "pais": "España",
+      "anio": 2022,
+      "uvas": ["Garnacha"],
+      "alcohol": 13.0,
+      "certificacion": "D.O. Navarra",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD013",
+      "lote_id": "L013"
     }
   ]
+
 }

@@ -7,10 +7,12 @@ import {EditClientsComponent} from "./GrapeFlow/producer/components/edit-clients
 import {AddClientComponent} from "./GrapeFlow/producer/components/add-client/add-client.component";
 import {OrdersComponent} from "./GrapeFlow/producer/components/orders/orders.component";
 import {ProductComponent} from "./GrapeFlow/consumer/components/product/product.component";
+import {ProductDetailsComponent} from "./GrapeFlow/consumer/components/product-details/product-details.component";
 
 export const routes: Routes = [
   {path: 'clients', component : ClientsComponent},
   {path: 'wines', component : ProductComponent},
+  {path: 'details-product/:id', component: ProductDetailsComponent },
   {path: 'inventory', component : InventoryComponent},
   {path: 'lote', component: LoteComponent},
   {path: 'details-clients/:id', component: DetailsClientsComponent},

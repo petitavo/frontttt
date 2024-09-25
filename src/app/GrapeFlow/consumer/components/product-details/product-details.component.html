@@ -1,0 +1,49 @@
+<h2 mat-dialog-title>Detalles del Producto</h2>
+<mat-dialog-content>
+  <dl>
+    <dt>ID:</dt>
+    <dd>{{ data.id }}</dd>
+
+    <dt>Nombre:</dt>
+    <dd>{{ data.nombre }}</dd>
+
+    <dt>Descripción:</dt>
+    <dd>{{ data.descripcion }}</dd>
+
+    <dt>Tipo:</dt>
+    <dd>{{ data.tipo }}</dd>
+
+    <dt>Región:</dt>
+    <dd>{{ data.region }}</dd>
+
+    <dt>Año:</dt>
+    <dd>{{ data.anio }}</dd>
+
+    <dt>Uvas:</dt>
+    <dd><ul><li *ngFor="let uva of data.uvas">{{ uva }}</li></ul></dd>
+
+    <dt>País:</dt>
+    <dd>{{ data.pais }}</dd>
+
+    <dt>Alcohol:</dt>
+    <dd>{{ data.alcohol }}%</dd>
+
+    <dt>Certificación:</dt>
+    <dd>{{ data.certificacion }}</dd>
+
+    <dt>Calificación:</dt>
+    <dd>{{ data.calificacion }}</dd>
+
+    <dt>Estado:</dt>
+    <dd>{{ data.estado }}</dd>
+
+    <dt>ID del Productor:</dt>
+    <dd>{{ data.productor_id }}</dd>
+
+    <dt>ID del Lote:</dt>
+    <dd>{{ data.lote_id }}</dd>
+  </dl>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onClose()">Cerrar</button>
+</mat-dialog-actions>
