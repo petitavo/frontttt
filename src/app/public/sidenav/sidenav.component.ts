@@ -7,6 +7,7 @@ import {MatButton, MatIconButton} from "@angular/material/button";
 import {MatToolbar} from "@angular/material/toolbar";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {FooterContentComponent} from "../footer-content/footer-content.component";
+import {NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-sidenav',
@@ -23,7 +24,8 @@ import {FooterContentComponent} from "../footer-content/footer-content.component
     MatToolbar,
     RouterOutlet,
     MatSidenavModule,
-    FooterContentComponent
+    FooterContentComponent,
+    NgOptimizedImage
   ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']
@@ -31,7 +33,13 @@ import {FooterContentComponent} from "../footer-content/footer-content.component
 export class SidenavComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
-  constructor() { }
+  // Variable para almacenar el nombre del usuario
+  userName: string = 'Usuario';
+
+  constructor() {
+    // Aquí puedes obtener el nombre del usuario del sistema de autenticación
+    // Por ejemplo: this.userName = authService.getUserName();
+  }
 
   toggleSidenav() {
     this.sidenav.toggle();

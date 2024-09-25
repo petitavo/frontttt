@@ -1,43 +1,51 @@
-<header class="app-header">
-  <mat-toolbar>
-    <button mat-icon-button (click)="toggleSidenav()" class="menu-button">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span class="app-title" routerLink="/home">GrapeFlow</span>
-    <span class="spacer"></span>
+<div class="app-container">
+  <header class="app-header">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="toggleSidenav()" class="menu-button">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span class="app-title" routerLink="/home">GrapeFlow</span>
+      <span class="spacer"></span>
+      <div class="consumer-indicator">
+        <mat-icon>person</mat-icon>
+        <span class="consumer-label">Consumer</span>
+      </div>
+    </mat-toolbar>
+  </header>
 
-    <!-- Subtle indicator for "consumer" -->
-    <div class="consumer-indicator">
-      <mat-icon>person</mat-icon> <!-- User icon -->
-      <span class="consumer-label">Consumer</span>
-    </div>
-  </mat-toolbar>
-</header>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #sidenav mode="over">
+      <mat-nav-list>
+        <a mat-list-item (click)="closeSidenav()" class="white-text">
+          <mat-icon>home</mat-icon>
+          <span class="link-text">Home</span>
+        </a>
+        <a mat-list-item routerLink="/inventory" (click)="closeSidenav()" class="white-text">
+          <mat-icon>inventory</mat-icon>
+          <span class="link-text">Inventory</span>
+        </a>
+        <a mat-list-item routerLink="/clients" (click)="closeSidenav()" class="white-text">
+          <mat-icon>people</mat-icon>
+          <span class="link-text">My Clients</span>
+        </a>
+        <a mat-list-item (click)="logout()" class="white-text">
+          <mat-icon>exit_to_app</mat-icon>
+          <span class="link-text">Cerrar Sesión</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
 
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="over">
-    <mat-nav-list>
-      <a mat-list-item routerLink="/home" (click)="closeSidenav()" class="white-text">
-        <mat-icon>home</mat-icon>
-        <span class="link-text">Home</span>
-      </a>
-      <a mat-list-item routerLink="/wines" (click)="closeSidenav()" class="white-text">
-        <mat-icon>local_bar</mat-icon>
-        <span class="link-text">Wines</span>
-      </a>
-      <a mat-list-item routerLink="/my-orders" (click)="closeSidenav()" class="white-text">
-        <mat-icon>shopping_basket</mat-icon>
-        <span class="link-text">My Orders</span>
-      </a>
-    </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    <mat-sidenav-content>
+      <div class="welcome-container">
+        <h1>¡Bienvenido a GrapeFlow!</h1>
+        <p>Estamos encantados de tenerte aquí, {{ userName }}.</p>
+        <p>Desde esta plataforma, puedes gestionar tus clientes, productos, y pedidos fácilmente. Aprovecha las herramientas que tenemos para ti.</p>
+        <img ngSrc="/assets/images/welcome.png" alt="Bienvenido" class="welcome-image">
+      </div>
 
-<!-- Footer -->
-<div class="footer-content">
-  <p>Copyright © 2024</p>
-  <p>Developed by the developer team of Villa System</p>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+  <app-footer-content></app-footer-content>
 </div>

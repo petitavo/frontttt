@@ -96,3 +96,25 @@ html, body {
   margin: 0; /* Asegúrate de que no haya márgenes por defecto que causen problemas */
   padding: 0; /* Asegúrate de que no haya padding por defecto */
 }
+
+
+.welcome-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.welcome-container h1 {
+  font-size: 36px;
+  color: #5a2e87;
+}
+
+.welcome-container p {
+  font-size: 18px;
+  color: #333;
+}
+
+.welcome-image {
+  margin-top: 20px;
+  width: 200px;
+  height: auto;
+}

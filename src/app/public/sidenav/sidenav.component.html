@@ -44,6 +44,13 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
+      <div class="welcome-container">
+        <h1>¡Bienvenido a GrapeFlow!</h1>
+        <p>Estamos encantados de tenerte aquí, {{ userName }}.</p>
+        <p>Desde esta plataforma, puedes gestionar tus clientes, productos, y pedidos fácilmente. Aprovecha las herramientas que tenemos para ti.</p>
+        <img ngSrc="/assets/images/welcome.png" alt="Bienvenido" class="welcome-image" height="512" width="512">
+      </div>
+
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

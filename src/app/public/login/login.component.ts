@@ -15,7 +15,7 @@ import { of } from 'rxjs';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  private apiUrl = 'http://localhost:3000/clients'; // URL del json-server
+  private apiUrl = 'https://my-json-server.typicode.com/Villasystem/Grapeflow/clients'; // URL del json-server
 
   constructor(private fb: FormBuilder, private router: Router, private http: HttpClient) {
     this.loginForm = this.fb.group({
