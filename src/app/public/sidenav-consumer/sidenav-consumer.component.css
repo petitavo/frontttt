@@ -80,3 +80,43 @@
 .white-text .link-text {
   color: white;
 }
+
+.welcome-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
+  background: linear-gradient(135deg, rgba(189, 12, 213, 0.45), #8838d2);
+  font-family: 'Roboto', sans-serif;
+}
+
+.welcome-content {
+  text-align: center;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+  transition: transform 0.3s ease-in-out; /* Efecto de transición */
+}
+
+.welcome-content:hover {
+  transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+.welcome-text {
+  font-size: 2.5rem; /* Tamaño grande para el texto de bienvenida */
+  color: #333; /* Color gris oscuro */
+  margin: 0;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 2rem; /* Reduce el tamaño en pantallas más pequeñas */
+  }
+
+  .welcome-content {
+    padding: 20px; /* Menos padding en pantallas pequeñas */
+  }
+}
+

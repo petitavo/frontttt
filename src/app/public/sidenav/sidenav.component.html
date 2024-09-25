@@ -39,9 +39,13 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
+    <mat-sidenav-content class="welcome-container">
+      <div class="welcome-content">
+        <p class="welcome-text">Welcome Producer</p>
+        <router-outlet></router-outlet>
+      </div>
     </mat-sidenav-content>
+
   </mat-sidenav-container>
 
   <app-footer-content></app-footer-content>
