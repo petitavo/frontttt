@@ -309,7 +309,9 @@
       "calificacion": 5,
       "estado": "Disponible",
       "productor_id": "PROD004",
-      "lote_id": "L004"
+      "lote_id": "L004",
+      "lote": "1"
+
     },
     {
       "id": "5",
@@ -325,7 +327,9 @@
       "calificacion": 4,
       "estado": "Disponible",
       "productor_id": "PROD005",
-      "lote_id": "L005"
+      "lote_id": "L005",
+      "lote": "2"
+
     },
     {
       "id": "6",
@@ -341,7 +345,9 @@
       "calificacion": 4,
       "estado": "Disponible",
       "productor_id": "PROD006",
-      "lote_id": "L006"
+      "lote_id": "L006",
+      "lote": "3"
+
     },
     {
       "id": "7",
@@ -357,7 +363,9 @@
       "calificacion": 5,
       "estado": "Disponible",
       "productor_id": "PROD007",
-      "lote_id": "L007"
+      "lote_id": "L007",
+      "lote": "4"
+
     },
     {
       "id": "8",
@@ -373,88 +381,8 @@
       "calificacion": 5,
       "estado": "Disponible",
       "productor_id": "PROD008",
-      "lote_id": "L008"
-    },
-    {
-      "id": "9",
-      "nombre": "Vino Rosado - Valle de Provence",
-      "descripcion": "Un vino rosado ligero con notas florales y de frutas rojas.",
-      "tipo": "Vino Rosado",
-      "region": "Provence",
-      "pais": "Francia",
-      "anio": 2022,
-      "uvas": ["Grenache", "Cinsault"],
-      "alcohol": 12.5,
-      "certificacion": "A.O.C. Côtes de Provence",
-      "calificacion": 4,
-      "estado": "Disponible",
-      "productor_id": "PROD009",
-      "lote_id": "L009"
-    },
-    {
-      "id": "10",
-      "nombre": "Vino Tinto Syrah - Valle de Colchagua",
-      "descripcion": "Vino con cuerpo, con notas de frutas negras y especias.",
-      "tipo": "Vino Tinto",
-      "region": "Valle de Colchagua",
-      "pais": "Chile",
-      "anio": 2021,
-      "uvas": ["Syrah"],
-      "alcohol": 14.0,
-      "certificacion": "D.O. Colchagua",
-      "calificacion": 5,
-      "estado": "Disponible",
-      "productor_id": "PROD010",
-      "lote_id": "L010"
-    },
-    {
-      "id": "11",
-      "nombre": "Vino Blanco Riesling - Valle del Mosela",
-      "descripcion": "Vino aromático, con un equilibrio perfecto entre acidez y dulzura.",
-      "tipo": "Vino Blanco",
-      "region": "Mosela",
-      "pais": "Alemania",
-      "anio": 2021,
-      "uvas": ["Riesling"],
-      "alcohol": 11.5,
-      "certificacion": "QbA Mosel",
-      "calificacion": 4,
-      "estado": "Disponible",
-      "productor_id": "PROD011",
-      "lote_id": "L011"
-    },
-    {
-      "id": "12",
-      "nombre": "Vino Tinto Tempranillo - Ribera del Duero",
-      "descripcion": "Vino con aromas a cerezas y vainilla, ideal para carnes rojas.",
-      "tipo": "Vino Tinto",
-      "region": "Ribera del Duero",
-      "pais": "España",
-      "anio": 2019,
-      "uvas": ["Tempranillo"],
-      "alcohol": 14.0,
-      "certificacion": "D.O. Ribera del Duero",
-      "calificacion": 5,
-      "estado": "Disponible",
-      "productor_id": "PROD012",
-      "lote_id": "L012"
-    },
-    {
-      "id": "13",
-      "nombre": "Vino Rosado de Garnacha - Navarra",
-      "descripcion": "Un vino rosado fresco y afrutado, ideal para el verano.",
-      "tipo": "Vino Rosado",
-      "region": "Navarra",
-      "pais": "España",
-      "anio": 2022,
-      "uvas": ["Garnacha"],
-      "alcohol": 13.0,
-      "certificacion": "D.O. Navarra",
-      "calificacion": 4,
-      "estado": "Disponible",
-      "productor_id": "PROD013",
-      "lote_id": "L013"
+      "lote_id": "L008",
+      "lote": "6"
     }
   ]
-
 }

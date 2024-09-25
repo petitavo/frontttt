@@ -22,6 +22,7 @@ describe('ProductDetailsComponent', () => {
     estado: 'Disponible',
     productor_id: 'PROD001',
     lote_id: 'L001',
+    lote: '1',
   };
 
   beforeEach(async () => {

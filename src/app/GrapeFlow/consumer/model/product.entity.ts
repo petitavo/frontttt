@@ -13,6 +13,7 @@ export class Product {
   estado: string;
   productor_id: string;
   lote_id: string;
+  lote: string;
 
   constructor(product: Partial<Product> = {}) {
     this.id = product.id || ''; // Inicializar id
@@ -29,6 +30,7 @@ export class Product {
     this.calificacion = product.calificacion || '';
     this.productor_id = product.productor_id || '';
     this.lote_id = product.lote_id || '';
+    this.lote = product.lote || '';
 
   }
 }
