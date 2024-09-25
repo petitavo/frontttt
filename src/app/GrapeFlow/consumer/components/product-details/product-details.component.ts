@@ -39,7 +39,4 @@ export class ProductDetailsComponent {
     this.dialogRef.close();
   }
 
-  onViewLote(): void {
-
-  }
 }
