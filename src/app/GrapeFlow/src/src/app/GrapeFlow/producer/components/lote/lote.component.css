@@ -1,0 +1,40 @@
+.order-wrapper {
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.mat-column-actions {
+  width: 150px;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  color: #333;
+}
+
+.mat-cell {
+  padding: 10px;
+}
+
+mat-paginator {
+  margin-top: 20px;
+}
+
+button[mat-raised-button] {
+  margin-bottom: 20px;
+}

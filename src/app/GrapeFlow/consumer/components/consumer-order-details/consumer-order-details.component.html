@@ -1,0 +1,43 @@
+<h2 mat-dialog-title>Detalles del Pedido</h2>
+<mat-dialog-content>
+  <dl>
+    <dt>Número de Pedido:</dt>
+    <dd>{{ data.numeroPedido }}</dd>
+
+    <dt>Nombre del Productor:</dt>
+    <dd>{{ data.nombreProductor }}</dd>
+
+    <dt>Correo del Productor:</dt>
+    <dd>{{ data.correoProductor }}</dd>
+
+    <dt>Productos:</dt>
+    <dd>{{ data.productos }}</dd>
+
+    <dt>CondicionTransporte:</dt>
+    <dd>{{ data.condicionTransporte }}</dd>
+
+    <dt>Método de Pago:</dt>
+    <dd>{{ data.metodoPago }}</dd>
+
+    <dt>Telefono del Productor:</dt>
+    <dd>{{ data.telefonoProductor }}</dd>
+
+    <dt>Terminos de Pago:</dt>
+    <dd>{{ data.terminosPago }}</dd>
+
+    <dt>Fecha de Solicitud:</dt>
+    <dd>{{ data.fecha | date:'dd/MM/yyyy'}}</dd>
+
+    <dt>Fecha de Entrega:</dt>
+    <dd>{{ data.fechaEntrega | date:'dd/MM/yyyy'}}</dd>
+
+    <dt>Tipo:</dt>
+    <dd>{{ data.tipo }}</dd>
+
+    <dt>Estado:</dt>
+    <dd>{{ data.estado }}</dd>
+  </dl>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onClose()">Cerrar</button>
+</mat-dialog-actions>

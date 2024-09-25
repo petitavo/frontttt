@@ -1,0 +1,51 @@
+.table-wrapper {
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.mat-mdc-header-row {
+  background-color: #f2f2f2;
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.mat-mdc-cell, .mat-mdc-header-cell {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.mat-mdc-header-cell {
+  font-weight: bold;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mat-mdc-form-field {
+  flex-grow: 1;
+  margin-right: 20px;
+}
+
+button {
+  margin-right: 5px;
+}
+
+.mat-column-actions {
+  width: 250px;
+}
