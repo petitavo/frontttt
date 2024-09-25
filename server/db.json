@@ -442,11 +442,5 @@
       "productor_id": "PROD003",
       "lote_id": "L003"
     }
-  ],
-  "order": [
-    {
-      "direccion": "Calle Principal 123, Miraflores, Lima",
-      "id": "76a0"
-    }
   ]
 }
