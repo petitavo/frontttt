@@ -11,6 +11,7 @@ import { Inventory } from '../../model/inventory.entity';
 import { InventoryService } from '../../services/inventory.service';
 import {MatDialog} from "@angular/material/dialog";
 import {InventoryEditComponent} from "../inventory-edit/inventory-edit.component";
+import {MatIcon} from "@angular/material/icon";
 
 @Component({
   selector: 'app-inventory',
@@ -23,7 +24,8 @@ import {InventoryEditComponent} from "../inventory-edit/inventory-edit.component
     MatButtonModule,
     MatPaginatorModule,
     FormsModule,
-    MatSortModule
+    MatSortModule,
+    MatIcon
   ],
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.css']

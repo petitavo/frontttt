@@ -1,40 +1,49 @@
-/* Estilo general */
-.lote-wrapper {
+.inventory-wrapper {
   padding: 20px;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  min-height: 100vh;
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 48px;
   font-weight: bold;
-  font-family: "Times New Roman", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 20px;
-  color: #A70AC0; /* Mismo color de título que en "order" */
+  color: #6a1b9a;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Flexbox para búsqueda y filtro */
 .search-container {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
-/* Estilo de la tabla */
+.mat-mdc-form-field {
+  flex: 1;
+}
+
 .mat-mdc-header-row {
-  background-color: #A70AC0; /* Color de encabezado igual a "order" */
+  background-color: #6a1b9a;
   color: white;
 }
 
 .mat-mdc-row:nth-child(even) {
-  background-color: #F5F5DC !important; /* Filas alternadas */
+  background-color: #e0f7fa;
 }
 
 .mat-mdc-row:nth-child(odd) {
-  background-color: #E6E6FA;
+  background-color: #fce4ec;
 }
 
 table {
   width: 100%;
   margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mat-column-actions {
@@ -43,43 +52,28 @@ table {
 
 .mat-header-cell {
   font-weight: bold;
-  color: #333; /* Color de texto igual a "order" */
+  color: white;
 }
 
 .mat-cell {
   padding: 10px;
 }
 
-/* Paginador */
 mat-paginator {
   margin-top: 20px;
+  background-color: #e0f7fa;
+  border-radius: 8px;
 }
 
-/* Botones */
 button[mat-raised-button] {
   margin-bottom: 20px;
 }
 
 .add-button {
-  background-color: #ffc107 !important; /* Botón agregar similar al de "order" */
+  background-color: #00acc1 !important; /* Botón agregar */
   color: white !important;
 }
 
-/* Botones de acciones */
-.save-button,
-.edit-button {
-  background-color: #ffc107 !important; /* Estilo similar al botón agregar */
-  color: white !important;
-}
-
-.delete-button {
-  background-color: #ff3d3d !important; /* Botón eliminar en rojo */
-  color: white !important;
-}
-
-/* Hover effects */
-.save-button:hover,
-.edit-button:hover,
-.delete-button:hover {
-  opacity: 0.8;
+.mat-icon-button {
+  margin-left: 10px;
 }
