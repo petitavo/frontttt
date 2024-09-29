@@ -1,37 +1,59 @@
 .lote-wrapper {
   padding: 20px;
+  background: linear-gradient(135deg, #f3e5f5, #fff3e0);
+  min-height: 100vh;
 }
 
 h1 {
-  font-size: 80px;
+  font-size: 48px;
   font-weight: bold;
-  font-family: "Times New Roman", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin-bottom: 20px;
-  color: #A70AC0; /* Mismo color de título que Registro de Pedidos */
+  color: #6a1b9a;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-image {
+  background-image: url('https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .search-container {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mat-mdc-form-field {
+  flex: 1;
 }
 
 .mat-mdc-header-row {
-  background-color: #A70AC0; /* Color de encabezado igual a Registro de Pedidos */
+  background-color: #6a1b9a;
   color: white;
 }
 
 .mat-mdc-row:nth-child(even) {
-  background-color: #F5F5DC !important; /* Colores de las filas alternadas */
+  background-color: #f3e5f5;
 }
 
 .mat-mdc-row:nth-child(odd) {
-  background-color: #E6E6FA;
+  background-color: #fff3e0;
 }
 
 table {
   width: 100%;
   margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .mat-column-actions {
@@ -40,7 +62,7 @@ table {
 
 .mat-header-cell {
   font-weight: bold;
-  color: #333; /* Mismo color de texto que Registro de Pedidos */
+  color: white;
 }
 
 .mat-cell {
@@ -49,6 +71,8 @@ table {
 
 mat-paginator {
   margin-top: 20px;
+  background-color: #f3e5f5;
+  border-radius: 8px;
 }
 
 button[mat-raised-button] {
@@ -56,6 +80,35 @@ button[mat-raised-button] {
 }
 
 .add-button {
-  background-color: #ffc107 !important; /* Botón Agregar Lote con estilo igual al de Pedidos */
+  background-color: #ff9800 !important;
   color: white !important;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #f57c00 !important;
+}
+
+.grape-icon {
+  margin-right: 5px;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status-completed {
+  background-color: #4caf50;
+}
+
+.status-in-process {
+  background-color: #ffc107;
+}
+
+.status-waiting {
+  background-color: #f44336;
 }

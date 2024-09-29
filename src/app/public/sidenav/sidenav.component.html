@@ -1,19 +1,4 @@
-<!-- app.component.html (o producer.component.html) -->
 <div class="app-container">
-  <header class="app-header">
-    <mat-toolbar color="primary">
-      <button mat-icon-button (click)="toggleSidenav()" class="menu-button">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span class="app-title" routerLink="/home">GrapeFlow</span>
-      <span class="spacer"></span>
-      <div class="producer-indicator">
-        <mat-icon>store</mat-icon>
-        <span class="producer-label">Producer</span>
-      </div>
-    </mat-toolbar>
-  </header>
-
   <mat-sidenav-container class="sidenav-container">
     <mat-sidenav #sidenav mode="over">
       <mat-nav-list>
@@ -41,10 +26,25 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <router-outlet></router-outlet> <!-- Solo deja el router-outlet aquí -->
+      <header class="app-header">
+        <mat-toolbar color="primary">
+          <button mat-icon-button (click)="toggleSidenav()" class="menu-button">
+            <mat-icon>menu</mat-icon>
+          </button>
+          <span class="app-title" routerLink="/home">GrapeFlow</span>
+          <span class="spacer"></span>
+          <div class="producer-indicator">
+            <mat-icon>store</mat-icon>
+            <span class="producer-label">Producer</span>
+          </div>
+        </mat-toolbar>
+      </header>
+
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
+
+      <app-footer-content></app-footer-content>
     </mat-sidenav-content>
-
   </mat-sidenav-container>
-
-  <app-footer-content></app-footer-content>
 </div>
