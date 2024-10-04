@@ -62,15 +62,12 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   }
 
   onDetails(client: Client) {
-    console.log('Detalles del cliente:', client);
-    this.router.navigate(['/details-clients', client.id]);
+    this.router.navigate(['/producer/detailClients', client.id]);
   }
 
   onEdit(client: Client) {
-    console.log('Edit', client);
-    this.router.navigate(['/edit-clients', client.id]);
+    this.router.navigate(['/producer/editClients', client.id]);
   }
-
   onDelete(client: Client) {
     if (confirm(`¿Estás seguro de que quieres eliminar a ${client.nombre} ${client.apellido}?`)) {
       this.clientService.delete(client.id).subscribe(
@@ -86,8 +83,4 @@ export class ClientsComponent implements OnInit, AfterViewInit {
     }
   }
 
-  onAddClient() {
-    console.log('Add Client');
-    this.router.navigate(['/add-client']);
-  }
 }

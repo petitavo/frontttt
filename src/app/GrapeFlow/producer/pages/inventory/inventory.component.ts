@@ -9,9 +9,9 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { Inventory } from '../../model/inventory.entity';
 import { InventoryService } from '../../services/inventory.service';
-import {MatDialog} from "@angular/material/dialog";
-import {InventoryEditComponent} from "../../components/inventory-edit/inventory-edit.component";
-import {MatIcon} from "@angular/material/icon";
+import { MatDialog } from "@angular/material/dialog";
+import { InventoryEditComponent } from "../../components/inventory-edit/inventory-edit.component";
+import { MatIconModule } from "@angular/material/icon";
 
 @Component({
   selector: 'app-inventory',
@@ -25,7 +25,7 @@ import {MatIcon} from "@angular/material/icon";
     MatPaginatorModule,
     FormsModule,
     MatSortModule,
-    MatIcon
+    MatIconModule
   ],
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.css']
@@ -38,7 +38,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   protected dataSource: MatTableDataSource<Inventory>;
   private inventoryService: InventoryService = inject(InventoryService);
 
-  constructor(private InventoryService: InventoryService,private dialog: MatDialog) {
+  constructor(private dialog: MatDialog) {
     this.inventoryData = new Inventory({
       nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
     });
@@ -65,30 +65,40 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  onSave(): void {
-    this.inventoryService.create(this.inventoryData).subscribe(
-      (newItem) => {
-        this.dataSource.data = [...this.dataSource.data, newItem];
-        this.inventoryData = new Inventory({
-          nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
-        });
-      },
-      (error) => console.error('Error adding inventory item', error)
-    );
+  openAddDialog(): void {
+    const dialogRef = this.dialog.open(InventoryEditComponent, {
+      width: '400px',
+      data: new Inventory({
+        nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
+      })
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.inventoryService.create(result).subscribe(
+          (newItem) => {
+            this.dataSource.data = [...this.dataSource.data, newItem];
+          },
+          (error) => console.error('Error adding inventory item', error)
+        );
+      }
+      // If result is undefined (cancel was clicked), do nothing
+    });
   }
 
   onEdit(item: Inventory): void {
     const dialogRef = this.dialog.open(InventoryEditComponent, {
       width: '400px',
-      data: item
+      data: {...item}  // Create a copy of the item
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.inventoryService.update(result.id, result).subscribe(() => {
-          this.getAllInventory(); // Refresca la lista de inventario
+          this.getAllInventory(); // Refresh the inventory list
         });
       }
+      // If result is undefined (cancel was clicked), do nothing
     });
   }
 

@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { MatListItem, MatNavList } from "@angular/material/list";
 import { MatIcon } from "@angular/material/icon";
 import { RouterLink, RouterOutlet } from "@angular/router";
-import { MatSidenav, MatSidenavContainer, MatSidenavModule } from "@angular/material/sidenav";  // Asegúrate de importar el módulo
+import { MatSidenav, MatSidenavContainer, MatSidenavModule } from "@angular/material/sidenav";
 import { MatButton, MatIconButton } from "@angular/material/button";
 import { MatToolbar } from "@angular/material/toolbar";
 import { FooterContentComponent } from "../footer-content/footer-content.component";
@@ -21,7 +21,7 @@ import { FooterContentComponent } from "../footer-content/footer-content.compone
     MatIconButton,
     MatToolbar,
     RouterOutlet,
-    MatSidenavModule,  // Asegúrate de que este módulo esté incluido
+    MatSidenavModule,
     FooterContentComponent
   ],
   templateUrl: './sidenav.component.html',

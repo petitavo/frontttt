@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
-import {FormsModule} from "@angular/forms";
-import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
-import {MatInput, MatInputModule} from "@angular/material/input";
-import {MatButton} from "@angular/material/button";
-import {Client} from "../../model/client.entity";
-import {ClientService} from "../../services/client.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormsModule } from "@angular/forms";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { MatButtonModule } from "@angular/material/button";
+import { Client } from "../../model/client.entity";
+import { ClientService } from "../../services/client.service";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'app-edit-clients',
@@ -14,12 +14,12 @@ import {ActivatedRoute, Router} from "@angular/router";
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButton
+    MatButtonModule
   ],
   templateUrl: './edit-clients.component.html',
-  styleUrl: './edit-clients.component.css'
+  styleUrls: ['./edit-clients.component.css']
 })
-export class EditClientsComponent {
+export class EditClientsComponent implements OnInit {
   client!: Client;
 
   constructor(
@@ -37,18 +37,22 @@ export class EditClientsComponent {
       });
     } else {
       console.error('Client ID is null');
-      this.router.navigate(['/clients']);
+      this.router.navigate(['/producer/clients']);
     }
   }
 
   onSave() {
-    this.clientService.update(this.client.id, this.client).subscribe(() => {
-      console.log('Cliente actualizado con éxito');
-      this.router.navigate(['/clients']);
-    });
+    if (this.client && this.client.id) {
+      this.clientService.update(this.client.id, this.client).subscribe(() => {
+        console.log('Cliente actualizado con éxito');
+        this.router.navigate(['/producer/clients']);
+      });
+    } else {
+      console.error('Client or client ID is undefined');
+    }
   }
 
   onCancel() {
-    this.router.navigate(['/clients']);
+    this.router.navigate(['/producer/clients']);
   }
 }

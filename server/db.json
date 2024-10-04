@@ -14,7 +14,7 @@
     {
       "id": "5",
       "nombre": "Carlos",
-      "apellido": "García",
+      "apellido": "Samillan",
       "telefono": "999 888 777",
       "direccion": "Las Condes",
       "pais": "Perú",
@@ -32,7 +32,7 @@
       "proveedor": "Barriles Únicos",
       "costoU": 250,
       "ultimaActualizacion": "2024-09-03",
-      "cantidad": 30,
+      "cantidad": 35,
       "id": "e578"
     },
     {
@@ -56,6 +56,24 @@
       "ultimaActualizacion": "2024-09-04",
       "cantidad": 100,
       "id": "6d57"
+    },
+    {
+      "id": "jVpeKiy",
+      "nombre": "aas",
+      "tipo": "",
+      "unidad": "",
+      "caducidad": "",
+      "costoU": 0,
+      "cantidad": 0
+    },
+    {
+      "id": "aD-FD-J",
+      "nombre": "asda",
+      "tipo": "",
+      "unidad": "",
+      "caducidad": "",
+      "costoU": 0,
+      "cantidad": 0
     }
   ],
   "lotes": [
