@@ -1,17 +1,6 @@
 {
   "clients": [
     {
-      "id": "3",
-      "nombre": "Eduardo",
-      "apellido": "Rodriguez",
-      "telefono": "999 999 999",
-      "direccion": "San Felipe",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "87654321",
-      "correo": "eduardo.rodriguez@example.com"
-    },
-    {
       "id": "4",
       "nombre": "Ana",
       "apellido": "Fernández",
@@ -69,8 +58,7 @@
       "id": "6d57"
     }
   ],
-  "lotes":
-  [
+  "lotes": [
     {
       "id": "1",
       "lote": 1,
@@ -99,6 +87,16 @@
       "cantidadLitros": 400,
       "pH": 3.4,
       "temperatura": 17,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "4",
+      "numeroLote": "5",
+      "uva": "Uva Tinta",
+      "fechaInicio": "2022-02-01",
+      "cantidadLitros": 4,
+      "pH": 1.5,
+      "temperatura": 40,
       "estadoProceso": "En Proceso"
     }
   ],
@@ -182,15 +180,17 @@
       "region": "Valle del Maule",
       "pais": "Chile",
       "anio": 2020,
-      "uvas": ["Carmenere", "Syrah"],
-      "alcohol": 14.0,
+      "uvas": [
+        "Carmenere",
+        "Syrah"
+      ],
+      "alcohol": 14,
       "certificacion": "D.O. Valle del Maule",
       "calificacion": 5,
       "estado": "Disponible",
       "productor_id": "PROD004",
       "lote_id": "L004",
       "lote": "1"
-
     },
     {
       "id": "5",
@@ -200,15 +200,16 @@
       "region": "Valle de Leyda",
       "pais": "Chile",
       "anio": 2022,
-      "uvas": ["Sauvignon Blanc"],
-      "alcohol": 13.0,
+      "uvas": [
+        "Sauvignon Blanc"
+      ],
+      "alcohol": 13,
       "certificacion": "D.O. Leyda",
       "calificacion": 4,
       "estado": "Disponible",
       "productor_id": "PROD005",
       "lote_id": "L005",
       "lote": "2"
-
     },
     {
       "id": "6",
@@ -218,7 +219,9 @@
       "region": "Mendoza",
       "pais": "Argentina",
       "anio": 2023,
-      "uvas": ["Malbec"],
+      "uvas": [
+        "Malbec"
+      ],
       "alcohol": 12.5,
       "certificacion": "I.G. Mendoza",
       "calificacion": 4,
@@ -226,7 +229,6 @@
       "productor_id": "PROD006",
       "lote_id": "L006",
       "lote": "3"
-
     }
-   ]
+  ]
 }
