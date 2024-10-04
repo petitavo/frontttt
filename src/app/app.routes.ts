@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { LoginComponent} from "./public/login/login.component"; // Importa el LoginComponent
+import { LoginComponent} from "./public/login/login.component";
 import { SidenavComponent} from "./public/sidenav/sidenav.component";
 import { SidenavConsumerComponent} from "./public/sidenav-consumer/sidenav-consumer.component";
 import { ClientsComponent } from "./GrapeFlow/producer/components/clients/clients.component";
@@ -20,7 +20,6 @@ export const routes: Routes = [
   { path: 'consumer', component: SidenavConsumerComponent, children: [
       { path: 'orders', component: ConsumerOrderComponent },
       { path: 'product', component: ProductComponent },
-      // Otras rutas de consumidor...
     ]}
 ];
 
