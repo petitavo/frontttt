@@ -11,21 +11,22 @@ import {
 import {MatButton, MatButtonModule} from "@angular/material/button";
 import {MatFormField, MatInput, MatInputModule} from "@angular/material/input";
 import {MatPaginator} from "@angular/material/paginator";
-import {Order} from "../../../producer/model/order.entity";
+import {Order} from "../../model/order.entity";
 import {MatSort} from "@angular/material/sort";
-import {OrderService} from "../../../producer/services/order.service";
+import {OrderService} from "../../services/order.service";
 import {Router} from "@angular/router";
 import { MatSortModule } from '@angular/material/sort';
 import {MatIcon} from "@angular/material/icon";
 import {DatePipe} from "@angular/common";
 import {MatOption} from "@angular/material/core";
 import {MatSelect} from "@angular/material/select";
+import {Lote} from "../../model/lote.entity";
+import {LoteDetailsComponent} from "../../components/lote-details/lote-details.component";
 import {MatDialog} from "@angular/material/dialog";
-import {OrdersDetailsComponent} from "../../../producer/components/orders-details/orders-details.component";
-import {ConsumerOrderDetailsComponent} from "../consumer-order-details/consumer-order-details.component";
+import {OrdersDetailsComponent} from "../../components/orders-details/orders-details.component";
 
 @Component({
-  selector: 'app-consumer-order',
+  selector: 'app-orders',
   standalone: true,
   imports: [
     MatColumnDef,
@@ -49,10 +50,10 @@ import {ConsumerOrderDetailsComponent} from "../consumer-order-details/consumer-
     MatOption,
     MatSelect
   ],
-  templateUrl: './consumer-order.component.html',
-  styleUrl: './consumer-order.component.css'
+  templateUrl: './orders.component.html',
+  styleUrl: './orders.component.css'
 })
-export class ConsumerOrderComponent implements OnInit, AfterViewInit{
+export class OrdersComponent implements OnInit, AfterViewInit{
   datasource: MatTableDataSource<Order> = new MatTableDataSource<Order>();
   columnsToDisplay: string[] = ['numeroPedido', 'fecha', 'tipo', 'estado', 'actions'];
   filteredValue: string = '';
@@ -89,7 +90,7 @@ export class ConsumerOrderComponent implements OnInit, AfterViewInit{
   }
 
   onViewDetails(order: Order): void {
-    this.dialog.open(ConsumerOrderDetailsComponent, {
+    this.dialog.open(OrdersDetailsComponent, {
       width: '600px',
       data: order
     });

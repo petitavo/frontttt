@@ -2,11 +2,11 @@ import { Routes } from '@angular/router';
 import { LoginComponent} from "./public/login/login.component"; // Importa el LoginComponent
 import { SidenavComponent} from "./public/sidenav/sidenav.component";
 import { SidenavConsumerComponent} from "./public/sidenav-consumer/sidenav-consumer.component";
-import { ClientsComponent } from "./GrapeFlow/producer/components/clients/clients.component";
-import { InventoryComponent } from "./GrapeFlow/producer/components/inventory/inventory.component";
-import { LoteComponent } from "./GrapeFlow/producer/components/lote/lote.component";
-import { ConsumerOrderComponent } from "./GrapeFlow/consumer/components/consumer-order/consumer-order.component";
-import {ProductComponent} from "./GrapeFlow/consumer/components/product/product.component";
+import { ClientsComponent } from "./GrapeFlow/producer/pages/clients/clients.component";
+import { InventoryComponent } from "./GrapeFlow/producer/pages/inventory/inventory.component";
+import { LoteComponent } from "./GrapeFlow/producer/pages/lote/lote.component";
+import { ConsumerOrderComponent } from "./GrapeFlow/consumer/pages/consumer-order/consumer-order.component";
+import {ProductComponent} from "./GrapeFlow/consumer/pages/product/product.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },

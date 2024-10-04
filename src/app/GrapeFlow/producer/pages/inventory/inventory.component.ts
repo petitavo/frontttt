@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { Inventory } from '../../model/inventory.entity';
 import { InventoryService } from '../../services/inventory.service';
 import {MatDialog} from "@angular/material/dialog";
-import {InventoryEditComponent} from "../inventory-edit/inventory-edit.component";
+import {InventoryEditComponent} from "../../components/inventory-edit/inventory-edit.component";
 import {MatIcon} from "@angular/material/icon";
 
 @Component({

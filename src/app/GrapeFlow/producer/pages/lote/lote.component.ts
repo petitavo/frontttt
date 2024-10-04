@@ -10,10 +10,10 @@
   import { MatDialogModule, MatDialog } from '@angular/material/dialog';
   import { Lote } from '../../model/lote.entity';
   import { LoteService } from '../../services/lote.service';
-  import { LoteDetailsComponent } from '../lote-details/lote-details.component';
+  import { LoteDetailsComponent } from '../../components/lote-details/lote-details.component';
   import { MatIconModule } from '@angular/material/icon';
   import {RouterLink} from "@angular/router";
-  import {LoteAddComponent} from "../lote-add/lote-add.component";
+  import {LoteAddComponent} from "../../components/lote-add/lote-add.component";
 
   @Component({
     selector: 'app-lote',

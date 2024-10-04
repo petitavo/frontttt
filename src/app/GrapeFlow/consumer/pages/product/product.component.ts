@@ -12,7 +12,7 @@ import { Product } from '../../model/product.entity';
 import { ProductService } from '../../services/product.service';
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
-import {ProductDetailsComponent} from "../product-details/product-details.component";
+import {ProductDetailsComponent} from "../../components/product-details/product-details.component";
 
 @Component({
   selector: 'app-product-details',
