@@ -65,15 +65,6 @@
       "caducidad": "",
       "costoU": 0,
       "cantidad": 0
-    },
-    {
-      "id": "aD-FD-J",
-      "nombre": "asda",
-      "tipo": "",
-      "unidad": "",
-      "caducidad": "",
-      "costoU": 0,
-      "cantidad": 0
     }
   ],
   "lotes": [
@@ -85,7 +76,7 @@
       "cantidadLitros": 300,
       "pH": 3.5,
       "temperatura": 18,
-      "estadoProceso": "En Proceso"
+      "estadoProceso": "Terminado"
     },
     {
       "id": "2",
@@ -191,30 +182,10 @@
   ],
   "wines": [
     {
-      "id": "4",
-      "nombre": "Vino Tinto Reserva - Valle del Maule",
-      "descripcion": "Un vino tinto intenso con aromas a ciruelas y un toque de vainilla.",
-      "tipo": "Vino Tinto",
-      "region": "Valle del Maule",
-      "pais": "Chile",
-      "anio": 2020,
-      "uvas": [
-        "Carmenere",
-        "Syrah"
-      ],
-      "alcohol": 14,
-      "certificacion": "D.O. Valle del Maule",
-      "calificacion": 5,
-      "estado": "Disponible",
-      "productor_id": "PROD004",
-      "lote_id": "L004",
-      "lote": "1"
-    },
-    {
       "id": "5",
       "nombre": "Vino Blanco Sauvignon Blanc - Valle de Leyda",
       "descripcion": "Vino fresco y vibrante con notas herbáceas y cítricas.",
-      "tipo": "Vino Blanco",
+      "tipo": "Vino Blanc",
       "region": "Valle de Leyda",
       "pais": "Chile",
       "anio": 2022,
@@ -222,11 +193,11 @@
         "Sauvignon Blanc"
       ],
       "alcohol": 13,
-      "certificacion": "D.O. Leyda",
+      "certificacion": 2,
       "calificacion": 4,
       "estado": "Disponible",
       "productor_id": "PROD005",
-      "lote_id": "L005",
+      "lote_id": "4",
       "lote": "2"
     },
     {
@@ -245,8 +216,25 @@
       "calificacion": 4,
       "estado": "Disponible",
       "productor_id": "PROD006",
-      "lote_id": "L006",
+      "lote_id": "3",
       "lote": "3"
+    },
+    {
+      "id": "RMJHZHF",
+      "nombre": "vino del valle",
+      "descripcion": "rico vino",
+      "tipo": "Vino Blanc",
+      "region": "Lima",
+      "anio": 5,
+      "uvas": "1",
+      "pais": "1",
+      "alcohol": 50,
+      "certificacion": 5,
+      "calificacion": "20",
+      "estado": "20",
+      "productor_id": "",
+      "lote_id": "3",
+      "lote": ""
     }
   ]
 }

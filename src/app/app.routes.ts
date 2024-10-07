@@ -9,6 +9,7 @@ import { ConsumerOrderComponent } from "./GrapeFlow/consumer/pages/consumer-orde
 import {ProductComponent} from "./GrapeFlow/consumer/pages/product/product.component";
 import {EditClientsComponent} from "./GrapeFlow/producer/components/edit-clients/edit-clients.component";
 import {DetailsClientsComponent} from "./GrapeFlow/producer/components/details-clients/details-clients.component";
+import {WinesComponent} from "./GrapeFlow/producer/pages/wines/wines/wines.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -19,7 +20,8 @@ export const routes: Routes = [
       { path: 'lote', component: LoteComponent },
       { path: 'orders', component: ConsumerOrderComponent },
       { path: 'editClients/:id', component: EditClientsComponent },
-      { path: 'detailClients/:id', component: DetailsClientsComponent }
+      { path: 'detailClients/:id', component: DetailsClientsComponent },
+      {path:'wines',component:WinesComponent}
     ]},
   { path: 'consumer', component: SidenavConsumerComponent, children: [
       { path: 'orders', component: ConsumerOrderComponent },
