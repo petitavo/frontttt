@@ -8,16 +8,17 @@ import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
-import { Product} from "../../../../consumer/model/product.entity";
-import { ProductService} from "../../../../consumer/services/product.service";
-import { WineDetailsComponent} from "../../../components/wine-detail/wine-detail.component";
+import { Product } from "../../../../consumer/model/product.entity";
+import { ProductService } from "../../../../consumer/services/product.service";
+import { WineDetailsComponent } from "../../../components/wine-detail/wine-detail.component";
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from "@angular/router";
-import { WineAddComponent} from "../../../components/wine-add/wine-add.component";
-import { WineEditComponent} from "../../../components/wine-edit/wine-edit.component";
-import { LoteService} from "../../../services/lote.service";
-import {LoteDetailsComponent} from "../../../components/lote-details/lote-details.component";
-import {Lote} from "../../../model/lote.entity";
+import { WineAddComponent } from "../../../components/wine-add/wine-add.component";
+import { WineEditComponent } from "../../../components/wine-edit/wine-edit.component";
+import { LoteService } from "../../../services/lote.service";
+import { LoteDetailsComponent } from "../../../components/lote-details/lote-details.component";
+import { catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-wines',
@@ -93,11 +94,30 @@ export class WinesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  onViewLot(lote: Lote): void {
-    this.dialog.open(LoteDetailsComponent, {
-      width: '600px',
-      data: lote
-    });
+  onViewLot(wine: Product): void {
+    if (wine.lote_id) {
+      this.loteService.getById(wine.lote_id)
+        .pipe(
+          catchError(error => {
+            console.error('Error fetching lot details:', error);
+            return of(null);
+          })
+        )
+        .subscribe(lote => {
+          if (lote) {
+            this.dialog.open(LoteDetailsComponent, {
+              width: '600px',
+              data: lote
+            });
+          } else {
+            console.error('Lot not found');
+            // Optionally, show a message to the user that the lot was not found
+          }
+        });
+    } else {
+      console.error('No lot associated with this wine');
+      // Optionally, show a message to the user that there's no lot associated with this wine
+    }
   }
 
   openAddWineDialog(): void {

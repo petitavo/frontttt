@@ -67,48 +67,6 @@
       "cantidad": 0
     }
   ],
-  "lotes": [
-    {
-      "id": "1",
-      "lote": 1,
-      "uva": "Uva Tinta",
-      "fechaInicio": "11/08/2024",
-      "cantidadLitros": 300,
-      "pH": 3.5,
-      "temperatura": 18,
-      "estadoProceso": "Terminado"
-    },
-    {
-      "id": "2",
-      "lote": 2,
-      "uva": "Uva Blanca",
-      "fechaInicio": "04/08/2024",
-      "cantidadLitros": 250,
-      "pH": 3.6,
-      "temperatura": 20,
-      "estadoProceso": "Terminado"
-    },
-    {
-      "id": "3",
-      "lote": 3,
-      "uva": "Uva Cabernet",
-      "fechaInicio": "06/07/2024",
-      "cantidadLitros": 400,
-      "pH": 3.4,
-      "temperatura": 17,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "4",
-      "numeroLote": "5",
-      "uva": "Uva Tinta",
-      "fechaInicio": "2022-02-01",
-      "cantidadLitros": 4,
-      "pH": 1.5,
-      "temperatura": 40,
-      "estadoProceso": "En Proceso"
-    }
-  ],
   "orders": [
     {
       "id": "1",
@@ -180,6 +138,48 @@
       "estado": "En Proceso"
     }
   ],
+  "lotes": [
+    {
+      "id": "1",
+      "numeroLote": "1",
+      "uva": "Uva Tinta",
+      "fechaInicio": "2024-08-11",
+      "cantidadLitros": 300,
+      "pH": 3.5,
+      "temperatura": 18,
+      "estadoProceso": "Terminado"
+    },
+    {
+      "id": "2",
+      "numeroLote": "2",
+      "uva": "Uva Blanca",
+      "fechaInicio": "2024-08-04",
+      "cantidadLitros": 250,
+      "pH": 3.6,
+      "temperatura": 20,
+      "estadoProceso": "Terminado"
+    },
+    {
+      "id": "3",
+      "numeroLote": "3",
+      "uva": "Uva Cabernet",
+      "fechaInicio": "2024-07-06",
+      "cantidadLitros": 400,
+      "pH": 3.4,
+      "temperatura": 17,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "4",
+      "numeroLote": "5",
+      "uva": "Uva Tinta",
+      "fechaInicio": "2022-02-01",
+      "cantidadLitros": 4,
+      "pH": 1.5,
+      "temperatura": 40,
+      "estadoProceso": "En Proceso"
+    }
+  ],
   "wines": [
     {
       "id": "5",
@@ -233,7 +233,7 @@
       "calificacion": "20",
       "estado": "20",
       "productor_id": "",
-      "lote_id": "3",
+      "lote_id": "2",
       "lote": ""
     }
   ]

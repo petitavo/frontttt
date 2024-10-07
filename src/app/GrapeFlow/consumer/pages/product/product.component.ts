@@ -12,7 +12,9 @@ import { Product } from '../../model/product.entity';
 import { ProductService } from '../../services/product.service';
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
-import {ProductDetailsComponent} from "../../components/product-details/product-details.component";
+import { ProductDetailsComponent } from "../../components/product-details/product-details.component";
+import { LoteService} from "../../../producer/services/lote.service";
+import { LoteDetailsComponent} from "../../../producer/components/lote-details/lote-details.component";
 
 @Component({
   selector: 'app-product-details',
@@ -39,7 +41,11 @@ export class ProductComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
   protected dataSource: MatTableDataSource<Product>;
 
-  constructor(private productService: ProductService, private dialog: MatDialog) {
+  constructor(
+    private productService: ProductService,
+    private loteService: LoteService,
+    private dialog: MatDialog
+  ) {
     this.dataSource = new MatTableDataSource<Product>();
   }
 
@@ -75,5 +81,25 @@ export class ProductComponent implements OnInit, AfterViewInit {
       width: '600px',
       data: product
     });
+  }
+
+  onViewLot(product: Product): void {
+    if (product.lote_id) {
+      this.loteService.getById(product.lote_id).subscribe({
+        next: (lote) => {
+          this.dialog.open(LoteDetailsComponent, {
+            width: '600px',
+            data: lote
+          });
+        },
+        error: (error) => {
+          console.error('Error fetching lot details:', error);
+          // Optionally, show an error message to the user
+        }
+      });
+    } else {
+      console.error('No lot associated with this product');
+      // Optionally, show a message to the user that there's no lot associated with this product
+    }
   }
 }
