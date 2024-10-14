@@ -1,0 +1,112 @@
+/* Contenedor principal de la página de inicio */
+.home-container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 40px 20px;
+}
+
+/* Estilo del título de bienvenida */
+.welcome-title {
+  font-size: 3em;
+  font-weight: bold;
+  color: #4a148c;
+  margin-bottom: 20px;
+}
+
+/* Estilo del mensaje de bienvenida */
+.welcome-message {
+  font-size: 1.5em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+/* Container for the wine section */
+.popular-wines {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Card container */
+.wine-cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual wine card */
+.wine-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 20px);
+  max-width: 300px;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.wine-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Wine image */
+.wine-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Wine title */
+.wine-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Wine description */
+.wine-card p {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.wine-button {
+  background-color: #6C63FF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.wine-button:hover {
+  background-color: #514ac4;
+}
+
+/* Adjust button alignment */
+.more-wines-btn {
+  background-color: #6C63FF;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 30px auto;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.more-wines-btn:hover {
+  background-color: #514ac4;
+}

@@ -1,0 +1,25 @@
+<div class="home-container">
+  <!-- Título y mensaje de bienvenida -->
+  <h1 class="welcome-title">Bienvenido a GrapeFlow</h1>
+  <p class="welcome-message">
+    Estamos encantados de tenerte aquí, <strong>usuario</strong>. <br>
+    Desde esta plataforma, puedes descubrir nuestros vinos más populares y hacer tus pedidos fácilmente. <br>
+    Aprovecha nuestras recomendaciones personalizadas.
+  </p>
+
+  <!-- Sección de Vinos Populares -->
+  <div class="popular-wines">
+    <h2>Vinos Populares</h2>
+    <div class="wine-cards">
+      <div *ngFor="let wine of popularWines" class="wine-card">
+        <img [src]="wine.link" alt="Imagen de vino">
+        <h3>{{ wine.nombre }}</h3>
+        <p>{{ wine.descripcion }}</p> <!-- Asegúrate que sea 'descripcion' -->
+        <button class="wine-button">Ver Detalles</button>
+      </div>
+    </div>
+
+    <!-- Botón para ver más vinos -->
+    <button class="more-wines-btn" (click)="goToWines()">Ver Más</button>
+  </div>
+</div>
