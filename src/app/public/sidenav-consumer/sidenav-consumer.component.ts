@@ -36,4 +36,7 @@ export class SidenavConsumerComponent {
   closeSidenav() {
     this.sidenav.close();
   }
+  logout() {
+    console.log("Sesión cerrada");
+  }
 }
