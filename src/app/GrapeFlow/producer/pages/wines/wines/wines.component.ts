@@ -19,6 +19,14 @@ import { LoteService } from "../../../services/lote.service";
 import { LoteDetailsComponent } from "../../../components/lote-details/lote-details.component";
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import {
+  MatCard,
+  MatCardActions,
+  MatCardContent,
+  MatCardHeader,
+  MatCardSubtitle,
+  MatCardTitle
+} from "@angular/material/card";
 
 @Component({
   selector: 'app-wines',
@@ -34,7 +42,13 @@ import { of } from 'rxjs';
     MatSortModule,
     MatDialogModule,
     MatIconModule,
-    RouterLink
+    RouterLink,
+    MatCardActions,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatCardContent,
+    MatCardHeader,
+    MatCard
   ],
   templateUrl: './wines.component.html',
   styleUrls: ['./wines.component.css']
