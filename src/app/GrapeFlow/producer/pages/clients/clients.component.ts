@@ -11,6 +11,8 @@ import { MatPaginator } from "@angular/material/paginator";
 import { MatSort, MatSortModule } from "@angular/material/sort";
 import { ClientService } from "../../services/client.service";
 import { Router } from '@angular/router';
+import {MatIcon} from "@angular/material/icon";
+import {MatCard, MatCardActions, MatCardHeader, MatCardSubtitle, MatCardTitle} from "@angular/material/card";
 
 @Component({
   selector: 'app-clients',
@@ -23,7 +25,13 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatPaginatorModule,
     FormsModule,
-    MatSortModule
+    MatSortModule,
+    MatIcon,
+    MatCardActions,
+    MatCardTitle,
+    MatCardSubtitle,
+    MatCard,
+    MatCardHeader
   ],
   templateUrl: './clients.component.html',
   styleUrls: ['./clients.component.css']
