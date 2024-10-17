@@ -1,31 +1,3 @@
-button {
-  margin: 10px;
-  padding: 16px 32px; /* Botones más grandes */
-  background-color: #ff80ab; /* Color de fondo rosado */
-  color: white; /* Texto en blanco */
-  border: none; /* Sin borde */
-  border-radius: 30px; /* Bordes redondeados */
-  font-size: 1.4rem; /* Tamaño de fuente más grande */
-  cursor: pointer; /* Cambia el cursor a pointer */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para efecto hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
-}
-
-button:hover {
-  background-color: #e040fb; /* Cambia el fondo a morado en hover */
-  transform: translateY(-5px); /* Movimiento hacia arriba al pasar el mouse */
-}
-
-button:active {
-  background-color: #d500f9; /* Color más oscuro al hacer clic */
-  transform: translateY(0); /* Restablece la posición al hacer clic */
-}
-
-button:focus {
-  outline: none; /* Elimina el borde de foco */
-  box-shadow: 0 0 10px #ff80ab; /* Añade una sombra de foco de color rosado */
-}
-
 .login-container {
   display: flex;
   flex-direction: column;
@@ -44,37 +16,82 @@ button:focus {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
+  opacity: 0; /* Para la animación */
+  animation: fadeIn 1.5s forwards ease-out; /* Suave entrada */
 }
 
-.login-container button {
-  background-color: rgba(255, 255, 255, 0.3); /* Botón semi-transparente */
+/* Cuadro blanco que contiene los botones */
+.login-box {
+  background-color: white;
+  padding: 40px 60px; /* Aumenta el padding para mayor espacio */
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0; /* Para la animación */
+  transform: translateY(30px); /* Desliza desde abajo */
+  animation: fadeInSlide 1s forwards ease-out; /* Suave entrada deslizante */
+}
+
+button {
+  margin: 12px 0;
+  padding: 16px 36px;
+  background-color: #ff80ab;
   color: white;
   border: none;
-  padding: 16px 32px;
-  margin: 10px 0;
-  font-size: 1.4rem; /* Tamaño de fuente más grande */
   border-radius: 30px;
+  font-size: 1.4rem;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.login-container button:hover {
-  background-color: rgba(255, 255, 255, 0.6); /* Cambia el fondo al hacer hover */
-  transform: translateY(-5px); /* Movimiento hacia arriba al pasar el mouse */
+button:hover {
+  background: linear-gradient(135deg, #ff80ab, #e040fb); /* Gradiente al hacer hover */
+  transform: translateY(-5px);
 }
 
-.login-container button:focus {
-  outline: none; /* Quita el borde de foco predeterminado */
+button:active {
+  background: linear-gradient(135deg, #d500f9, #9c27b0); /* Color más oscuro */
+  transform: translateY(0);
 }
 
+button:focus {
+  outline: none;
+  box-shadow: 0 0 10px #ff80ab;
+}
+
+button i {
+  margin-right: 8px; /* Margen para los iconos */
+}
+
+/* Animación para entrada suave */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInSlide {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para pantallas pequeñas */
 @media (max-width: 768px) {
   .login-container h2 {
-    font-size: 2rem; /* Tamaño del texto reducido en pantallas pequeñas */
+    font-size: 2rem;
   }
 
   .login-container button {
-    font-size: 1.2rem; /* Botones más pequeños en pantallas pequeñas */
+    font-size: 1.2rem;
     padding: 12px 24px;
   }
 }

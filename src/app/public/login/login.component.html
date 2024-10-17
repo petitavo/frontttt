@@ -1,6 +1,11 @@
 <div class="login-container">
   <h2>Login</h2>
-  <button mat-button (click)="loginAsProducer()">Login as Producer</button>
-  <button mat-button (click)="loginAsConsumer()">Login as Consumer</button>
+  <div class="login-box">
+    <button mat-button (click)="loginAsProducer()">
+      <i class="fas fa-user-tie"></i>Login as Producer
+    </button>
+    <button mat-button (click)="loginAsConsumer()">
+      <i class="fas fa-user"></i>Login as Consumer
+    </button>
+  </div>
 </div>
-
