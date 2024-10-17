@@ -57,20 +57,6 @@
       "role": "producer"
     },
     {
-      "id": "7",
-      "nombre": "Jorge",
-      "apellido": "Martínez",
-      "telefono": "777 666 555",
-      "direccion": "San Isidro",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "45678901",
-      "correo": "jorge.martinez@example.com",
-      "password": "45678901",
-      "confirmPassword": "45678901",
-      "role": "consumer"
-    },
-    {
       "id": "8",
       "nombre": "Lucía",
       "apellido": "Gómez",
@@ -207,7 +193,7 @@
       "cantidadLitros": 300,
       "pH": 3.5,
       "temperatura": 18,
-      "estadoProceso": "En Proceso"
+      "estadoProceso": "Terminado"
     },
     {
       "id": "2",
@@ -297,7 +283,7 @@
       "fecha": "01/09/2024",
       "fechaEntrega": "02/09/2024",
       "tipo": "vino",
-      "estado": "En Proceso"
+      "estado": "Terminado"
     },
     {
       "id": "2",
@@ -453,45 +439,6 @@
   ],
   "wines": [
     {
-      "id": "1",
-      "nombre": "Vino Blanco Sauvignon Blanc - Valle de Leyda",
-      "descripcion": "Vino fresco y vibrante con notas herbáceas y cítricas.",
-      "tipo": "Vino Blanc",
-      "region": "Valle de Leyda",
-      "pais": "Chile",
-      "anio": 2022,
-      "uvas": [
-        "Sauvignon Blanc"
-      ],
-      "alcohol": 13,
-      "certificacion": 2,
-      "calificacion": 4,
-      "estado": "Disponible",
-      "productor_id": "PROD005",
-      "lote_id": "4",
-      "lote": "2",
-      "link":"https://lacasadelbarman.pe/wp-content/uploads/2022/08/vino-blanco-leyda.jpg"
-    },
-    {
-      "id": "2",
-      "nombre": "Vino Tinto Malbec - Mendoza",
-      "descripcion": "Concentrado y afrutado, ideal para acompañar carnes rojas.",
-      "tipo": "Vino Tinto",
-      "region": "Mendoza",
-      "pais": "Argentina",
-      "anio": 2023,
-      "uvas": [
-        "Malbec"
-      ],
-      "alcohol": 12.5,
-      "certificacion": "I.G. Mendoza",
-      "calificacion": 4,
-      "estado": "Disponible",
-      "productor_id": "PROD003",
-      "lote_id": "L003",
-      "link": "https://www.infinitybrands.pe/wp-content/uploads/2019/07/LA-IRIDE-ROSE-SEMI-SWEET-2024.jpg"
-    },
-    {
       "id": "3",
       "nombre": "Vino Blanco Sauvignon Blanc - Valle Central",
       "descripcion": "Vino fresco con notas de cítricos y manzana verde.",
@@ -499,13 +446,15 @@
       "region": "Valle Central",
       "pais": "Chile",
       "anio": 2020,
-      "uvas": ["Sauvignon Blanc"],
+      "uvas": [
+        "Sauvignon Blanc"
+      ],
       "alcohol": 12.8,
       "certificacion": "D.O. Valle Central",
       "calificacion": 4,
       "estado": "Disponible",
       "productor_id": "PROD004",
-      "lote_id": "L004",
+      "lote_id": "10",
       "link": "https://metroio.vtexassets.com/arquivos/ids/418795-1200-auto?v=638279378601570000&width=1200&height=auto&aspect=true"
     },
     {
@@ -516,13 +465,15 @@
       "region": "Napa Valley",
       "pais": "Estados Unidos",
       "anio": 2018,
-      "uvas": ["Cabernet Sauvignon"],
-      "alcohol": 14.0,
+      "uvas": [
+        "Cabernet Sauvignon"
+      ],
+      "alcohol": 14,
       "certificacion": "Napa Valley AVA",
       "calificacion": 5,
       "estado": "Disponible",
       "productor_id": "PROD005",
-      "lote_id": "L005",
+      "lote_id": "10",
       "link": "https://lacanasteria.com/wp-content/uploads/2024/06/caymusweb.jpg"
     },
     {
@@ -533,13 +484,15 @@
       "region": "Campo de Borja",
       "pais": "España",
       "anio": 2022,
-      "uvas": ["Garnacha"],
-      "alcohol": 13.0,
+      "uvas": [
+        "Garnacha"
+      ],
+      "alcohol": 13,
       "certificacion": "D.O. Campo de Borja",
       "calificacion": 4,
       "estado": "Disponible",
       "productor_id": "PROD006",
-      "lote_id": "L006",
+      "lote_id": "2",
       "link": "https://chapeauwines.es/wp-content/uploads/2022/10/PRADOS-ROSADO-600x600.jpg"
     },
     {
@@ -550,31 +503,16 @@
       "region": "Valdobbiadene",
       "pais": "Italia",
       "anio": 2021,
-      "uvas": ["Glera"],
-      "alcohol": 11.0,
+      "uvas": [
+        "Glera"
+      ],
+      "alcohol": 11,
       "certificacion": "D.O.C.G. Prosecco Superiore",
       "calificacion": 5,
       "estado": "Disponible",
       "productor_id": "PROD007",
-      "lote_id": "L007",
+      "lote_id": "2",
       "link": "https://lebollicine.pe/wp-content/uploads/BRUT-1.png"
-    },
-    {
-      "id": "7",
-      "nombre": "Vino Tinto Merlot - Colchagua Valley",
-      "descripcion": "Vino suave y afrutado con aromas a ciruelas, cerezas y un toque de chocolate.",
-      "tipo": "Vino Tinto",
-      "region": "Colchagua Valley",
-      "pais": "Chile",
-      "anio": 2020,
-      "uvas": ["Merlot"],
-      "alcohol": 13.5,
-      "certificacion": "D.O. Colchagua",
-      "calificacion": 4,
-      "estado": "Disponible",
-      "productor_id": "PROD008",
-      "lote_id": "L008",
-      "link": "https://wongfood.vtexassets.com/arquivos/ids/711388/25096-01-7715.jpg?v=638538214871930000"
     },
     {
       "id": "8",
@@ -584,13 +522,15 @@
       "region": "Mosel",
       "pais": "Alemania",
       "anio": 2019,
-      "uvas": ["Riesling"],
+      "uvas": [
+        "Riesling"
+      ],
       "alcohol": 8.5,
       "certificacion": "D.O.C. Mosel",
       "calificacion": 5,
       "estado": "Disponible",
       "productor_id": "PROD009",
-      "lote_id": "L009",
+      "lote_id": "12",
       "link": "https://wongfood.vtexassets.com/arquivos/ids/158110-800-auto?v=636088744964870000&width=800&height=auto&aspect=true"
     },
     {
@@ -601,13 +541,15 @@
       "region": "Barossa Valley",
       "pais": "Australia",
       "anio": 2017,
-      "uvas": ["Syrah"],
+      "uvas": [
+        "Syrah"
+      ],
       "alcohol": 14.8,
       "certificacion": "Barossa Valley",
       "calificacion": 5,
       "estado": "Disponible",
       "productor_id": "PROD010",
-      "lote_id": "L010",
+      "lote_id": "2",
       "link": "https://images.vivino.com/thumbs/B8kRZndCTHqWm07l7Qu9eQ_pb_600x600.png"
     },
     {
@@ -618,13 +560,15 @@
       "region": "Friuli",
       "pais": "Italia",
       "anio": 2021,
-      "uvas": ["Pinot Grigio"],
+      "uvas": [
+        "Pinot Grigio"
+      ],
       "alcohol": 12.5,
       "certificacion": "D.O.C. Friuli",
       "calificacion": 4,
       "estado": "Disponible",
       "productor_id": "PROD011",
-      "lote_id": "L011",
+      "lote_id": "10",
       "link": "https://www.laeuropea.com.mx/media/catalog/product/cache/a26d55f417b24cf05a5296f884382fe4/0/0/00086891084657.1.jpg"
     }
   ],
