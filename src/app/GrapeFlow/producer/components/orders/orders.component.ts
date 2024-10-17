@@ -20,7 +20,6 @@ import {MatIcon} from "@angular/material/icon";
 import {DatePipe} from "@angular/common";
 import {MatOption} from "@angular/material/core";
 import {MatSelect} from "@angular/material/select";
-import {Lote} from "../../model/lote.entity";
 import {LoteDetailsComponent} from "../lote-details/lote-details.component";
 import {MatDialog} from "@angular/material/dialog";
 import {OrdersDetailsComponent} from "../orders-details/orders-details.component";
@@ -53,14 +52,13 @@ import {OrdersDetailsComponent} from "../orders-details/orders-details.component
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.css'
 })
-export class OrdersComponent implements OnInit, AfterViewInit{
+export class OrdersComponent implements OnInit, AfterViewInit {
   datasource: MatTableDataSource<Order> = new MatTableDataSource<Order>();
   columnsToDisplay: string[] = ['numeroPedido', 'fecha', 'tipo', 'estado', 'actions'];
   filteredValue: string = '';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
 
   private dialog: MatDialog = inject(MatDialog);
 
@@ -101,7 +99,8 @@ export class OrdersComponent implements OnInit, AfterViewInit{
     const newStatus = order.estado === 'En Proceso' ? 'Terminado' : 'En Proceso';
     console.log('Nuevo estado:', newStatus); // Verificar nuevo estado
 
-    this.orderService.update(order.id, { ...order, estado: newStatus }).subscribe(
+    // Ajustar el llamado al método correcto
+    this.orderService.updateOrder(order.id, { ...order, estado: newStatus }).subscribe(
       (updatedOrder) => {
         const index = this.datasource.data.findIndex(o => o.id === updatedOrder.id);
         if (index !== -1) {
@@ -115,10 +114,10 @@ export class OrdersComponent implements OnInit, AfterViewInit{
 
   onDelete(order: Order) {
     if (confirm(`¿Estás seguro de que quieres eliminar el pedido ${order.numeroPedido}?`)) {
-      this.orderService.delete(order.id).subscribe(
+      // Ajustar el llamado al método correcto
+      this.orderService.deleteOrder(order.id).subscribe(
         () => {
           console.log('Pedido eliminado:', order);
-          // Actualiza la fuente de datos para reflejar el cambio
           this.datasource.data = this.datasource.data.filter(o => o.id !== order.id);
         },
         (error) => {

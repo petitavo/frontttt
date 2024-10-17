@@ -3,33 +3,38 @@
 
   <div class="search-container">
     <mat-form-field appearance="outline">
-      <mat-label>Buscar</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Buscar" #input>
-    </mat-form-field>
-
-    <mat-form-field appearance="outline">
       <mat-label>Filtrar por</mat-label>
-      <mat-select>
+      <mat-select [(value)]="selectedFilter" (selectionChange)="onFilterChange($event.value)">
         <mat-option value="nombre">Nombre</mat-option>
         <mat-option value="tipo">Tipo</mat-option>
         <mat-option value="uvas">Uvas</mat-option>
       </mat-select>
     </mat-form-field>
+
+    <mat-form-field *ngIf="selectedFilter === 'nombre'" appearance="outline">
+      <mat-label>Buscar</mat-label>
+      <input matInput (input)="applyFilter($event)" placeholder="Buscar por {{selectedFilter}}">
+    </mat-form-field>
+
+    <mat-form-field *ngIf="selectedFilter === 'tipo' || selectedFilter === 'uvas'" appearance="outline">
+      <mat-label>Seleccionar {{selectedFilter}}</mat-label>
+      <mat-select (selectionChange)="onSelectOption($event.value)">
+        <mat-option *ngFor="let option of filterOptions" [value]="option">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 
-  <!-- Contenedor de las tarjetas de vino -->
+  <!-- Contenedor para las tarjetas -->
   <div class="wine-card-container">
-    <div *ngFor="let product of dataSource.data" class="wine-card" (click)="onViewDetails(product)">
-      <img [src]="product.link" alt="{{ product.nombre }}" class="wine-image">
+    <div *ngFor="let product of filteredProducts" class="wine-card">
+      <img class="wine-image" [src]="product.link" alt="{{product.nombre}}">
       <div class="wine-info">
-        <h3>{{ product.nombre }}</h3>
-        <p>Calificación: {{ product.calificacion }} / 5</p>
-        <p>{{ product.descripcion }}</p>
-        <button mat-raised-button color="primary" (click)="onBuyWine($event, product)">Comprar</button>
+        <h3>{{product.nombre}}</h3>
+        <p>{{product.descripcion}}</p>
+        <button mat-raised-button (click)="onBuyWine($event, product)">Comprar</button>
       </div>
     </div>
   </div>
 
-  <!-- Paginador -->
-  <mat-paginator [pageSize]="5"></mat-paginator>
+  <mat-paginator [pageSize]="10"></mat-paginator>
 </div>

@@ -1,65 +1,47 @@
-import {AfterViewInit, Component, inject, OnInit, ViewChild} from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit, ViewChild } from '@angular/core';
 import {
-  MatCell,
-  MatCellDef,
-  MatColumnDef,
-  MatHeaderCell,
-  MatHeaderCellDef,
-  MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
-  MatTable, MatTableDataSource, MatTableModule
+  MatTableDataSource,
+  MatTableModule
 } from "@angular/material/table";
-import {MatButton, MatButtonModule} from "@angular/material/button";
-import {MatFormField, MatInput, MatInputModule} from "@angular/material/input";
-import {MatPaginator} from "@angular/material/paginator";
-import {Order} from "../../../producer/model/order.entity";
-import {MatSort} from "@angular/material/sort";
-import {OrderService} from "../../../producer/services/order.service";
-import {Router} from "@angular/router";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { MatPaginator } from "@angular/material/paginator";
+import { Order } from "../../../producer/model/order.entity";
+import { MatSort } from "@angular/material/sort";
+import { OrderService } from "../../../producer/services/order.service";
 import { MatSortModule } from '@angular/material/sort';
-import {MatIcon} from "@angular/material/icon";
-import {DatePipe} from "@angular/common";
-import {MatOption} from "@angular/material/core";
-import {MatSelect} from "@angular/material/select";
-import {MatDialog} from "@angular/material/dialog";
-import {OrdersDetailsComponent} from "../../../producer/components/orders-details/orders-details.component";
-import {ConsumerOrderDetailsComponent} from "../../components/consumer-order-details/consumer-order-details.component";
+import { MatDialog } from "@angular/material/dialog";
+import { ConsumerOrderDetailsComponent } from "../../components/consumer-order-details/consumer-order-details.component";
+import { MatSelectModule, MatOption } from '@angular/material/select';
+import { CommonModule, DatePipe } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-consumer-order',
   standalone: true,
   imports: [
-    MatColumnDef,
-    MatHeaderCell,
-    MatHeaderCellDef,
-    MatCellDef,
-    MatButtonModule,
-    MatCell,
-    MatTable,
-    MatInputModule,
-    MatFormField,
-    MatHeaderRow,
-    MatRow,
-    MatPaginator,
-    MatRowDef,
+    CommonModule,
     MatTableModule,
+    MatButtonModule,
+    MatInputModule,
+    MatPaginator,
     MatSortModule,
-    MatHeaderRowDef,
-    MatIcon,
-    DatePipe,
-    MatOption,
-    MatSelect
+    MatIconModule,
+    MatSelectModule,
+    FormsModule
   ],
   templateUrl: './consumer-order.component.html',
-  styleUrl: './consumer-order.component.css'
+  styleUrls: ['./consumer-order.component.css']
 })
-export class ConsumerOrderComponent implements OnInit, AfterViewInit{
+export class ConsumerOrderComponent implements OnInit, AfterViewInit {
   datasource: MatTableDataSource<Order> = new MatTableDataSource<Order>();
   columnsToDisplay: string[] = ['numeroPedido', 'fecha', 'tipo', 'estado', 'actions'];
   filteredValue: string = '';
+  selectedFilter: string = 'numeroPedido';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
 
   private dialog: MatDialog = inject(MatDialog);
 
@@ -76,16 +58,30 @@ export class ConsumerOrderComponent implements OnInit, AfterViewInit{
 
   private getAllOrders(): void {
     this.orderService.getAll().subscribe((orders: Order[]) => {
-      console.log('Pedidos recibidos:', orders);
       this.datasource.data = orders;
     }, (error) => {
       console.error('Error al obtener pedidos:', error);
     });
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.datasource.filter = filterValue.trim().toLowerCase();
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    if (this.selectedFilter === 'numeroPedido') {
+      this.datasource.filterPredicate = (data: Order, filter: string) =>
+        data.numeroPedido.toLowerCase().includes(filter);
+    } else if (this.selectedFilter === 'tipo') {
+      this.datasource.filterPredicate = (data: Order, filter: string) =>
+        data.tipo.toLowerCase().includes(filter);
+    } else if (this.selectedFilter === 'estado') {
+      this.datasource.filterPredicate = (data: Order, filter: string) =>
+        data.estado.toLowerCase().includes(filter);
+    }
+    this.datasource.filter = filterValue;
+  }
+
+  onFilterChange(filter: string): void {
+    this.selectedFilter = filter;
+    this.datasource.filter = ''; // Limpiar filtro al cambiar
   }
 
   onViewDetails(order: Order): void {
@@ -96,11 +92,9 @@ export class ConsumerOrderComponent implements OnInit, AfterViewInit{
   }
 
   onChangeStatus(order: Order): void {
-    console.log('Estado actual:', order.estado); // Verificar estado actual
     const newStatus = order.estado === 'En Proceso' ? 'Terminado' : 'En Proceso';
-    console.log('Nuevo estado:', newStatus); // Verificar nuevo estado
 
-    this.orderService.update(order.id, { ...order, estado: newStatus }).subscribe(
+    this.orderService.updateOrder(order.id, { ...order, estado: newStatus }).subscribe(
       (updatedOrder) => {
         const index = this.datasource.data.findIndex(o => o.id === updatedOrder.id);
         if (index !== -1) {
@@ -112,23 +106,17 @@ export class ConsumerOrderComponent implements OnInit, AfterViewInit{
     );
   }
 
-  onDelete(order: Order) {
+  onDelete(order: Order): void {
     if (confirm(`¿Estás seguro de que quieres eliminar el pedido ${order.numeroPedido}?`)) {
-      this.orderService.delete(order.id).subscribe(
+      this.orderService.deleteOrder(order.id).subscribe(
         () => {
-          console.log('Pedido eliminado:', order);
-          // Actualiza la fuente de datos para reflejar el cambio
           this.datasource.data = this.datasource.data.filter(o => o.id !== order.id);
         },
-        (error) => {
+        (error: any) => {
           console.error('Error al eliminar el pedido:', error);
         }
       );
     }
   }
-
-  onAddOrder() {
-    console.log('Agregar nuevo pedido');
-    // Navegar a agregar un nuevo pedido
-  }
 }
+

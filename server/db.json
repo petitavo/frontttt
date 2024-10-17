@@ -297,7 +297,7 @@
       "fecha": "01/09/2024",
       "fechaEntrega": "02/09/2024",
       "tipo": "vino",
-      "estado": "En Proceso"
+      "estado": "Terminado"
     },
     {
       "id": "2",
@@ -318,7 +318,7 @@
       "fecha": "02/09/2024",
       "fechaEntrega": "03/09/2024",
       "tipo": "cerveza",
-      "estado": "En Proceso"
+      "estado": "Terminado"
     },
     {
       "id": "3",
@@ -470,7 +470,7 @@
       "productor_id": "PROD005",
       "lote_id": "4",
       "lote": "2",
-      "link":"https://lacasadelbarman.pe/wp-content/uploads/2022/08/vino-blanco-leyda.jpg"
+      "link": "https://lacasadelbarman.pe/wp-content/uploads/2022/08/vino-blanco-leyda.jpg"
     },
     {
       "id": "2",
@@ -499,7 +499,9 @@
       "region": "Valle Central",
       "pais": "Chile",
       "anio": 2020,
-      "uvas": ["Sauvignon Blanc"],
+      "uvas": [
+        "Sauvignon Blanc"
+      ],
       "alcohol": 12.8,
       "certificacion": "D.O. Valle Central",
       "calificacion": 4,
@@ -516,8 +518,10 @@
       "region": "Napa Valley",
       "pais": "Estados Unidos",
       "anio": 2018,
-      "uvas": ["Cabernet Sauvignon"],
-      "alcohol": 14.0,
+      "uvas": [
+        "Cabernet Sauvignon"
+      ],
+      "alcohol": 14,
       "certificacion": "Napa Valley AVA",
       "calificacion": 5,
       "estado": "Disponible",
@@ -533,8 +537,10 @@
       "region": "Campo de Borja",
       "pais": "España",
       "anio": 2022,
-      "uvas": ["Garnacha"],
-      "alcohol": 13.0,
+      "uvas": [
+        "Garnacha"
+      ],
+      "alcohol": 13,
       "certificacion": "D.O. Campo de Borja",
       "calificacion": 4,
       "estado": "Disponible",
@@ -550,8 +556,10 @@
       "region": "Valdobbiadene",
       "pais": "Italia",
       "anio": 2021,
-      "uvas": ["Glera"],
-      "alcohol": 11.0,
+      "uvas": [
+        "Glera"
+      ],
+      "alcohol": 11,
       "certificacion": "D.O.C.G. Prosecco Superiore",
       "calificacion": 5,
       "estado": "Disponible",
@@ -567,7 +575,9 @@
       "region": "Colchagua Valley",
       "pais": "Chile",
       "anio": 2020,
-      "uvas": ["Merlot"],
+      "uvas": [
+        "Merlot"
+      ],
       "alcohol": 13.5,
       "certificacion": "D.O. Colchagua",
       "calificacion": 4,
@@ -584,7 +594,9 @@
       "region": "Mosel",
       "pais": "Alemania",
       "anio": 2019,
-      "uvas": ["Riesling"],
+      "uvas": [
+        "Riesling"
+      ],
       "alcohol": 8.5,
       "certificacion": "D.O.C. Mosel",
       "calificacion": 5,
@@ -601,7 +613,9 @@
       "region": "Barossa Valley",
       "pais": "Australia",
       "anio": 2017,
-      "uvas": ["Syrah"],
+      "uvas": [
+        "Syrah"
+      ],
       "alcohol": 14.8,
       "certificacion": "Barossa Valley",
       "calificacion": 5,
@@ -618,7 +632,9 @@
       "region": "Friuli",
       "pais": "Italia",
       "anio": 2021,
-      "uvas": ["Pinot Grigio"],
+      "uvas": [
+        "Pinot Grigio"
+      ],
       "alcohol": 12.5,
       "certificacion": "D.O.C. Friuli",
       "calificacion": 4,

@@ -1,5 +1,7 @@
 .wine-list-container {
   padding: 20px;
+  max-width: 1200px; /* Limitar el ancho máximo para pantallas grandes */
+  margin: 0 auto; /* Centrar el contenedor */
 }
 
 .title {
@@ -12,9 +14,10 @@
 
 .search-container {
   display: flex;
-  justify-content: center; /* Centramos los elementos de búsqueda y filtro */
+  justify-content: center; /* Centra los elementos de búsqueda y filtro */
   gap: 15px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas más pequeñas */
 }
 
 .mat-form-field {
@@ -61,7 +64,8 @@
   background-color: #fafafa;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
-  width: 280px;
+  width: calc(33.333% - 20px); /* Tres tarjetas por fila con espacio entre ellas */
+  max-width: 300px; /* Establece un tamaño máximo para evitar tarjetas muy grandes */
   padding: 20px;
   text-align: center;
   cursor: pointer;

@@ -1,18 +1,18 @@
 export class Order {
   id: string;
   numeroPedido: string;
-  nombre: string; // Nuevo campo
+  nombre: string;
   nombreProductor: string;
   correoProductor: string;
-  correo: string; // Nuevo campo
-  productos: string[]; // Nuevo campo (array de strings)
-  condicionTransporte: string; // Nuevo campo
-  metodoPago: string; // Nuevo campo
+  correo: string;
+  productos: string[]; // Arreglo de productos
+  condicionTransporte: string;
+  metodoPago: string;
   telefonoProductor: string;
-  telefono: string; // Nuevo campo
-  terminosPago: string; // Nuevo campo
+  telefono: string;
+  terminosPago: string;
   fecha: string;
-  fechaEntrega: string; // Nuevo campo
+  fechaEntrega: string;
   tipo: string;
   estado: string;
 
@@ -29,7 +29,7 @@ export class Order {
     this.telefonoProductor = order.telefonoProductor || '';
     this.telefono = order.telefono || '';
     this.terminosPago = order.terminosPago || '';
-    this.fecha = order.fecha || '';
+    this.fecha = order.fecha || new Date().toISOString(); // Asigna la fecha actual por defecto
     this.fechaEntrega = order.fechaEntrega || '';
     this.tipo = order.tipo || '';
     this.estado = order.estado || 'En Proceso';
