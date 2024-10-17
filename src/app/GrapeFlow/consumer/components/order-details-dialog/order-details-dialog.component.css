@@ -1,0 +1,114 @@
+/* Contenedor del diálogo */
+mat-dialog-container {
+  padding: 40px; /* Disminuimos el padding para dar más espacio */
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+/* Título del diálogo */
+h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Contenedor del formulario */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre los campos */
+  padding-bottom: 10px; /* Disminuimos el padding inferior */
+}
+
+/* Campos de formulario */
+mat-form-field {
+  width: 100%;
+}
+
+.mat-input-element {
+  font-size: 1rem;
+  padding: 12px; /* Aumentamos el padding */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  border-width: 1.5px;
+  border-color: #d3d3d3;
+}
+
+.mat-form-field.mat-focused .mat-form-field-outline-thick {
+  border-color: #4CAF50;
+}
+
+.mat-form-field-label {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Botones de acción en el diálogo */
+.dialog-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px; /* Ajustamos el margen superior para que haya espacio */
+  padding-top: 20px; /* Agregamos un poco más de espacio encima de los botones */
+  border-top: 1px solid #d3d3d3; /* Separador visual */
+}
+
+/* Botones específicos */
+button[mat-button] {
+  font-size: 1rem;
+  color: #f44336;
+}
+
+button[mat-raised-button] {
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #45a049;
+}
+
+button[mat-button]:hover {
+  background-color: #ffe6e6;
+  color: #d32f2f;
+}
+
+/* Ajuste del padding de los campos */
+.mat-form-field .mat-input-element {
+  padding-left: 12px;
+}
+
+/* Estilos responsivos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  mat-dialog-container {
+    padding: 20px; /* Disminuimos aún más el padding en pantallas pequeñas */
+    max-width: 90%;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  form {
+    gap: 15px;
+  }
+
+  .dialog-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  button[mat-button], button[mat-raised-button] {
+    width: 100%;
+  }
+}

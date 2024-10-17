@@ -6,6 +6,7 @@ import { MatSidenav, MatSidenavContainer, MatSidenavModule } from "@angular/mate
 import { MatButton, MatIconButton } from "@angular/material/button";
 import { MatToolbar } from "@angular/material/toolbar";
 import { FooterContentComponent } from "../footer-content/footer-content.component";
+import { TranslateService } from '@ngx-translate/core'; // Importamos el servicio de traducción
 
 @Component({
   selector: 'app-sidenav',
@@ -33,7 +34,7 @@ export class SidenavComponent {
   // Variable para almacenar el nombre del usuario
   userName: string = 'Usuario';
 
-  constructor() {
+  constructor(private translate: TranslateService) { // Inyectamos el servicio de traducción
     // Aquí puedes obtener el nombre del usuario del sistema de autenticación
     // Por ejemplo: this.userName = authService.getUserName();
   }
@@ -50,5 +51,10 @@ export class SidenavComponent {
     console.log("Sesión cerrada");
     // Redirigir al login
     window.location.href = '/login';
+  }
+
+  // Método para cambiar el idioma
+  changeLanguage(lang: string) {
+    this.translate.use(lang);
   }
 }

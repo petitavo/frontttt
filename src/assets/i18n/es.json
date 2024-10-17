@@ -1,0 +1,12 @@
+{
+  "HOME": {
+    "WELCOME_TITLE": "Bienvenido a GrapeFlow",
+    "WELCOME_MESSAGE": "Estamos encantados de tenerte aquí",
+    "USER": "usuario",
+    "PLATFORM_DESCRIPTION": "Desde esta plataforma, puedes descubrir nuestros vinos más populares y hacer tus pedidos fácilmente.",
+    "RECOMMENDATIONS": "Aprovecha nuestras recomendaciones personalizadas.",
+    "POPULAR_WINES": "Vinos Populares",
+    "VIEW_DETAILS": "Ver Detalles",
+    "VIEW_MORE": "Ver Más"
+  }
+}

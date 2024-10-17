@@ -1,0 +1,38 @@
+<h1>Detalles de la Compra</h1>
+
+<form [formGroup]="orderForm" (ngSubmit)="submit()">
+  <mat-form-field>
+    <mat-label>Nombre</mat-label>
+    <input matInput formControlName="nombre" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Correo</mat-label>
+    <input matInput formControlName="correo" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Teléfono</mat-label>
+    <input matInput formControlName="telefono" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Condición de Transporte</mat-label>
+    <input matInput formControlName="condicionTransporte" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Método de Pago</mat-label>
+    <input matInput formControlName="metodoPago" required>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Términos de Pago</mat-label>
+    <input matInput formControlName="terminosPago" required>
+  </mat-form-field>
+
+  <div class="dialog-actions">
+    <button mat-button (click)="cancel()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit">Confirmar</button>
+  </div>
+</form>

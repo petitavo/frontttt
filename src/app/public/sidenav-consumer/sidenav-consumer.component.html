@@ -11,6 +11,12 @@
       <mat-icon>person</mat-icon> <!-- Ícono de usuario -->
       <span class="consumer-label">Consumer</span>
     </div>
+
+    <!-- Botones para cambiar idioma -->
+    <div class="language-buttons">
+      <button class="language-button" [class.active]="isActive('es')" (click)="changeLanguage('es')">Español</button>
+      <button class="language-button" [class.active]="isActive('en')" (click)="changeLanguage('en')">English</button>
+    </div>
   </mat-toolbar>
 </header>
 

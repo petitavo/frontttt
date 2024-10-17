@@ -95,41 +95,31 @@
   color: white;
 }
 
-.welcome-container {
+.language-buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Asegura que ocupe toda la altura de la pantalla */
-  background: linear-gradient(135deg, rgba(189, 12, 213, 0.45), #8838d2);
-  font-family: 'Roboto', sans-serif;
+  gap: 10px; /* Espacio entre los botones */
 }
 
-.welcome-content {
-  text-align: center;
-  padding: 40px;
-  background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco semi-transparente */
-  border-radius: 15px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
-  transition: transform 0.3s ease-in-out; /* Efecto de transición */
+.language-button {
+  background-color: #A70AC0; /* Fondo púrpura oscuro */
+  color: white; /* Color del texto blanco */
+  border: none; /* Elimina el borde por defecto */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 8px 16px; /* Relleno interno */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
 }
 
-.welcome-content:hover {
-  transform: scale(1.05); /* Aumenta ligeramente el tamaño al hacer hover */
+.language-button:hover {
+  background-color: #8838d2; /* Color más claro al hacer hover */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
 }
 
-.welcome-text {
-  font-size: 2.5rem; /* Tamaño grande para el texto de bienvenida */
-  color: #333; /* Color gris oscuro */
-  margin: 0;
-  font-weight: bold;
+.language-button:focus {
+  outline: none; /* Elimina el borde al hacer clic */
 }
 
-@media (max-width: 768px) {
-  .welcome-text {
-    font-size: 2rem; /* Reduce el tamaño en pantallas más pequeñas */
-  }
-
-  .welcome-content {
-    padding: 20px; /* Menos padding en pantallas pequeñas */
-  }
+.language-button.active {
+  background-color: #5A2E87; /* Color más oscuro para el botón activo */
 }

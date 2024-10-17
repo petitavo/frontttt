@@ -1,27 +1,27 @@
 <div class="home-container">
-  <!-- Título y mensaje de bienvenida -->
-  <h1 class="welcome-title">Bienvenido a GrapeFlow</h1>
-  <p class="welcome-message">
-    Estamos encantados de tenerte aquí, <strong>usuario</strong>. <br>
-    Desde esta plataforma, puedes descubrir nuestros vinos más populares y hacer tus pedidos fácilmente. <br>
-    Aprovecha nuestras recomendaciones personalizadas.
-  </p>
+    <!-- Título y mensaje de bienvenida -->
+    <h1 class="welcome-title">{{ 'HOME.WELCOME_TITLE' | translate }}</h1>
+    <p class="welcome-message">
+        {{ 'HOME.WELCOME_MESSAGE' | translate }} <strong>{{ 'HOME.USER' | translate }}</strong>. <br>
+        {{ 'HOME.PLATFORM_DESCRIPTION' | translate }} <br>
+        {{ 'HOME.RECOMMENDATIONS' | translate }}
+    </p>
 
-  <!-- Sección de Vinos Populares -->
-  <div class="popular-wines">
-    <h2>Vinos Populares</h2>
-    <div class="wine-cards">
-      <div *ngFor="let wine of popularWines" class="wine-card">
-        <!-- Imagen y detalles del vino -->
-        <img [src]="wine.link" alt="Imagen de vino">
-        <h3>{{ wine.nombre }}</h3>
-        <p>{{ wine.descripcion }}</p>
-        <!-- Botón Ver Detalles que redirige a la pantalla de vinos -->
-        <button class="wine-button" (click)="goToWines()">Ver Detalles</button>
-      </div>
+    <!-- Sección de Vinos Populares -->
+    <div class="popular-wines">
+        <h2>{{ 'HOME.POPULAR_WINES' | translate }}</h2>
+        <div class="wine-cards">
+            <div *ngFor="let wine of popularWines" class="wine-card">
+                <!-- Imagen y detalles del vino -->
+                <img [src]="wine.link" alt="Imagen de vino">
+                <h3>{{ wine.nombre }}</h3>
+                <p>{{ wine.descripcion }}</p>
+                <!-- Botón Ver Detalles que redirige a la pantalla de vinos -->
+                <button class="wine-button" (click)="goToWines()">{{ 'HOME.VIEW_DETAILS' | translate }}</button>
+            </div>
+        </div>
+
+        <!-- Botón para ver más vinos que redirige a la página de vinos -->
+        <button class="more-wines-btn" (click)="goToWines()">{{ 'HOME.VIEW_MORE' | translate }}</button>
     </div>
-
-    <!-- Botón para ver más vinos que redirige a la página de vinos -->
-    <button class="more-wines-btn" (click)="goToWines()">Ver Más</button>
-  </div>
 </div>
