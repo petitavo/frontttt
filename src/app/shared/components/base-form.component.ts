@@ -11,8 +11,13 @@ export class BaseFormComponent {
     switch (errorKey) {
       case 'required':
         return `The field ${controlName} is required.`;
+<<<<<<< HEAD
+      default:
+        return `The field ${controlName} is invalid.`;
+=======
         default:
           return `The field ${controlName} is invalid.`;
+>>>>>>> develop
     }
   }
 
@@ -22,7 +27,11 @@ export class BaseFormComponent {
     let errors = control.errors;
     if (!errors) return errorMessages;
     Object.keys(errors).forEach((errorKey) =>
+<<<<<<< HEAD
+      errorMessages += this.errorMessageForControl(controlName, errorKey));
+=======
     errorMessages += this.errorMessageForControl(controlName, errorKey));
+>>>>>>> develop
     return errorMessages;
   }
 

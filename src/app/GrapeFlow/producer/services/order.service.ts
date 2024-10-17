@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {BaseService} from "../../../shared/services/base.service";
-import {Order} from "../model/order.entity";
+import { BaseService } from "../../../shared/services/base.service";
+import { Order } from "../model/order.entity";
 
 @Injectable({
   providedIn: 'root'

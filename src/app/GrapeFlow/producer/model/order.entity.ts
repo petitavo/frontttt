@@ -16,7 +16,7 @@ export class Order {
   tipo: string;
   estado: string;
 
-  constructor(order: Partial<Order> ={}) {
+  constructor(order: Partial<Order> = {}) {
     this.id = order.id || '';
     this.numeroPedido = order.numeroPedido || '';
     this.nombre = order.nombre || '';

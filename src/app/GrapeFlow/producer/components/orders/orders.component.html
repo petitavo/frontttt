@@ -1,0 +1,61 @@
+<div class="orders-wrapper">
+  <h1>My Orders</h1>
+
+  <div class="search-container">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Filter</mat-label>
+      <mat-select>
+        <mat-option value="numeroPedido">Order Number</mat-option>
+        <mat-option value="tipo">Type</mat-option>
+        <mat-option value="estado">Status</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <table mat-table [dataSource]="datasource" class="mat-elevation-z8" matSort>
+    <ng-container matColumnDef="numeroPedido">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Order Number</th>
+      <td mat-cell *matCellDef="let order">{{ order.numeroPedido }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell *matCellDef="let order">{{ order.fecha }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="tipo">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+      <td mat-cell *matCellDef="let order">{{ order.tipo }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="estado">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let order">{{ order.estado }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let order">
+        <button mat-icon-button color="primary" (click)="onViewDetails(order)" aria-label="View details">
+          <mat-icon>visibility</mat-icon>
+        </button>
+
+        <button mat-icon-button color="primary" (click)="onChangeStatus(order)" aria-label="Change status">
+          <mat-icon>autorenew</mat-icon>
+        </button>
+
+        <button mat-icon-button color="warn" (click)="onDelete(order)" aria-label="Delete">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+
+  <mat-paginator [pageSize]="5"></mat-paginator>
+</div>

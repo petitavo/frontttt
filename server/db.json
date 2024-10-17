@@ -1,6 +1,20 @@
 {
   "clients": [
     {
+      "id": "3",
+      "nombre": "Eduardo",
+      "apellido": "Rodriguez",
+      "telefono": "999 999 999",
+      "direccion": "San Felipe",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "87654321",
+      "correo": "eduardo.rodriguez@example.com",
+      "password": "87654321",
+      "confirmPassword": "87654321",
+      "role": "producer"
+    },
+    {
       "id": "4",
       "nombre": "Ana",
       "apellido": "Fernández",
@@ -9,18 +23,123 @@
       "pais": "Perú",
       "ciudad": "Lima",
       "dni": "12345678",
-      "correo": "ana.fernandez@example.com"
+      "correo": "ana.fernandez@example.com",
+      "password": "12345678",
+      "confirmPassword": "12345678",
+      "role": "consumer"
     },
     {
       "id": "5",
       "nombre": "Carlos",
-      "apellido": "Samillan",
+      "apellido": "Garcia",
       "telefono": "999 888 777",
       "direccion": "Las Condes",
       "pais": "Perú",
       "ciudad": "Lima",
       "dni": "23456789",
-      "correo": "carlos.garcia@example.com"
+      "correo": "carlos.garcia@example.com",
+      "password": "23456789",
+      "confirmPassword": "23456789",
+      "role": "consumer"
+    },
+    {
+      "id": "6",
+      "nombre": "María",
+      "apellido": "López",
+      "telefono": "888 777 666",
+      "direccion": "Miraflores",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "34567890",
+      "correo": "maria.lopez@example.com",
+      "password": "34567890",
+      "confirmPassword": "34567890",
+      "role": "producer"
+    },
+    {
+      "id": "7",
+      "nombre": "Jorge",
+      "apellido": "Martínez",
+      "telefono": "777 666 555",
+      "direccion": "San Isidro",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "45678901",
+      "correo": "jorge.martinez@example.com",
+      "password": "45678901",
+      "confirmPassword": "45678901",
+      "role": "consumer"
+    },
+    {
+      "id": "8",
+      "nombre": "Lucía",
+      "apellido": "Gómez",
+      "telefono": "666 555 444",
+      "direccion": "Palermo",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "56789012",
+      "correo": "lucia.gomez@example.com",
+      "password": "56789012",
+      "confirmPassword": "56789012",
+      "role": "producer"
+    },
+    {
+      "id": "9",
+      "nombre": "Pedro",
+      "apellido": "Hernández",
+      "telefono": "555 444 333",
+      "direccion": "Recoleta",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "67890123",
+      "correo": "pedro.hernandez@example.com",
+      "password": "67890123",
+      "confirmPassword": "67890123",
+      "role": "producer"
+    },
+    {
+      "id": "10",
+      "nombre": "Sofía",
+      "apellido": "Torres",
+      "telefono": "444 333 222",
+      "direccion": "Surquillo",
+      "pais": "Perú",
+      "ciudad": "Lima",
+      "dni": "78901234",
+      "correo": "sofia.torres@example.com",
+      "password": "78901234",
+      "confirmPassword": "78901234",
+      "role": "consumer"
+    },
+    {
+      "id": "13",
+      "nombre": "Juan",
+      "apellido": "aaffa",
+      "negocio": "",
+      "telefono": "131313",
+      "direccion": "adaf",
+      "pais": "afafa",
+      "ciudad": "afafa",
+      "dni": "fafa",
+      "correo": "fafa",
+      "password": "fafa",
+      "confirmPassword": "fafa",
+      "role": "producer"
+    },
+    {
+      "id": "6221",
+      "nombre": "diego",
+      "apellido": "huincho",
+      "correo": "huincho@gmail.com",
+      "password": "diego",
+      "confirmPassword": "diego",
+      "role": "consumer",
+      "telefono": "999999999",
+      "direccion": "Desconocida",
+      "ciudad": "Lima",
+      "pais": "Perú",
+      "dni": "12345678"
     }
   ],
   "inventory": [
@@ -32,7 +151,7 @@
       "proveedor": "Barriles Únicos",
       "costoU": 250,
       "ultimaActualizacion": "2024-09-03",
-      "cantidad": 35,
+      "cantidad": 30,
       "id": "e578"
     },
     {
@@ -58,20 +177,125 @@
       "id": "6d57"
     },
     {
-      "id": "jVpeKiy",
-      "nombre": "aas",
-      "tipo": "",
-      "unidad": "",
-      "caducidad": "",
-      "costoU": 0,
-      "cantidad": 0
+      "nombre": "Azúcar Refinada",
+      "tipo": "Aditivo",
+      "unidad": "kg",
+      "caducidad": "2025-09-20",
+      "proveedor": "Vinotech",
+      "costoU": 8,
+      "ultimaActualizacion": "2024-09-05",
+      "cantidad": 40,
+      "id": "4770"
+    },
+    {
+      "id": "0",
+      "nombre": "Cabernet",
+      "tipo": "Vino",
+      "unidad": "kg",
+      "caducidad": "15-12-25",
+      "costoU": 10,
+      "ultimaActualizacion": "",
+      "cantidad": 200
+    }
+  ],
+  "lotes": [
+    {
+      "id": "1",
+      "numeroLote": "L001",
+      "uva": "Uva Tinta",
+      "fechaInicio": "11/08/2024",
+      "cantidadLitros": 300,
+      "pH": 3.5,
+      "temperatura": 18,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "2",
+      "numeroLote": "L002",
+      "uva": "Uva Blanca",
+      "fechaInicio": "04/08/2024",
+      "cantidadLitros": 250,
+      "pH": 3.6,
+      "temperatura": 20,
+      "estadoProceso": "Terminado"
+    },
+    {
+      "id": "3",
+      "numeroLote": "L003",
+      "uva": "Uva Cabernet",
+      "fechaInicio": "06/07/2024",
+      "cantidadLitros": 400,
+      "pH": 3.4,
+      "temperatura": 17,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "10",
+      "numeroLote": "L003",
+      "uva": "uva",
+      "fechaInicio": "2020-10-20",
+      "cantidadLitros": 5,
+      "pH": 5,
+      "temperatura": 5,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "11",
+      "numeroLote": "5",
+      "uva": "Vino",
+      "fechaInicio": "2024-10-20",
+      "cantidadLitros": 3,
+      "pH": 3,
+      "temperatura": 3,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "12",
+      "numeroLote": "L004",
+      "uva": "Tinta",
+      "fechaInicio": "2024-10-15",
+      "cantidadLitros": 20,
+      "pH": 3,
+      "temperatura": 20,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "13",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
+      "estadoProceso": "En Proceso"
+    },
+    {
+      "id": "14",
+      "numeroLote": "",
+      "uva": "",
+      "fechaInicio": "",
+      "cantidadLitros": 0,
+      "pH": 0,
+      "temperatura": 0,
+      "estadoProceso": "En Proceso"
     }
   ],
   "orders": [
     {
       "id": "1",
       "numeroPedido": "P001",
+      "nombre": "Roberto Carlos",
+      "correo": "juan.perez@vinosdelsur.com",
+      "productos": [
+        "Vino Tinto Malbec - 750 ml - 2 botellas",
+        "Vino Blanco Sauvignon - 750 ml - 5 botellas"
+      ],
+      "condicionTransporte": "Transporte con temperatura controlada",
+      "metodoPago": "Transferencia bancaria",
+      "telefono": "+51 987 564 321",
+      "terminosPago": "Crédito a 30 dias",
       "fecha": "01/09/2024",
+      "fechaEntrega": "02/09/2024",
       "tipo": "vino",
       "estado": "En Proceso"
     },
@@ -93,8 +317,8 @@
       "terminosPago": "Pago Contado",
       "fecha": "02/09/2024",
       "fechaEntrega": "03/09/2024",
-      "tipo": "vino",
-      "estado": "Terminado"
+      "tipo": "cerveza",
+      "estado": "En Proceso"
     },
     {
       "id": "3",
@@ -110,9 +334,10 @@
       "condicionTransporte": "Transporte Regular",
       "metodoPago": "Yape",
       "telefono": "+51 910 345 678",
-      "telefonoProductor": "+51 998 765 432",
       "terminosPago": "Pago Contado",
       "fecha": "03/09/2024",
+      "fechaEntrega": "10/09/2024",
+      "telefonoProductor": "+51 998 765 432",
       "tipo": "vino",
       "estado": "Enviado"
     },
@@ -134,55 +359,101 @@
       "terminosPago": "Pago Contado",
       "fecha": "04/09/2024",
       "fechaEntrega": "12/09/2024",
-      "tipo": "vino",
+      "tipo": "mixto",
       "estado": "En Proceso"
-    }
-  ],
-  "lotes": [
-    {
-      "id": "1",
-      "numeroLote": "1",
-      "uva": "Uva Tinta",
-      "fechaInicio": "2024-08-11",
-      "cantidadLitros": 300,
-      "pH": 3.5,
-      "temperatura": 18,
-      "estadoProceso": "Terminado"
     },
     {
-      "id": "2",
-      "numeroLote": "2",
-      "uva": "Uva Blanca",
-      "fechaInicio": "2024-08-04",
-      "cantidadLitros": 250,
-      "pH": 3.6,
-      "temperatura": 20,
-      "estadoProceso": "Terminado"
+      "id": "5",
+      "numeroPedido": "P005",
+      "nombre": "Diego Torres",
+      "correo": "diego.torres@licoresdelsur.ar",
+      "productos": [
+        "Gin Argentino London Dry - 750 ml - 2 botellas",
+        "Tónica Premium - 330 ml - 6 unidades"
+      ],
+      "condicionTransporte": "Transporte Regular",
+      "metodoPago": "Mercado Pago",
+      "telefono": "+54 11 5432 1098",
+      "terminosPago": "Pago Contado",
+      "fecha": "05/09/2024",
+      "fechaEntrega": "17/09/2024",
+      "tipo": "licores",
+      "estado": "Terminado"
     },
     {
-      "id": "3",
-      "numeroLote": "3",
-      "uva": "Uva Cabernet",
-      "fechaInicio": "2024-07-06",
-      "cantidadLitros": 400,
-      "pH": 3.4,
-      "temperatura": 17,
-      "estadoProceso": "En Proceso"
+      "id": "6",
+      "numeroPedido": "P006",
+      "nombre": "Sofia Garcia",
+      "correo": "sofia.garcia@vinosdelvalle.com",
+      "productos": [
+        "Vino Rosado Español - 750 ml - 1 botella"
+      ],
+      "condicionTransporte": "Recolección en Tienda",
+      "metodoPago": "Tarjeta de Crédito",
+      "telefono": "+34 6 1234 5678",
+      "terminosPago": "Pago Contado",
+      "fecha": "06/09/2024",
+      "fechaEntrega": "06/09/2024",
+      "tipo": "vino",
+      "estado": "Terminado"
     },
     {
-      "id": "4",
-      "numeroLote": "5",
-      "uva": "Uva Tinta",
-      "fechaInicio": "2022-02-01",
-      "cantidadLitros": 4,
-      "pH": 1.5,
-      "temperatura": 40,
-      "estadoProceso": "En Proceso"
+      "id": "7",
+      "numeroPedido": "P007",
+      "nombre": "Laura Ramirez",
+      "correo": "laura.ramirez@cervezasartesanales.mx",
+      "productos": [
+        "Cerveza IPA Mexicana - 355 ml - 12 unidades"
+      ],
+      "condicionTransporte": "Envío a Domicilio",
+      "metodoPago": "PayPal",
+      "telefono": "+52 55 1234 5678",
+      "terminosPago": "Pago Contado",
+      "fecha": "07/09/2024",
+      "fechaEntrega": "14/09/2024",
+      "tipo": "cerveza",
+      "estado": "Terminado"
+    },
+    {
+      "id": "8",
+      "numeroPedido": "P008",
+      "nombre": "Carlos Rodriguez",
+      "correo": "carlos.rodriguez@vinosargentinos.com.ar",
+      "productos": [
+        "Vino Tinto Malbec Reserva - 750 ml - 2 botellas",
+        "Aceite de Oliva Extra Virgen - 500 ml - 1 botella"
+      ],
+      "condicionTransporte": "Transporte con temperatura controlada",
+      "metodoPago": "Transferencia bancaria",
+      "telefono": "+54 9 11 2345 6789",
+      "terminosPago": "Crédito a 30 días",
+      "fecha": "08/09/2024",
+      "fechaEntrega": "20/09/2024",
+      "tipo": "mixto",
+      "estado": "En Proceso"
+    },
+    {
+      "id": "9",
+      "numeroPedido": "P009",
+      "nombre": "Isabella Santos",
+      "correo": "isabella.santos@licorespremium.br",
+      "productos": [
+        "Ron Añejo Colombiano - 750 ml - 1 botella",
+        "Cachaça Brasileña - 700 ml - 1 botella"
+      ],
+      "condicionTransporte": "Transporte Regular",
+      "metodoPago": "Tarjeta de Crédito",
+      "telefono": "+55 21 98765 4321",
+      "terminosPago": "Pago Contado",
+      "fecha": "09/09/2024",
+      "fechaEntrega": "19/09/2024",
+      "tipo": "licores",
+      "estado": "Terminado"
     }
   ],
   "wines": [
     {
-      "id": "5",
+      "id": "1",
       "nombre": "Vino Blanco Sauvignon Blanc - Valle de Leyda",
       "descripcion": "Vino fresco y vibrante con notas herbáceas y cítricas.",
       "tipo": "Vino Blanc",
@@ -198,10 +469,11 @@
       "estado": "Disponible",
       "productor_id": "PROD005",
       "lote_id": "4",
-      "lote": "2"
+      "lote": "2",
+      "link":"https://lacasadelbarman.pe/wp-content/uploads/2022/08/vino-blanco-leyda.jpg"
     },
     {
-      "id": "6",
+      "id": "2",
       "nombre": "Vino Tinto Malbec - Mendoza",
       "descripcion": "Concentrado y afrutado, ideal para acompañar carnes rojas.",
       "tipo": "Vino Tinto",
@@ -215,26 +487,151 @@
       "certificacion": "I.G. Mendoza",
       "calificacion": 4,
       "estado": "Disponible",
-      "productor_id": "PROD006",
-      "lote_id": "3",
-      "lote": "3"
+      "productor_id": "PROD003",
+      "lote_id": "L003",
+      "link": "https://www.infinitybrands.pe/wp-content/uploads/2019/07/LA-IRIDE-ROSE-SEMI-SWEET-2024.jpg"
     },
     {
-      "id": "RMJHZHF",
-      "nombre": "vino del valle",
-      "descripcion": "rico vino",
-      "tipo": "Vino Blanc",
-      "region": "Lima",
-      "anio": 5,
-      "uvas": "1",
-      "pais": "1",
-      "alcohol": 50,
-      "certificacion": 5,
-      "calificacion": "20",
-      "estado": "20",
-      "productor_id": "",
-      "lote_id": "2",
-      "lote": ""
+      "id": "3",
+      "nombre": "Vino Blanco Sauvignon Blanc - Valle Central",
+      "descripcion": "Vino fresco con notas de cítricos y manzana verde.",
+      "tipo": "Vino Blanco",
+      "region": "Valle Central",
+      "pais": "Chile",
+      "anio": 2020,
+      "uvas": ["Sauvignon Blanc"],
+      "alcohol": 12.8,
+      "certificacion": "D.O. Valle Central",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD004",
+      "lote_id": "L004",
+      "link": "https://metroio.vtexassets.com/arquivos/ids/418795-1200-auto?v=638279378601570000&width=1200&height=auto&aspect=true"
+    },
+    {
+      "id": "4",
+      "nombre": "Vino Tinto Cabernet Sauvignon - Napa Valley",
+      "descripcion": "Vino estructurado con aromas a ciruela, moras y un toque de madera.",
+      "tipo": "Vino Tinto",
+      "region": "Napa Valley",
+      "pais": "Estados Unidos",
+      "anio": 2018,
+      "uvas": ["Cabernet Sauvignon"],
+      "alcohol": 14.0,
+      "certificacion": "Napa Valley AVA",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD005",
+      "lote_id": "L005",
+      "link": "https://lacanasteria.com/wp-content/uploads/2024/06/caymusweb.jpg"
+    },
+    {
+      "id": "5",
+      "nombre": "Vino Rosado Garnacha - Campo de Borja",
+      "descripcion": "Vino ligero con aromas a frutas rojas y flores silvestres.",
+      "tipo": "Vino Rosado",
+      "region": "Campo de Borja",
+      "pais": "España",
+      "anio": 2022,
+      "uvas": ["Garnacha"],
+      "alcohol": 13.0,
+      "certificacion": "D.O. Campo de Borja",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD006",
+      "lote_id": "L006",
+      "link": "https://chapeauwines.es/wp-content/uploads/2022/10/PRADOS-ROSADO-600x600.jpg"
+    },
+    {
+      "id": "6",
+      "nombre": "Vino Espumoso Prosecco - Valdobbiadene",
+      "descripcion": "Vino espumoso refrescante con notas de pera, manzana y flores blancas.",
+      "tipo": "Vino Espumoso",
+      "region": "Valdobbiadene",
+      "pais": "Italia",
+      "anio": 2021,
+      "uvas": ["Glera"],
+      "alcohol": 11.0,
+      "certificacion": "D.O.C.G. Prosecco Superiore",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD007",
+      "lote_id": "L007",
+      "link": "https://lebollicine.pe/wp-content/uploads/BRUT-1.png"
+    },
+    {
+      "id": "7",
+      "nombre": "Vino Tinto Merlot - Colchagua Valley",
+      "descripcion": "Vino suave y afrutado con aromas a ciruelas, cerezas y un toque de chocolate.",
+      "tipo": "Vino Tinto",
+      "region": "Colchagua Valley",
+      "pais": "Chile",
+      "anio": 2020,
+      "uvas": ["Merlot"],
+      "alcohol": 13.5,
+      "certificacion": "D.O. Colchagua",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD008",
+      "lote_id": "L008",
+      "link": "https://wongfood.vtexassets.com/arquivos/ids/711388/25096-01-7715.jpg?v=638538214871930000"
+    },
+    {
+      "id": "8",
+      "nombre": "Vino Blanco Riesling - Mosel",
+      "descripcion": "Vino dulce y refrescante con notas de manzana verde y melocotón.",
+      "tipo": "Vino Blanco",
+      "region": "Mosel",
+      "pais": "Alemania",
+      "anio": 2019,
+      "uvas": ["Riesling"],
+      "alcohol": 8.5,
+      "certificacion": "D.O.C. Mosel",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD009",
+      "lote_id": "L009",
+      "link": "https://wongfood.vtexassets.com/arquivos/ids/158110-800-auto?v=636088744964870000&width=800&height=auto&aspect=true"
+    },
+    {
+      "id": "9",
+      "nombre": "Vino Tinto Syrah - Barossa Valley",
+      "descripcion": "Vino intenso con notas a moras, pimienta negra y toques ahumados.",
+      "tipo": "Vino Tinto",
+      "region": "Barossa Valley",
+      "pais": "Australia",
+      "anio": 2017,
+      "uvas": ["Syrah"],
+      "alcohol": 14.8,
+      "certificacion": "Barossa Valley",
+      "calificacion": 5,
+      "estado": "Disponible",
+      "productor_id": "PROD010",
+      "lote_id": "L010",
+      "link": "https://images.vivino.com/thumbs/B8kRZndCTHqWm07l7Qu9eQ_pb_600x600.png"
+    },
+    {
+      "id": "10",
+      "nombre": "Vino Blanco Pinot Grigio - Friuli",
+      "descripcion": "Vino seco con notas de peras, manzana y toques florales.",
+      "tipo": "Vino Blanco",
+      "region": "Friuli",
+      "pais": "Italia",
+      "anio": 2021,
+      "uvas": ["Pinot Grigio"],
+      "alcohol": 12.5,
+      "certificacion": "D.O.C. Friuli",
+      "calificacion": 4,
+      "estado": "Disponible",
+      "productor_id": "PROD011",
+      "lote_id": "L011",
+      "link": "https://www.laeuropea.com.mx/media/catalog/product/cache/a26d55f417b24cf05a5296f884382fe4/0/0/00086891084657.1.jpg"
+    }
+  ],
+  "order": [
+    {
+      "direccion": "Calle Principal 123, Miraflores, Lima",
+      "id": "76a0"
     }
   ]
 }

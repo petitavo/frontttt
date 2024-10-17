@@ -1,0 +1,98 @@
+<div class="register-container">
+  <h2>Registro</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+      <input id="nombre" formControlName="nombre" type="text" placeholder="Ingresa tu nombre">
+      <div *ngIf="registerForm.get('nombre')?.invalid && registerForm.get('nombre')?.touched" class="error">
+        El nombre es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="apellido">Apellido</label>
+      <input id="apellido" formControlName="apellido" type="text" placeholder="Ingresa tu apellido">
+      <div *ngIf="registerForm.get('apellido')?.invalid && registerForm.get('apellido')?.touched" class="error">
+        El apellido es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="correo">Correo electrónico</label>
+      <input id="correo" formControlName="correo" type="email" placeholder="Ingresa tu correo">
+      <div *ngIf="registerForm.get('correo')?.invalid && registerForm.get('correo')?.touched" class="error">
+        Correo electrónico inválido.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Contraseña</label>
+      <input id="password" formControlName="password" type="password" placeholder="Ingresa tu contraseña">
+      <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched" class="error">
+        La contraseña es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirmar contraseña</label>
+      <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Repite tu contraseña">
+      <div *ngIf="!passwordsMatch() && registerForm.get('confirmPassword')?.touched" class="error">
+        Las contraseñas no coinciden.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Teléfono</label>
+      <input id="phone" formControlName="phone" type="text" placeholder="Ingresa tu número de teléfono">
+      <div *ngIf="registerForm.get('phone')?.invalid && registerForm.get('phone')?.touched" class="error">
+        El número de teléfono es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Dirección</label>
+      <input id="address" formControlName="address" type="text" placeholder="Ingresa tu dirección">
+      <div *ngIf="registerForm.get('address')?.invalid && registerForm.get('address')?.touched" class="error">
+        La dirección es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="city">Ciudad</label>
+      <input id="city" formControlName="city" type="text" placeholder="Ingresa tu ciudad">
+      <div *ngIf="registerForm.get('city')?.invalid && registerForm.get('city')?.touched" class="error">
+        La ciudad es obligatoria.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="country">País</label>
+      <input id="country" formControlName="country" type="text" placeholder="Ingresa tu país">
+      <div *ngIf="registerForm.get('country')?.invalid && registerForm.get('country')?.touched" class="error">
+        El país es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="id">ID (DNI)</label>
+      <input id="id" formControlName="id" type="text" placeholder="Ingresa tu ID o DNI">
+      <div *ngIf="registerForm.get('id')?.invalid && registerForm.get('id')?.touched" class="error">
+        El ID o DNI es obligatorio.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="role">Rol</label>
+      <select id="role" formControlName="role">
+        <option value="">Selecciona tu rol</option>
+        <option value="consumer">Consumidor</option>
+        <option value="producer">Productor</option>
+      </select>
+      <div *ngIf="registerForm.get('role')?.invalid && registerForm.get('role')?.touched" class="error">
+        El rol es obligatorio.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid || !passwordsMatch()">Registrar</button>
+  </form>
+</div>

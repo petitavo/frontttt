@@ -6,21 +6,21 @@ import {MatButton} from "@angular/material/button";
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
   imports: [
     MatButton
-  ],
-  styleUrls: ['./login.component.css']
+  ]
 })
 export class LoginComponent {
   constructor(private router: Router) {}
 
   loginAsProducer() {
-    // Redirige al sidenav del productor
-    this.router.navigate(['/producer']);
+    // Redirige al home del productor
+    this.router.navigate(['/producer/home-producer']);
   }
 
   loginAsConsumer() {
-    // Redirige al sidenav del consumidor
-    this.router.navigate(['/consumer']);
+    // Redirige al home del consumidor
+    this.router.navigate(['/consumer/home-consumer']);
   }
 }

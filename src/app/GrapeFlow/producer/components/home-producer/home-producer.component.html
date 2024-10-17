@@ -1,0 +1,30 @@
+<div class="home-container">
+  <!-- Título y mensaje de bienvenida -->
+  <h1 class="welcome-title">Bienvenido a GrapeFlow</h1>
+  <p class="welcome-message">
+    Estamos encantados de tenerte aquí, <strong>usuario</strong>.
+    <br>
+    Desde esta plataforma, puedes gestionar tus clientes, productor y pedidos fácilmente.
+    <br>
+    Aprovecha las herramientas que tenemos para ti.
+  </p>
+
+  <!-- Pedidos Recientes -->
+  <div class="recent-orders">
+    <h2>Pedidos Recientes</h2>
+    <div class="order-cards">
+      <div *ngFor="let order of orders" class="order-card">
+        <h3>Pedido: {{ order.numeroPedido }}</h3>
+        <p>Cliente: {{ order.nombre }}</p>
+        <p>Estado: {{ order.estado }}</p>
+        <p>Tipo: {{ order.tipo }}</p>
+        <button class="order-button" (click)="goToOrders()">Ir Orden</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón de Ver Más -->
+  <div class="view-more">
+    <button class="view-more-button" (click)="goToOrders()">Ver Más</button>
+  </div>
+</div>

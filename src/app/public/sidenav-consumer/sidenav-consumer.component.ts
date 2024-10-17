@@ -5,7 +5,7 @@ import { RouterLink, RouterOutlet } from "@angular/router";
 import { MatSidenav, MatSidenavContainer, MatSidenavModule } from "@angular/material/sidenav";
 import { MatIconButton } from "@angular/material/button";
 import { MatToolbar } from "@angular/material/toolbar";
-import {FooterContentComponent} from "../footer-content/footer-content.component";
+import { FooterContentComponent } from "../footer-content/footer-content.component";
 
 @Component({
   selector: 'app-sidenav-consumer',
@@ -36,6 +36,7 @@ export class SidenavConsumerComponent {
   closeSidenav() {
     this.sidenav.close();
   }
+
   logout() {
     console.log("Sesión cerrada");
   }

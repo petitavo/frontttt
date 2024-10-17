@@ -1,61 +1,118 @@
-.lote-wrapper {
+.wine-list-container {
   padding: 20px;
 }
 
-h1 {
-  font-size: 80px;
-  font-weight: bold;
-  font-family: "Times New Roman", sans-serif;
+.title {
+  text-align: center;
   margin-bottom: 20px;
-  color: #A70AC0; /* Mismo color de título que Registro de Pedidos */
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #5a2e87; /* Color del título */
 }
 
 .search-container {
   display: flex;
-  gap: 10px;
+  justify-content: center; /* Centramos los elementos de búsqueda y filtro */
+  gap: 15px;
   margin-bottom: 20px;
 }
 
-.mat-mdc-header-row {
-  background-color: #A70AC0; /* Color de encabezado igual a Registro de Pedidos */
-  color: white;
-}
-
-.mat-mdc-row:nth-child(even) {
-  background-color: #F5F5DC !important; /* Colores de las filas alternadas */
-}
-
-.mat-mdc-row:nth-child(odd) {
-  background-color: #E6E6FA;
-}
-
-table {
+.mat-form-field {
   width: 100%;
-  margin-top: 20px;
+  max-width: 250px;
 }
 
-.mat-column-actions {
-  width: 150px;
-}
-
-.mat-header-cell {
-  font-weight: bold;
-  color: #333; /* Mismo color de texto que Registro de Pedidos */
-}
-
-.mat-cell {
+.mat-input-element, .mat-select {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
   padding: 10px;
 }
 
-mat-paginator {
+.mat-form-field-appearance-outline .mat-form-field-outline {
+  border-color: #d3d3d3; /* Color del borde del campo */
+}
+
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  border-width: 2px;
+}
+
+.mat-select-arrow {
+  color: #5a2e87; /* Color de la flecha del selector */
+}
+
+.mat-input-element:focus, .mat-select:focus {
+  box-shadow: 0 2px 6px rgba(90, 46, 135, 0.3); /* Efecto de sombra al enfocar */
+}
+
+.mat-form-field-label {
+  color: #5a2e87; /* Color del label */
+  font-weight: bold;
+}
+
+.wine-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.wine-card {
+  background-color: #fafafa;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  width: 280px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative; /* Para el botón "Comprar" flotante */
+}
+
+.wine-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* Sombra más fuerte al hacer hover */
+}
+
+.wine-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.wine-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.wine-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+.wine-info p:last-of-type {
+  margin-bottom: 20px; /* Espacio antes del botón */
+}
+
+button.mat-raised-button {
+  background-color: #5a2e87; /* Color de fondo del botón "Comprar" */
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  bottom: 15px; /* Fija el botón en la parte inferior de la tarjeta */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+button.mat-raised-button:hover {
+  background-color: #4a1e73; /* Color del botón al hacer hover */
+}
+
+.mat-paginator {
   margin-top: 20px;
-}
-
-button[mat-raised-button] {
-  margin-bottom: 20px;
-}
-
-.add-button {
-  background-color: #ffc107 !important; /* Botón Agregar Lote con estilo igual al de Pedidos */
-  color: white !important;
 }

@@ -30,7 +30,13 @@ import { FooterContentComponent } from "../footer-content/footer-content.compone
 export class SidenavComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
-  constructor() { }
+  // Variable para almacenar el nombre del usuario
+  userName: string = 'Usuario';
+
+  constructor() {
+    // Aquí puedes obtener el nombre del usuario del sistema de autenticación
+    // Por ejemplo: this.userName = authService.getUserName();
+  }
 
   toggleSidenav() {
     this.sidenav.toggle();
@@ -42,5 +48,7 @@ export class SidenavComponent {
 
   logout() {
     console.log("Sesión cerrada");
+    // Redirigir al login
+    window.location.href = '/login';
   }
 }
