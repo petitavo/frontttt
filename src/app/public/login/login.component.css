@@ -1,45 +1,80 @@
-.login-container {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+button {
+  margin: 10px;
+  padding: 16px 32px; /* Botones más grandes */
+  background-color: #ff80ab; /* Color de fondo rosado */
+  color: white; /* Texto en blanco */
+  border: none; /* Sin borde */
+  border-radius: 30px; /* Bordes redondeados */
+  font-size: 1.4rem; /* Tamaño de fuente más grande */
+  cursor: pointer; /* Cambia el cursor a pointer */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición para efecto hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
 }
 
-h2 {
+button:hover {
+  background-color: #e040fb; /* Cambia el fondo a morado en hover */
+  transform: translateY(-5px); /* Movimiento hacia arriba al pasar el mouse */
+}
+
+button:active {
+  background-color: #d500f9; /* Color más oscuro al hacer clic */
+  transform: translateY(0); /* Restablece la posición al hacer clic */
+}
+
+button:focus {
+  outline: none; /* Elimina el borde de foco */
+  box-shadow: 0 0 10px #ff80ab; /* Añade una sombra de foco de color rosado */
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f48fb1, #8e24aa); /* Degradado de rosado a morado */
+  font-family: 'Roboto', sans-serif;
+  color: white;
   text-align: center;
 }
 
-.form-group {
-  margin-bottom: 15px;
+.login-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.error {
-  color: red;
-  font-size: 0.9em;
-  margin-top: 5px;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007bff;
+.login-container button {
+  background-color: rgba(255, 255, 255, 0.3); /* Botón semi-transparente */
   color: white;
   border: none;
-  border-radius: 5px;
+  padding: 16px 32px;
+  margin: 10px 0;
+  font-size: 1.4rem; /* Tamaño de fuente más grande */
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más fuerte */
 }
 
-.register-link {
-  text-align: center;
-  margin-top: 15px;
+.login-container button:hover {
+  background-color: rgba(255, 255, 255, 0.6); /* Cambia el fondo al hacer hover */
+  transform: translateY(-5px); /* Movimiento hacia arriba al pasar el mouse */
 }
 
-.register-link a {
-  color: #007bff;
-  text-decoration: none;
+.login-container button:focus {
+  outline: none; /* Quita el borde de foco predeterminado */
 }
 
-.register-link a:hover {
-  text-decoration: underline;
+@media (max-width: 768px) {
+  .login-container h2 {
+    font-size: 2rem; /* Tamaño del texto reducido en pantallas pequeñas */
+  }
+
+  .login-container button {
+    font-size: 1.2rem; /* Botones más pequeños en pantallas pequeñas */
+    padding: 12px 24px;
+  }
 }

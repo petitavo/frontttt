@@ -1,0 +1,79 @@
+.inventory-wrapper {
+  padding: 20px;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+  color: #6a1b9a;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mat-mdc-form-field {
+  flex: 1;
+}
+
+.mat-mdc-header-row {
+  background-color: #6a1b9a;
+  color: white;
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: #e0f7fa;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #fce4ec;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mat-column-actions {
+  width: 150px;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  color: white;
+}
+
+.mat-cell {
+  padding: 10px;
+}
+
+mat-paginator {
+  margin-top: 20px;
+  background-color: #e0f7fa;
+  border-radius: 8px;
+}
+
+button[mat-raised-button] {
+  margin-bottom: 20px;
+}
+
+.add-button {
+  background-color: #00acc1 !important; /* Botón agregar */
+  color: white !important;
+}
+
+.mat-icon-button {
+  margin-left: 10px;
+}

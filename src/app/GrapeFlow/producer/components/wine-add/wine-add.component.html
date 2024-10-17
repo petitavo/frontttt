@@ -1,0 +1,73 @@
+<h2 mat-dialog-title>Add New Wine</h2>
+<form (ngSubmit)="onSave()" #wineForm="ngForm">
+  <mat-dialog-content>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="wine.nombre" name="nombre" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea matInput [(ngModel)]="wine.descripcion" name="descripcion" required></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Type</mat-label>
+      <input matInput [(ngModel)]="wine.tipo" name="tipo" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Region</mat-label>
+      <input matInput [(ngModel)]="wine.region" name="region" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Year</mat-label>
+      <input matInput type="number" [(ngModel)]="wine.anio" name="anio" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Grapes</mat-label>
+      <input matInput [(ngModel)]="wine.uvas" name="uvas" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Country</mat-label>
+      <input matInput [(ngModel)]="wine.pais" name="pais" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Alcohol (%)</mat-label>
+      <input matInput type="number" [(ngModel)]="wine.alcohol" name="alcohol" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Certification</mat-label>
+      <input matInput type="number" [(ngModel)]="wine.certificacion" name="certificacion" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Rating</mat-label>
+      <input matInput [(ngModel)]="wine.calificacion" name="calificacion" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Status</mat-label>
+      <input matInput [(ngModel)]="wine.estado" name="estado" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Lot</mat-label>
+      <mat-select [(ngModel)]="wine.lote_id" name="lote_id" required>
+        <mat-option *ngFor="let lote of lotes" [value]="lote.id">
+          {{ lote.numeroLote }} - {{ lote.uva }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="onCancel()">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="!wineForm.form.valid">Save</button>
+  </mat-dialog-actions>
+</form>

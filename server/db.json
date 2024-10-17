@@ -31,7 +31,7 @@
     {
       "id": "5",
       "nombre": "Carlos",
-      "apellido": "García",
+      "apellido": "Garcia",
       "telefono": "999 888 777",
       "direccion": "Las Condes",
       "pais": "Perú",
@@ -303,6 +303,8 @@
       "id": "2",
       "numeroPedido": "P002",
       "nombre": "Maria Fernandez",
+      "nombreProductor": "Carlos Fernandez",
+      "correoProductor": "carlosf@vinosdelsur.com",
       "correo": "maria.fernandez@cervezasdelnorte.com",
       "productos": [
         "Cerveza Artesanal Rubia - 500 ml - 6 unidades",
@@ -310,6 +312,7 @@
       ],
       "condicionTransporte": "Recolección en Tienda",
       "metodoPago": "Tarjeta de Débito",
+      "telefonoProductor": "+51 912 345 678",
       "telefono": "+51 942 876 123",
       "terminosPago": "Pago Contado",
       "fecha": "02/09/2024",
@@ -321,6 +324,8 @@
       "id": "3",
       "numeroPedido": "P003",
       "nombre": "Pedro Martinez",
+      "nombreProductor": "Laura Torres",
+      "correoProductor": "lauratorres@vinosdelsur.com",
       "correo": "pedro.martinez@licoresdelmundo.pe",
       "productos": [
         "Whisky Escocés 12 Años - 750 ml - 1 botella",
@@ -332,13 +337,16 @@
       "terminosPago": "Pago Contado",
       "fecha": "03/09/2024",
       "fechaEntrega": "10/09/2024",
-      "tipo": "licores",
-      "estado": "Terminado"
+      "telefonoProductor": "+51 998 765 432",
+      "tipo": "vino",
+      "estado": "Enviado"
     },
     {
       "id": "4",
       "numeroPedido": "P004",
       "nombre": "Ana Lopez",
+      "nombreProductor": "Juan Perez",
+      "correoProductor": "juanperez@vinosdelsur.com",
       "correo": "ana.lopez@vinosdelpacifico.cl",
       "productos": [
         "Vino Tinto Chileno Reserva - 750 ml - 3 botellas",
@@ -346,6 +354,7 @@
       ],
       "condicionTransporte": "Transporte con temperatura controlada",
       "metodoPago": "Pago Contraentrega",
+      "telefonoProductor": "+51 923 456 789",
       "telefono": "+56 9 8765 4321",
       "terminosPago": "Pago Contado",
       "fecha": "04/09/2024",
@@ -442,51 +451,32 @@
       "estado": "Terminado"
     }
   ],
-  "vinos": [
+  "wines": [
     {
       "id": "1",
-      "nombre": "Vino Tinto Gran Reserva - Valle de Ica",
-      "descripcion": "Vino robusto y complejo, con notas intensas de frutos rojos maduros y especias.",
-      "tipo": "Vino Tinto",
-      "region": "Valle de Ica",
-      "pais": "Perú",
-      "anio": 2021,
-      "uvas": [
-        "Malbec",
-        "Cabernet Sauvignon"
-      ],
-      "alcohol": 14.5,
-      "certificacion": "Denominación de Origen Ica",
-      "calificacion": 5,
-      "estado": "Disponible",
-      "productor_id": "PROD001",
-      "lote_id": "L001",
-      "link": "https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/tottusPE/20108209_1/w=1500,h=1500,fit=pad"
-    },
-    {
-      "id": "2",
-      "nombre": "Vino Blanco Chardonnay - Valle de Casablanca",
-      "descripcion": "Vino fresco y afrutado con notas cítricas y tropicales.",
-      "tipo": "Vino Blanco",
-      "region": "Valle de Casablanca",
+      "nombre": "Vino Blanco Sauvignon Blanc - Valle de Leyda",
+      "descripcion": "Vino fresco y vibrante con notas herbáceas y cítricas.",
+      "tipo": "Vino Blanc",
+      "region": "Valle de Leyda",
       "pais": "Chile",
       "anio": 2022,
       "uvas": [
-        "Chardonnay"
+        "Sauvignon Blanc"
       ],
-      "alcohol": 13.5,
-      "certificacion": "D.O. Valle de Casablanca",
+      "alcohol": 13,
+      "certificacion": 2,
       "calificacion": 4,
       "estado": "Disponible",
-      "productor_id": "PROD002",
-      "lote_id": "L002",
-      "link": "https://cdn1.ewine.cl/3129-thickbox_default/chardonnay-gran-reserva-vina-casas-del-bosque-valle-de-casablanca.jpg"
+      "productor_id": "PROD005",
+      "lote_id": "4",
+      "lote": "2",
+      "link":"https://lacasadelbarman.pe/wp-content/uploads/2022/08/vino-blanco-leyda.jpg"
     },
     {
-      "id": "3",
-      "nombre": "Vino Rosado Malbec - Mendoza",
-      "descripcion": "Vino ligero y refrescante con aromas a frutos rojos y flores.",
-      "tipo": "Vino Rosado",
+      "id": "2",
+      "nombre": "Vino Tinto Malbec - Mendoza",
+      "descripcion": "Concentrado y afrutado, ideal para acompañar carnes rojas.",
+      "tipo": "Vino Tinto",
       "region": "Mendoza",
       "pais": "Argentina",
       "anio": 2023,
@@ -502,7 +492,7 @@
       "link": "https://www.infinitybrands.pe/wp-content/uploads/2019/07/LA-IRIDE-ROSE-SEMI-SWEET-2024.jpg"
     },
     {
-      "id": "4",
+      "id": "3",
       "nombre": "Vino Blanco Sauvignon Blanc - Valle Central",
       "descripcion": "Vino fresco con notas de cítricos y manzana verde.",
       "tipo": "Vino Blanco",
@@ -519,7 +509,7 @@
       "link": "https://metroio.vtexassets.com/arquivos/ids/418795-1200-auto?v=638279378601570000&width=1200&height=auto&aspect=true"
     },
     {
-      "id": "5",
+      "id": "4",
       "nombre": "Vino Tinto Cabernet Sauvignon - Napa Valley",
       "descripcion": "Vino estructurado con aromas a ciruela, moras y un toque de madera.",
       "tipo": "Vino Tinto",
@@ -536,7 +526,7 @@
       "link": "https://lacanasteria.com/wp-content/uploads/2024/06/caymusweb.jpg"
     },
     {
-      "id": "6",
+      "id": "5",
       "nombre": "Vino Rosado Garnacha - Campo de Borja",
       "descripcion": "Vino ligero con aromas a frutas rojas y flores silvestres.",
       "tipo": "Vino Rosado",
@@ -553,7 +543,7 @@
       "link": "https://chapeauwines.es/wp-content/uploads/2022/10/PRADOS-ROSADO-600x600.jpg"
     },
     {
-      "id": "7",
+      "id": "6",
       "nombre": "Vino Espumoso Prosecco - Valdobbiadene",
       "descripcion": "Vino espumoso refrescante con notas de pera, manzana y flores blancas.",
       "tipo": "Vino Espumoso",
@@ -570,7 +560,7 @@
       "link": "https://lebollicine.pe/wp-content/uploads/BRUT-1.png"
     },
     {
-      "id": "8",
+      "id": "7",
       "nombre": "Vino Tinto Merlot - Colchagua Valley",
       "descripcion": "Vino suave y afrutado con aromas a ciruelas, cerezas y un toque de chocolate.",
       "tipo": "Vino Tinto",
@@ -587,7 +577,7 @@
       "link": "https://wongfood.vtexassets.com/arquivos/ids/711388/25096-01-7715.jpg?v=638538214871930000"
     },
     {
-      "id": "9",
+      "id": "8",
       "nombre": "Vino Blanco Riesling - Mosel",
       "descripcion": "Vino dulce y refrescante con notas de manzana verde y melocotón.",
       "tipo": "Vino Blanco",
@@ -604,7 +594,7 @@
       "link": "https://wongfood.vtexassets.com/arquivos/ids/158110-800-auto?v=636088744964870000&width=800&height=auto&aspect=true"
     },
     {
-      "id": "10",
+      "id": "9",
       "nombre": "Vino Tinto Syrah - Barossa Valley",
       "descripcion": "Vino intenso con notas a moras, pimienta negra y toques ahumados.",
       "tipo": "Vino Tinto",
@@ -621,7 +611,7 @@
       "link": "https://images.vivino.com/thumbs/B8kRZndCTHqWm07l7Qu9eQ_pb_600x600.png"
     },
     {
-      "id": "11",
+      "id": "10",
       "nombre": "Vino Blanco Pinot Grigio - Friuli",
       "descripcion": "Vino seco con notas de peras, manzana y toques florales.",
       "tipo": "Vino Blanco",

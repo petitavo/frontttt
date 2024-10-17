@@ -1,13 +1,11 @@
-import {Component, ViewChild} from '@angular/core';
-import {MatListItem, MatNavList} from "@angular/material/list";
-import {MatIcon} from "@angular/material/icon";
-import {RouterLink, RouterOutlet} from "@angular/router";
-import {MatSidenav, MatSidenavContainer} from "@angular/material/sidenav";
-import {MatButton, MatIconButton} from "@angular/material/button";
-import {MatToolbar} from "@angular/material/toolbar";
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {FooterContentComponent} from "../footer-content/footer-content.component";
-import {NgOptimizedImage} from "@angular/common";
+import { Component, ViewChild } from '@angular/core';
+import { MatListItem, MatNavList } from "@angular/material/list";
+import { MatIcon } from "@angular/material/icon";
+import { RouterLink, RouterOutlet } from "@angular/router";
+import { MatSidenav, MatSidenavContainer, MatSidenavModule } from "@angular/material/sidenav";
+import { MatButton, MatIconButton } from "@angular/material/button";
+import { MatToolbar } from "@angular/material/toolbar";
+import { FooterContentComponent } from "../footer-content/footer-content.component";
 
 @Component({
   selector: 'app-sidenav',
@@ -24,8 +22,7 @@ import {NgOptimizedImage} from "@angular/common";
     MatToolbar,
     RouterOutlet,
     MatSidenavModule,
-    FooterContentComponent,
-    NgOptimizedImage
+    FooterContentComponent
   ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']

@@ -7,7 +7,7 @@ import { Wine } from '../model/wine.entity';
   providedIn: 'root'
 })
 export class WineService {
-  private apiUrl = 'http://localhost:3000/vinos';  // Cambia esta URL según tu API
+  private apiUrl = 'http://localhost:3000/wines';  // URL correcta según db.json
 
   constructor(private http: HttpClient) {}
 

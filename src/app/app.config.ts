@@ -12,7 +12,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }),
+  providers: [provideZoneChangeDetection({eventCoalescing: true}),
     provideRouter(routes), provideAnimationsAsync(),
     provideHttpClient(),
     importProvidersFrom(TranslateModule.forRoot({
@@ -21,5 +21,5 @@ export const appConfig: ApplicationConfig = {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })), provideAnimationsAsync()]
-};
+    }))]
+}

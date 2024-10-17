@@ -1,61 +1,26 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http'; // Importar HttpClient
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { Router } from '@angular/router';
+import {MatButton} from "@angular/material/button";
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports: [ReactiveFormsModule, CommonModule, RouterLink]
+  imports: [
+    MatButton
+  ]
 })
 export class LoginComponent {
-  loginForm: FormGroup;
-  private apiUrl = 'https://my-json-server.typicode.com/Villasystem/Grapeflow/clients'; // URL del json-server
+  constructor(private router: Router) {}
 
-  constructor(private fb: FormBuilder, private router: Router, private http: HttpClient) {
-    this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required]
-    });
+  loginAsProducer() {
+    // Redirige al home del productor
+    this.router.navigate(['/producer/home-producer']);
   }
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-      this.authenticateUser(email, password);
-    }
-  }
-
-  authenticateUser(email: string, password: string) {
-    // Consulta al servidor json-server para validar las credenciales
-    this.http.get<any[]>(`${this.apiUrl}?correo=${email}&password=${password}`)
-      .pipe(
-        catchError((error) => {
-          alert('Error en la autenticación');
-          return of([]); // Retorna un array vacío si hay un error
-        })
-      )
-      .subscribe((users) => {
-        if (users.length > 0) {
-          const user = users[0]; // Asumiendo que el correo y la contraseña son únicos
-
-          // Verificar el rol del usuario y redirigir
-          if (user.role === 'producer') {
-            this.router.navigate(['/SideNav']); // Redirige a producer
-          } else if (user.role === 'consumer') {
-            this.router.navigate(['/consumerSidenav']); // Redirige a consumer
-          } else {
-            alert('Rol no reconocido');
-          }
-        } else {
-          // Mostrar un mensaje de error si las credenciales son incorrectas
-          alert('Credenciales incorrectas');
-        }
-      });
+  loginAsConsumer() {
+    // Redirige al home del consumidor
+    this.router.navigate(['/consumer/home-consumer']);
   }
 }

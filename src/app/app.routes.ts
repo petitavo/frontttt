@@ -11,26 +11,33 @@ import { EditClientsComponent } from './GrapeFlow/producer/components/edit-clien
 import { AddClientComponent } from './GrapeFlow/producer/components/add-client/add-client.component';
 import { OrdersComponent } from './GrapeFlow/producer/components/orders/orders.component';
 import { HomeProducerComponent } from './GrapeFlow/producer/components/home-producer/home-producer.component';
-import { HomeConsumerComponent } from './GrapeFlow/consumer/components/home-consumer/home-consumer.component'; // Importa el Home para el consumidor
+import { HomeConsumerComponent } from './GrapeFlow/consumer/components/home-consumer/home-consumer.component';
+import { ConsumerOrderComponent } from './GrapeFlow/consumer/pages/consumer-order/consumer-order.component';
+import { ProductComponent } from './GrapeFlow/consumer/pages/product/product.component';
+import { WinesComponent } from "./GrapeFlow/producer/pages/wines/wines/wines.component";
 
 export const routes: Routes = [
-  // Rutas para el Productor
-  { path: 'home-producer', component: HomeProducerComponent },
-  { path: 'clients', component: ClientsComponent },
-  { path: 'inventory', component: InventoryComponent },
-  { path: 'lote', component: LoteComponent },
-  { path: 'details-clients/:id', component: DetailsClientsComponent },
-  { path: 'edit-clients/:id', component: EditClientsComponent },
-  { path: 'add-client', component: AddClientComponent },
-  { path: 'orders', component: OrdersComponent },
-  { path: 'SideNav', component: SidenavComponent },
+  // Rutas públicas
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'consumerSidenav', component: SidenavConsumerComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
+  // Rutas del Productor
+  { path: 'producer', component: SidenavComponent, children: [
+      { path: 'home-producer', component: HomeProducerComponent },
+      { path: 'clients', component: ClientsComponent },
+      { path: 'inventory', component: InventoryComponent },
+      { path: 'lote', component: LoteComponent },
+      { path: 'orders', component: OrdersComponent },
+      { path: 'editClients/:id', component: EditClientsComponent },
+      { path: 'detailClients/:id', component: DetailsClientsComponent },
+      { path: 'wines', component: WinesComponent }
+    ]},
 
-  // Rutas para el Consumidor
-  { path: 'home-consumer', component: HomeConsumerComponent },
-
+  // Rutas del Consumidor
+  { path: 'consumer', component: SidenavConsumerComponent, children: [
+      { path: 'home-consumer', component: HomeConsumerComponent },
+      { path: 'orders', component: ConsumerOrderComponent },
+      { path: 'product', component: ProductComponent }
+    ]}
 ];
