@@ -182,6 +182,15 @@
       "costoU": 10,
       "ultimaActualizacion": "",
       "cantidad": 200
+    },
+    {
+      "id": "AEtLMTE",
+      "nombre": "",
+      "tipo": "",
+      "unidad": "",
+      "caducidad": "",
+      "costoU": 0,
+      "cantidad": 0
     }
   ],
   "lotes": [
@@ -223,46 +232,6 @@
       "cantidadLitros": 5,
       "pH": 5,
       "temperatura": 5,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "11",
-      "numeroLote": "5",
-      "uva": "Vino",
-      "fechaInicio": "2024-10-20",
-      "cantidadLitros": 3,
-      "pH": 3,
-      "temperatura": 3,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "12",
-      "numeroLote": "L004",
-      "uva": "Tinta",
-      "fechaInicio": "2024-10-15",
-      "cantidadLitros": 20,
-      "pH": 3,
-      "temperatura": 20,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "13",
-      "numeroLote": "",
-      "uva": "",
-      "fechaInicio": "",
-      "cantidadLitros": 0,
-      "pH": 0,
-      "temperatura": 0,
-      "estadoProceso": "En Proceso"
-    },
-    {
-      "id": "14",
-      "numeroLote": "",
-      "uva": "",
-      "fechaInicio": "",
-      "cantidadLitros": 0,
-      "pH": 0,
-      "temperatura": 0,
       "estadoProceso": "En Proceso"
     }
   ],
