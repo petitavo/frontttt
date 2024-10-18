@@ -1,79 +1,141 @@
 .inventory-wrapper {
-  padding: 20px;
-  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  padding: 30px;
+  background: linear-gradient(135deg, #f3e5f5, #ede7f6);
   min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-  font-size: 48px;
-  font-weight: bold;
-  font-family: 'Roboto', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 20px;
   color: #6a1b9a;
   text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
 }
 
 .search-container {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin-bottom: 25px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .mat-mdc-form-field {
   flex: 1;
+  min-width: 250px;
+}
+
+.mat-mdc-form-field.mat-mdc-form-field-appearance-outline {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .mat-mdc-header-row {
   background-color: #6a1b9a;
   color: white;
+  text-transform: uppercase;
+  font-size: 1.1rem;
 }
 
 .mat-mdc-row:nth-child(even) {
-  background-color: #e0f7fa;
+  background-color: #f3e5f5;
 }
 
 .mat-mdc-row:nth-child(odd) {
-  background-color: #fce4ec;
+  background-color: #ede7f6;
 }
 
 table {
   width: 100%;
-  margin-top: 20px;
-  border-radius: 8px;
+  margin-top: 25px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 .mat-column-actions {
-  width: 150px;
+  width: 180px;
+  text-align: center;
 }
 
 .mat-header-cell {
   font-weight: bold;
   color: white;
+  padding: 12px;
 }
 
 .mat-cell {
-  padding: 10px;
+  padding: 15px;
+  font-size: 1.1rem;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.mat-cell:hover {
+  background-color: rgba(106, 27, 154, 0.1);
 }
 
 mat-paginator {
   margin-top: 20px;
-  background-color: #e0f7fa;
-  border-radius: 8px;
+  background-color: #f3e5f5;
+  border-radius: 12px;
+  padding: 10px;
 }
 
 button[mat-raised-button] {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+button[mat-raised-button]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .add-button {
-  background-color: #00acc1 !important; /* Botón agregar */
+  background-color: #ab47bc !important;
   color: white !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.add-button:hover {
+  background-color: #8e24aa !important;
 }
 
 .mat-icon-button {
   margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.mat-icon-button:hover {
+  background-color: rgba(255, 82, 82, 0.1);
+}
+
+.mat-icon {
+  font-size: 1.5rem;
+}
+
+.mat-select {
+  background-color: white;
+}
+
+button.mat-raised-button.mat-accent {
+  background-color: #7e57c2 !important;
+  color: white !important;
+}
+
+button.mat-raised-button.mat-accent:hover {
+  background-color: #5e35b1 !important;
+}
+
+.mat-option.mat-selected {
+  background-color: #d1c4e9 !important;
 }
