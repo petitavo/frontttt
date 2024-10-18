@@ -23,7 +23,7 @@
 
     <ng-container matColumnDef="fecha">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'ORDERS.DATE' | translate }}</th>
-      <td mat-cell *matCellDef="let order">{{ order.fecha }}</td>
+      <td mat-cell *matCellDef="let order">{{ order.fecha }}</td> <!-- Se asegura que se use el formato correcto -->
     </ng-container>
 
     <ng-container matColumnDef="tipo">

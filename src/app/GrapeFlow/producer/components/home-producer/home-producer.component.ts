@@ -35,8 +35,9 @@ export class HomeProducerComponent implements OnInit {
 
   // Redirigir a la ventana de pedidos completos
   goToOrders(): void {
-    this.router.navigate(['/orders']);  // Redirige a la ruta de pedidos
+    this.router.navigate(['/producer/orders']);  // Redirige a la ruta de pedidos
   }
+
 
   // Método para cambiar el idioma
   changeLanguage(lang: string): void {

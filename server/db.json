@@ -448,7 +448,47 @@
       "fecha": "09/09/2024",
       "fechaEntrega": "19/09/2024",
       "tipo": "licores",
-      "estado": "Terminado"
+      "estado": "En Proceso"
+    },
+    {
+      "id": "",
+      "numeroPedido": "P00848",
+      "nombre": "diego",
+      "nombreProductor": "",
+      "correoProductor": "",
+      "correo": "hdiego@gmail.com",
+      "productos": [
+        "Vino Tinto Malbec - Mendoza - Concentrado y afrutado, ideal para acompañar carnes rojas."
+      ],
+      "condicionTransporte": "frio",
+      "metodoPago": "contraentrega",
+      "telefonoProductor": "",
+      "telefono": "958075248",
+      "terminosPago": "soles",
+      "fecha": "2024-10-18",
+      "fechaEntrega": "2024-10-25",
+      "tipo": "Vino Tinto",
+      "estado": "En Proceso"
+    },
+    {
+      "id": "",
+      "numeroPedido": "P00710",
+      "nombre": "arturo",
+      "nombreProductor": "",
+      "correoProductor": "",
+      "correo": "art@gmail.com",
+      "productos": [
+        "Vino Rosado Garnacha - Campo de Borja - Vino ligero con aromas a frutas rojas y flores silvestres."
+      ],
+      "condicionTransporte": "frio",
+      "metodoPago": "efectivo",
+      "telefonoProductor": "",
+      "telefono": "213891273",
+      "terminosPago": "soles",
+      "fecha": "2024-10-18",
+      "fechaEntrega": "2024-10-25",
+      "tipo": "Vino Rosado",
+      "estado": "En Proceso"
     }
   ],
   "wines": [

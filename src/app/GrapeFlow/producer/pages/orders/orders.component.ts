@@ -31,7 +31,8 @@ import { TranslateModule } from "@ngx-translate/core";
     TranslateModule
   ],
   templateUrl: './orders.component.html',
-  styleUrl: './orders.component.css'
+  styleUrl: './orders.component.css',
+  providers: [DatePipe]
 })
 export class OrdersComponent implements OnInit, AfterViewInit {
   datasource: MatTableDataSource<Order> = new MatTableDataSource<Order>();
@@ -42,6 +43,7 @@ export class OrdersComponent implements OnInit, AfterViewInit {
   @ViewChild(MatSort) sort!: MatSort;
 
   private dialog: MatDialog = inject(MatDialog);
+  private datePipe: DatePipe = inject(DatePipe);
 
   constructor(private orderService: OrderService) {}
 
@@ -56,7 +58,10 @@ export class OrdersComponent implements OnInit, AfterViewInit {
 
   private getAllOrders(): void {
     this.orderService.getAll().subscribe((orders: Order[]) => {
-      console.log('Pedidos recibidos:', orders);
+      // Formatear la fecha correctamente para cada orden
+      orders.forEach(order => {
+        order.fecha = this.datePipe.transform(order.fecha, 'dd/MM/yyyy') || order.fecha;
+      });
       this.datasource.data = orders;
     }, (error) => {
       console.error('Error al obtener pedidos:', error);
@@ -94,7 +99,6 @@ export class OrdersComponent implements OnInit, AfterViewInit {
     if (confirm(`¿Estás seguro de que quieres eliminar el pedido ${order.numeroPedido}?`)) {
       this.orderService.deleteOrder(order.id).subscribe(
         () => {
-          console.log('Pedido eliminado:', order);
           this.datasource.data = this.datasource.data.filter(o => o.id !== order.id);
         },
         (error) => {
@@ -105,6 +109,21 @@ export class OrdersComponent implements OnInit, AfterViewInit {
   }
 
   onAddOrder() {
-    console.log('Agregar nuevo pedido');
+    this.orderService.getAll().subscribe(orders => {
+      const lastOrder = orders[orders.length - 1];
+      const lastOrderNumber = lastOrder ? parseInt(lastOrder.numeroPedido.replace('P', ''), 10) : 0;
+      const newOrderNumber = `P${lastOrderNumber + 1}`;
+
+      const newOrder = new Order({
+        numeroPedido: newOrderNumber,
+        fecha: this.datePipe.transform(new Date(), 'yyyy-MM-dd') || '',
+        tipo: 'Nuevo tipo',
+        estado: 'En Proceso'
+      });
+
+      this.orderService.addOrder(newOrder).subscribe(() => {
+        this.getAllOrders();
+      });
+    });
   }
 }
