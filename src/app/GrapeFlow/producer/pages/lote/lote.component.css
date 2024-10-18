@@ -80,13 +80,13 @@ button[mat-raised-button] {
 }
 
 .add-button {
-  background-color: #ff9800 !important;
+  background-color: #6a1b9a !important;
   color: white !important;
   transition: background-color 0.3s ease;
 }
 
 .add-button:hover {
-  background-color: #f57c00 !important;
+  background-color: #4a148c !important;
 }
 
 .grape-icon {
@@ -106,9 +106,9 @@ button[mat-raised-button] {
 }
 
 .status-in-process {
-  background-color: #ffc107;
+  background-color: #ffb74d;
 }
 
 .status-waiting {
-  background-color: #f44336;
+  background-color: #e57373;
 }

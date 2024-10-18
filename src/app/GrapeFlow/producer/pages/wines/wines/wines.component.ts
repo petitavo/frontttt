@@ -132,7 +132,6 @@ export class WinesComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // Métodos de acciones
   onDelete(wine: Product): void {
     if (confirm(`Are you sure you want to delete the wine ${wine.nombre}?`)) {
       this.productService.delete(wine.id).subscribe({

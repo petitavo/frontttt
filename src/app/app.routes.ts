@@ -17,9 +17,12 @@ import { ProductComponent } from './GrapeFlow/consumer/pages/product/product.com
 import { WinesComponent } from "./GrapeFlow/producer/pages/wines/wines/wines.component";
 
 export const routes: Routes = [
+  // Rutas públicas
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
+
+  // Rutas del Productor
   { path: 'producer', component: SidenavComponent, children: [
       { path: 'home-producer', component: HomeProducerComponent },
       { path: 'clients', component: ClientsComponent },
@@ -30,6 +33,8 @@ export const routes: Routes = [
       { path: 'detailClients/:id', component: DetailsClientsComponent },
       { path: 'wines', component: WinesComponent }
     ]},
+
+  // Rutas del Consumidor
   { path: 'consumer', component: SidenavConsumerComponent, children: [
       { path: 'home-consumer', component: HomeConsumerComponent },
       { path: 'orders', component: ConsumerOrderComponent },
