@@ -1,4 +1,3 @@
-// order.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,7 +8,7 @@ import { Order } from "../model/order.entity";
 })
 export class OrderService {
 
-  private apiUrl = '/api/orders'; // Ajusta la URL base según tu configuración
+  private apiUrl = 'http://localhost:3000/orders';
 
   constructor(private http: HttpClient) {}
 

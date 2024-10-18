@@ -126,9 +126,4 @@ export class OrdersComponent implements OnInit, AfterViewInit {
       );
     }
   }
-
-  onAddOrder() {
-    console.log('Agregar nuevo pedido');
-    // Navegar a agregar un nuevo pedido
-  }
 }

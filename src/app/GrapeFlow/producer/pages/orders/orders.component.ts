@@ -1,66 +1,45 @@
-import {AfterViewInit, Component, inject, OnInit, ViewChild} from '@angular/core';
-import {
-  MatCell,
-  MatCellDef,
-  MatColumnDef,
-  MatHeaderCell,
-  MatHeaderCellDef,
-  MatHeaderRow, MatHeaderRowDef, MatRow, MatRowDef,
-  MatTable, MatTableDataSource, MatTableModule
-} from "@angular/material/table";
-import {MatButton, MatButtonModule} from "@angular/material/button";
-import {MatFormField, MatInput, MatInputModule} from "@angular/material/input";
-import {MatPaginator} from "@angular/material/paginator";
-import {Order} from "../../model/order.entity";
-import {MatSort} from "@angular/material/sort";
-import {OrderService} from "../../services/order.service";
-import {Router} from "@angular/router";
+import { AfterViewInit, Component, inject, OnInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatTableModule } from "@angular/material/table";
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { MatPaginator } from "@angular/material/paginator";
+import { Order } from "../../model/order.entity";
+import { MatSort } from "@angular/material/sort";
+import { OrderService } from "../../services/order.service";
 import { MatSortModule } from '@angular/material/sort';
-import {MatIcon} from "@angular/material/icon";
-import {DatePipe} from "@angular/common";
-import {MatOption} from "@angular/material/core";
-import {MatSelect} from "@angular/material/select";
-import {Lote} from "../../model/lote.entity";
-import {LoteDetailsComponent} from "../../components/lote-details/lote-details.component";
-import {MatDialog} from "@angular/material/dialog";
-import {OrdersDetailsComponent} from "../../components/orders-details/orders-details.component";
+import { MatDialog } from "@angular/material/dialog";
+import { OrdersDetailsComponent } from "../../components/orders-details/orders-details.component";
+import { MatIcon } from "@angular/material/icon";
+import { DatePipe } from "@angular/common";
+import { MatOption } from "@angular/material/core";
+import { MatSelect } from "@angular/material/select";
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-orders',
   standalone: true,
   imports: [
-    MatColumnDef,
-    MatHeaderCell,
-    MatHeaderCellDef,
-    MatCellDef,
-    MatButtonModule,
-    MatCell,
-    MatTable,
-    MatInputModule,
-    MatFormField,
-    MatHeaderRow,
-    MatRow,
-    MatPaginator,
-    MatRowDef,
     MatTableModule,
+    MatButtonModule,
+    MatInputModule,
+    MatPaginator,
     MatSortModule,
-    MatHeaderRowDef,
     MatIcon,
     DatePipe,
     MatOption,
-    MatSelect
+    MatSelect,
+    TranslateModule
   ],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.css'
 })
-export class OrdersComponent implements OnInit, AfterViewInit{
+export class OrdersComponent implements OnInit, AfterViewInit {
   datasource: MatTableDataSource<Order> = new MatTableDataSource<Order>();
   columnsToDisplay: string[] = ['numeroPedido', 'fecha', 'tipo', 'estado', 'actions'];
   filteredValue: string = '';
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-
 
   private dialog: MatDialog = inject(MatDialog);
 
@@ -97,11 +76,9 @@ export class OrdersComponent implements OnInit, AfterViewInit{
   }
 
   onChangeStatus(order: Order): void {
-    console.log('Estado actual:', order.estado); // Verificar estado actual
     const newStatus = order.estado === 'En Proceso' ? 'Terminado' : 'En Proceso';
-    console.log('Nuevo estado:', newStatus); // Verificar nuevo estado
 
-    this.orderService.update(order.id, { ...order, estado: newStatus }).subscribe(
+    this.orderService.updateOrder(order.id, { ...order, estado: newStatus }).subscribe(
       (updatedOrder) => {
         const index = this.datasource.data.findIndex(o => o.id === updatedOrder.id);
         if (index !== -1) {
@@ -109,16 +86,15 @@ export class OrdersComponent implements OnInit, AfterViewInit{
           this.datasource._updateChangeSubscription();
         }
       },
-      (error) => console.error('Error updating order status', error)
+      (error) => console.error('Error al actualizar el estado del pedido:', error)
     );
   }
 
   onDelete(order: Order) {
     if (confirm(`¿Estás seguro de que quieres eliminar el pedido ${order.numeroPedido}?`)) {
-      this.orderService.delete(order.id).subscribe(
+      this.orderService.deleteOrder(order.id).subscribe(
         () => {
           console.log('Pedido eliminado:', order);
-          // Actualiza la fuente de datos para reflejar el cambio
           this.datasource.data = this.datasource.data.filter(o => o.id !== order.id);
         },
         (error) => {
@@ -130,6 +106,5 @@ export class OrdersComponent implements OnInit, AfterViewInit{
 
   onAddOrder() {
     console.log('Agregar nuevo pedido');
-    // Navegar a agregar un nuevo pedido
   }
 }

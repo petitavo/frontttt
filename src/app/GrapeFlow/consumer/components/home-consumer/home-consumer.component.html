@@ -9,7 +9,7 @@
 
     <!-- Sección de Vinos Populares -->
     <div class="popular-wines">
-        <h2>{{ 'HOME.POPULAR_WINES' | translate }}</h2>
+        <h2>{{ 'HOME-CONSUMER.POPULAR_WINES' | translate }}</h2>
         <div class="wine-cards">
             <div *ngFor="let wine of popularWines" class="wine-card">
                 <!-- Imagen y detalles del vino -->
@@ -17,7 +17,7 @@
                 <h3>{{ wine.nombre }}</h3>
                 <p>{{ wine.descripcion }}</p>
                 <!-- Botón Ver Detalles que redirige a la pantalla de vinos -->
-                <button class="wine-button" (click)="goToWines()">{{ 'HOME.VIEW_DETAILS' | translate }}</button>
+                <button class="wine-button" (click)="goToWines()">{{ 'HOME-CONSUMER.VIEW_DETAILS' | translate }}</button>
             </div>
         </div>
 

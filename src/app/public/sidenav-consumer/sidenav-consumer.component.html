@@ -9,14 +9,11 @@
     <!-- Indicador sutil para "consumer" -->
     <div class="consumer-indicator">
       <mat-icon>person</mat-icon> <!-- Ícono de usuario -->
-      <span class="consumer-label">Consumer</span>
+      <span class="consumer-label">{{ 'SIDENAV-CONSUMER.CONSUMER' | translate }}</span>
     </div>
 
     <!-- Botones para cambiar idioma -->
-    <div class="language-buttons">
-      <button class="language-button" [class.active]="isActive('es')" (click)="changeLanguage('es')">Español</button>
-      <button class="language-button" [class.active]="isActive('en')" (click)="changeLanguage('en')">English</button>
-    </div>
+    <app-language-switcher></app-language-switcher>
   </mat-toolbar>
 </header>
 
@@ -26,19 +23,19 @@
       <!-- Usamos rutas absolutas -->
       <a mat-list-item routerLink="/consumer/home-consumer" (click)="closeSidenav()" class="white-text">
         <mat-icon>home</mat-icon>
-        <span class="link-text">Home</span>
+        <span class="link-text">{{ 'SIDENAV-CONSUMER.HOME' | translate }}</span>
       </a>
       <a mat-list-item routerLink="/consumer/product" (click)="closeSidenav()" class="white-text">
         <mat-icon>local_bar</mat-icon>
-        <span class="link-text">Wines</span>
+        <span class="link-text">{{ 'SIDENAV-CONSUMER.WINES' | translate }}</span>
       </a>
       <a mat-list-item routerLink="/consumer/orders" (click)="closeSidenav()" class="white-text">
         <mat-icon>shopping_basket</mat-icon>
-        <span class="link-text">My Orders</span>
+        <span class="link-text">{{ 'SIDENAV-CONSUMER.ORDERS' | translate }}</span>
       </a>
       <a mat-list-item routerLink="/login" (click)="logout()" class="white-text">
         <mat-icon>exit_to_app</mat-icon>
-        <span class="link-text">Logout</span>
+        <span class="link-text">{{ 'SIDENAV-CONSUMER.LOGOUT' | translate }}</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -50,7 +47,4 @@
 </mat-sidenav-container>
 
 <!-- Footer -->
-<div class="footer-content">
-  <p>Copyright © 2024</p>
-  <p>Developed by the developer team of Villa System</p>
-</div>
+<app-footer-content></app-footer-content>

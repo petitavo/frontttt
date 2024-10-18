@@ -6,7 +6,9 @@ import { MatSidenav, MatSidenavContainer, MatSidenavModule } from "@angular/mate
 import { MatButton, MatIconButton } from "@angular/material/button";
 import { MatToolbar } from "@angular/material/toolbar";
 import { FooterContentComponent } from "../footer-content/footer-content.component";
-import { TranslateService } from '@ngx-translate/core'; // Importamos el servicio de traducción
+import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
+import {LanguageSwitcherComponent} from "../language-switcher/language-switcher.component"; // Importamos el servicio de traducción
 
 @Component({
   selector: 'app-sidenav',
@@ -23,7 +25,9 @@ import { TranslateService } from '@ngx-translate/core'; // Importamos el servici
     MatToolbar,
     RouterOutlet,
     MatSidenavModule,
-    FooterContentComponent
+    FooterContentComponent,
+    LanguageSwitcherComponent,
+    TranslateModule
   ],
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.css']

@@ -14,6 +14,7 @@
   import { MatIconModule } from '@angular/material/icon';
   import {RouterLink} from "@angular/router";
   import {LoteAddComponent} from "../../components/lote-add/lote-add.component";
+  import {TranslateModule} from "@ngx-translate/core";
 
   @Component({
     selector: 'app-lote',
@@ -29,7 +30,8 @@
       MatSortModule,
       MatDialogModule,
       MatIconModule,
-      RouterLink
+      RouterLink,
+      TranslateModule
     ],
     templateUrl: './lote.component.html',
     styleUrls: ['./lote.component.css']

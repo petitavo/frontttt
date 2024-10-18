@@ -1,8 +1,5 @@
 import { AfterViewInit, Component, inject, OnInit, ViewChild } from '@angular/core';
-import {
-  MatTableDataSource,
-  MatTableModule
-} from "@angular/material/table";
+import { MatTableDataSource, MatTableModule } from "@angular/material/table";
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
 import { MatPaginator } from "@angular/material/paginator";
@@ -16,6 +13,7 @@ import { MatSelectModule, MatOption } from '@angular/material/select';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-consumer-order',
@@ -29,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     MatSortModule,
     MatIconModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    TranslateModule
   ],
   templateUrl: './consumer-order.component.html',
   styleUrls: ['./consumer-order.component.css']
@@ -119,4 +118,3 @@ export class ConsumerOrderComponent implements OnInit, AfterViewInit {
     }
   }
 }
-

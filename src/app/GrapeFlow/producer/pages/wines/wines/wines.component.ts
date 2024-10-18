@@ -19,6 +19,7 @@ import { LoteService } from "../../../services/lote.service";
 import { LoteDetailsComponent } from "../../../components/lote-details/lote-details.component";
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-wines',
@@ -34,7 +35,8 @@ import { of } from 'rxjs';
     MatSortModule,
     MatDialogModule,
     MatIconModule,
-    RouterLink
+    RouterLink,
+    TranslateModule
   ],
   templateUrl: './wines.component.html',
   styleUrls: ['./wines.component.css']
@@ -47,6 +49,11 @@ export class WinesComponent implements OnInit, AfterViewInit {
   private productService: ProductService = inject(ProductService);
   private loteService: LoteService = inject(LoteService);
   private dialog: MatDialog = inject(MatDialog);
+
+  // Variables para los filtros
+  selectedFilter: string = 'nombre';
+  filterOptions: string[] = [];
+  protected filteredWines: Product[] = [];
 
   constructor() {
     this.dataSource = new MatTableDataSource<Product>();
@@ -65,16 +72,67 @@ export class WinesComponent implements OnInit, AfterViewInit {
     this.productService.getAll().subscribe({
       next: (wines: Product[]) => {
         this.dataSource.data = wines;
+        this.filteredWines = wines; // Inicializa la lista filtrada
+        this.setFilterOptions();
       },
       error: (error) => console.error('Error fetching wines:', error)
     });
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  // Método para aplicar el filtro basado en el tipo seleccionado
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
+    this.filteredWines = this.dataSource.data.filter(wine => {
+      if (this.selectedFilter === 'nombre') {
+        return wine.nombre.toLowerCase().includes(filterValue);
+      } else if (this.selectedFilter === 'tipo') {
+        return wine.tipo.toLowerCase().includes(filterValue);
+      } else if (this.selectedFilter === 'region') {
+        return wine.region.toLowerCase().includes(filterValue);
+      }
+      return true;
+    });
   }
 
+  // Cambiar el filtro seleccionado
+  onFilterChange(filter: string): void {
+    this.selectedFilter = filter;
+    this.filterOptions = this.getFilterOptionsForSelectedFilter();
+  }
+
+  // Opciones del filtro basadas en el tipo seleccionado
+  getFilterOptionsForSelectedFilter(): string[] {
+    if (this.selectedFilter === 'tipo') {
+      return [...new Set(this.dataSource.data.map(wine => wine.tipo))];
+    } else if (this.selectedFilter === 'region') {
+      return [...new Set(this.dataSource.data.map(wine => wine.region))];
+    } else {
+      return [];
+    }
+  }
+
+  // Método para configurar las opciones del filtro (cuando inician los datos)
+  setFilterOptions(): void {
+    this.filterOptions = this.getFilterOptionsForSelectedFilter();
+  }
+
+  // Seleccionar una opción de filtro
+  onSelectOption(option: string): void {
+    if (option === 'Todos') {
+      this.filteredWines = this.dataSource.data;
+    } else {
+      this.filteredWines = this.dataSource.data.filter(wine => {
+        if (this.selectedFilter === 'tipo') {
+          return wine.tipo === option;
+        } else if (this.selectedFilter === 'region') {
+          return wine.region === option;
+        }
+        return true;
+      });
+    }
+  }
+
+  // Métodos de acciones
   onDelete(wine: Product): void {
     if (confirm(`Are you sure you want to delete the wine ${wine.nombre}?`)) {
       this.productService.delete(wine.id).subscribe({
@@ -111,12 +169,10 @@ export class WinesComponent implements OnInit, AfterViewInit {
             });
           } else {
             console.error('Lot not found');
-            // Optionally, show a message to the user that the lot was not found
           }
         });
     } else {
       console.error('No lot associated with this wine');
-      // Optionally, show a message to the user that there's no lot associated with this wine
     }
   }
 

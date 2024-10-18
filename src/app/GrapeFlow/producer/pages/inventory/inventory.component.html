@@ -1,70 +1,70 @@
 <div class="inventory-wrapper">
-  <h1>Inventory</h1>
+  <h1>{{ 'INVENTORY.TITLE' | translate }}</h1>
 
   <div class="search-container">
     <mat-form-field appearance="outline">
-      <mat-label>Search</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Search" #input>
+      <mat-label>{{ 'INVENTORY.SEARCH' | translate }}</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="{{ 'INVENTORY.SEARCH' | translate }}" #input>
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
     <mat-form-field appearance="outline">
-      <mat-label>Filter</mat-label>
+      <mat-label>{{ 'INVENTORY.FILTER' | translate }}</mat-label>
       <mat-select>
-        <mat-option value="nombre">Name</mat-option>
-        <mat-option value="tipo">Type</mat-option>
-        <mat-option value="proveedor">Supplier</mat-option>
+        <mat-option value="nombre">{{ 'INVENTORY.NAME' | translate }}</mat-option>
+        <mat-option value="tipo">{{ 'INVENTORY.TYPE' | translate }}</mat-option>
+        <mat-option value="proveedor">{{ 'INVENTORY.SUPPLIER' | translate }}</mat-option>
       </mat-select>
     </mat-form-field>
-    <button mat-raised-button color="accent">Search</button>
+    <button mat-raised-button color="accent">{{ 'INVENTORY.SEARCH' | translate }}</button>
   </div>
 
   <button mat-raised-button color="primary" class="add-button" (click)="openAddDialog()">
-    <mat-icon>add</mat-icon> Add New Item
+    <mat-icon>add</mat-icon> {{ 'INVENTORY.ADD_NEW_ITEM' | translate }}
   </button>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
     <ng-container matColumnDef="nombre">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'INVENTORY.NAME' | translate }}</th>
       <td mat-cell *matCellDef="let item">{{ item.nombre }}</td>
     </ng-container>
 
     <ng-container matColumnDef="tipo">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'INVENTORY.TYPE' | translate }}</th>
       <td mat-cell *matCellDef="let item">{{ item.tipo }}</td>
     </ng-container>
 
     <ng-container matColumnDef="unidad">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Unit</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'INVENTORY.UNIT' | translate }}</th>
       <td mat-cell *matCellDef="let item">{{ item.unidad }}</td>
     </ng-container>
 
     <ng-container matColumnDef="caducidad">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Expiry Date</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'INVENTORY.EXPIRY_DATE' | translate }}</th>
       <td mat-cell *matCellDef="let item">{{ item.caducidad }}</td>
     </ng-container>
 
     <ng-container matColumnDef="proveedor">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Supplier</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'INVENTORY.SUPPLIER' | translate }}</th>
       <td mat-cell *matCellDef="let item">{{ item.proveedor }}</td>
     </ng-container>
 
     <ng-container matColumnDef="costoU">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Unit Cost</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'INVENTORY.UNIT_COST' | translate }}</th>
       <td mat-cell *matCellDef="let item">{{ item.costoU | currency:'USD':'symbol':'1.2-2' }}</td>
     </ng-container>
 
     <ng-container matColumnDef="cantidad">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ 'INVENTORY.QUANTITY' | translate }}</th>
       <td mat-cell *matCellDef="let item">{{ item.cantidad }}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <th mat-header-cell *matHeaderCellDef>{{ 'INVENTORY.ACTIONS' | translate }}</th>
       <td mat-cell *matCellDef="let item">
-        <button mat-icon-button color="primary" (click)="onEdit(item)">
+        <button mat-icon-button color="primary" (click)="onEdit(item)" [attr.aria-label]="('INVENTORY.EDIT' | translate)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button color="warn" (click)="onDelete(item)">
+        <button mat-icon-button color="warn" (click)="onDelete(item)" [attr.aria-label]="('INVENTORY.DELETE' | translate)">
           <mat-icon>delete</mat-icon>
         </button>
       </td>

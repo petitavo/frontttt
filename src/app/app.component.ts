@@ -28,14 +28,8 @@ import { ProductComponent } from './GrapeFlow/consumer/pages/product/product.com
 export class AppComponent {
   title = 'FontEnd-VillaSystem';
 
-  constructor(private translate: TranslateService) {
-    this.translate.addLangs(['es', 'en']);  // Idiomas soportados
-    this.translate.setDefaultLang('es');    // Idioma predeterminado
-
-    // Detectar el idioma del navegador
-    const browserLang = this.translate.getBrowserLang() || 'es'; // Si no se encuentra, usa 'es'
-
-    // Verifica si el idioma detectado es 'en' o 'es', si no, usa 'es'
-    this.translate.use(browserLang.match(/en|es/) ? browserLang : 'es');
+  constructor(translate: TranslateService) {
+    translate.setDefaultLang('en');
+    translate.use('en');
   }
 }

@@ -12,6 +12,7 @@ import { InventoryService } from '../../services/inventory.service';
 import { MatDialog } from "@angular/material/dialog";
 import { InventoryEditComponent } from "../../components/inventory-edit/inventory-edit.component";
 import { MatIconModule } from "@angular/material/icon";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-inventory',
@@ -25,7 +26,8 @@ import { MatIconModule } from "@angular/material/icon";
     MatPaginatorModule,
     FormsModule,
     MatSortModule,
-    MatIconModule
+    MatIconModule,
+    TranslateModule
   ],
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.css']

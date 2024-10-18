@@ -1,23 +1,23 @@
 <div class="wine-list-container">
-  <h1 class="title">Vinos</h1>
+  <h1 class="title"><span class="link-text">{{ 'SIDENAV-CONSUMER.WINES' | translate }}</span></h1>
 
   <div class="search-container">
     <mat-form-field appearance="outline">
-      <mat-label>Filtrar por</mat-label>
+      <mat-label>{{ 'CONSUMER.FILTER_BY' | translate }}</mat-label>
       <mat-select [(value)]="selectedFilter" (selectionChange)="onFilterChange($event.value)">
-        <mat-option value="nombre">Nombre</mat-option>
-        <mat-option value="tipo">Tipo</mat-option>
-        <mat-option value="uvas">Uvas</mat-option>
+        <mat-option value="nombre">{{ 'CONSUMER.NAME' | translate }}</mat-option>
+        <mat-option value="tipo">{{ 'CONSUMER.TYPE' | translate }}</mat-option>
+        <mat-option value="uvas">{{ 'CONSUMER.GRAPES' | translate }}</mat-option>
       </mat-select>
     </mat-form-field>
 
     <mat-form-field *ngIf="selectedFilter === 'nombre'" appearance="outline">
-      <mat-label>Buscar</mat-label>
-      <input matInput (input)="applyFilter($event)" placeholder="Buscar por {{selectedFilter}}">
+      <mat-label>{{ 'CONSUMER.SEARCH' | translate }}</mat-label>
+      <input matInput (input)="applyFilter($event)" placeholder="{{ 'CONSUMER.SEARCH' | translate }} por {{selectedFilter}}">
     </mat-form-field>
 
     <mat-form-field *ngIf="selectedFilter === 'tipo' || selectedFilter === 'uvas'" appearance="outline">
-      <mat-label>Seleccionar {{selectedFilter}}</mat-label>
+      <mat-label>{{ 'CONSUMER.SELECT' | translate }} {{selectedFilter}}</mat-label>
       <mat-select (selectionChange)="onSelectOption($event.value)">
         <mat-option *ngFor="let option of filterOptions" [value]="option">{{option}}</mat-option>
       </mat-select>
@@ -31,7 +31,7 @@
       <div class="wine-info">
         <h3>{{product.nombre}}</h3>
         <p>{{product.descripcion}}</p>
-        <button mat-raised-button (click)="onBuyWine($event, product)">Comprar</button>
+        <button mat-raised-button (click)="onBuyWine($event, product)">{{ 'CONSUMER.BUY' | translate }}</button>
       </div>
     </div>
   </div>

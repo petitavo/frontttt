@@ -3,18 +3,19 @@ import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { OrderService } from '../../services/order.service';
 import { Order } from '../../model/order.entity';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';  // Importamos TranslateModule y TranslateService
 
 @Component({
   selector: 'app-home-producer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],  // Añadimos TranslateModule aquí
   templateUrl: './home-producer.component.html',
   styleUrls: ['./home-producer.component.css']
 })
 export class HomeProducerComponent implements OnInit {
   orders: Order[] = [];
 
-  constructor(private orderService: OrderService, private router: Router) {}
+  constructor(private orderService: OrderService, private router: Router, private translate: TranslateService) {}  // Inyectamos el servicio de traducción
 
   ngOnInit(): void {
     this.loadOrders();
@@ -35,5 +36,10 @@ export class HomeProducerComponent implements OnInit {
   // Redirigir a la ventana de pedidos completos
   goToOrders(): void {
     this.router.navigate(['/orders']);  // Redirige a la ruta de pedidos
+  }
+
+  // Método para cambiar el idioma
+  changeLanguage(lang: string): void {
+    this.translate.use(lang);
   }
 }

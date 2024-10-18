@@ -16,6 +16,7 @@ import { LoteDetailsComponent } from "../../../producer/components/lote-details/
 import { OrderDetailsDialogComponent } from '../../components/order-details-dialog/order-details-dialog.component';
 import { OrderService } from '../../../producer/services/order.service';
 import { Order } from "../../../producer/model/order.entity";
+import {TranslateModule} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-product-details',
@@ -29,7 +30,8 @@ import { Order } from "../../../producer/model/order.entity";
     FormsModule,
     MatDialogModule,
     MatIconModule,
-    RouterLink
+    RouterLink,
+    TranslateModule
   ],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
@@ -150,6 +152,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
           estado: 'En Proceso'
         });
 
+        // Asegúrate de que el método `addOrder` esté definido correctamente en `OrderService`
         this.orderService.addOrder(newOrder).subscribe(
           () => {
             console.log('Pedido registrado:', newOrder);

@@ -4,31 +4,31 @@
       <mat-nav-list>
         <a mat-list-item routerLink="/producer/home-producer" (click)="closeSidenav()" class="white-text">
           <mat-icon>home</mat-icon>
-          <span class="link-text">Home</span>
+          <span class="link-text">{{ 'SIDENAV-PRODUCER.HOME' | translate }}</span>
         </a>
         <a mat-list-item routerLink="/producer/inventory" (click)="closeSidenav()" class="white-text">
           <mat-icon>inventory</mat-icon>
-          <span class="link-text">Inventory</span>
+          <span class="link-text">{{ 'SIDENAV-PRODUCER.INVENTORY' | translate }}</span>
         </a>
         <a mat-list-item routerLink="/producer/lote" (click)="closeSidenav()" class="white-text">
           <mat-icon>local_bar</mat-icon>
-          <span class="link-text">Winemaking</span>
+          <span class="link-text">{{ 'SIDENAV-PRODUCER.WINEMAKING' | translate }}</span>
         </a>
         <a mat-list-item routerLink="/producer/clients" (click)="closeSidenav()" class="white-text">
           <mat-icon>people</mat-icon>
-          <span class="link-text">My Clients</span>
+          <span class="link-text">{{ 'SIDENAV-PRODUCER.CLIENTS' | translate }}</span>
         </a>
         <a mat-list-item routerLink="/producer/orders" (click)="closeSidenav()" class="white-text">
           <mat-icon>assignment</mat-icon>
-          <span class="link-text">My Orders</span>
+          <span class="link-text">{{ 'SIDENAV-PRODUCER.ORDERS' | translate }}</span>
         </a>
         <a mat-list-item routerLink="/producer/wines" (click)="closeSidenav()" class="white-text">
           <mat-icon>assignment</mat-icon>
-          <span class="link-text">Wines</span>
+          <span class="link-text">{{ 'SIDENAV-PRODUCER.WINES' | translate }}</span>
         </a>
         <a mat-list-item routerLink="/login" (click)="logout()" class="white-text">
           <mat-icon>exit_to_app</mat-icon>
-          <span class="link-text">Logout</span>
+          <span class="link-text">{{ 'SIDENAV-PRODUCER.LOGOUT' | translate }}</span>
         </a>
       </mat-nav-list>
     </mat-sidenav>
@@ -43,10 +43,9 @@
           <span class="spacer"></span>
           <div class="producer-indicator">
             <mat-icon>store</mat-icon>
-            <span class="producer-label">Producer</span>
+            <span class="producer-label">{{ 'SIDENAV-PRODUCER.PRODUCER' | translate }}</span>
           </div>
-          <button (click)="changeLanguage('es')">Español</button>
-          <button (click)="changeLanguage('en')">English</button>
+          <app-language-switcher></app-language-switcher>
         </mat-toolbar>
       </header>
 

@@ -1,0 +1,127 @@
+{
+  "HOME": {
+    "WELCOME_TITLE": "Welcome to GrapeFlow",
+    "WELCOME_MESSAGE": "We are thrilled to have you here,",
+    "USER": "user",
+    "PLATFORM_DESCRIPTION": "From this platform, you can discover our most popular wines and easily place your orders.",
+    "RECOMMENDATIONS": "Take advantage of our personalized recommendations.",
+    "VIEW_MORE": "View More"
+  },
+  "HOME-CONSUMER": {
+    "PLATFORM_DESCRIPTION": "From this platform, you can discover our most popular wines and easily place your orders.",
+    "RECOMMENDATIONS": "Take advantage of our personalized recommendations.",
+    "POPULAR_WINES": "Popular Wines",
+    "VIEW_DETAILS": "View Details"
+  },
+  "HOME-PRODUCTOR": {
+    "PLATFORM_DESCRIPTION": "From this platform, you can manage your clients, producer, and orders easily.",
+    "RECOMMENDATIONS": "Take advantage of the tools we have for you.",
+    "RECENT_ORDERS": "Recent Orders",
+    "VIEW_ORDER": "Go to Order"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2024 Villa System. All rights reserved.",
+    "DEVELOPED_BY": "Developed by the Villa System Developer Team."
+  },
+  "SIDENAV-CONSUMER": {
+    "HOME": "Home",
+    "WINES": "Wines",
+    "ORDERS": "My Orders",
+    "LOGOUT": "Logout",
+    "CONSUMER": "Consumer"
+  },
+  "SIDENAV-PRODUCER": {
+    "HOME": "Inicio",
+    "INVENTORY": "Inventory",
+    "WINEMAKING": "Winemaking",
+    "CLIENTS": "My Clients",
+    "ORDERS": "My Orders",
+    "WINES": "Wines",
+    "LOGOUT": "Logout",
+    "PRODUCER": "Producer"
+  },
+  "CONSUMER": {
+    "ORDER-REGISTRATION": "Order Registration",
+    "FILTER": "Filter",
+    "ORDER_NUMBER": "Order Number",
+    "DATE": "Date",
+    "STATUS": "Status",
+    "ACTIONS": "Actions",
+    "VIEW_DETAILS": "View details",
+    "FILTER_BY": "Filter by",
+    "NAME": "Name",
+    "TYPE": "Type",
+    "GRAPES": "Grapes",
+    "SEARCH": "Search",
+    "SELECT": "Select",
+    "BUY": "Buy"
+  },
+  "INVENTORY": {
+    "TITLE": "Inventory",
+    "SEARCH": "Search",
+    "FILTER": "Filter",
+    "NAME": "Name",
+    "TYPE": "Type",
+    "SUPPLIER": "Supplier",
+    "ADD_NEW_ITEM": "Add New Item",
+    "UNIT": "Unit",
+    "EXPIRY_DATE": "Expiry Date",
+    "UNIT_COST": "Unit Cost",
+    "QUANTITY": "Quantity",
+    "ACTIONS": "Actions",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "BATCH": {
+    "TITLE": "Batch Registration",
+    "SEARCH": "Search",
+    "FILTER": "Filter",
+    "BATCH_NUMBER": "Batch Number",
+    "GRAPE": "Grape",
+    "PROCESS_STATUS": "Process Status",
+    "ADD_BATCH": "Add Batch",
+    "START_DATE": "Start Date",
+    "ACTIONS": "Actions",
+    "VIEW_DETAILS": "View details",
+    "DELETE": "Delete",
+    "CHANGE_STATUS": "Change status"
+  },
+  "CLIENTS": {
+    "TITLE": "Clients",
+    "SEARCH": "Search",
+    "NAME": "Name",
+    "SURNAME": "Surname",
+    "PHONE": "Phone",
+    "ACTIONS": "Actions",
+    "DETAILS": "Details",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "ORDERS": {
+    "TITLE": "My Orders",
+    "SEARCH": "Search",
+    "FILTER": "Filter",
+    "ORDER_NUMBER": "Order Number",
+    "DATE": "Date",
+    "TYPE": "Type",
+    "STATUS": "Status",
+    "ACTIONS": "Actions",
+    "VIEW_DETAILS": "View details",
+    "CHANGE_STATUS": "Change status",
+    "DELETE": "Delete"
+  },
+  "PRODUCER": {
+    "FILTER_BY": "Filter by",
+    "SEARCH": "Search",
+    "SELECT": "Select",
+    "NAME": "Name",
+    "TYPE": "Type",
+    "REGION": "Region",
+    "ADD_WINE": "Add Wine",
+    "YEAR": "Year",
+    "VIEW_DETAILS": "View Details",
+    "VIEW_LOT": "View Lot",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  }
+}
