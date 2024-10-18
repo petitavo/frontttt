@@ -1,0 +1,76 @@
+.wines-wrapper {
+  padding: 20px;
+  background-color: #F5F5DC; /* Fondo de color claro */
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+  color: #A70AC0; /* Color morado */
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mat-form-field {
+  flex-grow: 1;
+}
+
+button[mat-raised-button] {
+  margin-bottom: 20px;
+}
+
+.add-button {
+  background-color: #ffc107 !important; /* Color de fondo para el botón de añadir */
+  color: white !important;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mat-mdc-header-row {
+  background-color: #A70AC0; /* Color morado para el encabezado */
+  color: white;
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: #E6E6FA; /* Color claro para filas pares */
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #F5F5DC; /* Color claro para filas impares */
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  color: white;
+}
+
+.mat-cell {
+  padding: 10px;
+}
+
+.mat-column-actions {
+  width: 180px;
+}
+
+mat-paginator {
+  margin-top: 20px;
+  background-color: #F5F5DC; /* Color de fondo del paginador */
+  border-radius: 8px;
+}
