@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Wine } from '../model/wine.entity';
+import { BaseService } from "../../../shared/services/base.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class WineService {
-  private apiUrl = 'http://localhost:3000/wines';  // URL correcta según db.json
-
-  constructor(private http: HttpClient) {}
+export class WineService extends BaseService<Wine> {
+  constructor() {
+    super();
+    this.resourceEndPoint = '/wines';
+  }
 
   getPopularWines(): Observable<Wine[]> {
-    return this.http.get<Wine[]>(this.apiUrl);
+    return this.getAll();
   }
 }
