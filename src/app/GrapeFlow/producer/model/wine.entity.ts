@@ -1,7 +1,7 @@
 export class Wine {
   id: string;
   nombre: string;
-  descripcion: string; // Asegúrate de que el nombre de esta propiedad sea 'descripcion'
+  descripcion: string;
   tipo: string;
   region: string;
   pais: string;
@@ -11,14 +11,14 @@ export class Wine {
   certificacion: string;
   calificacion: number;
   estado: string;
-  productor_id: string;
+  producer_id: string;
   lote_id: string;
   link: string;
 
   constructor(wine: Partial<Wine> = {}) {
     this.id = wine.id || '';
     this.nombre = wine.nombre || '';
-    this.descripcion = wine.descripcion || ''; // Aquí debe estar correctamente definido
+    this.descripcion = wine.descripcion || '';
     this.tipo = wine.tipo || '';
     this.region = wine.region || '';
     this.pais = wine.pais || '';
@@ -28,7 +28,7 @@ export class Wine {
     this.certificacion = wine.certificacion || '';
     this.calificacion = wine.calificacion || 0;
     this.estado = wine.estado || '';
-    this.productor_id = wine.productor_id || '';
+    this.producer_id = wine.producer_id || '';
     this.lote_id = wine.lote_id || '';
     this.link = wine.link || '';
   }

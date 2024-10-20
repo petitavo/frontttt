@@ -5,37 +5,44 @@
     <dd>{{ data.id }}</dd>
 
     <dt>Nombre:</dt>
-    <dd>{{ data.nombre }}</dd>
+    <dd>{{ client?.nombre }} {{ client?.apellido }}</dd>
 
     <dt>Correo:</dt>
-    <dd>{{ data.correo }}</dd>
+    <dd>{{ client?.correo }}</dd>
 
     <dt>Productos:</dt>
-    <dd>{{ data.productos }}</dd>
+    <dd>
+      <ul>
+        <li *ngFor="let producto of data.productos">{{ producto }}</li>
+      </ul>
+    </dd>
 
-    <dt>CondicionTransporte:</dt>
+    <dt>Condición de Transporte:</dt>
     <dd>{{ data.condicionTransporte }}</dd>
 
     <dt>Método de Pago:</dt>
     <dd>{{ data.metodoPago }}</dd>
 
-    <dt>Telefono:</dt>
-    <dd>{{ data.telefono }}</dd>
+    <dt>Teléfono:</dt>
+    <dd>{{ client?.telefono }}</dd>
 
-    <dt>Terminos de Pago:</dt>
+    <dt>Términos de Pago:</dt>
     <dd>{{ data.terminosPago }}</dd>
 
     <dt>Fecha de Solicitud:</dt>
-    <dd>{{ data.fecha | date:'dd/MM/yyyy'}}</dd>
+    <dd>{{ data.fecha | date:'dd/MM/yyyy' }}</dd>
 
     <dt>Fecha de Entrega:</dt>
-    <dd>{{ data.fechaEntrega | date:'dd/MM/yyyy'}}</dd>
+    <dd>{{ data.fechaEntrega | date:'dd/MM/yyyy' }}</dd>
 
     <dt>Tipo:</dt>
     <dd>{{ data.tipo }}</dd>
 
     <dt>Estado:</dt>
     <dd>{{ data.estado }}</dd>
+
+    <dt>Dirección de Entrega:</dt>
+    <dd>{{ client?.direccion }}, {{ client?.ciudad }}, {{ client?.pais }}</dd>
   </dl>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

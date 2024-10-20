@@ -42,7 +42,13 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   constructor(private dialog: MatDialog) {
     this.inventoryData = new Inventory({
-      nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
+      nombre: '',
+      tipo: '',
+      unidad: '',
+      caducidad: '',
+      costoU: 0,
+      cantidad: 0,
+      producer_id: '' // Add this line
     });
     this.dataSource = new MatTableDataSource<Inventory>();
   }
@@ -71,12 +77,20 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(InventoryEditComponent, {
       width: '400px',
       data: new Inventory({
-        nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
+        nombre: '',
+        tipo: '',
+        unidad: '',
+        caducidad: '',
+        costoU: 0,
+        cantidad: 0,
+        producer_id: '' // Add this line
       })
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        // Ensure producer_id is set before creating the item
+        result.producer_id = result.producer_id || 'default_producer_id'; // Replace with actual logic to get producer_id
         this.inventoryService.create(result).subscribe(
           (newItem) => {
             this.dataSource.data = [...this.dataSource.data, newItem];
@@ -84,7 +98,6 @@ export class InventoryComponent implements OnInit, AfterViewInit {
           (error) => console.error('Error adding inventory item', error)
         );
       }
-      // If result is undefined (cancel was clicked), do nothing
     });
   }
 
@@ -96,11 +109,12 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
+        // Ensure producer_id is set before updating the item
+        result.producer_id = result.producer_id || item.producer_id;
         this.inventoryService.update(result.id, result).subscribe(() => {
           this.getAllInventory(); // Refresh the inventory list
         });
       }
-      // If result is undefined (cancel was clicked), do nothing
     });
   }
 
