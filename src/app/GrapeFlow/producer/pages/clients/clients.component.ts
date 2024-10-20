@@ -37,12 +37,12 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   private clientService: ClientService = inject(ClientService);
 
   constructor(private router: Router) {
-    this.clientsData = new Client({nombre: '', apellido: '', telefono: ''});
+    this.clientsData = new Client();
     this.datasource = new MatTableDataSource<Client>();
   }
 
   ngOnInit(): void {
-    this.getAllClients();
+    this.getAllConsumers();
   }
 
   ngAfterViewInit(): void {
@@ -50,8 +50,8 @@ export class ClientsComponent implements OnInit, AfterViewInit {
     this.datasource.sort = this.sort;
   }
 
-  private getAllClients(): void {
-    this.clientService.getAll().subscribe((clients: Client[]) => {
+  private getAllConsumers(): void {
+    this.clientService.getAllConsumers().subscribe((clients: Client[]) => {
       this.datasource.data = clients;
     });
   }
@@ -68,6 +68,7 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   onEdit(client: Client) {
     this.router.navigate(['/producer/editClients', client.id]);
   }
+
   onDelete(client: Client) {
     if (confirm(`¿Estás seguro de que quieres eliminar a ${client.nombre} ${client.apellido}?`)) {
       this.clientService.delete(client.id).subscribe(
@@ -82,5 +83,4 @@ export class ClientsComponent implements OnInit, AfterViewInit {
       );
     }
   }
-
 }
