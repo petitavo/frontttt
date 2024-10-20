@@ -1,0 +1,28 @@
+<!-- buy-wine-dialog.component.html -->
+<h2 mat-dialog-title>Buy {{ data.wine.nombre }}</h2>
+<mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Shipping Condition</mat-label>
+    <input matInput [(ngModel)]="order.condicionTransporte">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Payment Terms</mat-label>
+    <mat-select [(ngModel)]="order.terminosPago">
+      <mat-option value="Pago Contado">Cash Payment</mat-option>
+      <mat-option value="Crédito 30 días">30-day Credit</mat-option>
+      <mat-option value="Crédito 60 días">60-day Credit</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Payment Method</mat-label>
+    <mat-select [(ngModel)]="order.metodoPago">
+      <mat-option value="Transferencia Bancaria">Bank Transfer</mat-option>
+      <mat-option value="Tarjeta de Crédito">Credit Card</mat-option>
+      <mat-option value="Yape">Yape</mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onSubmit()">Buy</button>
+</mat-dialog-actions>
