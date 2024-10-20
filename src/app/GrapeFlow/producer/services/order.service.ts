@@ -27,7 +27,7 @@ export class OrderService extends BaseService<Order> {
     return this.update(id, order);
   }
 
-  // Método para eliminar un pedido
+
   deleteOrder(id: string): Observable<any> {
     return this.delete(id);
   }

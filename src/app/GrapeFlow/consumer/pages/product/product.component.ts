@@ -6,17 +6,18 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from "@angular/forms";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
-import { Product } from '../../model/product.entity';
-import { ProductService } from '../../services/product.service';
+import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
+import { Wine} from "../../../producer/model/wine.entity";
+import { WineService} from "../../../producer/services/wine.service";
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
 import { ProductDetailsComponent } from "../../components/product-details/product-details.component";
 import { LoteService } from "../../../producer/services/lote.service";
 import { LoteDetailsComponent } from "../../../producer/components/lote-details/lote-details.component";
-import { OrderDetailsDialogComponent } from '../../components/order-details-dialog/order-details-dialog.component';
 import { OrderService } from '../../../producer/services/order.service';
 import { Order } from "../../../producer/model/order.entity";
-import {TranslateModule} from "@ngx-translate/core";
+import { TranslateModule } from "@ngx-translate/core";
+import { BuyWineDialogComponent } from "../../components/buy-wine-dialog/buy-wine-dialog.component";
 
 @Component({
   selector: 'app-product-details',
@@ -31,14 +32,15 @@ import {TranslateModule} from "@ngx-translate/core";
     MatDialogModule,
     MatIconModule,
     RouterLink,
-    TranslateModule
+    TranslateModule,
+    MatSnackBarModule
   ],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit, AfterViewInit {
-  products: Product[] = [];
-  filteredProducts: Product[] = [];
+  wines: Wine[] = [];
+  filteredWines: Wine[] = [];
   filterValue: string = '';
   selectedFilter: string = 'nombre';
 
@@ -49,29 +51,31 @@ export class ProductComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   constructor(
-    private productService: ProductService,
+    private wineService: WineService,
     private loteService: LoteService,
     private dialog: MatDialog,
-    private orderService: OrderService
+    private orderService: OrderService,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
-    this.getAllProduct();
+    this.getAllWines();
   }
 
   ngAfterViewInit(): void {}
 
-  private getAllProduct(): void {
-    this.productService.getAll().subscribe(
-      (products: Product[]) => {
-        this.products = products;
-        this.filteredProducts = products;
+  private getAllWines(): void {
+    this.wineService.getAll().subscribe(
+      (wines: Wine[]) => {
+        this.wines = wines;
+        this.filteredWines = wines;
 
-        this.tipos = [...new Set(products.map(product => product.tipo))];
-        this.uvas = [...new Set(products.flatMap(product => product.uvas))];
+        this.tipos = [...new Set(wines.map(wine => wine.tipo))];
+        this.uvas = [...new Set(wines.flatMap(wine => wine.uvas))];
       },
       error => {
-        console.error('Error fetching products:', error);
+        console.error('Error fetching wines:', error);
+        this.showErrorMessage('Error fetching wines. Please try again.');
       }
     );
   }
@@ -79,13 +83,13 @@ export class ProductComponent implements OnInit, AfterViewInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
 
-    this.filteredProducts = this.products.filter(product => {
+    this.filteredWines = this.wines.filter(wine => {
       if (this.selectedFilter === 'nombre') {
-        return product.nombre.toLowerCase().includes(filterValue);
+        return wine.nombre.toLowerCase().includes(filterValue);
       } else if (this.selectedFilter === 'tipo') {
-        return product.tipo.toLowerCase().includes(filterValue);
+        return wine.tipo.toLowerCase().includes(filterValue);
       } else if (this.selectedFilter === 'uvas') {
-        const uvasString = Array.isArray(product.uvas) ? product.uvas.join(', ').toLowerCase() : '';
+        const uvasString = Array.isArray(wine.uvas) ? wine.uvas.join(', ').toLowerCase() : '';
         return uvasString.includes(filterValue);
       }
       return true;
@@ -107,67 +111,29 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
   onSelectOption(option: string): void {
     if (option === 'Todos') {
-      this.filteredProducts = this.products;
+      this.filteredWines = this.wines;
     } else {
-      this.filteredProducts = this.products.filter(product => {
+      this.filteredWines = this.wines.filter(wine => {
         if (this.selectedFilter === 'tipo') {
-          return product.tipo.toLowerCase() === option.toLowerCase();
+          return wine.tipo.toLowerCase() === option.toLowerCase();
         } else if (this.selectedFilter === 'uvas') {
-          return product.uvas.some(uva => uva.toLowerCase() === option.toLowerCase());
+          return wine.uvas.some(uva => uva.toLowerCase() === option.toLowerCase());
         }
         return true;
       });
     }
   }
 
-  onViewDetails(product: Product): void {
+  onViewDetails(wine: Wine): void {
     this.dialog.open(ProductDetailsComponent, {
       width: '600px',
-      data: product
+      data: wine
     });
   }
 
-  onBuyWine(event: Event, product: Product): void {
-    event.stopPropagation();
-
-    const dialogRef = this.dialog.open(OrderDetailsDialogComponent, {
-      width: '600px',
-      data: { product }
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      if (result) {
-        const newOrder = new Order({
-          numeroPedido: `P00${Math.floor(Math.random() * 1000)}`,
-          fecha: new Date().toISOString().split('T')[0],
-          fechaEntrega: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0],
-          nombre: result.nombre,
-          correo: result.correo,
-          productos: [`${product.nombre} - ${product.descripcion}`],
-          condicionTransporte: result.condicionTransporte,
-          metodoPago: result.metodoPago,
-          telefono: result.telefono,
-          terminosPago: result.terminosPago,
-          tipo: product.tipo,
-          estado: 'En Proceso'
-        });
-
-        // Asegúrate de que el método `addOrder` esté definido correctamente en `OrderService`
-        this.orderService.addOrder(newOrder).subscribe(
-          () => {
-            console.log('Pedido registrado:', newOrder);
-          },
-          (error) => {
-            console.error('Error al registrar el pedido:', error);
-          }
-        );
-      }
-    });
-  }
-
-  onViewLot(product: Product): void {
-    if (product.lote_id) {
-      this.loteService.getById(product.lote_id).subscribe({
+  onViewLot(wine: Wine): void {
+    if (wine.lote_id) {
+      this.loteService.getById(wine.lote_id).subscribe({
         next: (lote) => {
           this.dialog.open(LoteDetailsComponent, {
             width: '600px',
@@ -176,10 +142,65 @@ export class ProductComponent implements OnInit, AfterViewInit {
         },
         error: (error) => {
           console.error('Error fetching lot details:', error);
+          this.showErrorMessage('Error fetching lot details. Please try again.');
         }
       });
     } else {
-      console.error('No lot associated with this product');
+      console.error('No lot associated with this wine');
+      this.showErrorMessage('No lot associated with this wine.');
     }
+  }
+
+  onBuyWine(event: Event, wine: Wine): void {
+    event.stopPropagation(); // Prevent event bubbling
+
+    const dialogRef = this.dialog.open(BuyWineDialogComponent, {
+      width: '400px',
+      data: { wine: wine }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        // Create a new order object with the wine type included
+        const newOrder: Order = {
+          ...result.order,
+          id: this.generateOrderId(),
+          tipo: wine.tipo // Include the wine type in the order
+        };
+
+        this.orderService.addOrder(newOrder).subscribe(
+          (createdOrder: Order) => {
+            console.log('Order placed successfully:', createdOrder);
+            this.showSuccessMessage(`Order placed successfully. Order ID: ${createdOrder.id}, Wine Type: ${createdOrder.tipo}`);
+          },
+          error => {
+            console.error('Error placing order:', error);
+            this.showErrorMessage('Error placing order. Please try again.');
+          }
+        );
+      }
+    });
+  }
+
+  private generateOrderId(): string {
+    return 'ORD-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+  }
+
+  private showSuccessMessage(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: ['success-snackbar']
+    });
+  }
+
+  private showErrorMessage(message: string): void {
+    this.snackBar.open(message, 'Close', {
+      duration: 5000,
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      panelClass: ['error-snackbar']
+    });
   }
 }

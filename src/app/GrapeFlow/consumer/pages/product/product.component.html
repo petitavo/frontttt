@@ -24,22 +24,20 @@
     </mat-form-field>
   </div>
 
-  <!-- Contenedor para las tarjetas -->
   <div class="wine-card-container">
-    <div *ngFor="let product of filteredProducts" class="wine-card">
-      <img class="wine-image" [src]="product.link" alt="{{product.nombre}}">
+    <div *ngFor="let wine of filteredWines" class="wine-card">
+      <img class="wine-image" [src]="wine.link" alt="{{wine.nombre}}">
       <div class="wine-info">
-        <h3>{{product.nombre}}</h3>
-        <p>{{product.descripcion}}</p>
-        <!-- Añadimos los botones de "View Details" y "View Lot" -->
+        <h3>{{wine.nombre}}</h3>
+        <p>{{wine.descripcion}}</p>
         <div class="wine-actions">
-          <button mat-raised-button color="primary" (click)="onViewDetails(product)">
+          <button mat-raised-button color="primary" (click)="onViewDetails(wine)">
             {{ 'CONSUMER.VIEW_DETAILS' | translate }}
           </button>
-          <button mat-raised-button color="accent" (click)="onViewLot(product)">
+          <button mat-raised-button color="accent" (click)="onViewLot(wine)">
             View Lot
           </button>
-          <button mat-raised-button (click)="onBuyWine($event, product)">
+          <button mat-raised-button (click)="onBuyWine($event, wine)">
             {{ 'CONSUMER.BUY' | translate }}
           </button>
         </div>

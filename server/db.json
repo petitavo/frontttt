@@ -346,7 +346,7 @@
       "fecha": "05/09/2024",
       "fechaEntrega": "17/09/2024",
       "tipo": "licores",
-      "estado": "Terminado"
+      "estado": "En Proceso"
     },
     {
       "id": "6",
@@ -382,6 +382,66 @@
       "terminosPago": "1",
       "fecha": "2024-10-20",
       "fechaEntrega": "2024-10-27",
+      "tipo": "Vino Tinto",
+      "estado": "En Proceso"
+    },
+    {
+      "id": "zaW368z",
+      "numeroPedido": "P363",
+      "nombre": "Nombre del Cliente",
+      "nombreProductor": "",
+      "correoProductor": "",
+      "correo": "correo.cliente@example.com",
+      "productos": [
+        "Vino Blanco Sauvignon Blanc - Valle de Leyda"
+      ],
+      "condicionTransporte": "a",
+      "metodoPago": "tarjta",
+      "telefonoProductor": "",
+      "telefono": "",
+      "terminosPago": "1",
+      "fecha": "2024-10-20",
+      "fechaEntrega": "",
+      "tipo": "vino",
+      "estado": "En Proceso"
+    },
+    {
+      "id": "2cIz6WN",
+      "numeroPedido": "P332",
+      "nombre": "Nombre del Cliente",
+      "nombreProductor": "",
+      "correoProductor": "",
+      "correo": "correo.cliente@example.com",
+      "productos": [
+        "Vino Tinto Malbec - Mendoza"
+      ],
+      "condicionTransporte": "a",
+      "metodoPago": "tarjta",
+      "telefonoProductor": "",
+      "telefono": "",
+      "terminosPago": "1",
+      "fecha": "2024-10-20",
+      "fechaEntrega": "",
+      "tipo": "vino",
+      "estado": "En Proceso"
+    },
+    {
+      "id": "ORD-8T1HSQKU1",
+      "numeroPedido": "",
+      "nombre": "",
+      "nombreProductor": "",
+      "correoProductor": "",
+      "correo": "",
+      "productos": [
+        "Vino Tinto Malbec - Mendoza"
+      ],
+      "condicionTransporte": "10",
+      "metodoPago": "Tarjeta de Crédito",
+      "telefonoProductor": "",
+      "telefono": "",
+      "terminosPago": "Crédito 30 días",
+      "fecha": "2024-10-20",
+      "fechaEntrega": "",
       "tipo": "Vino Tinto",
       "estado": "En Proceso"
     }
