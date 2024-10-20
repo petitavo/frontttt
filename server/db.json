@@ -1,20 +1,6 @@
 {
   "clients": [
     {
-      "id": "3",
-      "nombre": "Eduardo",
-      "apellido": "Rodriguez",
-      "telefono": "999 999 999",
-      "direccion": "San Felipe",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "87654321",
-      "correo": "eduardo.rodriguez@example.com",
-      "password": "87654321",
-      "confirmPassword": "87654321",
-      "role": "producer"
-    },
-    {
       "id": "4",
       "nombre": "Ana",
       "apellido": "Fernández",
@@ -282,24 +268,6 @@
   ],
   "orders": [
     {
-      "id": "1",
-      "numeroPedido": "P001",
-      "nombre": "Roberto Carlos",
-      "correo": "juan.perez@vinosdelsur.com",
-      "productos": [
-        "Vino Tinto Malbec - 750 ml - 2 botellas",
-        "Vino Blanco Sauvignon - 750 ml - 5 botellas"
-      ],
-      "condicionTransporte": "Transporte con temperatura controlada",
-      "metodoPago": "Transferencia bancaria",
-      "telefono": "+51 987 564 321",
-      "terminosPago": "Crédito a 30 dias",
-      "fecha": "01/09/2024",
-      "fechaEntrega": "02/09/2024",
-      "tipo": "vino",
-      "estado": "En Proceso"
-    },
-    {
       "id": "2",
       "numeroPedido": "P002",
       "nombre": "Maria Fernandez",
@@ -398,57 +366,24 @@
       "estado": "Terminado"
     },
     {
-      "id": "7",
-      "numeroPedido": "P007",
-      "nombre": "Laura Ramirez",
-      "correo": "laura.ramirez@cervezasartesanales.mx",
+      "id": "d2tTwDj",
+      "numeroPedido": "P00644",
+      "nombre": "gustav0",
+      "nombreProductor": "",
+      "correoProductor": "",
+      "correo": "ha@gmailcom",
       "productos": [
-        "Cerveza IPA Mexicana - 355 ml - 12 unidades"
+        "Vino Tinto Malbec - Mendoza - Concentrado y afrutado, ideal para acompañar carnes rojas."
       ],
-      "condicionTransporte": "Envío a Domicilio",
-      "metodoPago": "PayPal",
-      "telefono": "+52 55 1234 5678",
-      "terminosPago": "Pago Contado",
-      "fecha": "07/09/2024",
-      "fechaEntrega": "14/09/2024",
-      "tipo": "cerveza",
-      "estado": "Terminado"
-    },
-    {
-      "id": "8",
-      "numeroPedido": "P008",
-      "nombre": "Carlos Rodriguez",
-      "correo": "carlos.rodriguez@vinosargentinos.com.ar",
-      "productos": [
-        "Vino Tinto Malbec Reserva - 750 ml - 2 botellas",
-        "Aceite de Oliva Extra Virgen - 500 ml - 1 botella"
-      ],
-      "condicionTransporte": "Transporte con temperatura controlada",
-      "metodoPago": "Transferencia bancaria",
-      "telefono": "+54 9 11 2345 6789",
-      "terminosPago": "Crédito a 30 días",
-      "fecha": "08/09/2024",
-      "fechaEntrega": "20/09/2024",
-      "tipo": "mixto",
+      "condicionTransporte": "a",
+      "metodoPago": "tarjta",
+      "telefonoProductor": "",
+      "telefono": "123",
+      "terminosPago": "1",
+      "fecha": "2024-10-20",
+      "fechaEntrega": "2024-10-27",
+      "tipo": "Vino Tinto",
       "estado": "En Proceso"
-    },
-    {
-      "id": "9",
-      "numeroPedido": "P009",
-      "nombre": "Isabella Santos",
-      "correo": "isabella.santos@licorespremium.br",
-      "productos": [
-        "Ron Añejo Colombiano - 750 ml - 1 botella",
-        "Cachaça Brasileña - 700 ml - 1 botella"
-      ],
-      "condicionTransporte": "Transporte Regular",
-      "metodoPago": "Tarjeta de Crédito",
-      "telefono": "+55 21 98765 4321",
-      "terminosPago": "Pago Contado",
-      "fecha": "09/09/2024",
-      "fechaEntrega": "19/09/2024",
-      "tipo": "licores",
-      "estado": "Terminado"
     }
   ],
   "wines": [
@@ -642,12 +577,6 @@
       "productor_id": "PROD011",
       "lote_id": "L011",
       "link": "https://www.laeuropea.com.mx/media/catalog/product/cache/a26d55f417b24cf05a5296f884382fe4/0/0/00086891084657.1.jpg"
-    }
-  ],
-  "order": [
-    {
-      "direccion": "Calle Principal 123, Miraflores, Lima",
-      "id": "76a0"
     }
   ]
 }

@@ -31,7 +31,18 @@
       <div class="wine-info">
         <h3>{{product.nombre}}</h3>
         <p>{{product.descripcion}}</p>
-        <button mat-raised-button (click)="onBuyWine($event, product)">{{ 'CONSUMER.BUY' | translate }}</button>
+        <!-- Añadimos los botones de "View Details" y "View Lot" -->
+        <div class="wine-actions">
+          <button mat-raised-button color="primary" (click)="onViewDetails(product)">
+            {{ 'CONSUMER.VIEW_DETAILS' | translate }}
+          </button>
+          <button mat-raised-button color="accent" (click)="onViewLot(product)">
+            View Lot
+          </button>
+          <button mat-raised-button (click)="onBuyWine($event, product)">
+            {{ 'CONSUMER.BUY' | translate }}
+          </button>
+        </div>
       </div>
     </div>
   </div>
