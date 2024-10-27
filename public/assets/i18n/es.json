@@ -1,0 +1,127 @@
+{
+  "HOME": {
+    "WELCOME_TITLE": "Bienvenido a GrapeFlow",
+    "WELCOME_MESSAGE": "Estamos encantados de tenerte aquí,",
+    "USER": "usuario",
+    "PLATFORM_DESCRIPTION": "Desde esta plataforma, puedes descubrir nuestros vinos más populares y realizar tus pedidos fácilmente.",
+    "RECOMMENDATIONS": "Aprovecha nuestras recomendaciones personalizadas.",
+    "VIEW_MORE": "Ver Más"
+  },
+  "HOME-CONSUMER": {
+    "PLATFORM_DESCRIPTION": "Desde esta plataforma, puedes descubrir nuestros vinos más populares y realizar tus pedidos fácilmente.",
+    "RECOMMENDATIONS": "Aprovecha nuestras recomendaciones personalizadas.",
+    "POPULAR_WINES": "Vinos Populares",
+    "VIEW_DETAILS": "Ver Detalles"
+  },
+  "HOME-PRODUCTOR": {
+    "PLATFORM_DESCRIPTION": "Desde esta plataforma, puedes gestionar tus clientes, productor y pedidos fácilmente.",
+    "RECOMMENDATIONS": "Aprovecha las herramientas que tenemos para ti.",
+    "RECENT_ORDERS": "Pedidos Recientes",
+    "VIEW_ORDER": "Ir Orden"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "© 2024 Villa System. Todos los derechos reservados.",
+    "DEVELOPED_BY": "Desarrollado por el equipo de desarrolladores de Villa System."
+  },
+  "SIDENAV-CONSUMER": {
+    "HOME": "Inicio",
+    "WINES": "Vinos",
+    "ORDERS": "Mis Pedidos",
+    "LOGOUT": "Cerrar Sesión",
+    "CONSUMER": "Consumidor"
+  },
+  "SIDENAV-PRODUCER": {
+    "HOME": "Inicio",
+    "INVENTORY": "Inventario",
+    "WINEMAKING": "Elaboración de Vino",
+    "CLIENTS": "Mis Clientes",
+    "ORDERS": "Mis Pedidos",
+    "WINES": "Vinos",
+    "LOGOUT": "Cerrar Sesión",
+    "PRODUCER": "Productor"
+  },
+  "CONSUMER": {
+    "ORDER-REGISTRATION": "Registro de Pedidos",
+    "FILTER": "Filtro",
+    "ORDER_NUMBER": "Número de Pedido",
+    "DATE": "Fecha",
+    "STATUS": "Estado",
+    "ACTIONS": "Acciones",
+    "VIEW_DETAILS": "Ver detalles",
+    "FILTER_BY": "Filtrar por",
+    "NAME": "Nombre",
+    "TYPE": "Tipo",
+    "SEARCH": "Buscar",
+    "GRAPES": "Uvas",
+    "SELECT": "Seleccionar",
+    "BUY": "Comprar"
+  },
+  "INVENTORY": {
+    "TITLE": "Inventario",
+    "SEARCH": "Buscar",
+    "FILTER": "Filtro",
+    "NAME": "Nombre",
+    "TYPE": "Tipo",
+    "SUPPLIER": "Proveedor",
+    "ADD_NEW_ITEM": "Agregar Nuevo Elemento",
+    "UNIT": "Unidad",
+    "EXPIRY_DATE": "Fecha de Caducidad",
+    "UNIT_COST": "Costo Unitario",
+    "QUANTITY": "Cantidad",
+    "ACTIONS": "Acciones",
+    "EDIT": "Editar",
+    "DELETE": "Eliminar"
+  },
+  "BATCH": {
+    "TITLE": "Registro de Lotes",
+    "SEARCH": "Buscar",
+    "FILTER": "Filtro",
+    "BATCH_NUMBER": "Número de Lote",
+    "GRAPE": "Uva",
+    "PROCESS_STATUS": "Estado del Proceso",
+    "ADD_BATCH": "Agregar Lote",
+    "START_DATE": "Fecha de Inicio",
+    "ACTIONS": "Acciones",
+    "VIEW_DETAILS": "Ver detalles",
+    "DELETE": "Eliminar",
+    "CHANGE_STATUS": "Cambiar estado"
+  },
+  "CLIENTS": {
+    "TITLE": "Clientes",
+    "SEARCH": "Buscar",
+    "NAME": "Nombre",
+    "SURNAME": "Apellido",
+    "PHONE": "Teléfono",
+    "ACTIONS": "Acciones",
+    "DETAILS": "Detalles",
+    "EDIT": "Editar",
+    "DELETE": "Eliminar"
+  },
+  "ORDERS": {
+    "TITLE": "Mis Pedidos",
+    "SEARCH": "Buscar",
+    "FILTER": "Filtro",
+    "ORDER_NUMBER": "Número de Pedido",
+    "DATE": "Fecha",
+    "TYPE": "Tipo",
+    "STATUS": "Estado",
+    "ACTIONS": "Acciones",
+    "VIEW_DETAILS": "Ver detalles",
+    "CHANGE_STATUS": "Cambiar estado",
+    "DELETE": "Eliminar"
+  },
+  "PRODUCER": {
+    "FILTER_BY": "Filtrar por",
+    "SEARCH": "Buscar",
+    "SELECT": "Seleccionar",
+    "NAME": "Nombre",
+    "TYPE": "Tipo",
+    "REGION": "Región",
+    "ADD_WINE": "Agregar Vino",
+    "YEAR": "Año",
+    "VIEW_DETAILS": "Ver Detalles",
+    "VIEW_LOT": "Ver Lote",
+    "EDIT": "Editar",
+    "DELETE": "Eliminar"
+  }
+}

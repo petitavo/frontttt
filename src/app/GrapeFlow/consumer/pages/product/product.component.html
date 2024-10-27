@@ -1,0 +1,49 @@
+<div class="wine-list-container">
+  <h1 class="title"><span class="link-text">{{ 'SIDENAV-CONSUMER.WINES' | translate }}</span></h1>
+
+  <div class="search-container">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'CONSUMER.FILTER_BY' | translate }}</mat-label>
+      <mat-select [(value)]="selectedFilter" (selectionChange)="onFilterChange($event.value)">
+        <mat-option value="nombre">{{ 'CONSUMER.NAME' | translate }}</mat-option>
+        <mat-option value="tipo">{{ 'CONSUMER.TYPE' | translate }}</mat-option>
+        <mat-option value="uvas">{{ 'CONSUMER.GRAPES' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="selectedFilter === 'nombre'" appearance="outline">
+      <mat-label>{{ 'CONSUMER.SEARCH' | translate }}</mat-label>
+      <input matInput (input)="applyFilter($event)" placeholder="{{ 'CONSUMER.SEARCH' | translate }} por {{selectedFilter}}">
+    </mat-form-field>
+
+    <mat-form-field *ngIf="selectedFilter === 'tipo' || selectedFilter === 'uvas'" appearance="outline">
+      <mat-label>{{ 'CONSUMER.SELECT' | translate }} {{selectedFilter}}</mat-label>
+      <mat-select (selectionChange)="onSelectOption($event.value)">
+        <mat-option *ngFor="let option of filterOptions" [value]="option">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="wine-card-container">
+    <div *ngFor="let wine of filteredWines" class="wine-card">
+      <img class="wine-image" [src]="wine.link" alt="{{wine.nombre}}">
+      <div class="wine-info">
+        <h3>{{wine.nombre}}</h3>
+        <p>{{wine.descripcion}}</p>
+        <div class="wine-actions">
+          <button mat-raised-button color="primary" (click)="onViewDetails(wine)">
+            {{ 'CONSUMER.VIEW_DETAILS' | translate }}
+          </button>
+          <button mat-raised-button color="accent" (click)="onViewLot(wine)">
+            View Lot
+          </button>
+          <button mat-raised-button (click)="onBuyWine($event, wine)">
+            {{ 'CONSUMER.BUY' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-paginator [pageSize]="10"></mat-paginator>
+</div>

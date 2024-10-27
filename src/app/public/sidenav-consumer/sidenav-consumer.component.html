@@ -6,38 +6,45 @@
     <span class="app-title" routerLink="/home">GrapeFlow</span>
     <span class="spacer"></span>
 
-    <!-- Subtle indicator for "consumer" -->
+    <!-- Indicador sutil para "consumer" -->
     <div class="consumer-indicator">
-      <mat-icon>person</mat-icon> <!-- User icon -->
-      <span class="consumer-label">Consumer</span>
+      <mat-icon>person</mat-icon> <!-- Ícono de usuario -->
+      <span class="consumer-label">{{ 'SIDENAV-CONSUMER.CONSUMER' | translate }}</span>
     </div>
+
+    <!-- Botones para cambiar idioma -->
+    <app-language-switcher></app-language-switcher>
   </mat-toolbar>
 </header>
 
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #sidenav mode="over">
     <mat-nav-list>
-      <a mat-list-item routerLink="/home" (click)="closeSidenav()" class="white-text">
+      <!-- Usamos rutas absolutas -->
+      <a mat-list-item routerLink="/consumer/home-consumer" (click)="closeSidenav()" class="white-text">
         <mat-icon>home</mat-icon>
-        <span class="link-text">Home</span>
+        <span class="link-text">{{ 'SIDENAV-CONSUMER.HOME' | translate }}</span>
       </a>
-      <a mat-list-item routerLink="/wines" (click)="closeSidenav()" class="white-text">
+      <a mat-list-item routerLink="/consumer/product" (click)="closeSidenav()" class="white-text">
         <mat-icon>local_bar</mat-icon>
-        <span class="link-text">Wines</span>
+        <span class="link-text">{{ 'SIDENAV-CONSUMER.WINES' | translate }}</span>
       </a>
       <a mat-list-item routerLink="/consumer/orders" (click)="closeSidenav()" class="white-text">
         <mat-icon>shopping_basket</mat-icon>
-        <span class="link-text">My Orders</span>
+        <span class="link-text">{{ 'SIDENAV-CONSUMER.ORDERS' | translate }}</span>
+      </a>
+      <a mat-list-item routerLink="/login" (click)="logout()" class="white-text">
+        <mat-icon>exit_to_app</mat-icon>
+        <span class="link-text">{{ 'SIDENAV-CONSUMER.LOGOUT' | translate }}</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
+
+  <!-- Aquí se renderizan las rutas hijas de consumidor -->
   <mat-sidenav-content>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <!-- Footer -->
-<div class="footer-content">
-  <p>Copyright © 2024</p>
-  <p>Developed by the developer team of Villa System</p>
-</div>
+<app-footer-content></app-footer-content>

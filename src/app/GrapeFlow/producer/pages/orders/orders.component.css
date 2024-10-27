@@ -1,0 +1,100 @@
+.orders-wrapper {
+  padding: 20px;
+  background: linear-gradient(135deg, #f3e5f5, #fff3e0);
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3rem; /* 48px */
+  font-weight: 700; /* Bold */
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 20px;
+  color: #6a1b9a;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mat-mdc-header-row {
+  background-color: #6a1b9a;
+  color: white;
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: #f3e5f5;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #fff3e0;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.mat-column-actions {
+  width: 150px;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  color: white;
+}
+
+.mat-cell {
+  padding: 10px;
+}
+
+mat-paginator {
+  margin-top: 20px;
+  background-color: #f3e5f5;
+  border-radius: 8px;
+}
+
+button[mat-raised-button] {
+  margin-bottom: 20px;
+}
+
+.add-button {
+  background-color: #ff9800 !important;
+  color: white !important;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #f57c00 !important;
+}
+
+.grape-icon {
+  margin-right: 5px;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status-completed {
+  background-color: #4caf50;
+}
+
+.status-in-process {
+  background-color: #ffc107;
+}
+
+.status-waiting {
+  background-color: #f44336;
+}

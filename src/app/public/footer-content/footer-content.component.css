@@ -1,19 +1,28 @@
 /* Estilo para el footer */
 .footer-content {
-  margin-top: 100px;
   background-color: #A70AC0; /* Color de fondo del footer */
   color: white; /* Color del texto */
   text-align: center; /* Centrar el texto */
   padding: 20px; /* Espaciado interno */
   position: relative; /* Asegúrate de que esté posicionado en relación al flujo normal */
-  width: 97.8%; /* Asegura que el footer ocupe el ancho completo */
+  width: 100%; /* Asegura que el footer ocupe el ancho completo */
   bottom: 0; /* Mantén el footer en la parte inferior */
+  flex-shrink: 0; /* Evita que el footer se colapse */
+  margin: 0; /* Elimina cualquier margen extra */
 }
 
-/* Para asegurar que el contenido principal no se divida */
+/* Para asegurar que el contenido principal ocupe toda la pantalla */
 mat-sidenav-content {
   display: flex;
   flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-  min-height: calc(100vh - 64px); /* Ajusta la altura para que el footer no se superponga */
-  padding-bottom: 60px; /* Espacio para el footer */
+  min-height: 100vh; /* Asegura que el contenido ocupe al menos la altura de la pantalla */
+  padding-bottom: 0; /* Elimina espacio innecesario debajo */
+  margin: 0; /* Elimina cualquier margen extra */
+}
+
+/* Ajusta el contenedor del contenido para evitar espacio debajo */
+.main-content {
+  flex: 1; /* Permite que el contenido crezca para llenar el espacio disponible */
+  padding-bottom: 0; /* Elimina espacio adicional en la parte inferior */
+  margin-bottom: 0; /* Elimina márgenes extra */
 }

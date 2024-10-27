@@ -1,0 +1,46 @@
+<h2 mat-dialog-title>Detalles del Producto</h2>
+<mat-dialog-content>
+  <div class="details-container">
+    <!-- Mostrar la imagen del vino -->
+    <img [src]="data.link" alt="Imagen del vino {{ data.nombre }}" class="wine-image">
+
+    <dl>
+      <dt>Nombre:</dt>
+      <dd>{{ data.nombre }}</dd>
+
+      <dt>Descripción:</dt>
+      <dd>{{ data.descripcion }}</dd>
+
+      <dt>Tipo:</dt>
+      <dd>{{ data.tipo }}</dd>
+
+      <dt>Región:</dt>
+      <dd>{{ data.region }}</dd>
+
+      <dt>País:</dt>
+      <dd>{{ data.pais }}</dd>
+
+      <dt>Año:</dt>
+      <dd>{{ data.anio }}</dd>
+
+      <dt>Uvas:</dt>
+      <dd>
+        <ul>
+          <li *ngFor="let uva of data.uvas">{{ uva }}</li>
+        </ul>
+      </dd>
+
+      <dt>Calificación:</dt>
+      <dd>{{ data.calificacion }}</dd>
+
+      <dt>Alcohol:</dt>
+      <dd>{{ data.alcohol }}%</dd>
+
+      <dt>Certificación:</dt>
+      <dd>{{ data.certificacion }}</dd>
+    </dl>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onClose()">Cerrar</button>
+</mat-dialog-actions>

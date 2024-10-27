@@ -31,20 +31,3 @@
       <mat-label>País</mat-label>
       <input matInput [(ngModel)]="newClient.pais" name="pais" required>
     </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>DNI</mat-label>
-      <input matInput [(ngModel)]="newClient.dni" name="dni" required>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Correo</mat-label>
-      <input matInput type="email" [(ngModel)]="newClient.correo" name="correo" required>
-    </mat-form-field>
-
-    <div class="button-container">
-      <button mat-raised-button color="primary" type="submit">Agregar</button>
-      <button mat-raised-button color="warn" (click)="onCancel()">Volver</button>
-    </div>
-  </form>
-</div>

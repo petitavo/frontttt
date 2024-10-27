@@ -1,0 +1,64 @@
+.mat-dialog-container {
+  padding: 20px;
+  background-color: #FAF3E0;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h2.mat-dialog-title {
+  font-size: 50px;
+  font-weight: bold;
+  color: #7A0AC0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-dialog-actions {
+  margin-top: 20px;
+}
+
+button[mat-button] {
+  background-color: #FFC107;
+  color: white !important;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+button[mat-raised-button] {
+  background-color: #7A0AC0;
+  color: white !important;
+  border-radius: 8px;
+  padding: 8px 16px;
+}
+
+button[mat-button]:hover {
+  background-color: #FFD54F;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #9C27B0;
+}
+
+input.mat-input-element,
+textarea.mat-input-element,
+.mat-select {
+  font-size: 40px;
+  border-radius: 8px;
+}
+
+input.mat-input-element:focus,
+textarea.mat-input-element:focus,
+.mat-select:focus {
+  border-color: #7A0AC0;
+  box-shadow: 0 0 5px rgba(167, 10, 192, 0.5);
+}

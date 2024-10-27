@@ -1,15 +1,29 @@
-.mat-toolbar {
-  background-color: #2B2A43;
-  color: white;
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .app-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background-color: #2B2A43;
+}
+
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  background-color: #2B2A43;
+  color: white;
 }
 
 .app-title {
   font-size: 24px;
   font-weight: bold;
+  color: white;
 }
 
 .footer-content {
@@ -29,12 +43,12 @@
   display: flex;
   align-items: center;
   font-size: 14px;
-  color: #fff;
+  color: white;
 }
 
 .consumer-indicator mat-icon {
   margin-right: 4px;
-  color: #fff;
+  color: white;
 }
 
 .sidenav-container {
@@ -79,4 +93,33 @@
 
 .white-text .link-text {
   color: white;
+}
+
+.language-buttons {
+  display: flex;
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.language-button {
+  background-color: #A70AC0; /* Fondo púrpura oscuro */
+  color: white; /* Color del texto blanco */
+  border: none; /* Elimina el borde por defecto */
+  border-radius: 20px; /* Bordes redondeados */
+  padding: 8px 16px; /* Relleno interno */
+  font-size: 14px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones suaves */
+}
+
+.language-button:hover {
+  background-color: #8838d2; /* Color más claro al hacer hover */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño al hacer hover */
+}
+
+.language-button:focus {
+  outline: none; /* Elimina el borde al hacer clic */
+}
+
+.language-button.active {
+  background-color: #5A2E87; /* Color más oscuro para el botón activo */
 }

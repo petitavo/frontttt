@@ -12,11 +12,12 @@
       <p><strong>Email:</strong> {{ client?.correo }}</p>
     </div>
     <div class="client-image">
-      <img src="/6009864.png" alt="Client Image">
+      <img ngSrc="/6009864.png" alt="Client Image" height="512" width="512">
     </div>
   </div>
 
   <div class="button-container">
-    <button mat-raised-button color="accent" routerLink="/clients">Back to the list</button>
+    <button mat-raised-button color="primary" (click)="editClient()">Edit</button>
+    <button mat-raised-button (click)="goBack()">Back to List</button>
   </div>
 </div>

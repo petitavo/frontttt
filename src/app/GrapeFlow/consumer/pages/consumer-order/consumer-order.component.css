@@ -1,0 +1,73 @@
+.orders-wrapper {
+  padding: 20px;
+  background-color: #f3e5f5; /* Fondo suave */
+}
+
+h1 {
+  font-size: 80px;
+  font-weight: bold;
+  font-family: "Times New Roman", sans-serif;
+  margin-bottom: 20px;
+  color: #6a1b9a; /* Color principal */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.mat-mdc-header-row {
+  background-color: #6a1b9a; /* Color de encabezado */
+  color: white; /* Texto en el encabezado */
+}
+
+.mat-mdc-row:nth-child(even) {
+  background-color: #e3f2fd; /* Fondo claro para filas pares */
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: #fce4ec; /* Fondo claro para filas impares */
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px; /* Bordes redondeados para la tabla */
+  overflow: hidden; /* Ocultar el desbordamiento */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave para la tabla */
+}
+
+.mat-column-actions {
+  width: 150px;
+}
+
+.mat-header-cell {
+  font-weight: bold;
+  color: white; /* Color de texto en encabezado */
+}
+
+.mat-cell {
+  padding: 10px;
+}
+
+mat-paginator {
+  margin-top: 20px;
+  background-color: #f3e5f5; /* Fondo para el paginador */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+button[mat-raised-button] {
+  margin-bottom: 20px;
+}
+
+.add-button {
+  background-color: #ff9800 !important; /* Color de botón de agregar */
+  color: white !important; /* Color de texto en botón */
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #f57c00 !important; /* Color en hover */
+}

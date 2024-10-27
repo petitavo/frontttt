@@ -1,22 +1,22 @@
-import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import {Inventory} from "../../model/inventory.entity";
-import {MatFormField} from "@angular/material/form-field";
-import {MatInput, MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
-import {MatButton, MatButtonModule} from "@angular/material/button";
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from "@angular/material/dialog";
+import { Inventory } from "../../model/inventory.entity";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatInputModule } from "@angular/material/input";
+import { FormsModule } from "@angular/forms";
+import { MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: 'app-inventory-edit',
   standalone: true,
   imports: [
-    MatFormField,
+    MatFormFieldModule,
     MatInputModule,
     FormsModule,
     MatButtonModule
   ],
   templateUrl: './inventory-edit.component.html',
-  styleUrl: './inventory-edit.component.css'
+  styleUrls: ['./inventory-edit.component.css']
 })
 export class InventoryEditComponent {
   constructor(
@@ -25,7 +25,6 @@ export class InventoryEditComponent {
   ) {}
 
   onSave(): void {
-    // Emitir la acción de guardar y cerrar el diálogo
     this.dialogRef.close(this.inventoryData);
   }
 

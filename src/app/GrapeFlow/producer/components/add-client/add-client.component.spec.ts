@@ -10,7 +10,7 @@ describe('AddClientComponent', () => {
     await TestBed.configureTestingModule({
       imports: [AddClientComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(AddClientComponent);
     component = fixture.componentInstance;

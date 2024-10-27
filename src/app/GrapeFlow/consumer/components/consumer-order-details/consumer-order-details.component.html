@@ -5,37 +5,44 @@
     <dd>{{ data.numeroPedido }}</dd>
 
     <dt>Nombre del Productor:</dt>
-    <dd>{{ data.nombreProductor }}</dd>
+    <dd>{{ producer?.nombre }} {{ producer?.apellido }}</dd>
 
     <dt>Correo del Productor:</dt>
-    <dd>{{ data.correoProductor }}</dd>
+    <dd>{{ producer?.correo }}</dd>
 
     <dt>Productos:</dt>
-    <dd>{{ data.productos }}</dd>
+    <dd>
+      <ul>
+        <li *ngFor="let producto of data.productos">{{ producto }}</li>
+      </ul>
+    </dd>
 
-    <dt>CondicionTransporte:</dt>
+    <dt>Condición de Transporte:</dt>
     <dd>{{ data.condicionTransporte }}</dd>
 
     <dt>Método de Pago:</dt>
     <dd>{{ data.metodoPago }}</dd>
 
-    <dt>Telefono del Productor:</dt>
-    <dd>{{ data.telefonoProductor }}</dd>
+    <dt>Teléfono del Productor:</dt>
+    <dd>{{ producer?.telefono }}</dd>
 
-    <dt>Terminos de Pago:</dt>
+    <dt>Términos de Pago:</dt>
     <dd>{{ data.terminosPago }}</dd>
 
     <dt>Fecha de Solicitud:</dt>
-    <dd>{{ data.fecha | date:'dd/MM/yyyy'}}</dd>
+    <dd>{{ data.fecha | date:'dd/MM/yyyy' }}</dd>
 
     <dt>Fecha de Entrega:</dt>
-    <dd>{{ data.fechaEntrega | date:'dd/MM/yyyy'}}</dd>
+    <dd>{{ data.fechaEntrega | date:'dd/MM/yyyy' }}</dd>
 
     <dt>Tipo:</dt>
     <dd>{{ data.tipo }}</dd>
 
     <dt>Estado:</dt>
     <dd>{{ data.estado }}</dd>
+
+    <dt>Dirección del Productor:</dt>
+    <dd>{{ producer?.direccion }}, {{ producer?.ciudad }}, {{ producer?.pais }}</dd>
   </dl>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

@@ -1,8 +1,6 @@
-import {Component, Inject} from '@angular/core';
-import {Client} from "../../model/client.entity";
-import {Router} from "@angular/router";
-import {LoteService} from "../../services/lote.service";
-import {Lote} from "../../model/lote.entity";
+import { Component, Inject } from '@angular/core';
+import { LoteService } from "../../services/lote.service";
+import { Lote } from "../../model/lote.entity";
 import {
   MAT_DIALOG_DATA,
   MatDialogActions,
@@ -10,11 +8,12 @@ import {
   MatDialogRef,
   MatDialogTitle
 } from "@angular/material/dialog";
-import {MatFormField, MatFormFieldModule} from "@angular/material/form-field";
-import {FormsModule} from "@angular/forms";
-import {MatInput, MatInputModule} from "@angular/material/input";
-import {MatOption, MatSelect} from "@angular/material/select";
-import {MatButton} from "@angular/material/button";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule } from "@angular/forms";
+import { MatInputModule } from "@angular/material/input";
+import { MatOption, MatSelect } from "@angular/material/select";
+import { MatButton } from "@angular/material/button";
+
 @Component({
   selector: 'app-lote-add',
   standalone: true,
@@ -57,4 +56,3 @@ export class LoteAddComponent {
     this.dialogRef.close();
   }
 }
-

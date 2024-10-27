@@ -1,0 +1,59 @@
+<div class="wine-list-container">
+  <h1 class="title"><span class="link-text">{{ 'SIDENAV-PRODUCER.WINES' | translate }}</span></h1>
+
+  <div class="search-container">
+    <mat-form-field appearance="outline">
+      <mat-label>{{ 'PRODUCER.FILTER_BY' | translate }}</mat-label>
+      <mat-select [(value)]="selectedFilter" (selectionChange)="onFilterChange($event.value)">
+        <mat-option value="nombre">{{ 'PRODUCER.NAME' | translate }}</mat-option>
+        <mat-option value="tipo">{{ 'PRODUCER.TYPE' | translate }}</mat-option>
+        <mat-option value="region">{{ 'PRODUCER.REGION' | translate }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="selectedFilter === 'nombre'" appearance="outline">
+      <mat-label>{{ 'PRODUCER.SEARCH' | translate }}</mat-label>
+      <input matInput (input)="applyFilter($event)" placeholder="{{ 'PRODUCER.SEARCH' | translate }} por {{selectedFilter}}">
+    </mat-form-field>
+
+    <mat-form-field *ngIf="selectedFilter === 'tipo' || selectedFilter === 'region'" appearance="outline">
+      <mat-label>{{ 'PRODUCER.SELECT' | translate }} {{selectedFilter}}</mat-label>
+      <mat-select (selectionChange)="onSelectOption($event.value)">
+        <mat-option *ngFor="let option of filterOptions" [value]="option">{{option}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="primary" (click)="openAddWineDialog()" class="add-button">
+    <mat-icon>add</mat-icon> {{ 'PRODUCER.ADD_WINE' | translate }}
+  </button>
+
+  <!-- Contenedor para las tarjetas de vino con acciones adicionales -->
+  <div class="wine-card-container">
+    <div *ngFor="let wine of filteredWines" class="wine-card">
+      <img class="wine-image" [src]="wine.link" alt="{{wine.nombre}}">
+      <div class="wine-info">
+        <h3>{{wine.nombre}}</h3>
+        <p>{{wine.descripcion}}</p>
+        <p><strong>{{ 'PRODUCER.YEAR' | translate }}:</strong> {{wine.anio}}</p>
+        <p><strong>{{ 'PRODUCER.REGION' | translate }}:</strong> {{wine.region}}</p>
+        <div class="wine-actions">
+          <button mat-raised-button color="primary" (click)="onViewDetails(wine)">
+            {{ 'PRODUCER.VIEW_DETAILS' | translate }}
+          </button>
+          <button mat-raised-button color="accent" (click)="onViewLot(wine)">
+            {{ 'PRODUCER.VIEW_LOT' | translate }}
+          </button>
+          <button mat-raised-button color="primary" (click)="openEditWineDialog(wine)">
+            {{ 'PRODUCER.EDIT' | translate }}
+          </button>
+          <button mat-raised-button color="warn" (click)="onDelete(wine)">
+            {{ 'PRODUCER.DELETE' | translate }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <mat-paginator [pageSize]="10"></mat-paginator>
+</div>

@@ -1,0 +1,104 @@
+/* Contenedor principal de la página de inicio */
+.home-container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 40px 20px;
+}
+
+/* Estilo del título de bienvenida */
+.welcome-title {
+  font-size: 3em;
+  font-weight: bold;
+  color: #4a148c;
+  margin-bottom: 20px;
+}
+
+/* Estilo del mensaje de bienvenida */
+.welcome-message {
+  font-size: 1.5em;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 50px;
+}
+
+/* Estilos para la sección de Pedidos Recientes */
+.recent-orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Título de Pedidos Recientes */
+.recent-orders h2 {
+  font-size: 2em;
+  color: #4a148c;
+  margin-bottom: 30px;
+}
+
+/* Contenedor de las tarjetas de pedido */
+.order-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Estilos para cada tarjeta de pedido */
+.order-card {
+  width: 30%;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón para ir a la orden */
+.order-button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.order-button:hover {
+  background-color: #3700b3;
+}
+
+/* Estilo del botón de Ver Más */
+.view-more {
+  margin-top: 30px;
+}
+
+.view-more-button {
+  background-color: #6200ea;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.view-more-button:hover {
+  background-color: #3700b3;
+}
+
+/* Ajuste para dispositivos más pequeños */
+@media (max-width: 768px) {
+  .order-card {
+    width: 100%;
+  }
+}

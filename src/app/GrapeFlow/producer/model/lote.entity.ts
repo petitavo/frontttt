@@ -1,5 +1,5 @@
 export class Lote {
-  id: string; // Añadir id
+  id: string;
   numeroLote: string;
   uva: string;
   fechaInicio: string;
@@ -7,9 +7,10 @@ export class Lote {
   pH: number;
   temperatura: number;
   estadoProceso: string;
+  producer_id: string;
 
   constructor(lote: Partial<Lote> = {}) {
-    this.id = lote.id || ''; // Inicializar id
+    this.id = lote.id || '';
     this.numeroLote = lote.numeroLote || '';
     this.uva = lote.uva || '';
     this.fechaInicio = lote.fechaInicio || '';
@@ -17,5 +18,6 @@ export class Lote {
     this.pH = lote.pH || 0;
     this.temperatura = lote.temperatura || 0;
     this.estadoProceso = lote.estadoProceso || 'En Proceso';
+    this.producer_id = lote.producer_id || '';
   }
 }

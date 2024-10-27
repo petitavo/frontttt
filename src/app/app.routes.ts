@@ -1,22 +1,40 @@
 import { Routes } from '@angular/router';
-import {ClientsComponent} from "./GrapeFlow/producer/components/clients/clients.component";
-import {InventoryComponent} from "./GrapeFlow/producer/components/inventory/inventory.component";
-import {LoteComponent} from "./GrapeFlow/producer/components/lote/lote.component";
-import {DetailsClientsComponent} from "./GrapeFlow/producer/components/details-clients/details-clients.component";
+import { LoginComponent} from "./public/login/login.component";
+import { SidenavComponent} from "./public/sidenav/sidenav.component";
+import { SidenavConsumerComponent} from "./public/sidenav-consumer/sidenav-consumer.component";
+import { ClientsComponent } from "./GrapeFlow/producer/pages/clients/clients.component";
+import { InventoryComponent } from "./GrapeFlow/producer/pages/inventory/inventory.component";
+import { LoteComponent } from "./GrapeFlow/producer/pages/lote/lote.component";
+import { ConsumerOrderComponent } from "./GrapeFlow/consumer/pages/consumer-order/consumer-order.component";
+import {ProductComponent} from "./GrapeFlow/consumer/pages/product/product.component";
 import {EditClientsComponent} from "./GrapeFlow/producer/components/edit-clients/edit-clients.component";
-import {AddClientComponent} from "./GrapeFlow/producer/components/add-client/add-client.component";
-import {LoteAddComponent} from "./GrapeFlow/producer/components/lote-add/lote-add.component";
-import {OrdersComponent} from "./GrapeFlow/producer/components/orders/orders.component";
-import {ConsumerOrderComponent} from "./GrapeFlow/consumer/components/consumer-order/consumer-order.component";
+import {DetailsClientsComponent} from "./GrapeFlow/producer/components/details-clients/details-clients.component";
+import {WinesComponent} from "./GrapeFlow/producer/pages/wines/wines/wines.component";
+import {RegisterComponent} from "./public/register/register.component";
+import {HomeProducerComponent} from "./GrapeFlow/producer/components/home-producer/home-producer.component";
+import {OrdersComponent} from "./GrapeFlow/producer/pages/orders/orders.component";
+import {HomeConsumerComponent} from "./GrapeFlow/consumer/components/home-consumer/home-consumer.component";
 
 export const routes: Routes = [
-  {path: 'clients', component : ClientsComponent},
-  {path: 'inventory', component : InventoryComponent},
-  {path: 'lote', component: LoteComponent},
-  {path: 'details-clients/:id', component: DetailsClientsComponent},
-  {path: 'edit-clients/:id', component: EditClientsComponent},
-  {path: 'add-client', component: AddClientComponent},
-  { path: 'orders', component: OrdersComponent },
-  {path: 'consumer/orders', component: ConsumerOrderComponent},
-];
 
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+
+  { path: 'producer', component: SidenavComponent, children: [
+      { path: 'home-producer', component: HomeProducerComponent },
+      { path: 'clients', component: ClientsComponent },
+      { path: 'inventory', component: InventoryComponent },
+      { path: 'lote', component: LoteComponent },
+      { path: 'orders', component: OrdersComponent },
+      { path: 'editClients/:id', component: EditClientsComponent },
+      { path: 'detailClients/:id', component: DetailsClientsComponent },
+      { path: 'wines', component: WinesComponent }
+    ]},
+
+  { path: 'consumer', component: SidenavConsumerComponent, children: [
+      { path: 'home-consumer', component: HomeConsumerComponent },
+      { path: 'orders', component: ConsumerOrderComponent },
+      { path: 'product', component: ProductComponent }
+    ]}
+];

@@ -1,0 +1,29 @@
+<div class="home-container">
+  <!-- Título y mensaje de bienvenida -->
+  <h1 class="welcome-title">{{ 'HOME.WELCOME_TITLE' | translate }}</h1>
+  <p class="welcome-message">
+    {{ 'HOME.WELCOME_MESSAGE' | translate }} <strong>{{ 'HOME.USER' | translate }}</strong>.
+    <br>
+    {{ 'HOME-PRODUCTOR.PLATFORM_DESCRIPTION' | translate }}
+    <br>
+    {{ 'HOME-PRODUCTOR.RECOMMENDATIONS' | translate }}
+  </p>
+
+  <!-- Pedidos Recientes -->
+  <div class="recent-orders">
+    <h2>{{ 'HOME-PRODUCTOR.RECENT_ORDERS' | translate }}</h2>
+    <div class="order-cards">
+      <div *ngFor="let order of orders" class="order-card">
+        <h3>{{ 'Pedido:' }} {{ order.numeroPedido }}</h3>
+        <p>{{ 'Estado:' }} {{ order.estado }}</p>
+        <p>{{ 'Tipo:' }} {{ order.tipo }}</p>
+        <button class="order-button" (click)="goToOrders()">{{ 'HOME-PRODUCTOR.VIEW_ORDER' | translate }}</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón de Ver Más -->
+  <div class="view-more">
+    <button class="view-more-button" (click)="goToOrders()">{{ 'HOME.VIEW_MORE' | translate }}</button>
+  </div>
+</div>
