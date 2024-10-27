@@ -13,62 +13,6 @@
       "password": "12345678",
       "confirmPassword": "12345678",
       "role": "consumer"
-    },
-    {
-      "id": "5",
-      "nombre": "Carlos",
-      "apellido": "Garcia",
-      "telefono": "999 888 777",
-      "direccion": "Las Condes",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "23456789",
-      "correo": "carlos.garcia@example.com",
-      "password": "23456789",
-      "confirmPassword": "23456789",
-      "role": "consumer"
-    },
-    {
-      "id": "6",
-      "nombre": "María",
-      "apellido": "López",
-      "telefono": "888 777 666",
-      "direccion": "Miraflores",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "34567890",
-      "correo": "maria.lopez@example.com",
-      "password": "34567890",
-      "confirmPassword": "34567890",
-      "role": "producer"
-    },
-    {
-      "id": "7",
-      "nombre": "Jorge",
-      "apellido": "Martínez",
-      "telefono": "777 666 555",
-      "direccion": "San Isidro",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "45678901",
-      "correo": "jorge.martinez@example.com",
-      "password": "45678901",
-      "confirmPassword": "45678901",
-      "role": "consumer"
-    },
-    {
-      "id": "8",
-      "nombre": "Lucía",
-      "apellido": "Gómez",
-      "telefono": "666 555 444",
-      "direccion": "Palermo",
-      "pais": "Perú",
-      "ciudad": "Lima",
-      "dni": "56789012",
-      "correo": "lucia.gomez@example.com",
-      "password": "56789012",
-      "confirmPassword": "56789012",
-      "role": "producer"
     }
   ],
   "inventory": [
@@ -106,29 +50,6 @@
       "ultimaActualizacion": "2024-09-04",
       "cantidad": 100,
       "id": "6d57",
-      "producer_id": "6"
-    },
-    {
-      "nombre": "Azúcar Refinada",
-      "tipo": "Aditivo",
-      "unidad": "kg",
-      "caducidad": "2025-09-20",
-      "proveedor": "Vinotech",
-      "costoU": 8,
-      "ultimaActualizacion": "2024-09-05",
-      "cantidad": 40,
-      "id": "4770",
-      "producer_id": "8"
-    },
-    {
-      "id": "0",
-      "nombre": "Cabernet",
-      "tipo": "Vino",
-      "unidad": "kg",
-      "caducidad": "15-12-25",
-      "costoU": 10,
-      "ultimaActualizacion": "",
-      "cantidad": 200,
       "producer_id": "6"
     }
   ],
@@ -176,17 +97,6 @@
       "temperatura": 5,
       "estadoProceso": "En Proceso",
       "producer_id": "8"
-    },
-    {
-      "id": "11",
-      "numeroLote": "5",
-      "uva": "Vino",
-      "fechaInicio": "2024-10-20",
-      "cantidadLitros": 3,
-      "pH": 3,
-      "temperatura": 3,
-      "estadoProceso": "En Proceso",
-      "producer_id": "6"
     }
   ],
   "orders": [
@@ -257,22 +167,6 @@
       "estado": "En Proceso",
       "producer_id": "8",
       "consumer_id": "4"
-    },
-    {
-      "id": "6",
-      "numeroPedido": "P006",
-      "productos": [
-        "Vino Rosado Español - 750 ml - 1 botella"
-      ],
-      "condicionTransporte": "Recolección en Tienda",
-      "metodoPago": "Tarjeta de Crédito",
-      "terminosPago": "Pago Contado",
-      "fecha": "06/09/2024",
-      "fechaEntrega": "06/09/2024",
-      "tipo": "vino",
-      "estado": "Terminado",
-      "producer_id": "6",
-      "consumer_id": "5"
     }
   ],
   "wines": [
