@@ -1,29 +1,36 @@
 export class Client {
   id: string;
-  nombre: string;
-  apellido: string;
-  telefono: string;
-  direccion: string;
-  pais: string;
-  ciudad: string;
+  firstName: string;
+  lastName: string;
+  phone: string;
+  address: string;
+  country: string;
+  city: string;
   dni: string;
-  correo: string;
-  password: string;
-  confirmPassword: string;
+  email: string;
   role: string;
 
-  constructor(client: Partial<Client> = {}) {
+  constructor(client: {
+    id?: string,
+    firstName: string,
+    lastName: string,
+    phone: string,
+    address?: string,
+    country?: string,
+    city?: string,
+    dni?: string,
+    email?: string,
+    role?: string
+  }) {
     this.id = client.id || '';
-    this.nombre = client.nombre || '';
-    this.apellido = client.apellido || '';
-    this.telefono = client.telefono || '';
-    this.direccion = client.direccion || '';
-    this.pais = client.pais || '';
-    this.ciudad = client.ciudad || '';
+    this.firstName = client.firstName || '';
+    this.lastName = client.lastName || '';
+    this.phone = client.phone || '';
+    this.address = client.address || '';
+    this.country = client.country || '';
+    this.city = client.city || '';
     this.dni = client.dni || '';
-    this.correo = client.correo || '';
-    this.password = client.password || '';
-    this.confirmPassword = client.confirmPassword || '';
+    this.email = client.email || '';
     this.role = client.role || '';
   }
 }

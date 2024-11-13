@@ -30,19 +30,19 @@ import { Router } from '@angular/router';
 })
 export class ClientsComponent implements OnInit, AfterViewInit {
   protected clientsData!: Client;
-  protected columnsToDisplay: string[] = ['nombre', 'apellido', 'telefono', 'actions'];
+  protected columnsToDisplay: string[] = ['firstName', 'lastName', 'phone', 'actions']; // Atributos traducidos a inglés
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   protected datasource: MatTableDataSource<Client>;
   private clientService: ClientService = inject(ClientService);
 
   constructor(private router: Router) {
-    this.clientsData = new Client();
+    this.clientsData = new Client({ firstName: '', lastName: '', phone: '' }); // Atributos traducidos a inglés
     this.datasource = new MatTableDataSource<Client>();
   }
 
   ngOnInit(): void {
-    this.getAllConsumers();
+    this.getAllClients();
   }
 
   ngAfterViewInit(): void {
@@ -50,8 +50,8 @@ export class ClientsComponent implements OnInit, AfterViewInit {
     this.datasource.sort = this.sort;
   }
 
-  private getAllConsumers(): void {
-    this.clientService.getAllConsumers().subscribe((clients: Client[]) => {
+  private getAllClients(): void {
+    this.clientService.getAll().subscribe((clients: Client[]) => {
       this.datasource.data = clients;
     });
   }
@@ -70,17 +70,20 @@ export class ClientsComponent implements OnInit, AfterViewInit {
   }
 
   onDelete(client: Client) {
-    if (confirm(`¿Estás seguro de que quieres eliminar a ${client.nombre} ${client.apellido}?`)) {
+    if (confirm(`Are you sure you want to delete ${client.firstName} ${client.lastName}?`)) { // Mensaje de confirmación traducido
       this.clientService.delete(client.id).subscribe(
         () => {
           this.datasource.data = this.datasource.data.filter(c => c.id !== client.id);
           this.datasource._updateChangeSubscription();
-          console.log('Cliente eliminado con éxito');
+          console.log('Client deleted successfully');
         },
         (error) => {
-          console.error('Error al eliminar el cliente', error);
+          console.error('Error deleting client', error);
         }
       );
     }
+  }
+  onCreate() {
+    this.router.navigate(['/producer/createClients']);
   }
 }

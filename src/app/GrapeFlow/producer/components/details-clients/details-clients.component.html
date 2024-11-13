@@ -1,15 +1,15 @@
 <div class="client-details-container">
-  <h1>Client Details</h1>
+  <h1>Client Details</h1> <!-- Título traducido -->
 
   <div class="client-card">
     <div class="client-info">
-      <h2>{{ client?.nombre }} {{ client?.apellido }}</h2>
-      <p><strong>Phone:</strong> {{ client?.telefono }}</p>
-      <p><strong>Address:</strong> {{ client?.direccion }}</p>
-      <p><strong>City:</strong> {{ client?.ciudad }}</p>
-      <p><strong>Country:</strong> {{ client?.pais }}</p>
-      <p><strong>ID:</strong> {{ client?.dni }}</p>
-      <p><strong>Email:</strong> {{ client?.correo }}</p>
+      <h2>{{ client?.firstName }} {{ client?.lastName }}</h2> <!-- Atributos traducidos -->
+      <p><strong>Phone:</strong> {{ client?.phone }}</p> <!-- Atributos traducidos -->
+      <p><strong>Address:</strong> {{ client?.address }}</p> <!-- Atributos traducidos -->
+      <p><strong>City:</strong> {{ client?.city }}</p> <!-- Atributos traducidos -->
+      <p><strong>Country:</strong> {{ client?.country }}</p> <!-- Atributos traducidos -->
+      <p><strong>ID:</strong> {{ client?.dni }}</p> <!-- Atributos traducidos -->
+      <p><strong>Email:</strong> {{ client?.email }}</p> <!-- Atributos traducidos -->
     </div>
     <div class="client-image">
       <img ngSrc="/6009864.png" alt="Client Image" height="512" width="512">
@@ -17,7 +17,7 @@
   </div>
 
   <div class="button-container">
-    <button mat-raised-button color="primary" (click)="editClient()">Edit</button>
-    <button mat-raised-button (click)="goBack()">Back to List</button>
+    <button mat-raised-button color="primary" (click)="editClient()">Edit</button> <!-- Botón traducido -->
+    <button mat-raised-button (click)="goBack()">Back to List</button> <!-- Botón traducido -->
   </div>
 </div>

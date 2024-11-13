@@ -1,35 +1,35 @@
 <div class="edit-client-container">
-  <h1>Editar Cliente</h1>
+  <h1>Edit Client</h1>
 
   <form (ngSubmit)="onSave()">
     <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput [(ngModel)]="client.nombre" name="nombre" required>
+      <mat-label>First Name</mat-label>
+      <input matInput [(ngModel)]="client.firstName" name="firstName" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Apellido</mat-label>
-      <input matInput [(ngModel)]="client.apellido" name="apellido" required>
+      <mat-label>Last Name</mat-label>
+      <input matInput [(ngModel)]="client.lastName" name="lastName" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Teléfono</mat-label>
-      <input matInput [(ngModel)]="client.telefono" name="telefono" required>
+      <mat-label>Phone</mat-label>
+      <input matInput [(ngModel)]="client.phone" name="phone" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Dirección</mat-label>
-      <input matInput [(ngModel)]="client.direccion" name="direccion" required>
+      <mat-label>Address</mat-label>
+      <input matInput [(ngModel)]="client.address" name="address" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Ciudad</mat-label>
-      <input matInput [(ngModel)]="client.ciudad" name="ciudad" required>
+      <mat-label>City</mat-label>
+      <input matInput [(ngModel)]="client.city" name="city" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>País</mat-label>
-      <input matInput [(ngModel)]="client.pais" name="pais" required>
+      <mat-label>Country</mat-label>
+      <input matInput [(ngModel)]="client.country" name="country" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -38,13 +38,18 @@
     </mat-form-field>
 
     <mat-form-field appearance="fill">
-      <mat-label>Correo</mat-label>
-      <input matInput type="email" [(ngModel)]="client.correo" name="correo" required>
+      <mat-label>Email</mat-label>
+      <input matInput type="email" [(ngModel)]="client.email" name="email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Role</mat-label>
+      <input matInput [(ngModel)]="client.role" name="role" required>
     </mat-form-field>
 
     <div class="button-container">
-      <button mat-raised-button color="primary" type="submit">Guardar</button>
-      <button mat-raised-button color="warn" (click)="onCancel()">Volver</button>
+      <button mat-raised-button color="primary" type="submit">Save</button>
+      <button mat-raised-button color="warn" (click)="onCancel()">Back</button>
     </div>
   </form>
 </div>
