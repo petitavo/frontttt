@@ -14,6 +14,7 @@ import {RegisterComponent} from "./public/register/register.component";
 import {HomeProducerComponent} from "./GrapeFlow/producer/components/home-producer/home-producer.component";
 import {OrdersComponent} from "./GrapeFlow/producer/pages/orders/orders.component";
 import {HomeConsumerComponent} from "./GrapeFlow/consumer/components/home-consumer/home-consumer.component";
+import {AddClientComponent} from "./GrapeFlow/producer/components/add-client/add-client.component";
 
 export const routes: Routes = [
 
@@ -29,6 +30,7 @@ export const routes: Routes = [
       { path: 'orders', component: OrdersComponent },
       { path: 'editClients/:id', component: EditClientsComponent },
       { path: 'detailClients/:id', component: DetailsClientsComponent },
+      {path : 'createClients', component: AddClientComponent},
       { path: 'wines', component: WinesComponent }
     ]},
 
