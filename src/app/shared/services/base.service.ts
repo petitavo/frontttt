@@ -7,7 +7,7 @@ import {catchError, Observable, retry, throwError} from "rxjs";
   providedIn: 'root'
 })
 export class BaseService<T> {
-  protected basePath: string = `https://my-json-server.typicode.com/Villasystem/Grapeflow`;
+  protected basePath: string = `${environment.serverBasePath}`;
   protected resourceEndPoint: string = '/resources';
   protected http: HttpClient = inject(HttpClient);
   protected httpOptions = {
