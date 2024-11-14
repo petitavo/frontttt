@@ -5,10 +5,10 @@
     <dd>{{ data.id }}</dd>
 
     <dt>Nombre:</dt>
-    <dd>{{ client?.nombre }} {{ client?.apellido }}</dd>
+    <dd>{{ client?.firstName }} {{ client?.lastName }}</dd>
 
     <dt>Correo:</dt>
-    <dd>{{ client?.correo }}</dd>
+    <dd>{{ client?.email }}</dd>
 
     <dt>Productos:</dt>
     <dd>
@@ -24,7 +24,7 @@
     <dd>{{ data.metodoPago }}</dd>
 
     <dt>Teléfono:</dt>
-    <dd>{{ client?.telefono }}</dd>
+    <dd>{{ client?.phone }}</dd>
 
     <dt>Términos de Pago:</dt>
     <dd>{{ data.terminosPago }}</dd>
@@ -42,7 +42,7 @@
     <dd>{{ data.estado }}</dd>
 
     <dt>Dirección de Entrega:</dt>
-    <dd>{{ client?.direccion }}, {{ client?.ciudad }}, {{ client?.pais }}</dd>
+    <dd>{{ client?.email }}, {{ client?.city }}, {{ client?.country }}</dd>
   </dl>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

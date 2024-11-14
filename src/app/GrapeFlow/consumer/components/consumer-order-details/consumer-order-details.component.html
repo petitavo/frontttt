@@ -5,10 +5,10 @@
     <dd>{{ data.numeroPedido }}</dd>
 
     <dt>Nombre del Productor:</dt>
-    <dd>{{ producer?.nombre }} {{ producer?.apellido }}</dd>
+    <dd>{{ producer?.firstName }} {{ producer?.lastName}}</dd>
 
     <dt>Correo del Productor:</dt>
-    <dd>{{ producer?.correo }}</dd>
+    <dd>{{ producer?.email }}</dd>
 
     <dt>Productos:</dt>
     <dd>
@@ -24,7 +24,7 @@
     <dd>{{ data.metodoPago }}</dd>
 
     <dt>Teléfono del Productor:</dt>
-    <dd>{{ producer?.telefono }}</dd>
+    <dd>{{ producer?.phone }}</dd>
 
     <dt>Términos de Pago:</dt>
     <dd>{{ data.terminosPago }}</dd>
@@ -42,7 +42,7 @@
     <dd>{{ data.estado }}</dd>
 
     <dt>Dirección del Productor:</dt>
-    <dd>{{ producer?.direccion }}, {{ producer?.ciudad }}, {{ producer?.pais }}</dd>
+    <dd>{{ producer?.email }}, {{ producer?.city }}, {{ producer?.country }}</dd>
   </dl>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
