@@ -34,7 +34,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class InventoryComponent implements OnInit, AfterViewInit {
   protected inventoryData: Inventory;
-  protected columnsToDisplay: string[] = ['nombre', 'tipo', 'unidad', 'caducidad', 'costoU', 'cantidad', 'actions'];
+  protected columnsToDisplay: string[] = ['name', 'type', 'unit', 'expirationDate', 'unitCost', 'quantity', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   protected dataSource: MatTableDataSource<Inventory>;
@@ -42,13 +42,14 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   constructor(private dialog: MatDialog) {
     this.inventoryData = new Inventory({
-      nombre: '',
-      tipo: '',
-      unidad: '',
-      caducidad: '',
-      costoU: 0,
-      cantidad: 0,
-      producer_id: '' // Add this line
+      lastUpdated: "", supplier: "",
+      name: '',
+      type: '',
+      unit: '',
+      expirationDate: '',
+      unitCost: 0,
+      quantity: 0,
+      producerId: '' // Make sure this matches the property name in the Inventory class
     });
     this.dataSource = new MatTableDataSource<Inventory>();
   }
@@ -77,20 +78,21 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(InventoryEditComponent, {
       width: '400px',
       data: new Inventory({
-        nombre: '',
-        tipo: '',
-        unidad: '',
-        caducidad: '',
-        costoU: 0,
-        cantidad: 0,
-        producer_id: '' // Add this line
+        lastUpdated: "", supplier: "",
+        name: '',
+        type: '',
+        unit: '',
+        expirationDate: '',
+        unitCost: 0,
+        quantity: 0,
+        producerId: '' // Ensure this matches the property name
       })
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Ensure producer_id is set before creating the item
-        result.producer_id = result.producer_id || 'default_producer_id'; // Replace with actual logic to get producer_id
+        // Ensure producerId is set before creating the item
+        result.producerId = result.producerId || 'default_producer_id'; // Replace with actual logic to get producerId
         this.inventoryService.create(result).subscribe(
           (newItem) => {
             this.dataSource.data = [...this.dataSource.data, newItem];
@@ -109,8 +111,8 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Ensure producer_id is set before updating the item
-        result.producer_id = result.producer_id || item.producer_id;
+        // Ensure producerId is set before updating the item
+        result.producerId = result.producerId || item.producerId;
         this.inventoryService.update(result.id, result).subscribe(() => {
           this.getAllInventory(); // Refresh the inventory list
         });
@@ -119,7 +121,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   }
 
   onDelete(item: Inventory): void {
-    if (confirm(`¿Estás seguro de que quieres eliminar ${item.nombre}?`)) {
+    if (confirm(`Are you sure you want to delete ${item.name}?`)) {
       this.inventoryService.delete(item.id).subscribe(
         () => {
           this.dataSource.data = this.dataSource.data.filter(i => i.id !== item.id);

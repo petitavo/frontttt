@@ -73,30 +73,6 @@
   ],
   "inventory": [
     {
-      "nombre": "Barriles de Roble",
-      "tipo": "Equipamiento",
-      "unidad": "und",
-      "caducidad": "N/A",
-      "proveedor": "Barriles Únicos",
-      "costoU": 250,
-      "ultimaActualizacion": "2024-09-03",
-      "cantidad": 30,
-      "id": "e578",
-      "producer_id": "6"
-    },
-    {
-      "nombre": "Botellas de Vidrio",
-      "tipo": "Consumible",
-      "unidad": "und",
-      "caducidad": "N/A",
-      "proveedor": "Vidrios de Oro",
-      "costoU": 0.75,
-      "ultimaActualizacion": "2024-09-02",
-      "cantidad": 2000,
-      "id": "92a7",
-      "producer_id": "8"
-    },
-    {
       "nombre": "Azúcar Refinada",
       "tipo": "Aditivo",
       "unidad": "kg",
@@ -130,6 +106,30 @@
       "ultimaActualizacion": "",
       "cantidad": 200,
       "producer_id": "6"
+    },
+    {
+      "id": "AwfVXcz",
+      "name": "",
+      "type": "",
+      "unit": "",
+      "expirationDate": "",
+      "supplier": "",
+      "unitCost": 0,
+      "quantity": 0,
+      "lastUpdated": "",
+      "producerId": "default_producer_id"
+    },
+    {
+      "id": "zqPMC6A",
+      "name": "Barriles",
+      "type": "afafafa",
+      "unit": "14141",
+      "expirationDate": "fafafa",
+      "supplier": "",
+      "unitCost": 300,
+      "quantity": 500,
+      "lastUpdated": "",
+      "producerId": "default_producer_id"
     }
   ],
   "lotes": [
