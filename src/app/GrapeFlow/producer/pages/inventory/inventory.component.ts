@@ -42,14 +42,13 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   constructor(private dialog: MatDialog) {
     this.inventoryData = new Inventory({
-      lastUpdated: "", supplier: "",
       name: '',
       type: '',
       unit: '',
       expirationDate: '',
       unitCost: 0,
       quantity: 0,
-      producerId: '' // Make sure this matches the property name in the Inventory class
+      supplier: ''
     });
     this.dataSource = new MatTableDataSource<Inventory>();
   }
@@ -69,7 +68,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     });
   }
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -78,21 +77,18 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     const dialogRef = this.dialog.open(InventoryEditComponent, {
       width: '400px',
       data: new Inventory({
-        lastUpdated: "", supplier: "",
         name: '',
         type: '',
         unit: '',
         expirationDate: '',
         unitCost: 0,
         quantity: 0,
-        producerId: '' // Ensure this matches the property name
+        supplier: ''
       })
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Ensure producerId is set before creating the item
-        result.producerId = result.producerId || 'default_producer_id'; // Replace with actual logic to get producerId
         this.inventoryService.create(result).subscribe(
           (newItem) => {
             this.dataSource.data = [...this.dataSource.data, newItem];
@@ -106,13 +102,11 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   onEdit(item: Inventory): void {
     const dialogRef = this.dialog.open(InventoryEditComponent, {
       width: '400px',
-      data: {...item}  // Create a copy of the item
+      data: { ...item }  // Create a copy of the item
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
-        // Ensure producerId is set before updating the item
-        result.producerId = result.producerId || item.producerId;
         this.inventoryService.update(result.id, result).subscribe(() => {
           this.getAllInventory(); // Refresh the inventory list
         });

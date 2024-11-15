@@ -39,16 +39,6 @@
       <input matInput [(ngModel)]="inventoryData.quantity" type="number" name="quantity" required>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
-      <mat-label>Last Updated</mat-label>
-      <input matInput [(ngModel)]="inventoryData.lastUpdated" name="lastUpdated" required>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Producer ID</mat-label>
-      <input matInput [(ngModel)]="inventoryData.producerId" type="number" name="producerId" required>
-    </mat-form-field>
-
     <div class="dialog-buttons">
       <button mat-raised-button color="primary" type="submit">Save</button>
       <button mat-button (click)="onCancel()">Cancel</button>

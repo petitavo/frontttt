@@ -38,7 +38,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
 
   constructor(private InventoryService: InventoryService, private dialog: MatDialog) {
     this.inventoryData = new Inventory({
-      name: '', type: '', unit: '', expirationDate: '', unitCost: 0, quantity: 0, supplier: '', lastUpdated: '', producerId: ''
+      name: '', type: '', unit: '', expirationDate: '', unitCost: 0, quantity: 0, supplier: ''
     });
     this.dataSource = new MatTableDataSource<Inventory>();
   }
@@ -68,7 +68,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
       (newItem) => {
         this.dataSource.data = [...this.dataSource.data, newItem];
         this.inventoryData = new Inventory({
-          name: '', type: '', unit: '', expirationDate: '', unitCost: 0, quantity: 0, supplier: '', lastUpdated: '', producerId: ''
+          name: '', type: '', unit: '', expirationDate: '', unitCost: 0, quantity: 0, supplier: ''
         });
       },
       (error) => console.error('Error adding inventory item', error)
