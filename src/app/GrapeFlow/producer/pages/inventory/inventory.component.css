@@ -139,3 +139,21 @@ button.mat-raised-button.mat-accent:hover {
 .mat-option.mat-selected {
   background-color: #d1c4e9 !important;
 }
+
+.controls-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.inventory-card {
+  width: 300px;
+}
+
