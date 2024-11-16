@@ -16,12 +16,16 @@
 
     <mat-form-field appearance="fill">
       <mat-label>Unit</mat-label>
-      <input matInput [(ngModel)]="inventoryData.unit" name="unit" required>
+      <mat-select [(ngModel)]="inventoryData.unit" name="unit" required>
+        <mat-option *ngFor="let unit of unitOptions" [value]="unit">{{ unit }}</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Expiration Date</mat-label>
-      <input matInput [(ngModel)]="inventoryData.expirationDate" name="expirationDate" required>
+      <input matInput [matDatepicker]="picker" [(ngModel)]="inventoryData.expirationDate" name="expirationDate" required>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
     <mat-form-field appearance="fill">

@@ -1,8 +1,7 @@
 import { AfterViewInit, Component, inject, OnInit, ViewChild } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
+import { MatSelectChange, MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
@@ -13,13 +12,14 @@ import { MatDialog } from "@angular/material/dialog";
 import { InventoryEditComponent } from "../../components/inventory-edit/inventory-edit.component";
 import { MatIconModule } from "@angular/material/icon";
 import { TranslateModule } from '@ngx-translate/core';
+import { MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle } from "@angular/material/card";
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'app-inventory',
   standalone: true,
   imports: [
     CommonModule,
-    MatTableModule,
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
@@ -27,50 +27,64 @@ import { TranslateModule } from '@ngx-translate/core';
     FormsModule,
     MatSortModule,
     MatIconModule,
-    TranslateModule
+    TranslateModule,
+    MatCardContent,
+    MatCardSubtitle,
+    MatCardTitle,
+    MatCardHeader,
+    MatCard,
+    MatCardActions
   ],
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.css']
 })
-export class InventoryComponent implements OnInit, AfterViewInit {
-  protected inventoryData: Inventory;
+export class InventoryComponent implements OnInit {
+  protected inventoryData: Inventory[] = [];
   protected columnsToDisplay: string[] = ['name', 'type', 'unit', 'expirationDate', 'unitCost', 'quantity', 'actions'];
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-  protected dataSource: MatTableDataSource<Inventory>;
+  selectedFilter: string = 'name'; // Valor por defecto del filtro
+  searchValue: string = ''; // Valor de búsqueda
+  filteredData: Inventory[] = []; // Datos filtrados
+
   private inventoryService: InventoryService = inject(InventoryService);
 
-  constructor(private dialog: MatDialog) {
-    this.inventoryData = new Inventory({
-      name: '',
-      type: '',
-      unit: '',
-      expirationDate: '',
-      unitCost: 0,
-      quantity: 0,
-      supplier: ''
-    });
-    this.dataSource = new MatTableDataSource<Inventory>();
-  }
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getAllInventory();
   }
 
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
   private getAllInventory(): void {
     this.inventoryService.getAll().subscribe((inventory: Inventory[]) => {
-      this.dataSource.data = inventory;
+      this.inventoryData = inventory;
+      this.applyFilter(); // Aplicar filtro cuando se obtienen los datos
     });
   }
 
-  applyFilter(event: Event): void {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  // Aplicar el filtro basándose en el valor de búsqueda y el filtro seleccionado
+  applyFilter(): void {
+    const filterValue = this.searchValue.trim().toLowerCase();
+    if (!filterValue) {
+      this.filteredData = [...this.inventoryData];
+      return;
+    }
+
+    this.filteredData = this.inventoryData.filter(item => {
+      switch (this.selectedFilter) {
+        case 'name':
+          return item.name.toLowerCase().includes(filterValue);
+        case 'type':
+          return item.type.toLowerCase().includes(filterValue);
+        case 'supplier':
+          return item.supplier.toLowerCase().includes(filterValue);
+        default:
+          return false;
+      }
+    });
+  }
+
+  // Actualiza el filtro seleccionado
+  onFilterChange(): void {
+    this.applyFilter();
   }
 
   openAddDialog(): void {
@@ -91,7 +105,8 @@ export class InventoryComponent implements OnInit, AfterViewInit {
       if (result) {
         this.inventoryService.create(result).subscribe(
           (newItem) => {
-            this.dataSource.data = [...this.dataSource.data, newItem];
+            this.inventoryData = [...this.inventoryData, newItem];
+            this.applyFilter(); // Aplicar el filtro después de agregar un nuevo ítem
           },
           (error) => console.error('Error adding inventory item', error)
         );
@@ -102,7 +117,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
   onEdit(item: Inventory): void {
     const dialogRef = this.dialog.open(InventoryEditComponent, {
       width: '400px',
-      data: { ...item }  // Create a copy of the item
+      data: { ...item }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -118,7 +133,8 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     if (confirm(`Are you sure you want to delete ${item.name}?`)) {
       this.inventoryService.delete(item.id).subscribe(
         () => {
-          this.dataSource.data = this.dataSource.data.filter(i => i.id !== item.id);
+          this.inventoryData = this.inventoryData.filter(i => i.id !== item.id);
+          this.applyFilter(); // Aplicar el filtro después de eliminar un ítem
         },
         (error) => console.error('Error deleting inventory item', error)
       );
