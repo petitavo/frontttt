@@ -8,6 +8,6 @@ import { Inventory } from '../model/inventory.entity';
 export class InventoryService extends BaseService<Inventory> {
   constructor() {
     super();
-    this.resourceEndPoint = '/inventory';
+    this.resourceEndPoint = '/inventories';
   }
 }

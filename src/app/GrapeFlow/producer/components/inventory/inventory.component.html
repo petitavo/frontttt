@@ -8,9 +8,9 @@
     <mat-form-field>
       <mat-label>Filter</mat-label>
       <mat-select>
-        <mat-option value="nombre">Name</mat-option>
-        <mat-option value="tipo">Type</mat-option>
-        <mat-option value="proveedor">Supplier</mat-option>
+        <mat-option value="name">Name</mat-option>
+        <mat-option value="type">Type</mat-option>
+        <mat-option value="supplier">Supplier</mat-option>
       </mat-select>
     </mat-form-field>
     <button mat-raised-button color="primary">Search</button>
@@ -19,65 +19,79 @@
   <div class="form-container">
     <h2>Add a new item to the inventory:</h2>
     <mat-form-field>
-      <input matInput [(ngModel)]="inventoryData.nombre" placeholder="Name">
+      <input matInput [(ngModel)]="inventoryData.name" placeholder="Name">
     </mat-form-field>
     <mat-form-field>
-      <input matInput [(ngModel)]="inventoryData.tipo" placeholder="Type">
+      <input matInput [(ngModel)]="inventoryData.type" placeholder="Type">
     </mat-form-field>
     <mat-form-field>
-      <input matInput [(ngModel)]="inventoryData.unidad" placeholder="Unit">
+      <input matInput [(ngModel)]="inventoryData.unit" placeholder="Unit">
     </mat-form-field>
     <mat-form-field>
-      <input matInput [(ngModel)]="inventoryData.caducidad" placeholder="Expiry Date">
+      <input matInput [(ngModel)]="inventoryData.expirationDate" placeholder="Expiry Date">
     </mat-form-field>
     <mat-form-field>
-      <input matInput [(ngModel)]="inventoryData.costoU" type="number" placeholder="Unit Cost">
+      <input matInput [(ngModel)]="inventoryData.supplier" placeholder="Supplier">
     </mat-form-field>
     <mat-form-field>
-      <input matInput [(ngModel)]="inventoryData.cantidad" type="number" placeholder="Quantity">
+      <input matInput [(ngModel)]="inventoryData.unitCost" type="number" placeholder="Unit Cost">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="inventoryData.quantity" type="number" placeholder="Quantity">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="inventoryData.lastUpdated" placeholder="Last Updated">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput [(ngModel)]="inventoryData.producerId" type="number" placeholder="Producer ID">
     </mat-form-field>
     <button mat-raised-button class="save-button" (click)="onSave()">Save</button>
   </div>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
-    <ng-container matColumnDef="nombre">
+    <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let item">{{ item.nombre }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.name }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="tipo">
+    <ng-container matColumnDef="type">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
-      <td mat-cell *matCellDef="let item">{{ item.tipo }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.type }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="unidad">
+    <ng-container matColumnDef="unit">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Unit</th>
-      <td mat-cell *matCellDef="let item">{{ item.unidad }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.unit }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="caducidad">
+    <ng-container matColumnDef="expirationDate">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Expiry Date</th>
-      <td mat-cell *matCellDef="let item">{{ item.caducidad }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.expirationDate }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="proveedor">
+    <ng-container matColumnDef="supplier">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Supplier</th>
-      <td mat-cell *matCellDef="let item">{{ item.proveedor }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.supplier }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="costoU">
+    <ng-container matColumnDef="unitCost">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Unit Cost</th>
-      <td mat-cell *matCellDef="let item">{{ item.costoU | currency:'USD':'symbol':'1.2-2' }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.unitCost | currency:'USD':'symbol':'1.2-2' }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="ultimaActualizacion">
+    <ng-container matColumnDef="lastUpdated">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Updated</th>
-      <td mat-cell *matCellDef="let item">{{ item.ultimaActualizacion | date:'yyyy-MM-dd' }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.lastUpdated | date:'yyyy-MM-dd' }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="cantidad">
+    <ng-container matColumnDef="quantity">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Quantity</th>
-      <td mat-cell *matCellDef="let item">{{ item.cantidad }}</td>
+      <td mat-cell *matCellDef="let item">{{ item.quantity }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="producerId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Producer ID</th>
+      <td mat-cell *matCellDef="let item">{{ item.producerId }}</td>
     </ng-container>
 
     <ng-container matColumnDef="actions">

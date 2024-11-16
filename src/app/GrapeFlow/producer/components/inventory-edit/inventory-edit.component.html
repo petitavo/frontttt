@@ -6,32 +6,47 @@
   <form (ngSubmit)="onSave()">
     <mat-form-field appearance="fill">
       <mat-label>Name</mat-label>
-      <input matInput [(ngModel)]="inventoryData.nombre" name="nombre" required>
+      <input matInput [(ngModel)]="inventoryData.name" name="name" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Type</mat-label>
-      <input matInput [(ngModel)]="inventoryData.tipo" name="tipo" required>
+      <input matInput [(ngModel)]="inventoryData.type" name="type" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Unit</mat-label>
-      <input matInput [(ngModel)]="inventoryData.unidad" name="unidad" required>
+      <input matInput [(ngModel)]="inventoryData.unit" name="unit" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Expiration Date</mat-label>
-      <input matInput [(ngModel)]="inventoryData.caducidad" name="caducidad" required>
+      <input matInput [(ngModel)]="inventoryData.expirationDate" name="expirationDate" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Supplier</mat-label>
+      <input matInput [(ngModel)]="inventoryData.supplier" name="supplier" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Unit Cost</mat-label>
-      <input matInput [(ngModel)]="inventoryData.costoU" type="number" name="costoU" required>
+      <input matInput [(ngModel)]="inventoryData.unitCost" type="number" name="unitCost" required>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Quantity</mat-label>
-      <input matInput [(ngModel)]="inventoryData.cantidad" type="number" name="cantidad" required>
+      <input matInput [(ngModel)]="inventoryData.quantity" type="number" name="quantity" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Last Updated</mat-label>
+      <input matInput [(ngModel)]="inventoryData.lastUpdated" name="lastUpdated" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Producer ID</mat-label>
+      <input matInput [(ngModel)]="inventoryData.producerId" type="number" name="producerId" required>
     </mat-form-field>
 
     <div class="dialog-buttons">

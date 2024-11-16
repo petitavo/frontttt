@@ -9,8 +9,8 @@ import { MatSortModule, MatSort } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { Inventory } from '../../model/inventory.entity';
 import { InventoryService } from '../../services/inventory.service';
-import {MatDialog} from "@angular/material/dialog";
-import {InventoryEditComponent} from "../inventory-edit/inventory-edit.component";
+import { MatDialog } from "@angular/material/dialog";
+import { InventoryEditComponent } from "../inventory-edit/inventory-edit.component";
 
 @Component({
   selector: 'app-inventory',
@@ -30,15 +30,15 @@ import {InventoryEditComponent} from "../inventory-edit/inventory-edit.component
 })
 export class InventoryComponent implements OnInit, AfterViewInit {
   protected inventoryData: Inventory;
-  protected columnsToDisplay: string[] = ['nombre', 'tipo', 'unidad', 'caducidad', 'costoU', 'cantidad', 'actions'];
+  protected columnsToDisplay: string[] = ['name', 'type', 'unit', 'expirationDate', 'unitCost', 'quantity', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   protected dataSource: MatTableDataSource<Inventory>;
   private inventoryService: InventoryService = inject(InventoryService);
 
-  constructor(private InventoryService: InventoryService,private dialog: MatDialog) {
+  constructor(private InventoryService: InventoryService, private dialog: MatDialog) {
     this.inventoryData = new Inventory({
-      nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
+      name: '', type: '', unit: '', expirationDate: '', unitCost: 0, quantity: 0, supplier: '', lastUpdated: '', producerId: ''
     });
     this.dataSource = new MatTableDataSource<Inventory>();
   }
@@ -58,7 +58,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     });
   }
 
-  applyFilter(event: Event) {
+  applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
@@ -68,7 +68,7 @@ export class InventoryComponent implements OnInit, AfterViewInit {
       (newItem) => {
         this.dataSource.data = [...this.dataSource.data, newItem];
         this.inventoryData = new Inventory({
-          nombre: '', tipo: '', unidad: '', caducidad: '', costoU: 0, cantidad: 0
+          name: '', type: '', unit: '', expirationDate: '', unitCost: 0, quantity: 0, supplier: '', lastUpdated: '', producerId: ''
         });
       },
       (error) => console.error('Error adding inventory item', error)
@@ -84,14 +84,14 @@ export class InventoryComponent implements OnInit, AfterViewInit {
     dialogRef.afterClosed().subscribe(result => {
       if (result) {
         this.inventoryService.update(result.id, result).subscribe(() => {
-          this.getAllInventory(); // Refresca la lista de inventario
+          this.getAllInventory(); // Refresh the inventory list
         });
       }
     });
   }
 
   onDelete(item: Inventory): void {
-    if (confirm(`¿Estás seguro de que quieres eliminar ${item.nombre}?`)) {
+    if (confirm(`Are you sure you want to delete ${item.name}?`)) {
       this.inventoryService.delete(item.id).subscribe(
         () => {
           this.dataSource.data = this.dataSource.data.filter(i => i.id !== item.id);
