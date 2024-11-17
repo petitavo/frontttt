@@ -37,7 +37,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./lote.component.css']
 })
 export class LoteComponent implements OnInit, AfterViewInit {
-  protected columnsToDisplay: string[] = ['numeroLote', 'uva', 'fechaInicio', 'estadoProceso', 'producerId', 'actions'];
+  protected columnsToDisplay: string[] = ['batchNumber', 'grape', 'startDate', 'processStatus', 'producerId', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   protected dataSource: MatTableDataSource<Lote>;
@@ -58,10 +58,17 @@ export class LoteComponent implements OnInit, AfterViewInit {
   }
 
   private getAllLotes(): void {
-    this.loteService.getAll().subscribe((lotes: Lote[]) => {
-      this.dataSource.data = lotes;
-    });
+    this.loteService.getAll().subscribe(
+      (lotes: Lote[]) => {
+        console.log(lotes);  // Verifica si los datos contienen starDate correctamente
+        this.dataSource.data = lotes;
+      },
+      (error) => {
+        console.error('Error al obtener los lotes', error);
+      }
+    );
   }
+
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -92,7 +99,7 @@ export class LoteComponent implements OnInit, AfterViewInit {
     const newStatus = lote.processStatus === 'En Proceso' ? 'Terminado' : 'En Proceso';
     console.log('Nuevo estado:', newStatus); // Verificar nuevo estado
 
-    this.loteService.update(lote.id, { ...lote, estadoProceso: newStatus }).subscribe(
+    this.loteService.update(lote.id, { ...lote, processStatus: newStatus }).subscribe(
       (updatedLote) => {
         const index = this.dataSource.data.findIndex(l => l.id === updatedLote.id);
         if (index !== -1) {

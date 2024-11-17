@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, map, throwError } from 'rxjs';
 import { Lote } from '../model/lote.entity';
 import { BaseService } from "../../../shared/services/base.service";
+import {Order} from "../model/order.entity";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class LoteService extends BaseService<Lote> {
   getById(id: string): Observable<Lote> {
     return this.getAll().pipe(
       map(lotes => {
+        // @ts-ignore
         const foundLote = lotes.find(lote => lote.id === id);
         if (foundLote) {
           return foundLote;
@@ -23,5 +25,9 @@ export class LoteService extends BaseService<Lote> {
         }
       })
     );
+  }
+
+  override getAll(): Observable<Lote[]> {
+    return super.getAll();
   }
 }

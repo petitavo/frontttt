@@ -1,8 +1,8 @@
 export class Lote {
-  id: string; // ID del lote
+  id: number; // ID del lote
   batchNumber: string; // Número del lote
   grape: string; // Tipo de uva
-  startDate: string; // Fecha de inicio
+  starDate: string; // Fecha de inicio
   litersQuantity: string; // Cantidad de litros
   ph: string; // pH
   temperature: string; // Temperatura
@@ -10,10 +10,10 @@ export class Lote {
   producerId: string; // ID del productor
 
   constructor(lote: Partial<Lote> = {}) {
-    this.id = lote.id || '';
+    this.id = lote.id ||0;
     this.batchNumber = lote.batchNumber || '';
     this.grape = lote.grape || '';
-    this.startDate = lote.startDate || '';
+    this.starDate = lote.starDate || '';
     this.litersQuantity = lote.litersQuantity || '';
     this.ph = lote.ph || '';
     this.temperature = lote.temperature || '';

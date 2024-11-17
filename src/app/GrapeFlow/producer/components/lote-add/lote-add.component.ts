@@ -41,28 +41,32 @@ export class LoteAddComponent {
   ) {}
 
   onSave(): void {
-    // Verificar que todos los campos estén correctamente definidos
-    this.lote.batchNumber = this.lote.batchNumber ? this.lote.batchNumber.toString() : '';
-    this.lote.grape = this.lote.grape ? this.lote.grape.toString() : '';
-    this.lote.startDate = this.lote.startDate ? this.lote.startDate.toString() : ''; // Asegúrate de que la fecha esté en formato YYYY-MM-DD
-    this.lote.litersQuantity = this.lote.litersQuantity ? this.lote.litersQuantity.toString() : '';
-    this.lote.ph = this.lote.ph ? this.lote.ph.toString() : '';
-    this.lote.temperature = this.lote.temperature ? this.lote.temperature.toString() : '';
 
-    console.log('Datos del lote antes de enviar:', this.lote); // Verifica los datos
+    // Crear el objeto a enviar al backend, sin el campo 'id' ya que lo genera el backend
+    const loteToSave = {
+      batchNumber: this.lote.batchNumber,
+      grape: this.lote.grape,
+      starDate: this.lote.starDate, // Mantén la fecha como string
+      litersQuantity: this.lote.litersQuantity,
+      ph: this.lote.ph,
+      temperature: this.lote.temperature,
+      producerId: this.lote.producerId,
+      processStatus: this.lote.processStatus
+    };
 
-    // Obtener el último ID de los lotes existentes para generar uno nuevo
-    this.loteService.getAll().subscribe(lotes => {
-      const lastId = lotes.length > 0 ? Math.max(...lotes.map(lote => +lote.id)) : 0; // Buscar el ID más alto
-      this.lote.id = (lastId + 1).toString(); // Generar un nuevo ID sumando 1
+    console.log('Datos del lote antes de enviar:', loteToSave); // Verifica los datos
 
-      this.loteService.create(this.lote).subscribe(newLote => {
-        this.dialogRef.close(newLote); // Devuelve el nuevo lote al cerrar el diálogo
-      }, error => {
-        console.error('Error al crear lote', error); // Maneja el error
-      });
+    // Llamada al backend para crear el lote
+    this.loteService.create(loteToSave).subscribe(newLote => {
+      this.dialogRef.close(newLote); // Cierra el diálogo y devuelve el nuevo lote
+    }, error => {
+      console.error('Error al crear lote', error); // Maneja el error
+      alert('Hubo un error al crear el lote. Por favor, revisa los datos.');
     });
   }
+
+
+
 
   onCancel(): void {
     this.dialogRef.close();
