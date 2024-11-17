@@ -9,7 +9,7 @@ import { BaseService } from "../../../shared/services/base.service";
 export class LoteService extends BaseService<Lote> {
   constructor() {
     super();
-    this.resourceEndPoint = '/lotes';
+    this.resourceEndPoint = '/batches';
   }
 
   getById(id: string): Observable<Lote> {

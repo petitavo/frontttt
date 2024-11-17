@@ -2,25 +2,28 @@
 <mat-dialog-content>
   <dl>
     <dt>Batch Number:</dt>
-    <dd>{{ data.id }}</dd>
+    <dd>{{ data.batchNumber }}</dd> <!-- Cambié "id" a "batchNumber" -->
 
     <dt>Grape:</dt>
-    <dd>{{ data.uva }}</dd>
+    <dd>{{ data.grape }}</dd> <!-- Cambié "uva" a "grape" -->
 
     <dt>Start Date:</dt>
-    <dd>{{ data.fechaInicio | date:'dd/MM/yyyy' }}</dd>
+    <dd>{{ data.startDate | date:'dd/MM/yyyy' }}</dd> <!-- Cambié "fechaInicio" a "starDate" -->
 
     <dt>Quantity (liters):</dt>
-    <dd>{{ data.cantidadLitros }}</dd>
+    <dd>{{ data.litersQuantity }}</dd> <!-- Cambié "cantidadLitros" a "litersQuantity" -->
 
     <dt>pH:</dt>
-    <dd>{{ data.pH }}</dd>
+    <dd>{{ data.ph }}</dd> <!-- Cambié "pH" a "ph" -->
 
     <dt>Temperature (°C):</dt>
-    <dd>{{ data.temperatura }}</dd>
+    <dd>{{ data.temperature }}</dd> <!-- Cambié "temperatura" a "temperature" -->
 
     <dt>Process Status:</dt>
-    <dd>{{ data.estadoProceso }}</dd>
+    <dd>{{ data.processStatus }}</dd> <!-- Cambié "estadoProceso" a "processStatus" -->
+
+    <dt>Producer ID:</dt>
+    <dd>{{ data.producerId }}</dd> <!-- Añadí "producerId" -->
   </dl>
 </mat-dialog-content>
 <mat-dialog-actions align="end">

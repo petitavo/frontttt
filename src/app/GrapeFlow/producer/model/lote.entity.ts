@@ -1,23 +1,23 @@
 export class Lote {
-  id: string;
-  numeroLote: string;
-  uva: string;
-  fechaInicio: string;
-  cantidadLitros: number;
-  pH: number;
-  temperatura: number;
-  estadoProceso: string;
-  producer_id: string;
+  id: string; // ID del lote
+  batchNumber: string; // Número del lote
+  grape: string; // Tipo de uva
+  startDate: string; // Fecha de inicio
+  litersQuantity: string; // Cantidad de litros
+  ph: string; // pH
+  temperature: string; // Temperatura
+  processStatus: string; // Estado del proceso
+  producerId: string; // ID del productor
 
   constructor(lote: Partial<Lote> = {}) {
     this.id = lote.id || '';
-    this.numeroLote = lote.numeroLote || '';
-    this.uva = lote.uva || '';
-    this.fechaInicio = lote.fechaInicio || '';
-    this.cantidadLitros = lote.cantidadLitros || 0;
-    this.pH = lote.pH || 0;
-    this.temperatura = lote.temperatura || 0;
-    this.estadoProceso = lote.estadoProceso || 'En Proceso';
-    this.producer_id = lote.producer_id || '';
+    this.batchNumber = lote.batchNumber || '';
+    this.grape = lote.grape || '';
+    this.startDate = lote.startDate || '';
+    this.litersQuantity = lote.litersQuantity || '';
+    this.ph = lote.ph || '';
+    this.temperature = lote.temperature || '';
+    this.processStatus = lote.processStatus || 'En Proceso';
+    this.producerId = lote.producerId || '';
   }
 }

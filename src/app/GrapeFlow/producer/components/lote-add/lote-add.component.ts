@@ -41,6 +41,16 @@ export class LoteAddComponent {
   ) {}
 
   onSave(): void {
+    // Verificar que todos los campos estén correctamente definidos
+    this.lote.batchNumber = this.lote.batchNumber ? this.lote.batchNumber.toString() : '';
+    this.lote.grape = this.lote.grape ? this.lote.grape.toString() : '';
+    this.lote.startDate = this.lote.startDate ? this.lote.startDate.toString() : ''; // Asegúrate de que la fecha esté en formato YYYY-MM-DD
+    this.lote.litersQuantity = this.lote.litersQuantity ? this.lote.litersQuantity.toString() : '';
+    this.lote.ph = this.lote.ph ? this.lote.ph.toString() : '';
+    this.lote.temperature = this.lote.temperature ? this.lote.temperature.toString() : '';
+
+    console.log('Datos del lote antes de enviar:', this.lote); // Verifica los datos
+
     // Obtener el último ID de los lotes existentes para generar uno nuevo
     this.loteService.getAll().subscribe(lotes => {
       const lastId = lotes.length > 0 ? Math.max(...lotes.map(lote => +lote.id)) : 0; // Buscar el ID más alto
@@ -48,6 +58,8 @@ export class LoteAddComponent {
 
       this.loteService.create(this.lote).subscribe(newLote => {
         this.dialogRef.close(newLote); // Devuelve el nuevo lote al cerrar el diálogo
+      }, error => {
+        console.error('Error al crear lote', error); // Maneja el error
       });
     });
   }
