@@ -70,8 +70,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
         this.wines = wines;
         this.filteredWines = wines;
 
-        this.tipos = [...new Set(wines.map(wine => wine.tipo))];
-        this.uvas = [...new Set(wines.flatMap(wine => wine.uvas))];
+        this.tipos = [...new Set(wines.map(wine => wine.type))];
+        this.uvas = [...new Set(wines.flatMap(wine => wine.grapes))];
       },
       error => {
         console.error('Error fetching wines:', error);
@@ -85,11 +85,11 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
     this.filteredWines = this.wines.filter(wine => {
       if (this.selectedFilter === 'nombre') {
-        return wine.nombre.toLowerCase().includes(filterValue);
+        return wine.name.toLowerCase().includes(filterValue);
       } else if (this.selectedFilter === 'tipo') {
-        return wine.tipo.toLowerCase().includes(filterValue);
+        return wine.type.toLowerCase().includes(filterValue);
       } else if (this.selectedFilter === 'uvas') {
-        const uvasString = Array.isArray(wine.uvas) ? wine.uvas.join(', ').toLowerCase() : '';
+        const uvasString = Array.isArray(wine.grapes) ? wine.grapes.join(', ').toLowerCase() : '';
         return uvasString.includes(filterValue);
       }
       return true;
@@ -115,9 +115,9 @@ export class ProductComponent implements OnInit, AfterViewInit {
     } else {
       this.filteredWines = this.wines.filter(wine => {
         if (this.selectedFilter === 'tipo') {
-          return wine.tipo.toLowerCase() === option.toLowerCase();
+          return wine.type.toLowerCase() === option.toLowerCase();
         } else if (this.selectedFilter === 'uvas') {
-          return wine.uvas.some(uva => uva.toLowerCase() === option.toLowerCase());
+          return wine.grapes.some(uva => uva.toLowerCase() === option.toLowerCase());
         }
         return true;
       });
@@ -132,8 +132,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
 
   onViewLot(wine: Wine): void {
-    if (wine.lote_id) {
-      this.loteService.getById(wine.lote_id).subscribe({
+    if (wine.batchId) {
+      this.loteService.getById(wine.batchId).subscribe({
         next: (lote) => {
           this.dialog.open(LoteDetailsComponent, {
             width: '600px',
@@ -165,7 +165,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
         const newOrder: Order = {
           ...result.order,
           id: this.generateOrderId(),
-          tipo: wine.tipo // Include the wine type in the order
+          tipo: wine.type // Include the wine type in the order
         };
 
         this.orderService.addOrder(newOrder).subscribe(

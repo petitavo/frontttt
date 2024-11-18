@@ -34,7 +34,7 @@ export class HomeConsumerComponent implements OnInit {
       (data: Wine[]) => {
         console.log(data);  // Verifica qué datos estás recibiendo
         // Filtra los vinos con calificación de 5 y muestra solo los primeros 3
-        this.popularWines = data.filter(wine => wine.calificacion === 5).slice(0, 3);
+        this.popularWines = data.filter(wine => wine.rating === 5).slice(0, 3);
         console.log(this.popularWines);  // Verifica si hay vinos populares
       },
       (error) => {
