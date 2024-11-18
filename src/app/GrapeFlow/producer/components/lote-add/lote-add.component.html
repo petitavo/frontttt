@@ -1,9 +1,5 @@
 <h1>Agregar Nuevo Lote</h1>
 <form (ngSubmit)="onSave()" #loteForm="ngForm">
-  <mat-form-field appearance="fill">
-    <mat-label>Número de Lote</mat-label>
-    <input matInput [(ngModel)]="lote.batchNumber" name="batchNumber" required type="text">
-  </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Uva</mat-label>
@@ -12,31 +8,28 @@
 
   <mat-form-field appearance="fill">
     <mat-label>Fecha de Inicio</mat-label>
-    <input matInput [(ngModel)]="lote.starDate" name="startDate" required type="text">
+    <input matInput [matDatepicker]="picker" [(ngModel)]="lote.starDate" name="startDate" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Cantidad Litros</mat-label>
-    <input matInput [(ngModel)]="lote.litersQuantity" name="litersQuantity" required type="text">
+    <input matInput [(ngModel)]="lote.litersQuantity" name="litersQuantity" required type="number">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>pH</mat-label>
-    <input matInput [(ngModel)]="lote.ph" name="ph" required type="text">
+    <input matInput [(ngModel)]="lote.ph" name="ph" required type="number">
   </mat-form-field>
 
   <mat-form-field appearance="fill">
     <mat-label>Temperatura</mat-label>
-    <input matInput [(ngModel)]="lote.temperature" name="temperature" required type="text">
+    <input matInput [(ngModel)]="lote.temperature" name="temperature" required type="number">
   </mat-form-field>
 
-  <!-- Campo para el ID del productor -->
-  <mat-form-field appearance="fill">
-    <mat-label>ID del Productor</mat-label>
-    <input matInput [(ngModel)]="lote.producerId" name="producerId" required type="text">
-  </mat-form-field>
+  <!-- El campo producerId ha sido removido del formulario -->
 
-  <!-- Campo para el estado del proceso -->
   <mat-form-field appearance="fill">
     <mat-label>Estado del Proceso</mat-label>
     <mat-select [(ngModel)]="lote.processStatus" name="processStatus" required>
@@ -47,5 +40,5 @@
   </mat-form-field>
 
   <button mat-raised-button color="primary" type="submit">Agregar Lote</button>
-  <button mat-button (click)="dialogRef.close()">Cancelar</button>
+  <button mat-button (click)="onCancel()">Cancelar</button>
 </form>

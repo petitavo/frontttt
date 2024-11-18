@@ -37,7 +37,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./lote.component.css']
 })
 export class LoteComponent implements OnInit, AfterViewInit {
-  protected columnsToDisplay: string[] = ['batchNumber', 'grape', 'startDate', 'processStatus', 'producerId', 'actions'];
+  protected columnsToDisplay: string[] = ['batchNumber', 'grape', 'startDate', 'processStatus', 'actions'];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   protected dataSource: MatTableDataSource<Lote>;
