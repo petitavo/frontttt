@@ -15,6 +15,9 @@ import {HomeProducerComponent} from "./GrapeFlow/producer/components/home-produc
 import {OrdersComponent} from "./GrapeFlow/producer/pages/orders/orders.component";
 import {HomeConsumerComponent} from "./GrapeFlow/consumer/components/home-consumer/home-consumer.component";
 import {AddClientComponent} from "./GrapeFlow/producer/components/add-client/add-client.component";
+import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
+import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
+import {authenticationGuard} from "./iam/services/authentication.guard";
 
 export const routes: Routes = [
 
@@ -23,7 +26,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   { path: 'producer', component: SidenavComponent, children: [
-      { path: 'home-producer', component: HomeProducerComponent },
+      { path: 'home-producer', component: HomeProducerComponent,canActivate: [authenticationGuard] },
       { path: 'clients', component: ClientsComponent },
       { path: 'inventory', component: InventoryComponent },
       { path: 'lote', component: LoteComponent },
@@ -38,5 +41,7 @@ export const routes: Routes = [
       { path: 'home-consumer', component: HomeConsumerComponent },
       { path: 'orders', component: ConsumerOrderComponent },
       { path: 'product', component: ProductComponent }
-    ]}
+    ]},
+  { path: 'sign-in',          component: SignInComponent },
+  { path: 'sign-up',          component: SignUpComponent },
 ];

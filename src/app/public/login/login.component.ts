@@ -15,12 +15,10 @@ export class LoginComponent {
   constructor(private router: Router) {}
 
   loginAsProducer() {
-    // Redirige al home del productor
-    this.router.navigate(['/producer/home-producer']);
+    this.router.navigate(['/sign-in']);
   }
 
   loginAsConsumer() {
-    // Redirige al home del consumidor
-    this.router.navigate(['/consumer/home-consumer']);
+    this.router.navigate(['/sign-up']);
   }
 }
