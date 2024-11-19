@@ -2,42 +2,43 @@
 <mat-dialog-content>
   <dl>
     <dt>Name:</dt>
-    <dd>{{ wine.nombre }}</dd>
+    <dd>{{ wine.name }}</dd>
 
     <dt>Description:</dt>
-    <dd>{{ wine.descripcion }}</dd>
+    <dd>{{ wine.description }}</dd>
 
     <dt>Type:</dt>
-    <dd>{{ wine.tipo }}</dd>
+    <dd>{{ wine.type }}</dd>
 
     <dt>Year:</dt>
-    <dd>{{ wine.anio }}</dd>
+    <dd>{{ wine.year }}</dd>
 
     <dt>Region:</dt>
     <dd>{{ wine.region }}</dd>
 
     <dt>Country:</dt>
-    <dd>{{ wine.pais }}</dd>
+    <dd>{{ wine.country }}</dd>
 
     <dt>Grapes:</dt>
-    <dd>{{ wine.uvas }}</dd>
+    <dd>{{ wine.grapes }}</dd>
 
     <dt>Alcohol (%):</dt>
     <dd>{{ wine.alcohol }}</dd>
 
     <dt>Certification:</dt>
-    <dd>{{ wine.certificacion }}</dd>
+    <dd>{{ wine.certification }}</dd>
 
     <dt>Rating:</dt>
-    <dd>{{ wine.calificacion }}</dd>
+    <dd>{{ wine.rating }}</dd>
 
     <dt>Status:</dt>
-    <dd>{{ wine.estado }}</dd>
+    <dd>{{ wine.state }}</dd>
 
     <dt>Lot:</dt>
-    <dd>{{ wine.lote }}</dd>
+    <dd>{{ wine.batchId }}</dd>
   </dl>
 </mat-dialog-content>
+
 <mat-dialog-actions align="end">
   <button mat-button (click)="onClose()">Close</button>
 </mat-dialog-actions>

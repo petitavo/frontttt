@@ -71,7 +71,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
         this.filteredWines = wines;
 
         this.tipos = [...new Set(wines.map(wine => wine.type))];
-        this.uvas = [...new Set(wines.flatMap(wine => wine.grapes))];
+        this.uvas = [...new Set(wines.map(wine => wine.grapes))]; // Si grapes es un string, esto solo tendrá valores únicos.
       },
       error => {
         console.error('Error fetching wines:', error);
@@ -89,8 +89,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
       } else if (this.selectedFilter === 'tipo') {
         return wine.type.toLowerCase().includes(filterValue);
       } else if (this.selectedFilter === 'uvas') {
-        const uvasString = Array.isArray(wine.grapes) ? wine.grapes.join(', ').toLowerCase() : '';
-        return uvasString.includes(filterValue);
+        // Cambié la lógica aquí para trabajar con wine.grapes como un string
+        return wine.grapes.toLowerCase().includes(filterValue); // Usamos includes en lugar de some
       }
       return true;
     });
@@ -117,7 +117,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
         if (this.selectedFilter === 'tipo') {
           return wine.type.toLowerCase() === option.toLowerCase();
         } else if (this.selectedFilter === 'uvas') {
-          return wine.grapes.some(uva => uva.toLowerCase() === option.toLowerCase());
+          // Si 'uvas' es un string, simplemente verifica si la opción seleccionada está en el string
+          return wine.grapes.toLowerCase().includes(option.toLowerCase());
         }
         return true;
       });
