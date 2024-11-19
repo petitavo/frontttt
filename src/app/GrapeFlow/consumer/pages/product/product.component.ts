@@ -7,8 +7,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from "@angular/forms";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
-import { Wine} from "../../../producer/model/wine.entity";
-import { WineService} from "../../../producer/services/wine.service";
+
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
 import { ProductDetailsComponent } from "../../components/product-details/product-details.component";
@@ -18,6 +17,8 @@ import { OrderService } from '../../../producer/services/order.service';
 import { Order } from "../../../producer/model/order.entity";
 import { TranslateModule } from "@ngx-translate/core";
 import { BuyWineDialogComponent } from "../../components/buy-wine-dialog/buy-wine-dialog.component";
+import {Wine} from "../../../producer/model/wine.entity";
+import {WineService} from "../../../producer/services/wine.service";
 
 @Component({
   selector: 'app-product-details',
