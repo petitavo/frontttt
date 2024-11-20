@@ -38,9 +38,9 @@ export const routes: Routes = [
     ]},
 
   { path: 'consumer', component: SidenavConsumerComponent, children: [
-      { path: 'home-consumer', component: HomeConsumerComponent },
-      { path: 'orders', component: ConsumerOrderComponent },
-      { path: 'product', component: ProductComponent }
+      { path: 'home-consumer', component: HomeConsumerComponent,canActivate: [authenticationGuard] },
+      { path: 'orders', component: ConsumerOrderComponent,canActivate: [authenticationGuard] },
+      { path: 'product', component: ProductComponent,canActivate: [authenticationGuard] }
     ]},
   { path: 'sign-in',          component: SignInComponent },
   { path: 'sign-up',          component: SignUpComponent },
