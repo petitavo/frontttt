@@ -29,7 +29,7 @@ export const routes: Routes = [
       { path: 'home-producer', component: HomeProducerComponent,canActivate: [authenticationGuard] },
       { path: 'clients', component: ClientsComponent,canActivate: [authenticationGuard] },
       { path: 'inventory', component: InventoryComponent,canActivate: [authenticationGuard] },
-      { path: 'lote', component: LoteComponent,canActivate: [authenticationGuard] },
+      { path: 'lote', component: LoteComponent },
       { path: 'orders', component: OrdersComponent,canActivate: [authenticationGuard] },
       { path: 'editClients/:id', component: EditClientsComponent,canActivate: [authenticationGuard] },
       { path: 'detailClients/:id', component: DetailsClientsComponent,canActivate: [authenticationGuard] },
