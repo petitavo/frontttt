@@ -14,7 +14,7 @@ import {SignInResponse} from "../model/sign-in.response";
  */
 @Injectable({providedIn: 'root'})
 export class AuthenticationService {
-  basePath: string = `https://backend-villasystem-production-36d5.up.railway.app/api/v1`;
+  basePath: string = `http://localhost:8080/api/v1`;
   httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
   private signedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
@@ -87,7 +87,7 @@ export class AuthenticationService {
           this.signedInUsername.next(response.username);
           localStorage.setItem('token', response.token);
           console.log(`Signed in as ${response.username} with token ${response.token}`);
-          this.router.navigate(['/']).then();
+          this.router.navigate(['/producer/home-producer']).then();
         },
         error: (error) => {
           this.signedIn.next(false);
