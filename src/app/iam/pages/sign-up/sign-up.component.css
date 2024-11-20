@@ -68,3 +68,28 @@ mat-error {
   font-size: 0.875rem;
   margin-top: 0.25rem;
 }
+
+/* New styles for mat-select */
+mat-select {
+  width: 100%;
+}
+
+.mat-select-value {
+  color: #4b5563;
+}
+
+.mat-select-arrow {
+  color: #9ca3af;
+}
+
+.mat-select-panel {
+  background-color: #ffffff;
+}
+
+.mat-option {
+  color: #4b5563;
+}
+
+.mat-option:hover:not(.mat-option-disabled) {
+  background-color: #f3f4f6;
+}

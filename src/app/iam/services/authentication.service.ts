@@ -87,7 +87,12 @@ export class AuthenticationService {
           this.signedInUsername.next(response.username);
           localStorage.setItem('token', response.token);
           console.log(`Signed in as ${response.username} with token ${response.token}`);
-          this.router.navigate(['/producer/home-producer']).then();
+          const userRole = response.roles[0]?.name;
+          if (userRole === 'CONSUMER') {
+            this.router.navigate(['/consumer/home-consumer']).then();
+          } else {
+            this.router.navigate(['/producer/home-producer']).then();
+          }
         },
         error: (error) => {
           this.signedIn.next(false);

@@ -27,14 +27,14 @@ export const routes: Routes = [
 
   { path: 'producer', component: SidenavComponent, children: [
       { path: 'home-producer', component: HomeProducerComponent,canActivate: [authenticationGuard] },
-      { path: 'clients', component: ClientsComponent },
-      { path: 'inventory', component: InventoryComponent },
-      { path: 'lote', component: LoteComponent },
-      { path: 'orders', component: OrdersComponent },
-      { path: 'editClients/:id', component: EditClientsComponent },
-      { path: 'detailClients/:id', component: DetailsClientsComponent },
-      {path : 'createClients', component: AddClientComponent},
-      { path: 'wines', component: WinesComponent }
+      { path: 'clients', component: ClientsComponent,canActivate: [authenticationGuard] },
+      { path: 'inventory', component: InventoryComponent,canActivate: [authenticationGuard] },
+      { path: 'lote', component: LoteComponent,canActivate: [authenticationGuard] },
+      { path: 'orders', component: OrdersComponent,canActivate: [authenticationGuard] },
+      { path: 'editClients/:id', component: EditClientsComponent,canActivate: [authenticationGuard] },
+      { path: 'detailClients/:id', component: DetailsClientsComponent,canActivate: [authenticationGuard] },
+      {path : 'createClients', component: AddClientComponent,canActivate: [authenticationGuard]},
+      { path: 'wines', component: WinesComponent,canActivate: [authenticationGuard] }
     ]},
 
   { path: 'consumer', component: SidenavConsumerComponent, children: [

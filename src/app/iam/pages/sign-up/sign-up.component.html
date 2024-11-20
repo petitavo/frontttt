@@ -17,6 +17,17 @@
             <mat-error>{{ errorMessagesForControl(form,'password')}}</mat-error>
           }
         </mat-form-field>
+        <mat-form-field>
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role">
+            <mat-option value="PRODUCER">Producer</mat-option>
+            <mat-option value="CONSUMER">Consumer</mat-option>
+          </mat-select>
+          @if (isInvalidControl(form,'role')) {
+            <mat-error>{{ errorMessagesForControl(form,'role')}}</mat-error>
+          }
+        </mat-form-field>
+
         <button mat-raised-button color="primary">Sign Up</button>
       </form>
     </mat-card-content>
