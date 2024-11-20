@@ -16,8 +16,7 @@ export class LoteService extends BaseService<Lote> {
   getById(id: string): Observable<Lote> {
     return this.getAll().pipe(
       map(lotes => {
-        // @ts-ignore
-        const foundLote = lotes.find(lote => lote.id === id);
+        const foundLote = lotes.find(lote => lote.id.toString() === id);
         if (foundLote) {
           return foundLote;
         } else {
