@@ -7,8 +7,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { FormsModule } from "@angular/forms";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
 import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
-import { Wine} from "../../../producer/model/wine.entity";
-import { WineService} from "../../../producer/services/wine.service";
+
 import { MatIconModule } from "@angular/material/icon";
 import { RouterLink } from "@angular/router";
 import { ProductDetailsComponent } from "../../components/product-details/product-details.component";
@@ -18,6 +17,8 @@ import { OrderService } from '../../../producer/services/order.service';
 import { Order } from "../../../producer/model/order.entity";
 import { TranslateModule } from "@ngx-translate/core";
 import { BuyWineDialogComponent } from "../../components/buy-wine-dialog/buy-wine-dialog.component";
+import {Wine} from "../../../producer/model/wine.entity";
+import {WineService} from "../../../producer/services/wine.service";
 
 @Component({
   selector: 'app-product-details',
@@ -70,8 +71,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
         this.wines = wines;
         this.filteredWines = wines;
 
-        this.tipos = [...new Set(wines.map(wine => wine.tipo))];
-        this.uvas = [...new Set(wines.flatMap(wine => wine.uvas))];
+        this.tipos = [...new Set(wines.map(wine => wine.type))];
+        this.uvas = [...new Set(wines.map(wine => wine.grapes))]; // Si grapes es un string, esto solo tendrá valores únicos.
       },
       error => {
         console.error('Error fetching wines:', error);
@@ -85,12 +86,12 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
     this.filteredWines = this.wines.filter(wine => {
       if (this.selectedFilter === 'nombre') {
-        return wine.nombre.toLowerCase().includes(filterValue);
+        return wine.name.toLowerCase().includes(filterValue);
       } else if (this.selectedFilter === 'tipo') {
-        return wine.tipo.toLowerCase().includes(filterValue);
+        return wine.type.toLowerCase().includes(filterValue);
       } else if (this.selectedFilter === 'uvas') {
-        const uvasString = Array.isArray(wine.uvas) ? wine.uvas.join(', ').toLowerCase() : '';
-        return uvasString.includes(filterValue);
+        // Cambié la lógica aquí para trabajar con wine.grapes como un string
+        return wine.grapes.toLowerCase().includes(filterValue); // Usamos includes en lugar de some
       }
       return true;
     });
@@ -115,9 +116,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
     } else {
       this.filteredWines = this.wines.filter(wine => {
         if (this.selectedFilter === 'tipo') {
-          return wine.tipo.toLowerCase() === option.toLowerCase();
+          return wine.type.toLowerCase() === option.toLowerCase();
         } else if (this.selectedFilter === 'uvas') {
-          return wine.uvas.some(uva => uva.toLowerCase() === option.toLowerCase());
+          // Si 'uvas' es un string, simplemente verifica si la opción seleccionada está en el string
+          return wine.grapes.toLowerCase().includes(option.toLowerCase());
         }
         return true;
       });
@@ -132,8 +134,8 @@ export class ProductComponent implements OnInit, AfterViewInit {
   }
 
   onViewLot(wine: Wine): void {
-    if (wine.lote_id) {
-      this.loteService.getById(wine.lote_id).subscribe({
+    if (wine.batchId) {
+      this.loteService.getById(wine.batchId).subscribe({
         next: (lote) => {
           this.dialog.open(LoteDetailsComponent, {
             width: '600px',
@@ -165,7 +167,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
         const newOrder: Order = {
           ...result.order,
           id: this.generateOrderId(),
-          tipo: wine.tipo // Include the wine type in the order
+          tipo: wine.type // Include the wine type in the order
         };
 
         this.orderService.addOrder(newOrder).subscribe(

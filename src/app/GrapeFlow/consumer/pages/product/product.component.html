@@ -26,10 +26,10 @@
 
   <div class="wine-card-container">
     <div *ngFor="let wine of filteredWines" class="wine-card">
-      <img class="wine-image" [src]="wine.link" alt="{{wine.nombre}}">
+      <img class="wine-image" [src]="wine.link" alt="{{wine.name}}">
       <div class="wine-info">
-        <h3>{{wine.nombre}}</h3>
-        <p>{{wine.descripcion}}</p>
+        <h3>{{wine.name}}</h3>
+        <p>{{wine.description}}</p>
         <div class="wine-actions">
           <button mat-raised-button color="primary" (click)="onViewDetails(wine)">
             {{ 'CONSUMER.VIEW_DETAILS' | translate }}

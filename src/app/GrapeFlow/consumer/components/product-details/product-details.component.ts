@@ -9,6 +9,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
+import {Wine} from "../../../producer/model/wine.entity";
 
 @Component({
   selector: 'app-product-details',
@@ -22,7 +23,7 @@ export class ProductDetailsComponent {
 
   constructor(
     public dialogRef: MatDialogRef<ProductDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Product,
+    @Inject(MAT_DIALOG_DATA) public data: Wine,
     private http: HttpClient
   ) {
     // Carga los lotes desde el JSON

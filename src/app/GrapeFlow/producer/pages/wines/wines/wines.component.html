@@ -5,18 +5,18 @@
     <mat-form-field appearance="outline">
       <mat-label>{{ 'PRODUCER.FILTER_BY' | translate }}</mat-label>
       <mat-select [(value)]="selectedFilter" (selectionChange)="onFilterChange($event.value)">
-        <mat-option value="nombre">{{ 'PRODUCER.NAME' | translate }}</mat-option>
-        <mat-option value="tipo">{{ 'PRODUCER.TYPE' | translate }}</mat-option>
+        <mat-option value="name">{{ 'PRODUCER.NAME' | translate }}</mat-option> <!-- Cambié 'nombre' a 'name' -->
+        <mat-option value="type">{{ 'PRODUCER.TYPE' | translate }}</mat-option> <!-- Cambié 'tipo' a 'type' -->
         <mat-option value="region">{{ 'PRODUCER.REGION' | translate }}</mat-option>
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field *ngIf="selectedFilter === 'nombre'" appearance="outline">
+    <mat-form-field *ngIf="selectedFilter === 'name'" appearance="outline"> <!-- Cambié 'nombre' a 'name' -->
       <mat-label>{{ 'PRODUCER.SEARCH' | translate }}</mat-label>
       <input matInput (input)="applyFilter($event)" placeholder="{{ 'PRODUCER.SEARCH' | translate }} por {{selectedFilter}}">
     </mat-form-field>
 
-    <mat-form-field *ngIf="selectedFilter === 'tipo' || selectedFilter === 'region'" appearance="outline">
+    <mat-form-field *ngIf="selectedFilter === 'type' || selectedFilter === 'region'" appearance="outline"> <!-- Cambié 'tipo' a 'type' -->
       <mat-label>{{ 'PRODUCER.SELECT' | translate }} {{selectedFilter}}</mat-label>
       <mat-select (selectionChange)="onSelectOption($event.value)">
         <mat-option *ngFor="let option of filterOptions" [value]="option">{{option}}</mat-option>
@@ -31,11 +31,11 @@
   <!-- Contenedor para las tarjetas de vino con acciones adicionales -->
   <div class="wine-card-container">
     <div *ngFor="let wine of filteredWines" class="wine-card">
-      <img class="wine-image" [src]="wine.link" alt="{{wine.nombre}}">
+      <img class="wine-image" [src]="wine.link" alt="{{wine.name}}"> <!-- Cambié 'nombre' a 'name' -->
       <div class="wine-info">
-        <h3>{{wine.nombre}}</h3>
-        <p>{{wine.descripcion}}</p>
-        <p><strong>{{ 'PRODUCER.YEAR' | translate }}:</strong> {{wine.anio}}</p>
+        <h3>{{wine.name}}</h3> <!-- Cambié 'nombre' a 'name' -->
+        <p>{{wine.description}}</p> <!-- Cambié 'descripcion' a 'description' -->
+        <p><strong>{{ 'PRODUCER.YEAR' | translate }}:</strong> {{wine.year}}</p> <!-- Cambié 'anio' a 'year' -->
         <p><strong>{{ 'PRODUCER.REGION' | translate }}:</strong> {{wine.region}}</p>
         <div class="wine-actions">
           <button mat-raised-button color="primary" (click)="onViewDetails(wine)">

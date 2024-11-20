@@ -2,7 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
-import { Product} from "../../../consumer/model/product.entity";
+import {Wine} from "../../model/wine.entity";
 
 @Component({
   selector: 'app-wine-details',
@@ -18,7 +18,7 @@ import { Product} from "../../../consumer/model/product.entity";
 export class WineDetailsComponent {
   constructor(
     public dialogRef: MatDialogRef<WineDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public wine: Product
+    @Inject(MAT_DIALOG_DATA) public wine: Wine
   ) {}
 
   onClose(): void {

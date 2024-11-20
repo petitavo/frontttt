@@ -5,10 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { Product} from "../../../consumer/model/product.entity";
-import { ProductService} from "../../../consumer/services/product.service";
 import { LoteService } from '../../services/lote.service';
 import { CommonModule } from '@angular/common';
+import { WineService } from "../../services/wine.service";
+import { Wine } from "../../model/wine.entity";
 
 @Component({
   selector: 'app-wine-add',
@@ -26,13 +26,29 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./wine-add.component.css']
 })
 export class WineAddComponent {
-  wine: Product = new Product();
+  // Instanciamos un nuevo objeto Wine con valores predeterminados
+  wine: Wine = new Wine({
+    name: '',
+    description: '',
+    type: '',
+    region: '',
+    country: '',
+    year: 0,
+    grapes: '',
+    alcohol: 0,
+    certification: '',
+    rating: 0,
+    state: '',
+    producerId: '',
+    batchId: '',
+    link: 'https://example.com/default-image.jpg'
+  });
   lotes: any[] = [];
 
   constructor(
     public dialogRef: MatDialogRef<WineAddComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private productService: ProductService,
+    private winetService: WineService,
     private loteService: LoteService
   ) {
     this.loadLotes();
@@ -46,7 +62,9 @@ export class WineAddComponent {
   }
 
   onSave(): void {
-    this.productService.create(this.wine).subscribe({
+    this.wine.producerId = '1';
+
+    this.winetService.create(this.wine).subscribe({
       next: (newWine) => {
         this.dialogRef.close(newWine);
       },
