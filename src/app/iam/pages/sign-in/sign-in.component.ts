@@ -7,6 +7,7 @@ import {MatButton} from "@angular/material/button";
 import {MatCard, MatCardContent, MatCardHeader, MatCardTitle} from "@angular/material/card";
 import {MatError, MatFormField} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-in',
@@ -29,7 +30,7 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
   form!: FormGroup;
   submitted = false;
 
-  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService) {
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private router: Router) {
     super();
   }
 
@@ -47,5 +48,8 @@ export class SignInComponent extends BaseFormComponent implements OnInit {
     const signInRequest = new SignInRequest(username, password);
     this.authenticationService.signIn(signInRequest);
     this.submitted = true;
+  }
+  backToLogin() {
+    this.router.navigate(['/login']).then();
   }
 }

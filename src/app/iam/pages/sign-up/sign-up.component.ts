@@ -9,6 +9,8 @@ import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
 import {MatOption} from "@angular/material/core";
 import {MatSelect} from "@angular/material/select";
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-sign-up',
@@ -34,7 +36,7 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
   form!: FormGroup;
   submitted: boolean = false;
 
-  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService) {
+  constructor(private builder: FormBuilder, private authenticationService: AuthenticationService, private router: Router) {
     super();
   }
 
@@ -56,6 +58,10 @@ export class SignUpComponent extends BaseFormComponent implements OnInit {
     this.submitted = true;
   }
 
+
+  backToLogin() {
+    this.router.navigate(['/login']).then();
+  }
 
 
 }
