@@ -1,0 +1,35 @@
+<div class="sign-up-content">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Sign Up</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form" (submit)="onSubmit()">
+        <mat-form-field>
+          <input matInput placeholder="Username" id="username" name="username" required formControlName="username">
+          @if (isInvalidControl(form,'username')) {
+            <mat-error>{{ errorMessagesForControl(form,'username')}}</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" id="password" name="password" formControlName="password">
+          @if (isInvalidControl(form,'password')) {
+            <mat-error>{{ errorMessagesForControl(form,'password')}}</mat-error>
+          }
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Role</mat-label>
+          <mat-select formControlName="role">
+            <mat-option value="PRODUCER">Producer</mat-option>
+            <mat-option value="CONSUMER">Consumer</mat-option>
+          </mat-select>
+          @if (isInvalidControl(form,'role')) {
+            <mat-error>{{ errorMessagesForControl(form,'role')}}</mat-error>
+          }
+        </mat-form-field>
+
+        <button mat-raised-button color="primary">Sign Up</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

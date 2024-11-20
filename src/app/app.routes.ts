@@ -15,6 +15,9 @@ import {HomeProducerComponent} from "./GrapeFlow/producer/components/home-produc
 import {OrdersComponent} from "./GrapeFlow/producer/pages/orders/orders.component";
 import {HomeConsumerComponent} from "./GrapeFlow/consumer/components/home-consumer/home-consumer.component";
 import {AddClientComponent} from "./GrapeFlow/producer/components/add-client/add-client.component";
+import {SignInComponent} from "./iam/pages/sign-in/sign-in.component";
+import {SignUpComponent} from "./iam/pages/sign-up/sign-up.component";
+import {authenticationGuard} from "./iam/services/authentication.guard";
 
 export const routes: Routes = [
 
@@ -23,20 +26,22 @@ export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
 
   { path: 'producer', component: SidenavComponent, children: [
-      { path: 'home-producer', component: HomeProducerComponent },
-      { path: 'clients', component: ClientsComponent },
-      { path: 'inventory', component: InventoryComponent },
-      { path: 'lote', component: LoteComponent },
-      { path: 'orders', component: OrdersComponent },
-      { path: 'editClients/:id', component: EditClientsComponent },
-      { path: 'detailClients/:id', component: DetailsClientsComponent },
-      {path : 'createClients', component: AddClientComponent},
-      { path: 'wines', component: WinesComponent }
+      { path: 'home-producer', component: HomeProducerComponent,canActivate: [authenticationGuard] },
+      { path: 'clients', component: ClientsComponent,canActivate: [authenticationGuard] },
+      { path: 'inventory', component: InventoryComponent,canActivate: [authenticationGuard] },
+      { path: 'lote', component: LoteComponent,canActivate: [authenticationGuard] },
+      { path: 'orders', component: OrdersComponent,canActivate: [authenticationGuard] },
+      { path: 'editClients/:id', component: EditClientsComponent,canActivate: [authenticationGuard] },
+      { path: 'detailClients/:id', component: DetailsClientsComponent,canActivate: [authenticationGuard] },
+      {path : 'createClients', component: AddClientComponent,canActivate: [authenticationGuard]},
+      { path: 'wines', component: WinesComponent,canActivate: [authenticationGuard] }
     ]},
 
   { path: 'consumer', component: SidenavConsumerComponent, children: [
-      { path: 'home-consumer', component: HomeConsumerComponent },
-      { path: 'orders', component: ConsumerOrderComponent },
-      { path: 'product', component: ProductComponent }
-    ]}
+      { path: 'home-consumer', component: HomeConsumerComponent,canActivate: [authenticationGuard] },
+      { path: 'orders', component: ConsumerOrderComponent,canActivate: [authenticationGuard] },
+      { path: 'product', component: ProductComponent,canActivate: [authenticationGuard] }
+    ]},
+  { path: 'sign-in',          component: SignInComponent },
+  { path: 'sign-up',          component: SignUpComponent },
 ];
