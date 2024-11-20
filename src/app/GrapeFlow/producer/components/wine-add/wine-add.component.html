@@ -56,21 +56,21 @@
       <input matInput [(ngModel)]="wine.state" name="state" required>
     </mat-form-field>
 
-    <!-- Campo de "Lot" comentado y reemplazado por un campo de texto -->
-    <!--
     <mat-form-field appearance="fill">
       <mat-label>Lot</mat-label>
       <mat-select [(ngModel)]="wine.batchId" name="batchId" required>
         <mat-option *ngFor="let lote of lotes" [value]="lote.id">
-          {{ lote.numeroLote }} - {{ lote.uva }}
+          {{ lote.batchNumber }} - {{ lote.grape }}
         </mat-option>
       </mat-select>
     </mat-form-field>
-    -->
-    <mat-form-field appearance="fill">
-      <mat-label>Lot (Text Input)</mat-label>
-      <input matInput [(ngModel)]="wine.batchId" name="batchId" required>
-    </mat-form-field>
+
+    <!--
+<mat-form-field appearance="fill">
+  <mat-label>Lot (Text Input)</mat-label>
+  <input matInput [(ngModel)]="wine.batchId" name="batchId" required>
+</mat-form-field>
+-->
 
     <mat-form-field appearance="fill">
       <mat-label>Image URL</mat-label>
