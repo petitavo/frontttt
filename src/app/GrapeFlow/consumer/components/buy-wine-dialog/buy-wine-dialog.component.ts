@@ -31,7 +31,7 @@ export class BuyWineDialogComponent {
   ) {
     this.order = new Order({
       id: this.generateOrderId(),
-      productos: [data.wine.nombre],
+      productos: [data.wine.name],
       estado: 'En Proceso',
       fecha: new Date().toISOString().split('T')[0]
     });
@@ -42,7 +42,7 @@ export class BuyWineDialogComponent {
   }
 
   onSubmit(): void {
-    this.dialogRef.close({ order: this.order, wineType: this.data.wine.tipo });
+    this.dialogRef.close({ order: this.order, wineType: this.data.wine.type });
   }
 
   private generateOrderId(): string {

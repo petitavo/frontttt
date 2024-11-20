@@ -8,8 +8,6 @@ import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSortModule, MatSort } from '@angular/material/sort';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule, MatDialog } from '@angular/material/dialog';
-import { Product } from "../../../../consumer/model/product.entity";
-import { ProductService } from "../../../../consumer/services/product.service";
 import { WineDetailsComponent } from "../../../components/wine-detail/wine-detail.component";
 import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from "@angular/router";
@@ -20,6 +18,8 @@ import { LoteDetailsComponent } from "../../../components/lote-details/lote-deta
 import { catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import {TranslateModule} from "@ngx-translate/core";
+import {WineService} from "../../../services/wine.service";
+import {Wine} from "../../../model/wine.entity";
 
 @Component({
   selector: 'app-wines',
@@ -42,21 +42,21 @@ import {TranslateModule} from "@ngx-translate/core";
   styleUrls: ['./wines.component.css']
 })
 export class WinesComponent implements OnInit, AfterViewInit {
-  protected columnsToDisplay: string[] = ['nombre', 'tipo', 'anio', 'region', 'actions'];
+  protected columnsToDisplay: string[] = ['name', 'type', 'year', 'region', 'actions']; // Cambié los nombres
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  protected dataSource: MatTableDataSource<Product>;
-  private productService: ProductService = inject(ProductService);
+  protected dataSource: MatTableDataSource<Wine>; // Cambié de Product a Wine
+  private wineService: WineService = inject(WineService); // Cambié de ProductService a WineService
   private loteService: LoteService = inject(LoteService);
   private dialog: MatDialog = inject(MatDialog);
 
   // Variables para los filtros
-  selectedFilter: string = 'nombre';
+  selectedFilter: string = 'name'; // Cambié de 'nombre' a 'name'
   filterOptions: string[] = [];
-  protected filteredWines: Product[] = [];
+  protected filteredWines: Wine[] = []; // Cambié de Product a Wine
 
   constructor() {
-    this.dataSource = new MatTableDataSource<Product>();
+    this.dataSource = new MatTableDataSource<Wine>(); // Cambié de Product a Wine
   }
 
   ngOnInit(): void {
@@ -69,8 +69,8 @@ export class WinesComponent implements OnInit, AfterViewInit {
   }
 
   private getAllWines(): void {
-    this.productService.getAll().subscribe({
-      next: (wines: Product[]) => {
+    this.wineService.getAll().subscribe({
+      next: (wines: Wine[]) => { // Cambié de Product a Wine
         this.dataSource.data = wines;
         this.filteredWines = wines; // Inicializa la lista filtrada
         this.setFilterOptions();
@@ -83,10 +83,10 @@ export class WinesComponent implements OnInit, AfterViewInit {
   applyFilter(event: Event): void {
     const filterValue = (event.target as HTMLInputElement).value.trim().toLowerCase();
     this.filteredWines = this.dataSource.data.filter(wine => {
-      if (this.selectedFilter === 'nombre') {
-        return wine.nombre.toLowerCase().includes(filterValue);
-      } else if (this.selectedFilter === 'tipo') {
-        return wine.tipo.toLowerCase().includes(filterValue);
+      if (this.selectedFilter === 'name') { // Cambié de 'nombre' a 'name'
+        return wine.name.toLowerCase().includes(filterValue); // Cambié de 'nombre' a 'name'
+      } else if (this.selectedFilter === 'type') {
+        return wine.type.toLowerCase().includes(filterValue);
       } else if (this.selectedFilter === 'region') {
         return wine.region.toLowerCase().includes(filterValue);
       }
@@ -102,8 +102,8 @@ export class WinesComponent implements OnInit, AfterViewInit {
 
   // Opciones del filtro basadas en el tipo seleccionado
   getFilterOptionsForSelectedFilter(): string[] {
-    if (this.selectedFilter === 'tipo') {
-      return [...new Set(this.dataSource.data.map(wine => wine.tipo))];
+    if (this.selectedFilter === 'type') { // Cambié de 'tipo' a 'type'
+      return [...new Set(this.dataSource.data.map(wine => wine.type))]; // Cambié de 'tipo' a 'type'
     } else if (this.selectedFilter === 'region') {
       return [...new Set(this.dataSource.data.map(wine => wine.region))];
     } else {
@@ -118,12 +118,12 @@ export class WinesComponent implements OnInit, AfterViewInit {
 
   // Seleccionar una opción de filtro
   onSelectOption(option: string): void {
-    if (option === 'Todos') {
+    if (option === 'All') { // Cambié de 'Todos' a 'All'
       this.filteredWines = this.dataSource.data;
     } else {
       this.filteredWines = this.dataSource.data.filter(wine => {
-        if (this.selectedFilter === 'tipo') {
-          return wine.tipo === option;
+        if (this.selectedFilter === 'type') { // Cambié de 'tipo' a 'type'
+          return wine.type === option; // Cambié de 'tipo' a 'type'
         } else if (this.selectedFilter === 'region') {
           return wine.region === option;
         }
@@ -132,9 +132,9 @@ export class WinesComponent implements OnInit, AfterViewInit {
     }
   }
 
-  onDelete(wine: Product): void {
-    if (confirm(`Are you sure you want to delete the wine ${wine.nombre}?`)) {
-      this.productService.delete(wine.id).subscribe({
+  onDelete(wine: Wine): void { // Cambié de Product a Wine
+    if (confirm(`Are you sure you want to delete the wine ${wine.name}?`)) { // Cambié de 'nombre' a 'name'
+      this.wineService.delete(wine.id).subscribe({
         next: () => {
           this.dataSource.data = this.dataSource.data.filter(w => w.id !== wine.id);
           this.dataSource._updateChangeSubscription();
@@ -144,16 +144,16 @@ export class WinesComponent implements OnInit, AfterViewInit {
     }
   }
 
-  onViewDetails(wine: Product): void {
+  onViewDetails(wine: Wine): void { // Cambié de Product a Wine
     this.dialog.open(WineDetailsComponent, {
       width: '600px',
       data: wine
     });
   }
 
-  onViewLot(wine: Product): void {
-    if (wine.lote_id) {
-      this.loteService.getById(wine.lote_id)
+  onViewLot(wine: Wine): void { // Cambié de Product a Wine
+    if (wine.batchId) { // Cambié de 'lote_id' a 'batchId'
+      this.loteService.getById(wine.batchId) // Cambié de 'lote_id' a 'batchId'
         .pipe(
           catchError(error => {
             console.error('Error fetching lot details:', error);
@@ -175,7 +175,7 @@ export class WinesComponent implements OnInit, AfterViewInit {
     }
   }
 
-  openAddWineDialog(): void {
+  openAddWineDialog(): void { // Cambié de openAddProductDialog a openAddWineDialog
     const dialogRef = this.dialog.open(WineAddComponent, {
       width: '400px',
       data: {}
@@ -188,7 +188,7 @@ export class WinesComponent implements OnInit, AfterViewInit {
     });
   }
 
-  openEditWineDialog(wine: Product): void {
+  openEditWineDialog(wine: Wine): void { // Cambié de openEditProductDialog a openEditWineDialog
     const dialogRef = this.dialog.open(WineEditComponent, {
       width: '400px',
       data: { ...wine }

@@ -5,10 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { Product} from "../../../consumer/model/product.entity";
-import { ProductService} from "../../../consumer/services/product.service";
-import { LoteService } from '../../services/lote.service';
 import { CommonModule } from '@angular/common';
+import { Wine } from "../../model/wine.entity";
+import { WineService } from "../../services/wine.service";
 
 @Component({
   selector: 'app-wine-edit',
@@ -26,24 +25,14 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./wine-edit.component.css']
 })
 export class WineEditComponent {
-  wine: Product;
-  lotes: any[] = [];
+  wine: Wine;
 
   constructor(
     public dialogRef: MatDialogRef<WineEditComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Product,
-    private productService: ProductService,
-    private loteService: LoteService
+    @Inject(MAT_DIALOG_DATA) public data: Wine,
+    private productService: WineService
   ) {
     this.wine = { ...data };
-    this.loadLotes();
-  }
-
-  loadLotes(): void {
-    this.loteService.getAll().subscribe({
-      next: (lotes) => this.lotes = lotes,
-      error: (error) => console.error('Error loading lotes', error)
-    });
   }
 
   onSave(): void {
