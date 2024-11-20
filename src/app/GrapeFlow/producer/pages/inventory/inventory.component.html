@@ -37,6 +37,9 @@
           <p><strong>{{ 'INVENTORY.QUANTITY' | translate }}:</strong> {{ item.quantity }}</p>
         </mat-card-content>
         <mat-card-actions>
+          <button mat-icon-button color="primary" (click)="onEdit(item)" [attr.aria-label]="('INVENTORY.EDIT' | translate)">
+            <mat-icon>edit</mat-icon>
+          </button>
           <button mat-icon-button color="warn" (click)="onDelete(item)" [attr.aria-label]="('INVENTORY.DELETE' | translate)">
             <mat-icon>delete</mat-icon>
           </button>
