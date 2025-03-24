@@ -1,33 +1,27 @@
-import {Injectable} from '@angular/core';
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {BehaviorSubject} from "rxjs";
-import {Router} from "@angular/router";
-import {SignUpRequest} from "../model/sign-up.request";
-import {SignUpResponse} from "../model/sign-up.response";
-import {SignInRequest} from "../model/sign-in.request";
-import {SignInResponse} from "../model/sign-in.response";
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { BehaviorSubject } from "rxjs";
+import { Router } from "@angular/router";
+import { SignUpRequest } from "../model/sign-up.request";
+import { SignUpResponse } from "../model/sign-up.response";
+import { SignInRequest } from "../model/sign-in.request";
+import { SignInResponse } from "../model/sign-in.response";
 
 /**
  * Service for handling authentication operations.
- * @summary
  * This service is responsible for handling authentication operations like sign-up, sign-in, and sign-out.
  */
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class AuthenticationService {
   basePath: string = `https://backend-villasystem-f5d5fndbbvgsbzb5.canadacentral-01.azurewebsites.net/api/v1`;
-  httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
+  httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
 
-  private signedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  // Inicializamos signedIn usando el método hasToken() para conservar el estado tras refresh.
+  private signedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(this.hasToken());
   private signedInUserId: BehaviorSubject<number> = new BehaviorSubject<number>(0);
   private signedInUsername: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
-  /**
-   * Constructor for the AuthenticationService.
-    * @param router The router service.
-   * @param http The HttpClient service.
-   */
-  constructor(private router: Router, private http: HttpClient) {
-  }
+  constructor(private router: Router, private http: HttpClient) { }
 
   get isSignedIn() {
     return this.signedIn.asObservable();
@@ -41,14 +35,13 @@ export class AuthenticationService {
     return this.signedInUsername.asObservable();
   }
 
+  // Método para verificar si hay token en el localStorage
+  private hasToken(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
   /**
    * Sign up a new user.
-   * @summary
-   * This method sends a POST request to the server with the user's username and password.
-   * If the request is successful, the user's id and username are logged and the user is navigated to the sign-in page.
-   * If the request fails, an error message is logged and the user is navigated to the sign-up page.
-   * @param signUpRequest The {@link SignUpRequest} object containing the user's username and password.
-   * @returns The {@link SignUpResponse} object containing the user's id and username.
    */
   signUp(signUpRequest: SignUpRequest) {
     return this.http.post<SignUpResponse>(`${this.basePath}/authentication/sign-up`, signUpRequest, this.httpOptions)
@@ -66,22 +59,13 @@ export class AuthenticationService {
 
   /**
    * Sign in a user.
-   * @summary
-   * This method sends a POST request to the server with the user's username and password.
-   * If the request is successful, the signedIn, signedInUserId, and signedInUsername are set to true,
-   * the user's id, and the user's username respectively.
-   * The token is stored in the local storage and the user is navigated to the home page.
-   * If the request fails, the signedIn, signedInUserId, and signedInUsername are set to false, 0, and
-   * an empty string respectively.
-   * An error message is logged and the user is navigated to the sign-in page.
-   * @param signInRequest The {@link SignInRequest} object containing the user's username and password.
-   * @returns The {@link SignInResponse} object containing the user's id, username, and token.
    */
   signIn(signInRequest: SignInRequest) {
     console.log(signInRequest);
     return this.http.post<SignInResponse>(`${this.basePath}/authentication/sign-in`, signInRequest, this.httpOptions)
       .subscribe({
         next: (response) => {
+          // Actualizamos los BehaviorSubject y almacenamos el token
           this.signedIn.next(true);
           this.signedInUserId.next(response.id);
           this.signedInUsername.next(response.username);
@@ -95,6 +79,7 @@ export class AuthenticationService {
           }
         },
         error: (error) => {
+          // Si ocurre error, se limpian los valores
           this.signedIn.next(false);
           this.signedInUserId.next(0);
           this.signedInUsername.next('');
@@ -106,9 +91,6 @@ export class AuthenticationService {
 
   /**
    * Sign out the user.
-   * @summary
-   * This method sets the signedIn, signedInUserId, and signedInUsername to their default values,
-   * removes the token from the local storage, and navigates to the sign-in page.
    */
   signOut() {
     this.signedIn.next(false);
@@ -117,5 +99,4 @@ export class AuthenticationService {
     localStorage.removeItem('token');
     this.router.navigate(['/sign-in']).then();
   }
-
 }
